@@ -58,7 +58,7 @@
     --border-strong: rgba(201,168,76,0.5);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
   body { font-family: 'Jost', sans-serif; background: var(--charcoal); color: var(--off-white); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--charcoal); }
@@ -75,7 +75,7 @@
   .btn-outline:hover { background: rgba(201,168,76,0.08); border-color: var(--gold); transform: translateY(-2px); }
 
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 2rem; height: 80px; display: flex; align-items: center; justify-content: space-between; background: rgba(26,26,26,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 1.5rem; height: 80px; display: flex; align-items: center; justify-content: space-between; background: rgba(26,26,26,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: all 0.3s ease; max-width: 100%; box-sizing: border-box; }
   nav.scrolled { height: 60px; background: rgba(20,20,20,0.98); }
   .nav-logo { display: block; text-decoration: none; line-height: 0; }
   .nav-logo img { height: 70px; width: 220px; display: block; object-fit: contain; }
@@ -95,7 +95,7 @@
   .mobile-menu a:hover { color: var(--gold); }
 
   /* HERO */
-  #home { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: visible; padding: 120px 2rem 80px; }
+  #home { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 120px 2rem 80px; }
   .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,168,76,0.04) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.03) 0%, transparent 60%), var(--charcoal); }
   .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%); }
   .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -295,37 +295,37 @@
     .process-steps::before { display: none; }
   }
   @media (max-width: 768px) {
+    /* Base */
     section { padding: 70px 1.25rem; }
+    /* Nav */
     .nav-links { display: none; }
     .nav-cta .btn { display: none; }
     .hamburger { display: flex; }
+    .nav-logo img { height: 50px; width: auto; max-width: 160px; }
+    /* Stop page blowout */
+    body { overflow-x: hidden; }
+    #home { padding: 100px 1.25rem 60px; overflow: visible; width: 100%; }
+    .hero-content { grid-template-columns: 1fr; gap: 2rem; width: 100%; }
+    .hero-visual { order: -1; }
+    .hero-text { max-width: 100%; text-align: center; }
+    .hero-eyebrow { justify-content: center; }
+    .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
+    .hero-subtitle { font-size: 0.95rem; margin: 0 auto 2.5rem; }
+    .hero-actions { justify-content: center; flex-direction: column; align-items: center; }
+    .hero-actions .btn { text-align: center; justify-content: center; width: 100%; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    .hero-badge-wrap { width: 220px; height: 220px; margin: 0 auto; }
+    .hero-badge-tag { display: none; }
+    .hero-stars-tag { display: none; }
+    /* Sections */
     .services-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
     .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
     .footer-bottom { flex-direction: column; text-align: center; }
     .trust-inner { gap: 1.5rem; }
     .trust-dot { display: none; }
-    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
-    .hero-actions { flex-direction: column; }
-    .hero-actions .btn { text-align: center; justify-content: center; }
-    .testimonial-card { width: 300px; }
-    .nav-logo img { height: 50px; width: 160px; }
-
-    /* ── MOBILE HERO FIXES ── */
-    #home { padding: 100px 1.25rem 60px; overflow: visible; }
-    .hero-content { grid-template-columns: 1fr; gap: 2rem; }
-    .hero-visual { order: -1; }
-    /* Shrink the badge wrap to fit phone screen */
-    .hero-badge-wrap { width: 240px; height: 240px; margin: 0 auto; }
-    /* Hide the floating badge tags — they overflow on mobile */
-    .hero-badge-tag { display: none; }
-    .hero-stars-tag { display: none; }
-    /* Hero text centered on mobile */
-    .hero-text { max-width: 100%; text-align: center; }
-    .hero-eyebrow { justify-content: center; }
-    .hero-stats { justify-content: center; }
-    .hero-title { font-size: clamp(2.2rem, 8vw, 3rem); }
-    .hero-subtitle { font-size: 0.95rem; margin-left: auto; margin-right: auto; }
+    .testimonial-card { width: 280px; }
   }
 </style>
 </head>
@@ -799,7 +799,7 @@
             <div class="action-btn-text"><span class="action-btn-label">Free Consultation</span><span class="action-btn-value">Schedule a Meeting</span></div>
             <span class="action-btn-arrow">&rarr;</span>
           </a>
-          <a href="/cdn-cgi/l/email-protection#37454e5659111401030c445f52565542445e5952444444585b42435e585944111403010c54585a" class="contact-action-btn">
+          <a href="/cdn-cgi/l/email-protection#14666d757a323722202f677c71757661677d7a716767677b7861607d7b7a67323720222f777b79" class="contact-action-btn">
             <div class="action-btn-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
             <div class="action-btn-text"><span class="action-btn-label">Email</span><span class="action-btn-value">&#114;&#121;&#97;&#110;&#64;&#115;&#104;&#101;&#97;&#98;&#117;&#115;&#105;&#110;&#101;&#115;&#115;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;&#46;&#99;&#111;&#109;</span></div>
             <span class="action-btn-arrow">&rarr;</span>
