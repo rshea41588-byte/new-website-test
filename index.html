@@ -95,7 +95,7 @@
   .mobile-menu a:hover { color: var(--gold); }
 
   /* HERO */
-  #home { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 120px 2rem 80px; }
+  #home { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: visible; padding: 120px 2rem 80px; }
   .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,168,76,0.04) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.03) 0%, transparent 60%), var(--charcoal); }
   .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%); }
   .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -310,6 +310,22 @@
     .hero-actions .btn { text-align: center; justify-content: center; }
     .testimonial-card { width: 300px; }
     .nav-logo img { height: 50px; width: 160px; }
+
+    /* ── MOBILE HERO FIXES ── */
+    #home { padding: 100px 1.25rem 60px; overflow: visible; }
+    .hero-content { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-visual { order: -1; }
+    /* Shrink the badge wrap to fit phone screen */
+    .hero-badge-wrap { width: 240px; height: 240px; margin: 0 auto; }
+    /* Hide the floating badge tags — they overflow on mobile */
+    .hero-badge-tag { display: none; }
+    .hero-stars-tag { display: none; }
+    /* Hero text centered on mobile */
+    .hero-text { max-width: 100%; text-align: center; }
+    .hero-eyebrow { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .hero-title { font-size: clamp(2.2rem, 8vw, 3rem); }
+    .hero-subtitle { font-size: 0.95rem; margin-left: auto; margin-right: auto; }
   }
 </style>
 </head>
@@ -783,7 +799,7 @@
             <div class="action-btn-text"><span class="action-btn-label">Free Consultation</span><span class="action-btn-value">Schedule a Meeting</span></div>
             <span class="action-btn-arrow">&rarr;</span>
           </a>
-          <a href="mailto:ryan&#64;sheabusinesssolutions&#46;com" class="contact-action-btn">
+          <a href="/cdn-cgi/l/email-protection#37454e5659111401030c445f52565542445e5952444444585b42435e585944111403010c54585a" class="contact-action-btn">
             <div class="action-btn-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
             <div class="action-btn-text"><span class="action-btn-label">Email</span><span class="action-btn-value">&#114;&#121;&#97;&#110;&#64;&#115;&#104;&#101;&#97;&#98;&#117;&#115;&#105;&#110;&#101;&#115;&#115;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;&#46;&#99;&#111;&#109;</span></div>
             <span class="action-btn-arrow">&rarr;</span>
@@ -862,7 +878,7 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <a href="tel:+16037598547">(603) 759-8547</a>
-      <a href="mailto:ryan&#64;sheabusinesssolutions&#46;com">&#114;&#121;&#97;&#110;&#64;&#115;&#104;&#101;&#97;&#98;&#117;&#115;&#105;&#110;&#101;&#115;&#115;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;&#46;&#99;&#111;&#109;</a>
+      <a href="/cdn-cgi/l/email-protection#4e3c372f20686d787a753d262b2f2c3b3d27202b3d3d3d21223b3a2721203d686d7a78752d2123">&#114;&#121;&#97;&#110;&#64;&#115;&#104;&#101;&#97;&#98;&#117;&#115;&#105;&#110;&#101;&#115;&#115;&#115;&#111;&#108;&#117;&#116;&#105;&#111;&#110;&#115;&#46;&#99;&#111;&#109;</a>
       <a href="https://calendar.app.google/XUuJ8UZcHRmSJWCv6" target="_blank" rel="noopener">Schedule a Meeting</a>
       <p style="margin-top:0.75rem;font-size:0.78rem;">Orlando, FL Area<br>Mon&ndash;Fri, 9am&ndash;5pm EST</p>
     </div>
@@ -877,7 +893,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   // Nav scroll
   const nav = document.getElementById('mainNav');
@@ -945,13 +961,4 @@
         document.getElementById('formSuccess').style.display = 'block';
       } else {
         alert('Something went wrong. Please try again.');
-        btn.textContent = 'Send Message →';
-        btn.disabled = false;
-      }
-    } catch (error) {
-      alert('Something went wrong. Please try again.');
-      btn.textContent = 'Send Message →';
-      btn.disabled = false;
-    }
-  });
-</script>
+        btn.textContent = 'Send Me
