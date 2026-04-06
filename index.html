@@ -2833,7 +2833,8 @@
             <p class="footer-copy">&copy; 2025 Shea Business Solutions LLC. All rights reserved.</p>
             <div class="footer-legal">
                 <a href="#" onclick="openPPModal(event)">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                <a href="#" onclick="openCookieModal(event)">Cookie Policy</a>
+                <a href="#" onclick="openTOSModal(event)">Terms of Service</a>
                 <a href="https://share.google/r2Vu1r1mJtu3Nw1jH" target="_blank" rel="noopener">Google Reviews</a>
             </div>
         </div>
@@ -2880,10 +2881,195 @@
     <div id="ppModal" class="pp-modal-overlay">
         <div class="pp-modal-content">
             <button class="pp-modal-close" onclick="closePPModal()">×</button>
-            <script id="usercentrics-ppg" privacy-policy-id="01d7c9b0-26e2-4399-89de-9540a808497f" data-language="en"
-                src="https://policygenerator.usercentrics.eu/api/privacy-policy"></script>
+            <div style="font-family:inherit;color:#222;line-height:1.7;">
+                <h2 style="margin-top:0;font-size:1.6rem;">Privacy Policy</h2>
+                <p style="font-size:0.85rem;color:#666;">Effective Date: January 1, 2025 &nbsp;|&nbsp; Last Updated:
+                    April 1, 2025</p>
+
+                <h3>1. Who We Are</h3>
+                <p>Shea Business Solutions LLC ("we," "us," or "our") is a bookkeeping and business solutions firm based
+                    in the Orlando, FL area. We can be reached at <a
+                        href="mailto:ryan@sheabusinesssolutions.com">ryan@sheabusinesssolutions.com</a> or (603)
+                    759-8547.</p>
+
+                <h3>2. Information We Collect</h3>
+                <p>We may collect the following types of information when you visit our website or contact us:</p>
+                <ul>
+                    <li><strong>Contact information</strong> — your name, email address, and phone number when you
+                        submit a contact or inquiry form.</li>
+                    <li><strong>Usage data</strong> — pages visited, time spent on site, browser type, and referring
+                        URL, collected automatically via Google Analytics and Google Tag Manager.</li>
+                    <li><strong>Cookie data</strong> — see our Cookie Policy for details.</li>
+                </ul>
+
+                <h3>3. How We Use Your Information</h3>
+                <ul>
+                    <li>To respond to your inquiries and schedule consultations.</li>
+                    <li>To improve our website and understand how visitors use it.</li>
+                    <li>To comply with legal obligations.</li>
+                    <li>To send occasional business-related communications (you may opt out at any time).</li>
+                </ul>
+
+                <h3>4. Sharing of Information</h3>
+                <p>We do not sell or rent your personal information. We may share it with:</p>
+                <ul>
+                    <li><strong>Service providers</strong> — such as Google (Analytics, Tag Manager, Calendar) and
+                        scheduling tools, solely to provide services to you.</li>
+                    <li><strong>Legal authorities</strong> — if required by law or to protect our legal rights.</li>
+                </ul>
+
+                <h3>5. Third-Party Services</h3>
+                <p>Our website uses the following third-party services that may collect data independently:</p>
+                <ul>
+                    <li>Google Analytics &amp; Google Tag Manager (usage analytics)</li>
+                    <li>Cookiebot (cookie consent management)</li>
+                    <li>QuickBooks / Intuit ProAdvisor directory</li>
+                    <li>Google Calendar (meeting scheduling)</li>
+                </ul>
+                <p>Each of these services has its own privacy policy governing their data practices.</p>
+
+                <h3>6. Data Retention</h3>
+                <p>We retain contact information only as long as necessary to fulfill the purpose for which it was
+                    collected or as required by applicable law. Analytics data is retained per Google Analytics default
+                    settings (26 months).</p>
+
+                <h3>7. Your Rights</h3>
+                <p>Depending on your location, you may have the right to:</p>
+                <ul>
+                    <li>Access, correct, or delete your personal information.</li>
+                    <li>Opt out of marketing communications.</li>
+                    <li>Withdraw consent for cookie use (via our cookie banner).</li>
+                    <li>Lodge a complaint with a supervisory authority.</li>
+                </ul>
+                <p>To exercise any of these rights, contact us at <a
+                        href="mailto:ryan@sheabusinesssolutions.com">ryan@sheabusinesssolutions.com</a>.</p>
+
+                <h3>8. Security</h3>
+                <p>We implement reasonable technical and organizational measures to protect your information. However,
+                    no transmission over the internet is completely secure, and we cannot guarantee absolute security.
+                </p>
+
+                <h3>9. Children's Privacy</h3>
+                <p>Our website is not directed at children under 13. We do not knowingly collect personal information
+                    from children.</p>
+
+                <h3>10. Changes to This Policy</h3>
+                <p>We may update this Privacy Policy from time to time. The "Last Updated" date at the top reflects the
+                    most recent revision. Continued use of our website after changes constitutes your acceptance of the
+                    updated policy.</p>
+
+                <h3>11. Contact Us</h3>
+                <p>Shea Business Solutions LLC<br>Orlando, FL Area<br>Email: <a
+                        href="mailto:ryan@sheabusinesssolutions.com">ryan@sheabusinesssolutions.com</a><br>Phone: (603)
+                    759-8547</p>
+            </div>
         </div>
     </div>
+    <!-- Cookie Policy Modal -->
+    <div id="cookieModal" class="pp-modal-overlay">
+        <div class="pp-modal-content">
+            <button class="pp-modal-close" onclick="closeCookieModal()">×</button>
+            <div style="font-family:inherit;color:#222;line-height:1.7;">
+                <h2 style="margin-top:0;font-size:1.6rem;">Cookie Policy</h2>
+                <p style="font-size:0.85rem;color:#666;">Effective Date: January 1, 2025 &nbsp;|&nbsp; Last Updated:
+                    April 1, 2025</p>
+
+                <h3>1. What Are Cookies?</h3>
+                <p>Cookies are small text files stored on your device when you visit a website. They help the site
+                    remember your preferences and understand how you interact with it. Some cookies are set directly by
+                    us; others are set by third-party services we use.</p>
+
+                <h3>2. How We Use Cookies</h3>
+                <p>We use cookies and similar tracking technologies for the following purposes:</p>
+                <ul>
+                    <li><strong>Essential cookies</strong> — necessary for the website to function correctly (e.g.,
+                        maintaining your cookie consent preference). These cannot be disabled.</li>
+                    <li><strong>Analytics cookies</strong> — help us understand how visitors use our site (pages viewed,
+                        time on site, traffic sources) via Google Analytics and Google Tag Manager.</li>
+                    <li><strong>Preference cookies</strong> — remember settings you've chosen to improve your
+                        experience.</li>
+                </ul>
+
+                <h3>3. Cookies We Use</h3>
+                <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+                    <thead>
+                        <tr style="background:#f5f5f5;">
+                            <th style="text-align:left;padding:8px;border:1px solid #ddd;">Cookie</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ddd;">Provider</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ddd;">Purpose</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ddd;">Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding:8px;border:1px solid #ddd;">CookieConsent</td>
+                            <td style="padding:8px;border:1px solid #ddd;">Cookiebot</td>
+                            <td style="padding:8px;border:1px solid #ddd;">Stores your cookie consent preferences</td>
+                            <td style="padding:8px;border:1px solid #ddd;">1 year</td>
+                        </tr>
+                        <tr style="background:#fafafa;">
+                            <td style="padding:8px;border:1px solid #ddd;">_ga</td>
+                            <td style="padding:8px;border:1px solid #ddd;">Google Analytics</td>
+                            <td style="padding:8px;border:1px solid #ddd;">Distinguishes unique users for analytics</td>
+                            <td style="padding:8px;border:1px solid #ddd;">2 years</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px;border:1px solid #ddd;">_ga_*</td>
+                            <td style="padding:8px;border:1px solid #ddd;">Google Analytics</td>
+                            <td style="padding:8px;border:1px solid #ddd;">Persists session state</td>
+                            <td style="padding:8px;border:1px solid #ddd;">2 years</td>
+                        </tr>
+                        <tr style="background:#fafafa;">
+                            <td style="padding:8px;border:1px solid #ddd;">_gid</td>
+                            <td style="padding:8px;border:1px solid #ddd;">Google Analytics</td>
+                            <td style="padding:8px;border:1px solid #ddd;">Distinguishes users within a session</td>
+                            <td style="padding:8px;border:1px solid #ddd;">24 hours</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:8px;border:1px solid #ddd;">_gtm*</td>
+                            <td style="padding:8px;border:1px solid #ddd;">Google Tag Manager</td>
+                            <td style="padding:8px;border:1px solid #ddd;">Tag management and analytics orchestration
+                            </td>
+                            <td style="padding:8px;border:1px solid #ddd;">Session</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>4. Managing Your Cookie Preferences</h3>
+                <p>When you first visit our site, a cookie consent banner will appear. You can choose to accept or
+                    decline non-essential cookies at that time. You can update your preferences at any time by clearing
+                    your browser cookies and revisiting the site.</p>
+                <p>You can also control cookies directly in your browser settings:</p>
+                <ul>
+                    <li><strong>Chrome:</strong> Settings → Privacy and Security → Cookies</li>
+                    <li><strong>Firefox:</strong> Options → Privacy &amp; Security → Cookies</li>
+                    <li><strong>Safari:</strong> Preferences → Privacy → Manage Website Data</li>
+                    <li><strong>Edge:</strong> Settings → Privacy, Search, and Services → Cookies</li>
+                </ul>
+                <p>Note: disabling essential cookies may affect website functionality.</p>
+
+                <h3>5. Third-Party Cookies</h3>
+                <p>Some cookies are placed by third-party services that appear on our pages. We do not control these
+                    cookies. Please refer to the respective privacy policies of:</p>
+                <ul>
+                    <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google (Analytics
+                            &amp; Tag Manager)</a></li>
+                    <li><a href="https://www.cookiebot.com/en/privacy-policy/" target="_blank"
+                            rel="noopener">Cookiebot</a></li>
+                </ul>
+
+                <h3>6. Changes to This Policy</h3>
+                <p>We may update this Cookie Policy periodically. The "Last Updated" date at the top reflects the most
+                    recent revision.</p>
+
+                <h3>7. Contact Us</h3>
+                <p>Questions about our use of cookies? Contact us at <a
+                        href="mailto:ryan@sheabusinesssolutions.com">ryan@sheabusinesssolutions.com</a> or (603)
+                    759-8547.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         function openPPModal(e) {
             e.preventDefault();
@@ -2892,7 +3078,107 @@
         function closePPModal() {
             document.getElementById('ppModal').style.display = 'none';
         }
+        function openCookieModal(e) {
+            e.preventDefault();
+            document.getElementById('cookieModal').style.display = 'flex';
+        }
+        function closeCookieModal() {
+            document.getElementById('cookieModal').style.display = 'none';
+        }
+        function openTOSModal(e) {
+            e.preventDefault();
+            document.getElementById('tosModal').style.display = 'flex';
+        }
+        function closeTOSModal() {
+            document.getElementById('tosModal').style.display = 'none';
+        }
     </script>
+
+    <!-- Terms of Service Modal -->
+    <div id="tosModal" class="pp-modal-overlay">
+        <div class="pp-modal-content">
+            <button class="pp-modal-close" onclick="closeTOSModal()">×</button>
+            <div style="font-family:inherit;color:#222;line-height:1.7;">
+                <h2 style="margin-top:0;font-size:1.6rem;">Terms of Service</h2>
+                <p style="font-size:0.85rem;color:#666;">Effective Date: January 1, 2025 &nbsp;|&nbsp; Last Updated:
+                    April 1, 2025</p>
+
+                <h3>1. Agreement to Terms</h3>
+                <p>By accessing or using the Shea Business Solutions LLC website ("Site"), you agree to be bound by
+                    these Terms of Service ("Terms"). If you do not agree, please do not use the Site. These Terms apply
+                    to all visitors, users, and anyone who accesses the Site.</p>
+
+                <h3>2. About Our Services</h3>
+                <p>Shea Business Solutions LLC provides bookkeeping, accounting support, and business advisory services.
+                    Information presented on this Site is for general informational purposes only and does not
+                    constitute professional financial, legal, or tax advice. For advice specific to your situation,
+                    please contact us directly to arrange a consultation.</p>
+
+                <h3>3. Use of the Site</h3>
+                <p>You agree to use this Site only for lawful purposes and in a manner that does not infringe the rights
+                    of others. You may not:</p>
+                <ul>
+                    <li>Use the Site in any way that violates applicable local, state, national, or international law.
+                    </li>
+                    <li>Transmit unsolicited or unauthorized advertising or promotional material.</li>
+                    <li>Attempt to gain unauthorized access to any part of the Site or its related systems.</li>
+                    <li>Use automated tools to scrape, crawl, or harvest data from the Site without our prior written
+                        consent.</li>
+                </ul>
+
+                <h3>4. Intellectual Property</h3>
+                <p>All content on this Site — including text, graphics, logos, images, and design — is the property of
+                    Shea Business Solutions LLC or its content suppliers and is protected by applicable copyright and
+                    trademark laws. You may not reproduce, distribute, or create derivative works without our express
+                    written permission.</p>
+
+                <h3>5. Third-Party Links</h3>
+                <p>This Site may contain links to third-party websites (such as LinkedIn, QuickBooks ProAdvisor, Google,
+                    Facebook, Instagram, TikTok, and YouTube). These links are provided for your convenience only. We
+                    have no control over the content of those sites and accept no responsibility for them or for any
+                    loss or damage that may arise from your use of them.</p>
+
+                <h3>6. Disclaimer of Warranties</h3>
+                <p>This Site and its content are provided on an "as is" and "as available" basis without any warranties
+                    of any kind, either express or implied, including but not limited to implied warranties of
+                    merchantability, fitness for a particular purpose, or non-infringement. We do not warrant that the
+                    Site will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+
+                <h3>7. Limitation of Liability</h3>
+                <p>To the fullest extent permitted by law, Shea Business Solutions LLC shall not be liable for any
+                    indirect, incidental, special, consequential, or punitive damages arising from your use of — or
+                    inability to use — this Site or its content, even if we have been advised of the possibility of such
+                    damages.</p>
+
+                <h3>8. Indemnification</h3>
+                <p>You agree to indemnify and hold harmless Shea Business Solutions LLC, its members, employees, and
+                    agents from any claims, damages, losses, or expenses (including reasonable attorneys' fees) arising
+                    from your use of the Site or your violation of these Terms.</p>
+
+                <h3>9. Privacy</h3>
+                <p>Your use of this Site is also governed by our <a href="#"
+                        onclick="closeTOSModal();openPPModal(event)">Privacy Policy</a> and <a href="#"
+                        onclick="closeTOSModal();openCookieModal(event)">Cookie Policy</a>, which are incorporated into
+                    these Terms by reference.</p>
+
+                <h3>10. Changes to These Terms</h3>
+                <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon
+                    posting to the Site. Your continued use of the Site after any changes constitutes your acceptance of
+                    the updated Terms. The "Last Updated" date at the top reflects the most recent revision.</p>
+
+                <h3>11. Governing Law</h3>
+                <p>These Terms shall be governed by and construed in accordance with the laws of the State of Florida,
+                    without regard to its conflict of law provisions. Any disputes arising under these Terms shall be
+                    subject to the exclusive jurisdiction of the courts located in Florida.</p>
+
+                <h3>12. Contact Us</h3>
+                <p>If you have any questions about these Terms, please contact us:</p>
+                <p>Shea Business Solutions LLC<br>Orlando, FL Area<br>Email: <a
+                        href="mailto:ryan@sheabusinesssolutions.com">ryan@sheabusinesssolutions.com</a><br>Phone: (603)
+                    759-8547</p>
+            </div>
+        </div>
+    </div>
 
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
