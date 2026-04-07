@@ -1793,33 +1793,31 @@
             .mobile-call-cta {
                 display: flex;
                 position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
+                bottom: 1.5rem;
+                right: 1rem;
                 z-index: 999;
                 background: var(--gold);
                 color: var(--charcoal);
                 text-decoration: none;
                 align-items: center;
                 justify-content: center;
-                gap: 0.6rem;
-                padding: 1rem;
+                gap: 0.5rem;
+                padding: 0.75rem 1.1rem;
+                border-radius: 50px;
                 font-family: 'Jost', sans-serif;
-                font-size: 0.95rem;
+                font-size: 0.85rem;
                 font-weight: 600;
-                letter-spacing: 0.08em;
+                letter-spacing: 0.06em;
                 text-transform: uppercase;
-                box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
                 -webkit-tap-highlight-color: transparent;
+                white-space: nowrap;
             }
 
             .mobile-call-cta:hover,
             .mobile-call-cta:active {
                 background: var(--gold-light);
-            }
-
-            footer {
-                padding-bottom: 60px;
+                transform: scale(1.04);
             }
         }
 
@@ -1879,9 +1877,28 @@
             display: block;
         }
 
-        @media (max-width: 1100px) {
+        @media (max-width: 768px) {
             .social-sidebar {
-                display: none;
+                right: 0.5rem;
+            }
+
+            .social-sidebar a {
+                width: 26px;
+                height: 26px;
+            }
+
+            .social-sidebar a svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            .social-sidebar-icons {
+                gap: 0.45rem;
+            }
+
+            .social-sidebar::before,
+            .social-sidebar::after {
+                height: 30px;
             }
         }
     </style>
