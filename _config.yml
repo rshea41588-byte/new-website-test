@@ -1,0 +1,5 @@
+title: Shea Business Solutions Blog
+    url: "https://rshea41588-byte.github.io"
+    baseurl: "/new-website-test"
+    plugins:
+      - jekyll-sitemap
