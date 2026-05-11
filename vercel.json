@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/contact-us-2",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/our-team-2",
+      "destination": "/#about",
+      "permanent": true
+    },
+    {
+      "source": "/login",
+      "destination": "/#contact",
+      "permanent": true
+    }
+  ]
+}
