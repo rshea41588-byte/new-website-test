@@ -12,14 +12,11 @@ This repository contains the static website files for the official website of **
   * `quickbooks-proadvisor-orlando.html` - Explaining QuickBooks ProAdvisor levels.
   * `small-business-bookkeeping-orlando.html` - Cost breakdown for professional bookkeeping in Orlando.
   * `payroll-taxes-florida-small-business.html` - Florida payroll taxes compliance guide.
-* **`images/`**: Image and logo assets used across the site.
+* **`images/`**: Image, logo, manifest, and favicon icon assets used across the site.
 * **`robots.txt`**: Search engine crawler and AI bot instructions.
 * **`sitemap.xml`**: Google-compliant XML Sitemap containing all active pages and blog posts.
 * **`llms.txt`**: High-context documentation file optimized for LLMs and AI assistants.
-
-### ⚠️ Legacy Files (Deprecated)
-* `blog.html`: Legacy single-file blog template.
-* `_posts/` & `_config.yml`: Older Jekyll configurations. Active blog pages are now located in the static `Blog/` directory.
+* **`_config.yml`**: Jekyll site configuration for build settings.
 
 ## 🛠️ Technologies Used
 
