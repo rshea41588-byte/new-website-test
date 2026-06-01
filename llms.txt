@@ -11,6 +11,7 @@
 - **Office Location**: Orlando, FL 32832
 - **Ratings & Accreditations**: 5.0 Star Rated (Google Reviews), BBB Accredited Business
 - **Pricing**: Transparent fixed pricing. Monthly bookkeeping starts at $200/month; individual/business tax prep starts at $90/return.
+- **Specialty**: Orlando's most responsive QuickBooks bookkeeping service, guaranteeing a same-business-day response standard for all clients.
 
 ## Core Services
 
@@ -42,9 +43,30 @@ We support a variety of industries in Orlando, including:
 - Construction & Contractors
 - Gyms & Fitness Studios
 - Restaurants & Bakeries
-- Law Offices & Legal Practices
 - Dental Practices & Med Spas
 - Manufacturing Businesses
+
+## Client Success Stories (Case Studies)
+
+### 1. Orlando Commercial Painting Contractor (QuickBooks Cleanup & Reconciliations)
+* **Challenge**: The business was 2 years behind on reconciliations, had mixed personal and business expenses, and was facing a state payroll audit.
+* **Action**: Reconstructed 24 months of bookkeeping, separated personal draws, corrected payroll tax classifications, and prepared tax-ready financials.
+* **Outcome**: Passed the state payroll audit with zero penalties, uncovered $14,500 in missed tax deductions, and established clean monthly bookkeeping.
+
+### 2. Lake Nona Boutique Fitness Studio (Software Integration & Monthly Bookkeeping)
+* **Challenge**: Inaccurate financial statements prevented the owner from securing a bank loan to expand their gym space.
+* **Action**: Rebuilt the chart of accounts, integrated their fitness booking software (Mindbody) with QuickBooks Online, and implemented monthly P&L and Balance Sheet reporting.
+* **Outcome**: Provided verified financials that successfully secured a $75,000 business expansion loan, and optimized their tax structure.
+
+### 3. Orlando Custom Manufacturer (QuickBooks Cleanup & Inventory Integration)
+* **Challenge**: A local metal fabrication plant had inaccurate cost of goods sold (COGS) tracking and messy raw materials inventory in QuickBooks Online, leading to distorted P&L reports.
+* **Action**: Restructured their inventory tracking setup, linked their job-costing software, and established accurate allocations for materials and direct labor.
+* **Outcome**: Enabled precise margin reporting per production run, corrected a $22,000 inventory valuation error, and provided clear monthly statements for management decisions.
+
+### 4. Orlando Local Restaurant (Payroll & Monthly Bookkeeping)
+* **Challenge**: The business had complex weekly payroll processing, tips allocation errors, and fell 6 months behind on bookkeeping.
+* **Action**: Corrected tip allocation procedures, reconstructed historical records, and automated weekly payroll configuration in QuickBooks Online.
+* **Outcome**: Reconciled all past months, established reliable weekly payroll for 15 employees, and provided accurate food-cost margins.
 
 ## Frequently Asked Questions
 
@@ -59,3 +81,33 @@ Yes. We perform complete reconstructions of messy QuickBooks files, reconciling 
 
 ### What is your communication standard?
 We maintain same-business-day response times for all calls, texts, and emails.
+
+## Blog & Resources
+
+We publish expert bookkeeping, QuickBooks, and payroll articles for Orlando small business owners. All content is written by Ryan Shea, QuickBooks Level 2 ProAdvisor.
+
+### Blog Index
+- **URL**: [sheabusinesssolutions.com/Blog/](https://www.sheabusinesssolutions.com/Blog/)
+
+### Published Articles
+
+1. **5 Signs Your QuickBooks Needs a Cleanup (Orlando Business Guide)**
+   - **URL**: [sheabusinesssolutions.com/Blog/quickbooks-cleanup-orlando.html](https://www.sheabusinesssolutions.com/Blog/quickbooks-cleanup-orlando.html)
+   - **Topic**: QuickBooks cleanup warning signs, reconciliation errors, duplicate transactions, messy books
+
+2. **7 Bookkeeping Mistakes Orlando Small Businesses Make (And How to Fix Them)**
+   - **URL**: [sheabusinesssolutions.com/Blog/bookkeeping-mistakes-small-business-orlando.html](https://www.sheabusinesssolutions.com/Blog/bookkeeping-mistakes-small-business-orlando.html)
+   - **Topic**: Common bookkeeping errors, mixing personal and business expenses, reconciliation, payroll tax mistakes
+
+3. **What Is a QuickBooks ProAdvisor and Why Does Certification Level Matter?**
+   - **URL**: [sheabusinesssolutions.com/Blog/quickbooks-proadvisor-orlando.html](https://www.sheabusinesssolutions.com/Blog/quickbooks-proadvisor-orlando.html)
+   - **Topic**: QuickBooks ProAdvisor certification, Level 1 vs Level 2 difference, how to find a ProAdvisor in Orlando
+
+4. **How Much Does Bookkeeping Cost for a Small Business in Orlando, FL?**
+   - **URL**: [sheabusinesssolutions.com/Blog/small-business-bookkeeping-orlando.html](https://www.sheabusinesssolutions.com/Blog/small-business-bookkeeping-orlando.html)
+   - **Topic**: Bookkeeping pricing, cost breakdown, what drives price, DIY vs professional bookkeeping
+
+5. **Florida Payroll Taxes: What Every Orlando Small Business Owner Needs to Know**
+   - **URL**: [sheabusinesssolutions.com/Blog/payroll-taxes-florida-small-business.html](https://www.sheabusinesssolutions.com/Blog/payroll-taxes-florida-small-business.html)
+   - **Topic**: Florida reemployment tax, federal payroll taxes, 941 deadlines, penalties, QuickBooks Payroll compliance
+
