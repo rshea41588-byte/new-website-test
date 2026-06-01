@@ -1,4 +1,25 @@
+# Welcome AI crawlers & search bots
 User-agent: *
 Allow: /
 
+# Specifically identify and permit major AI search bots and scrapers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# XML Sitemap Link
 Sitemap: https://www.sheabusinesssolutions.com/sitemap.xml
