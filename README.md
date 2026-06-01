@@ -1,23 +1,34 @@
 # Shea Business Solutions Website
 
-This repository contains the static website files for Shea Business Solutions.
+This repository contains the static website files for the official website of **Shea Business Solutions** (https://www.sheabusinesssolutions.com), a professional bookkeeping, QuickBooks consulting, and payroll services provider based in Orlando, FL.
 
-## Main Files
+## 📁 Project Structure
 
-- `index.html` - Main website page.
-- `blog.html` - Blog listing page.
-- `_posts/` - Blog posts for GitHub Pages/Jekyll.
-- `_config.yml` - GitHub Pages/Jekyll site settings.
+* **`index.html`**: The main website landing page (services, pricing, process, client reviews, FAQ, and contact form).
+* **`Blog/`**: The directory containing our high-value, SEO-optimized static blog system:
+  * `index.html` - The main blog listing page.
+  * `quickbooks-cleanup-orlando.html` - Orlando business guide to QuickBooks cleanup.
+  * `bookkeeping-mistakes-small-business-orlando.html` - 7 common bookkeeping mistakes and fixes.
+  * `quickbooks-proadvisor-orlando.html` - Explaining QuickBooks ProAdvisor levels.
+  * `small-business-bookkeeping-orlando.html` - Cost breakdown for professional bookkeeping in Orlando.
+  * `payroll-taxes-florida-small-business.html` - Florida payroll taxes compliance guide.
+* **`images/`**: Image and logo assets used across the site.
+* **`robots.txt`**: Search engine crawler and AI bot instructions.
+* **`sitemap.xml`**: Google-compliant XML Sitemap containing all active pages and blog posts.
+* **`llms.txt`**: High-context documentation file optimized for LLMs and AI assistants.
 
-## Site Support Files
+### ⚠️ Legacy Files (Deprecated)
+* `blog.html`: Legacy single-file blog template.
+* `_posts/` & `_config.yml`: Older Jekyll configurations. Active blog pages are now located in the static `Blog/` directory.
 
-- `manifest.json` - App/browser install metadata.
-- `favicon.ico`, `apple-icon.png`, `icon0.svg`, `icon1.png` - Browser and device icons.
-- `web-app-manifest-192x192.png`, `web-app-manifest-512x512.png` - App manifest icons.
-- `robots.txt` - Search engine crawling instructions.
-- `sitemap.xml` - Search engine page map.
-- `logo.png` - Business logo used by the website.
+## 🛠️ Technologies Used
 
-## Organization Notes
+* HTML5 (Semantic markup)
+* Custom CSS3 (Charcoal & gold premium theme with grid layouts, responsive navigation, and transitions)
+* Vanilla JavaScript (Interactive FAQ accordions, mobile menu toggles)
 
-The root-level website files are intentionally left in place because GitHub Pages, browsers, and search engines expect some of them at fixed locations. See `docs/file-organization.md` before moving assets or support files.
+## 🚀 Local Development
+
+To run or view the website locally:
+1. Double-click `index.html` or open it with any web browser.
+2. Click **Blog** in the navigation menu or open `Blog/index.html` directly to browse the articles.
