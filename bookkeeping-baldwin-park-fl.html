@@ -42,48 +42,105 @@
     <meta property="og:url" content="https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html">
     <meta property="og:type" content="website">
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "Service",
+      "@id": "https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html#service",
+      "name": "Bookkeeping & Accounting Services in Baldwin Park, FL",
+      "serviceType": "Bookkeeping, QuickBooks Setup and Cleanup, Payroll, Tax Preparation",
+      "url": "https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html",
+      "description": "Monthly bookkeeping, QuickBooks setup and cleanup, payroll processing, and tax preparation for small businesses in Baldwin Park, Orlando, FL.",
+      "areaServed": [
         {
-          "@type": "Service",
-          "@id": "https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html#service",
-          "name": "Bookkeeping & Accounting Services in Baldwin Park, FL",
-          "serviceType": "Bookkeeping, QuickBooks Setup and Cleanup, Payroll, Tax Preparation",
-          "url": "https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html",
-          "description": "Monthly bookkeeping, QuickBooks setup and cleanup, payroll processing, and tax preparation for small businesses in Baldwin Park, Orlando, FL.",
-          "areaServed": [
-            {"@type": "Place", "name": "Baldwin Park, Orlando, FL"},
-            {"@type": "City", "name": "Orlando", "sameAs": "https://en.wikipedia.org/wiki/Orlando,_Florida"}
-          ],
-          "provider": {
-            "@type": ["AccountingService", "LocalBusiness"],
-            "@id": "https://www.sheabusinesssolutions.com/#business",
-            "name": "Shea Business Solutions",
-            "image": "https://www.sheabusinesssolutions.com/images/logo.png",
-            "url": "https://www.sheabusinesssolutions.com",
-            "telephone": "+16037598547",
-            "email": "ryan@sheabusinesssolutions.com",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Orlando",
-              "addressLocality": "Orlando",
-              "addressRegion": "FL",
-              "postalCode": "32832",
-              "addressCountry": "US"
-            },
-            "priceRange": "$$"
+          "@type": "Place",
+          "name": "Baldwin Park, Orlando, FL"
+        },
+        {
+          "@type": "City",
+          "name": "Orlando",
+          "sameAs": "https://en.wikipedia.org/wiki/Orlando,_Florida"
+        }
+      ],
+      "provider": {
+        "@type": [
+          "AccountingService",
+          "LocalBusiness"
+        ],
+        "@id": "https://www.sheabusinesssolutions.com/#business",
+        "name": "Shea Business Solutions",
+        "image": "https://www.sheabusinesssolutions.com/images/logo.png",
+        "url": "https://www.sheabusinesssolutions.com",
+        "telephone": "+16037598547",
+        "email": "ryan@sheabusinesssolutions.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1809 Great Falls Way",
+          "addressLocality": "Orlando",
+          "addressRegion": "FL",
+          "postalCode": "32824",
+          "addressCountry": "US"
+        },
+        "priceRange": "$$"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.sheabusinesssolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Bookkeeping in Baldwin Park, FL",
+          "item": "https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why are my cafe's sales understated in QuickBooks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Almost always the point of sale. Toast and Square deposit card sales into your bank account net of processing fees, so recording the bank deposit as revenue understates sales and hides merchant fees. We gross the deposits back up against the POS reports."
           }
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.sheabusinesssolutions.com/"},
-            {"@type": "ListItem", "position": 2, "name": "Bookkeeping Baldwin Park FL", "item": "https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html"}
-          ]
+          "@type": "Question",
+          "name": "How does the monthly engagement run?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Everything operates on QuickBooks Online, so there is no shoebox handoff and no office visit required. Bank and card feeds connect directly, and the monthly close happens while you run your business."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I actually get each month?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The P&L and balance sheet each month with a plain-English note about anything unusual, so you are never reading reports cold."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does bookkeeping cost in Baldwin Park?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Monthly bookkeeping starts at $200 per month and scales with transaction volume. Payroll support starts at $100 per month, and tax preparation starts at $90 for simple individual returns, with business returns quoted per engagement."
+          }
         }
       ]
     }
+  ]
+}
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -738,10 +795,14 @@
         }
 
         @media (max-width: 768px) { .mobile-call-cta { display: flex; } }
+    
+        /* breadcrumb trail */
+        .breadcrumb { font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(255,255,255,0.55); margin-bottom: 1.1rem; display: flex; gap: 0.5rem; align-items: center; justify-content: center; }
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .footer-brand iframe { max-width: 340px; }
     </style>
-    <script type="application/ld+json">
-    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why are my cafe's sales understated in QuickBooks?", "acceptedAnswer": {"@type": "Answer", "text": "Almost always the point of sale. Toast and Square deposit card sales into your bank account net of processing fees, so recording the bank deposit as revenue understates sales and hides merchant fees. We gross the deposits back up against the POS reports."}}, {"@type": "Question", "name": "How does the monthly engagement run?", "acceptedAnswer": {"@type": "Answer", "text": "Everything operates on QuickBooks Online, so there is no shoebox handoff and no office visit required. Bank and card feeds connect directly, and the monthly close happens while you run your business."}}, {"@type": "Question", "name": "What do I actually get each month?", "acceptedAnswer": {"@type": "Answer", "text": "The P&L and balance sheet each month with a plain-English note about anything unusual, so you are never reading reports cold."}}, {"@type": "Question", "name": "What does bookkeeping cost in Baldwin Park?", "acceptedAnswer": {"@type": "Answer", "text": "Monthly bookkeeping starts at $200 per month and scales with transaction volume. Payroll support starts at $100 per month, and tax preparation starts at $90 for simple individual returns, with business returns quoted per engagement."}}]}
-    </script>
+    
 </head>
 
 <body>
@@ -793,6 +854,7 @@
     <!-- PAGE HERO -->
     <section class="post-hero">
         <div class="post-hero-inner fade-up">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="https://www.sheabusinesssolutions.com/">Home</a><span aria-hidden="true">&rsaquo;</span><span aria-current="page">Bookkeeping in Baldwin Park, FL</span></nav>
             <span class="post-category-tag">Service Area</span>
             <h1>Bookkeeping &amp; Accounting in <span class="gold">Baldwin Park, FL</span></h1>
             <div class="post-meta">
@@ -953,15 +1015,24 @@
                         style="border:0;width:160px;height:auto;"
                         alt="Shea Business Solutions LLC BBB Business Review" />
                 </a>
+                <iframe src="https://maps.google.com/maps?cid=13996863349911463635&amp;output=embed" width="100%" height="170" style="border:0;border-radius:8px;margin-top:1rem;display:block;" loading="lazy" title="Shea Business Solutions Bookkeeping &amp; Tax on Google Maps" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="footer-col">
                 <h3>Services</h3>
                 <ul>
+                    <li><a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/flat-rate-bookkeeping-orlando.html">Flat-Rate Bookkeeping</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/catch-up-bookkeeping-orlando.html">Catch-Up Bookkeeping</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/payroll-services-orlando.html">Payroll Services</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/construction-bookkeeping-orlando.html">Construction Bookkeeping</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/restaurant-bookkeeping-orlando.html">Restaurant Bookkeeping</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/fitness-gym-bookkeeping-orlando.html">Gym &amp; Fitness Bookkeeping</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/manufacturing-bookkeeping-orlando.html">Manufacturing Bookkeeping</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/quickbooks-setup-orlando.html">QuickBooks Setup</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/quickbooks-cleanup-orlando.html">QuickBooks Cleanup</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/quickbooks-migration-orlando.html">QuickBooks Migration</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-cost-orlando.html">Bookkeeping Pricing</a></li>
                     <li><a href="https://www.sheabusinesssolutions.com/#services">Monthly Bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/#services">QuickBooks Setup &amp; Cleanup</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/#services">Payroll Processing</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/#services">Tax Preparation</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/#services">P&amp;L &amp; Reporting</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -980,22 +1051,22 @@
                 <a href="tel:+16037598547">(603) 759-8547</a>
                 <a href="mailto:ryan@sheabusinesssolutions.com">ryan@sheabusinesssolutions.com</a>
                 <a href="https://calendar.app.google/XUuJ8UZcHRmSJWCv6" target="_blank" rel="noopener">Schedule a Meeting</a>
-                <p style="margin-top:0.75rem;font-size:0.78rem;">Orlando, FL Area<br>Mon&ndash;Fri, 9am&ndash;5pm EST</p>
+                <p style="margin-top:0.75rem;font-size:0.78rem;">Shea Business Solutions Bookkeeping &amp; Tax<br>1809 Great Falls Way<br>Orlando, FL 32824<br>Mon&ndash;Fri, 9am&ndash;5pm EST</p>
             </div>
             <div class="footer-col">
                 <h3>Areas We Serve</h3>
                 <ul>
-                    <li><a href="bookkeeping-baldwin-park-fl.html">Baldwin Park</a></li>
-                    <li><a href="bookkeeping-dr-phillips-fl.html">Dr. Phillips</a></li>
-                    <li><a href="bookkeeping-lake-nona-fl.html">Lake Nona</a></li>
-                    <li><a href="bookkeeping-windermere-fl.html">Windermere</a></li>
-                    <li><a href="bookkeeping-winter-park-fl.html">Winter Park</a></li>
-                    <li><a href="bookkeeping-kissimmee-fl.html">Kissimmee</a></li>
-                    <li><a href="bookkeeping-sanford-fl.html">Sanford</a></li>
-                    <li><a href="bookkeeping-oviedo-fl.html">Oviedo</a></li>
-                    <li><a href="bookkeeping-apopka-fl.html">Apopka</a></li>
-                    <li><a href="bookkeeping-st-cloud-fl.html">St. Cloud</a></li>
-                    <li><a href="bookkeeping-celebration-fl.html">Celebration</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html">Baldwin Park</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-dr-phillips-fl.html">Dr. Phillips</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-lake-nona-fl.html">Lake Nona</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-windermere-fl.html">Windermere</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-winter-park-fl.html">Winter Park</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-kissimmee-fl.html">Kissimmee</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-sanford-fl.html">Sanford</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-oviedo-fl.html">Oviedo</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-apopka-fl.html">Apopka</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-st-cloud-fl.html">St. Cloud</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-celebration-fl.html">Celebration</a></li>
                 </ul>
             </div>
         </div>
