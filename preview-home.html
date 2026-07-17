@@ -1,0 +1,3102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/icon1.png" type="image/png" sizes="48x48">
+    <title>PREVIEW — Shea Business Solutions Bookkeeping &amp; Tax | QuickBooks ProAdvisor Orlando</title>
+    <meta name="description"
+        content="Preview homepage redesign for Shea Business Solutions. QuickBooks Level 2 ProAdvisor bookkeeping, payroll, and tax prep for Orlando small businesses.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A84C;
+            --gold-light: #E2C97E;
+            --gold-dark: #A07830;
+            --charcoal: #1A1A1A;
+            --charcoal-mid: #252525;
+            --charcoal-light: #2E2E2E;
+            --off-white: #F5F2EC;
+            --text-muted: #9A9A8A;
+            --text-light: #CCCCBB;
+            --border: rgba(201, 168, 76, 0.2);
+            --border-strong: rgba(201, 168, 76, 0.5);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            background: var(--charcoal);
+            color: var(--off-white);
+            font-weight: 300;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--charcoal);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-dark);
+            border-radius: 3px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--off-white);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .gold {
+            color: var(--gold);
+        }
+
+        .section-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* PREVIEW RIBBON */
+        .preview-ribbon {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1200;
+            background: var(--gold);
+            color: var(--charcoal);
+            text-align: center;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.35rem 1rem;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 2rem;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--charcoal);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--border-strong);
+        }
+
+        .btn-outline:hover {
+            background: rgba(201, 168, 76, 0.08);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 27px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 2rem;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: height 0.3s ease, background 0.3s ease;
+        }
+
+        nav.scrolled {
+            height: 62px;
+            background: rgba(20, 20, 20, 0.98);
+        }
+
+        .nav-logo {
+            display: block;
+            text-decoration: none;
+            line-height: 0;
+            flex-shrink: 0;
+        }
+
+        .nav-logo img {
+            height: 58px;
+            width: 190px;
+            display: block;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-links>li {
+            position: relative;
+        }
+
+        .nav-links>li>a,
+        .nav-links>li>.nav-trigger {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.76rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            text-decoration: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links>li>a:hover,
+        .nav-links>li>.nav-trigger:hover,
+        .nav-links>li:hover>.nav-trigger {
+            color: var(--gold);
+        }
+
+        .nav-caret {
+            width: 8px;
+            height: 8px;
+            border-right: 1.5px solid currentColor;
+            border-bottom: 1.5px solid currentColor;
+            transform: rotate(45deg) translateY(-2px);
+            transition: transform 0.25s ease;
+        }
+
+        .nav-links>li:hover .nav-caret {
+            transform: rotate(-135deg) translateY(-2px);
+        }
+
+        /* DROPDOWN */
+        .dropdown {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            background: rgba(22, 22, 22, 0.99);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--border);
+            padding: 1.25rem;
+            min-width: 300px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown.wide {
+            min-width: 560px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.25rem 1.75rem;
+        }
+
+        .nav-links>li:hover .dropdown,
+        .nav-links>li:focus-within .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 0;
+            right: 0;
+            height: 12px;
+        }
+
+        .dd-group-label {
+            grid-column: 1 / -1;
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            padding: 0.4rem 0.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 0.25rem;
+        }
+
+        .dd-group-label:not(:first-child) {
+            margin-top: 0.75rem;
+        }
+
+        .dropdown a.dd-link {
+            display: block;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            text-transform: none;
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.5rem 0.6rem;
+            border-left: 2px solid transparent;
+            transition: all 0.18s ease;
+        }
+
+        .dropdown a.dd-link:hover {
+            color: var(--gold);
+            background: rgba(201, 168, 76, 0.06);
+            border-left-color: var(--gold);
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .nav-phone {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            white-space: nowrap;
+            transition: opacity 0.2s;
+        }
+
+        .nav-phone:hover {
+            opacity: 0.8;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s;
+        }
+
+        /* MOBILE MENU */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: calc(27px + 80px);
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(18, 18, 18, 0.99);
+            backdrop-filter: blur(12px);
+            z-index: 999;
+            padding: 1.5rem 1.5rem 6rem;
+            overflow-y: auto;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu>a {
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--off-white);
+            text-decoration: none;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mm-section {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mm-toggle {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--off-white);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-align: left;
+            padding: 0.85rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mm-toggle .plus {
+            color: var(--gold);
+            font-size: 1.3rem;
+            font-weight: 300;
+            transition: transform 0.25s;
+        }
+
+        .mm-section.open .mm-toggle .plus {
+            transform: rotate(45deg);
+        }
+
+        .mm-panel {
+            display: none;
+            flex-direction: column;
+            padding: 0 0 0.75rem 0.75rem;
+        }
+
+        .mm-section.open .mm-panel {
+            display: flex;
+        }
+
+        .mm-panel a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            padding: 0.5rem 0;
+        }
+
+        .mm-panel a:hover {
+            color: var(--gold);
+        }
+
+        .mm-cta {
+            margin-top: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        /* HERO */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 160px 2rem 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201, 168, 76, 0.05) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201, 168, 76, 0.03) 0%, transparent 60%), var(--charcoal);
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 620px;
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-eyebrow-line {
+            width: 40px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero-eyebrow span {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .hero-title {
+            font-size: clamp(2.8rem, 5.2vw, 5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            color: var(--off-white);
+        }
+
+        .hero-title .gold {
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.08rem;
+            font-weight: 300;
+            color: var(--text-light);
+            margin-bottom: 2.25rem;
+            max-width: 480px;
+            line-height: 1.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.75rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-badge-wrap {
+            position: relative;
+            width: 360px;
+            height: 360px;
+        }
+
+        .hero-badge-ring {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            animation: rotate 22s linear infinite;
+        }
+
+        .hero-badge-ring::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-img-frame {
+            position: absolute;
+            inset: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--border-strong);
+        }
+
+        .hero-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .hero-badge-tag {
+            position: absolute;
+            bottom: 20px;
+            right: -20px;
+            background: var(--charcoal-mid);
+            border: 1px solid var(--border-strong);
+            padding: 0.8rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .badge-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid var(--border-strong);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .badge-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--gold);
+        }
+
+        .badge-text-main {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--off-white);
+        }
+
+        .badge-text-sub {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .hero-stars-tag {
+            position: absolute;
+            top: 30px;
+            left: -30px;
+            background: var(--charcoal-mid);
+            border: 1px solid var(--border-strong);
+            padding: 0.7rem 1rem;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .stars-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        /* TRUST BAR */
+        .trust-bar {
+            background: var(--charcoal-mid);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+        }
+
+        .trust-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .trust-item svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: var(--gold);
+            stroke-width: 1.5;
+            flex-shrink: 0;
+        }
+
+        .trust-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--border-strong);
+            border-radius: 50%;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 100px 2rem;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 580px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* SERVICES */
+        #services {
+            background: var(--charcoal-mid);
+        }
+
+        .svc-cluster {
+            margin-bottom: 3rem;
+        }
+
+        .svc-cluster:last-child {
+            margin-bottom: 0;
+        }
+
+        .svc-cluster-head {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .svc-cluster-head h3 {
+            font-size: 1.5rem;
+        }
+
+        .svc-cluster-head span {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .svc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .svc-card {
+            background: var(--charcoal);
+            border: 1px solid var(--border);
+            padding: 1.75rem;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+        }
+
+        .svc-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--gold);
+            transition: height 0.35s ease;
+        }
+
+        .svc-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-strong);
+            background: var(--charcoal-light);
+        }
+
+        .svc-card:hover::before {
+            height: 100%;
+        }
+
+        .svc-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(201, 168, 76, 0.08);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.4rem;
+        }
+
+        .svc-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .svc-card h4 {
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .svc-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            flex: 1;
+        }
+
+        .svc-arrow {
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0;
+            transform: translateX(-6px);
+            transition: all 0.28s ease;
+        }
+
+        .svc-card:hover .svc-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* PRICING */
+        #pricing {
+            background: var(--charcoal);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .pricing-card {
+            background: var(--charcoal-mid);
+            border: 1px solid var(--border);
+            padding: 2.25rem;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--gold);
+            background: var(--charcoal-light);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--charcoal);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.3rem 1.2rem;
+            white-space: nowrap;
+        }
+
+        .pricing-name {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .pricing-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--off-white);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .pricing-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.86rem;
+            color: var(--text-light);
+        }
+
+        .pricing-features li::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3 8l3.5 3.5L13 5' stroke='%23C9A84C' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .pricing-note a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* AREAS */
+        #areas {
+            background: var(--charcoal-mid);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .area-card {
+            background: var(--charcoal);
+            border: 1px solid var(--border);
+            padding: 1.5rem 1.5rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            transition: all 0.25s ease;
+        }
+
+        .area-card:hover {
+            border-color: var(--border-strong);
+            background: var(--charcoal-light);
+            transform: translateY(-3px);
+        }
+
+        .area-card .pin {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .area-card svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.5;
+            flex-shrink: 0;
+        }
+
+        .area-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--off-white);
+        }
+
+        .area-card .go {
+            color: var(--gold);
+            font-size: 1rem;
+            opacity: 0;
+            transform: translateX(-4px);
+            transition: all 0.25s ease;
+        }
+
+        .area-card:hover .go {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .areas-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* PROCESS */
+        #process {
+            background: var(--charcoal);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: calc(16.666% + 1rem);
+            right: calc(16.666% + 1rem);
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2.5rem 2rem;
+        }
+
+        .step-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-icon-wrap {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            background: rgba(201, 168, 76, 0.06);
+            border: 1px solid var(--border-strong);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-icon-wrap svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .process-step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .process-step p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* TESTIMONIALS */
+        #testimonials {
+            background: var(--charcoal-mid);
+            overflow: hidden;
+        }
+
+        .testimonials-track-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 1.5rem;
+            animation: scrollLeft 45s linear infinite;
+            width: max-content;
+        }
+
+        .testimonials-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .testimonial-card {
+            background: var(--charcoal);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            width: 380px;
+            flex-shrink: 0;
+            transition: border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--border-strong);
+        }
+
+        .testimonial-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            line-height: 0.8;
+            color: var(--gold);
+            opacity: 0.3;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            margin-bottom: 0.75rem;
+        }
+
+        .testimonial-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            flex: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            margin-top: auto;
+        }
+
+        .author-avatar {
+            width: 36px;
+            height: 36px;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid var(--border-strong);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .author-name {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--off-white);
+        }
+
+        .author-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .google-badge {
+            text-align: center;
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .google-badge a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* CASE STUDIES */
+        #results {
+            background: var(--charcoal);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+
+        .result-card {
+            background: var(--charcoal-mid);
+            border: 1px solid var(--border);
+            padding: 1.75rem;
+        }
+
+        .result-card .svc-icon {
+            margin-bottom: 1rem;
+        }
+
+        .result-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .result-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .result-card p strong {
+            color: var(--gold);
+            font-weight: 500;
+        }
+
+        /* ABOUT */
+        #about {
+            background: var(--charcoal-mid);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-img-wrap {
+            position: relative;
+        }
+
+        .about-img-border {
+            position: absolute;
+            top: -16px;
+            left: -16px;
+            right: 16px;
+            bottom: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .about-img-border-2 {
+            position: absolute;
+            top: 16px;
+            right: -16px;
+            left: 16px;
+            bottom: -16px;
+            border: 1px solid var(--border);
+        }
+
+        .about-img-main {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .about-gold-bar {
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            background: var(--charcoal-mid);
+            border: 1px solid var(--border-strong);
+            padding: 0.8rem 1.5rem;
+            white-space: nowrap;
+        }
+
+        .about-gold-bar-text {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .about-text h2 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 0.94rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 1.25rem;
+        }
+
+        /* FAQ */
+        #faq {
+            background: var(--charcoal);
+        }
+
+        .faq-grid {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--off-white);
+            text-align: left;
+            padding: 1.5rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: color 0.2s;
+        }
+
+        .faq-question h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: inherit;
+            margin: 0;
+        }
+
+        .faq-question:hover {
+            color: var(--gold);
+        }
+
+        .faq-icon {
+            font-size: 1.4rem;
+            color: var(--gold);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+
+        .faq-answer p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            padding: 0 0 1.5rem;
+        }
+
+        /* CONTACT */
+        #contact {
+            background: var(--charcoal-mid);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-left h2 {
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-left>p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-action-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--charcoal);
+            border: 1px solid var(--border);
+            padding: 1.1rem 1.4rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .contact-action-btn:hover {
+            border-color: var(--border-strong);
+            transform: translateX(4px);
+        }
+
+        .action-btn-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            background: rgba(201, 168, 76, 0.08);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .action-btn-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .action-btn-text {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .action-btn-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .action-btn-value {
+            font-size: 0.95rem;
+            color: var(--off-white);
+            font-weight: 400;
+        }
+
+        .action-btn-arrow {
+            color: var(--gold);
+        }
+
+        .contact-form-wrap {
+            background: var(--charcoal);
+            border: 1px solid var(--border);
+            padding: 2.25rem;
+        }
+
+        .form-title {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            background: var(--charcoal-mid);
+            border: 1px solid var(--border);
+            color: var(--off-white);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.9rem;
+            padding: 0.75rem 0.9rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-submit {
+            width: 100%;
+            justify-content: center;
+            background: var(--gold);
+            color: var(--charcoal);
+            border: none;
+            padding: 0.95rem;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.25s;
+        }
+
+        .form-submit:hover {
+            background: var(--gold-light);
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--charcoal);
+            border-top: 1px solid var(--border);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .footer-logo img {
+            height: 54px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
+        }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-top: 1rem;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 0.78rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .footer-col a,
+        .footer-col p {
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--gold);
+        }
+
+        .footer-col.contact-col a {
+            display: block;
+            margin-bottom: 0.55rem;
+        }
+
+        .footer-map {
+            margin-top: 1rem;
+        }
+
+        .footer-map iframe {
+            border: 0;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 320px;
+            height: 160px;
+            display: block;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 1.75rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-copy {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal a {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover {
+            color: var(--gold);
+        }
+
+        /* MOBILE STICKY CALL BAR (full-width, number always visible) */
+        .mobile-call-bar {
+            display: none;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .areas-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .nav-links,
+            .nav-cta .nav-phone,
+            .nav-cta .btn {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .hero-badge-wrap {
+                width: 280px;
+                height: 280px;
+            }
+
+            .svc-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .areas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-img-wrap {
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 70px 1.25rem;
+            }
+
+            nav {
+                padding: 0 1.25rem;
+            }
+
+            .svc-grid,
+            .pricing-grid,
+            .areas-grid,
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .trust-dot {
+                display: none;
+            }
+
+            .trust-inner {
+                gap: 1.25rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .hero-actions .btn {
+                justify-content: center;
+            }
+
+            .contact-form-wrap {
+                padding: 1.5rem;
+            }
+
+            .about-gold-bar {
+                white-space: normal;
+                text-align: center;
+                width: 90%;
+                padding: 0.6rem 0.75rem;
+            }
+
+            body {
+                padding-bottom: 4.5rem;
+            }
+
+            /* Full-width sticky call bar with the number always on screen */
+            .mobile-call-bar {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                z-index: 1100;
+                background: var(--gold);
+                color: var(--charcoal);
+                text-decoration: none;
+                align-items: center;
+                justify-content: center;
+                gap: 0.6rem;
+                padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
+                font-family: 'Jost', sans-serif;
+                font-size: 1.05rem;
+                font-weight: 700;
+                letter-spacing: 0.04em;
+                box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .mobile-call-bar svg {
+                width: 20px;
+                height: 20px;
+                stroke: var(--charcoal);
+                fill: none;
+                stroke-width: 2.5;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preview-ribbon">Preview build — internal review only. Ryan's live homepage is unchanged.</div>
+
+    <!-- NAV -->
+    <nav id="mainNav">
+        <a href="#home" class="nav-logo"><img src="images/logo_header.png"
+                alt="Shea Business Solutions Bookkeeping &amp; Tax – QuickBooks ProAdvisor Orlando FL"></a>
+        <ul class="nav-links">
+            <li>
+                <button class="nav-trigger" aria-haspopup="true">Services <span class="nav-caret"></span></button>
+                <div class="dropdown wide">
+                    <span class="dd-group-label">QuickBooks</span>
+                    <a class="dd-link" href="quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor</a>
+                    <a class="dd-link" href="quickbooks-setup-orlando.html">QuickBooks Setup</a>
+                    <a class="dd-link" href="quickbooks-cleanup-orlando.html">QuickBooks Cleanup</a>
+                    <a class="dd-link" href="quickbooks-migration-orlando.html">QuickBooks Migration</a>
+                    <a class="dd-link" href="quickbooks-training-orlando.html">QuickBooks Training</a>
+                    <a class="dd-link" href="quickbooks-proadvisor-cost-orlando.html">ProAdvisor Pricing</a>
+                    <span class="dd-group-label">Bookkeeping &amp; Payroll</span>
+                    <a class="dd-link" href="flat-rate-bookkeeping-orlando.html">Flat-Rate Bookkeeping</a>
+                    <a class="dd-link" href="catch-up-bookkeeping-orlando.html">Catch-Up Bookkeeping</a>
+                    <a class="dd-link" href="payroll-services-orlando.html">Payroll Services</a>
+                    <a class="dd-link" href="construction-bookkeeping-orlando.html">Construction Bookkeeping</a>
+                    <a class="dd-link" href="restaurant-bookkeeping-orlando.html">Restaurant Bookkeeping</a>
+                    <a class="dd-link" href="fitness-gym-bookkeeping-orlando.html">Gym &amp; Fitness Bookkeeping</a>
+                    <a class="dd-link" href="manufacturing-bookkeeping-orlando.html">Manufacturing Bookkeeping</a>
+                    <span class="dd-group-label">Tax Preparation</span>
+                    <a class="dd-link" href="tax-winter-park-fl.html">Tax Prep — Winter Park</a>
+                    <a class="dd-link" href="tax-dr-phillips-fl.html">Tax Prep — Dr. Phillips</a>
+                    <a class="dd-link" href="tax-windermere-fl.html">Tax Prep — Windermere</a>
+                    <a class="dd-link" href="tax-lake-nona-fl.html">Tax Prep — Lake Nona</a>
+                    <a class="dd-link" href="tax-baldwin-park-fl.html">Tax Prep — Baldwin Park</a>
+                </div>
+            </li>
+            <li>
+                <button class="nav-trigger" aria-haspopup="true">Service Areas <span class="nav-caret"></span></button>
+                <div class="dropdown wide">
+                    <span class="dd-group-label">Bookkeeping by City</span>
+                    <a class="dd-link" href="bookkeeping-winter-park-fl.html">Winter Park</a>
+                    <a class="dd-link" href="bookkeeping-dr-phillips-fl.html">Dr. Phillips</a>
+                    <a class="dd-link" href="bookkeeping-windermere-fl.html">Windermere</a>
+                    <a class="dd-link" href="bookkeeping-lake-nona-fl.html">Lake Nona</a>
+                    <a class="dd-link" href="bookkeeping-baldwin-park-fl.html">Baldwin Park</a>
+                    <a class="dd-link" href="bookkeeping-kissimmee-fl.html">Kissimmee</a>
+                    <a class="dd-link" href="bookkeeping-sanford-fl.html">Sanford</a>
+                    <a class="dd-link" href="bookkeeping-oviedo-fl.html">Oviedo</a>
+                    <a class="dd-link" href="bookkeeping-apopka-fl.html">Apopka</a>
+                    <a class="dd-link" href="bookkeeping-st-cloud-fl.html">St. Cloud</a>
+                    <a class="dd-link" href="bookkeeping-celebration-fl.html">Celebration</a>
+                </div>
+            </li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="Blog/">Blog</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="tel:+16037598547" class="nav-phone">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.25 8.09a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.09 6.09l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                </svg>
+                (603) 759-8547
+            </a>
+            <a href="https://calendar.app.google/XUuJ8UZcHRmSJWCv6" target="_blank" rel="noopener"
+                class="btn btn-primary" style="padding:0.6rem 1.3rem;font-size:0.72rem;">Schedule Meeting</a>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mm-section">
+            <button class="mm-toggle" onclick="toggleMM(this)">Services <span class="plus">+</span></button>
+            <div class="mm-panel">
+                <a href="quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor</a>
+                <a href="quickbooks-setup-orlando.html">QuickBooks Setup</a>
+                <a href="quickbooks-cleanup-orlando.html">QuickBooks Cleanup</a>
+                <a href="quickbooks-migration-orlando.html">QuickBooks Migration</a>
+                <a href="quickbooks-training-orlando.html">QuickBooks Training</a>
+                <a href="quickbooks-proadvisor-cost-orlando.html">ProAdvisor Pricing</a>
+                <a href="flat-rate-bookkeeping-orlando.html">Flat-Rate Bookkeeping</a>
+                <a href="catch-up-bookkeeping-orlando.html">Catch-Up Bookkeeping</a>
+                <a href="payroll-services-orlando.html">Payroll Services</a>
+                <a href="construction-bookkeeping-orlando.html">Construction Bookkeeping</a>
+                <a href="restaurant-bookkeeping-orlando.html">Restaurant Bookkeeping</a>
+                <a href="fitness-gym-bookkeeping-orlando.html">Gym &amp; Fitness Bookkeeping</a>
+                <a href="manufacturing-bookkeeping-orlando.html">Manufacturing Bookkeeping</a>
+                <a href="tax-winter-park-fl.html">Tax Prep — Winter Park</a>
+                <a href="tax-dr-phillips-fl.html">Tax Prep — Dr. Phillips</a>
+                <a href="tax-windermere-fl.html">Tax Prep — Windermere</a>
+                <a href="tax-lake-nona-fl.html">Tax Prep — Lake Nona</a>
+                <a href="tax-baldwin-park-fl.html">Tax Prep — Baldwin Park</a>
+            </div>
+        </div>
+        <div class="mm-section">
+            <button class="mm-toggle" onclick="toggleMM(this)">Service Areas <span class="plus">+</span></button>
+            <div class="mm-panel">
+                <a href="bookkeeping-winter-park-fl.html">Winter Park</a>
+                <a href="bookkeeping-dr-phillips-fl.html">Dr. Phillips</a>
+                <a href="bookkeeping-windermere-fl.html">Windermere</a>
+                <a href="bookkeeping-lake-nona-fl.html">Lake Nona</a>
+                <a href="bookkeeping-baldwin-park-fl.html">Baldwin Park</a>
+                <a href="bookkeeping-kissimmee-fl.html">Kissimmee</a>
+                <a href="bookkeeping-sanford-fl.html">Sanford</a>
+                <a href="bookkeeping-oviedo-fl.html">Oviedo</a>
+                <a href="bookkeeping-apopka-fl.html">Apopka</a>
+                <a href="bookkeeping-st-cloud-fl.html">St. Cloud</a>
+                <a href="bookkeeping-celebration-fl.html">Celebration</a>
+            </div>
+        </div>
+        <a href="#pricing" onclick="closeMenu()">Pricing</a>
+        <a href="#testimonials" onclick="closeMenu()">Reviews</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#faq" onclick="closeMenu()">FAQ</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="Blog/" onclick="closeMenu()">Blog</a>
+        <div class="mm-cta">
+            <a href="tel:+16037598547" class="btn btn-outline" style="justify-content:center;">Call or Text (603)
+                759-8547</a>
+            <a href="https://calendar.app.google/XUuJ8UZcHRmSJWCv6" target="_blank" rel="noopener"
+                class="btn btn-primary" style="justify-content:center;">Schedule a Meeting</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-eyebrow">
+                    <div class="hero-eyebrow-line"></div>
+                    <span>QuickBooks Level 2 ProAdvisor &bull; Orlando, FL</span>
+                </div>
+                <h1 class="hero-title">Clean books.<span class="gold">Clear numbers. No surprises.</span></h1>
+                <p class="hero-subtitle">Bookkeeping, payroll, and tax preparation for Orlando small businesses, handled
+                    by a QuickBooks Level 2 ProAdvisor. You get accurate financials every month and a straight answer the
+                    same business day.</p>
+                <div class="hero-actions">
+                    <a href="tel:+16037598547" class="btn btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.25 8.09a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.09 6.09l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                        </svg>
+                        Call or Text Now
+                    </a>
+                    <a href="https://calendar.app.google/XUuJ8UZcHRmSJWCv6" target="_blank" rel="noopener"
+                        class="btn btn-outline">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                            <line x1="16" y1="2" x2="16" y2="6" />
+                            <line x1="8" y1="2" x2="8" y2="6" />
+                            <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg>
+                        Schedule a Meeting
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5.0</div>
+                        <div class="stat-label">Google Rating</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Level 2</div>
+                        <div class="stat-label">QB ProAdvisor</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">BBB</div>
+                        <div class="stat-label">Accredited</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-badge-wrap">
+                    <div class="hero-badge-ring"></div>
+                    <div class="hero-img-frame"><img src="images/ryan_hero.jpeg"
+                            alt="Ryan Shea – QuickBooks Level 2 ProAdvisor Orlando FL"></div>
+                    <div class="hero-badge-tag">
+                        <div class="badge-icon">
+                            <svg viewBox="0 0 24 24" fill="var(--gold)" stroke="none">
+                                <path
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="badge-text-main">QuickBooks Level 2 ProAdvisor</div>
+                            <div class="badge-text-sub">Certified QuickBooks Payroll</div>
+                        </div>
+                    </div>
+                    <div class="hero-stars-tag">
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="stars-label">Google Reviews</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+        <div class="trust-inner">
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                QuickBooks Level 2 ProAdvisor
+            </div>
+            <div class="trust-dot"></div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+                Certified QuickBooks Payroll
+            </div>
+            <div class="trust-dot"></div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+                BBB Accredited
+            </div>
+            <div class="trust-dot"></div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                5.0 Stars on Google
+            </div>
+            <div class="trust-dot"></div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Same-Day Response
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">What We Do</span>
+                <h2>QuickBooks &amp; Accounting Services for <span class="gold">Orlando Small Businesses</span></h2>
+                <p>Every service links to a dedicated page with the full detail. Start where your books need the most
+                    help.</p>
+            </div>
+
+            <div class="svc-cluster">
+                <div class="svc-cluster-head">
+                    <h3>QuickBooks</h3>
+                    <span>Level 2 ProAdvisor setup, cleanup, migration, and training</span>
+                </div>
+                <div class="svc-grid">
+                    <a class="svc-card" href="quickbooks-proadvisor-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                        <h4>QuickBooks ProAdvisor</h4>
+                        <p>Work directly with a certified Level 2 ProAdvisor who knows the software inside and out.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                    <a class="svc-card" href="quickbooks-setup-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3M16 4h2a2 2 0 012 2v2M9 12l2 2 4-4" />
+                            </svg></div>
+                        <h4>QuickBooks Setup</h4>
+                        <p>A clean setup built around how your business actually runs, done right the first time.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                    <a class="svc-card" href="quickbooks-cleanup-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg></div>
+                        <h4>QuickBooks Cleanup</h4>
+                        <p>Years of messy data rebuilt so your reports make sense and you can move forward.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                    <a class="svc-card" href="quickbooks-migration-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg></div>
+                        <h4>QuickBooks Migration</h4>
+                        <p>Move to QuickBooks Online without losing history or breaking your reporting.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                    <a class="svc-card" href="quickbooks-training-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                            </svg></div>
+                        <h4>QuickBooks Training</h4>
+                        <p>Hands-on training for you and your team, built around your own file, not a generic video.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                    <a class="svc-card" href="quickbooks-proadvisor-cost-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg></div>
+                        <h4>ProAdvisor Pricing</h4>
+                        <p>Transparent pricing guide so you know what QuickBooks help costs before you commit.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="svc-cluster">
+                <div class="svc-cluster-head">
+                    <h3>Bookkeeping &amp; Payroll</h3>
+                    <span>Monthly books, catch-up work, payroll, and industry specialties</span>
+                </div>
+                <div class="svc-grid">
+                    <a class="svc-card" href="flat-rate-bookkeeping-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                            </svg></div>
+                        <h4>Flat-Rate Bookkeeping</h4>
+                        <p>Predictable monthly bookkeeping with one clear price and no billing surprises.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                    <a class="svc-card" href="catch-up-bookkeeping-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                        <h4>Catch-Up Bookkeeping</h4>
+                        <p>Months or years behind? We reconstruct your books and get you current and audit-ready.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                    <a class="svc-card" href="payroll-services-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                            </svg></div>
+                        <h4>Payroll Services</h4>
+                        <p>Certified QuickBooks Payroll for employees and contractors, kept compliant with Florida
+                            rules.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                    <a class="svc-card" href="construction-bookkeeping-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5" />
+                            </svg></div>
+                        <h4>Construction Bookkeeping</h4>
+                        <p>Job costing, subcontractor tracking, and clean payroll for Orlando contractors.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                    <a class="svc-card" href="restaurant-bookkeeping-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3v18h18M18 12V8m-4 4V6m-4 6v-2" /></svg></div>
+                        <h4>Restaurant Bookkeeping</h4>
+                        <p>Tips allocation, weekly payroll, and accurate food-cost margins handled correctly.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                    <a class="svc-card" href="fitness-gym-bookkeeping-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6.5 6.5l11 11m-9-13l-2 2m15 7l-2 2M4 8l2-2 3 3m9 9l2-2-3-3" /></svg></div>
+                        <h4>Gym &amp; Fitness Bookkeeping</h4>
+                        <p>Booking-software integrations and lender-ready financials for studios and gyms.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                    <a class="svc-card" href="manufacturing-bookkeeping-orlando.html">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3" />
+                                <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+                            </svg></div>
+                        <h4>Manufacturing Bookkeeping</h4>
+                        <p>Inventory tracking and COGS accuracy so your margins per production run are real.</p>
+                        <span class="svc-arrow">View page &rarr;</span>
+                    </a>
+                    <a class="svc-card" href="#pricing">
+                        <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z" />
+                            </svg></div>
+                        <h4>Tax Preparation</h4>
+                        <p>Business and individual returns with every legitimate deduction found. See pricing below.</p>
+                        <span class="svc-arrow">See pricing &rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">Pricing</span>
+                <h2>Straightforward <span class="gold">Pricing</span></h2>
+                <p>No hidden fees. No surprises. Honest pricing for Orlando small businesses.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="pricing-name">Bookkeeping</div>
+                    <div class="pricing-price">$200<span>/mo</span></div>
+                    <div class="pricing-sub">Starting price — scales with transaction volume</div>
+                    <ul class="pricing-features">
+                        <li>Monthly transaction categorization</li>
+                        <li>Bank &amp; credit card reconciliation</li>
+                        <li>Monthly P&amp;L &amp; balance sheet</li>
+                        <li>QuickBooks management</li>
+                        <li>Email &amp; phone support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Payroll</div>
+                    <div class="pricing-price">$100<span>/mo</span></div>
+                    <div class="pricing-sub">Starting at $100 — scales with employee count</div>
+                    <ul class="pricing-features">
+                        <li>Employee &amp; contractor payroll</li>
+                        <li>Payroll tax calculations &amp; filings</li>
+                        <li>Certified QuickBooks Payroll</li>
+                        <li>Direct deposit setup</li>
+                        <li>W-2 &amp; 1099 preparation</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Tax Preparation</div>
+                    <div class="pricing-price">$90<span>+</span></div>
+                    <div class="pricing-sub">As low as $90 — varies by return complexity</div>
+                    <ul class="pricing-features">
+                        <li>Individual &amp; business returns</li>
+                        <li>Maximum deductions identified</li>
+                        <li>Prior year review available</li>
+                        <li>E-file included</li>
+                        <li>Year-round questions welcome</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Cleanup Work</div>
+                    <div class="pricing-price" style="font-size:1.8rem;">Custom</div>
+                    <div class="pricing-sub">Contact us for a free assessment &amp; quote</div>
+                    <ul class="pricing-features">
+                        <li>Messy books &amp; catch-up work</li>
+                        <li>QuickBooks rebuild &amp; restructure</li>
+                        <li>Multi-year cleanup available</li>
+                        <li>Error correction &amp; audit prep</li>
+                        <li>One-time or ongoing support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Contact for
+                        Pricing</a>
+                </div>
+            </div>
+            <p class="pricing-note">All prices quoted to your business. <a href="tel:+16037598547">Call us</a> for a free
+                consultation.</p>
+        </div>
+    </section>
+
+    <!-- AREAS WE SERVE -->
+    <section id="areas">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">Where We Work</span>
+                <h2>Bookkeeping Across <span class="gold">Orlando &amp; Central Florida</span></h2>
+                <p>Based in the Orlando area and serving small businesses across the metro. Pick your city for local
+                    detail.</p>
+            </div>
+            <div class="areas-grid">
+                <a class="area-card" href="bookkeeping-winter-park-fl.html"><span class="pin"><svg viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" /></svg><span class="area-name">Winter Park</span></span><span
+                        class="go">&rarr;</span></a>
+                <a class="area-card" href="bookkeeping-dr-phillips-fl.html"><span class="pin"><svg viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" /></svg><span class="area-name">Dr. Phillips</span></span><span
+                        class="go">&rarr;</span></a>
+                <a class="area-card" href="bookkeeping-windermere-fl.html"><span class="pin"><svg viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" /></svg><span class="area-name">Windermere</span></span><span
+                        class="go">&rarr;</span></a>
+                <a class="area-card" href="bookkeeping-lake-nona-fl.html"><span class="pin"><svg viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" /></svg><span class="area-name">Lake Nona</span></span><span
+                        class="go">&rarr;</span></a>
+                <a class="area-card" href="bookkeeping-baldwin-park-fl.html"><span class="pin"><svg viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" /></svg><span class="area-name">Baldwin Park</span></span><span
+                        class="go">&rarr;</span></a>
+                <a class="area-card" href="bookkeeping-kissimmee-fl.html"><span class="pin"><svg viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" /></svg><span class="area-name">Kissimmee</span></span><span
+                        class="go">&rarr;</span></a>
+                <a class="area-card" href="bookkeeping-sanford-fl.html"><span class="pin"><svg viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" /></svg><span class="area-name">Sanford</span></span><span
+                        class="go">&rarr;</span></a>
+                <a class="area-card" href="bookkeeping-oviedo-fl.html"><span class="pin"><svg viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" /></svg><span class="area-name">Oviedo</span></span><span
+                        class="go">&rarr;</span></a>
+                <a class="area-card" href="bookkeeping-apopka-fl.html"><span class="pin"><svg viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" /></svg><span class="area-name">Apopka</span></span><span
+                        class="go">&rarr;</span></a>
+                <a class="area-card" href="bookkeeping-st-cloud-fl.html"><span class="pin"><svg viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" /></svg><span class="area-name">St. Cloud</span></span><span
+                        class="go">&rarr;</span></a>
+                <a class="area-card" href="bookkeeping-celebration-fl.html"><span class="pin"><svg viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                            <circle cx="12" cy="10" r="3" /></svg><span class="area-name">Celebration</span></span><span
+                        class="go">&rarr;</span></a>
+                <a class="area-card" href="#contact"><span class="pin"><svg viewBox="0 0 24 24" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path d="M12 8v8m-4-4h8m6 0a10 10 0 11-20 0 10 10 0 0120 0z" /></svg><span
+                            class="area-name">Your City?</span></span><span class="go">&rarr;</span></a>
+            </div>
+            <p class="areas-note">Remote-first bookkeeping means we work with businesses across Central Florida, whether
+                we meet in person or over a screen share.</p>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">Our Process</span>
+                <h2>Three Steps to <span class="gold">Financial Clarity</span></h2>
+                <p>Simple, efficient, and built around your schedule.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <span class="step-number">01</span>
+                    <div class="step-icon-wrap"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg></div>
+                    <h3>Free Consultation</h3>
+                    <p>We start with a free call to understand your Orlando business, your pain points, and exactly what
+                        you need. No pressure, no commitment.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">02</span>
+                    <div class="step-icon-wrap"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg></div>
+                    <h3>Tailored Plan</h3>
+                    <p>We build a customized plan around your business size, industry, and goals. Clear scope of work and
+                        exact pricing before anything starts.</p>
+                </div>
+                <div class="process-step">
+                    <span class="step-number">03</span>
+                    <div class="step-icon-wrap"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>
+                    <h3>We Handle the Rest</h3>
+                    <p>Clean books every month, responsive support whenever you have questions, and financial clarity all
+                        year long.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">Client Reviews</span>
+                <h2>What Orlando Clients <span class="gold">Are Saying</span></h2>
+                <p>Real words from real clients — all 5 stars on Google.</p>
+            </div>
+            <div class="testimonials-track-wrap">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <!-- Set 1 -->
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Ryan is extremely knowledgeable and very trustworthy when it comes to
+                            doing my taxes. He is the absolute best and I highly recommend him. Professional, honest, and
+                            always available.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">YR</div>
+                            <div>
+                                <div class="author-name">Yily Rivera</div>
+                                <div class="author-desc">Tax Preparation Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Ryan and his team have literally saved me! He tore down my file and
+                            helped me build it back the RIGHT way. Our P&amp;L finally makes sense after all these years.
+                            Highly recommend!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">KK</div>
+                            <div>
+                                <div class="author-name">Kristen Klimas</div>
+                                <div class="author-desc">Bookkeeping Cleanup Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Mr She's goes above and beyond to make sure everything is transparent
+                            as possible and the best service is provided. Can't go wrong with Shea Business Solutions.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">DF</div>
+                            <div>
+                                <div class="author-name">Dylan Fudge</div>
+                                <div class="author-desc">Accounting Services Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Absolute pleasure to work with and the help Ryan provided was
+                            immense! He made the complicated simple. I'll be sure to refer him to my family and friends
+                            for sure!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">DB</div>
+                            <div>
+                                <div class="author-name">Derek Bernier</div>
+                                <div class="author-desc">Accounting Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Ryan was awesome — helped me with multiple years of taxes. He always
+                            kept everything focused on how he could help me and made sure I knew all my options when
+                            filing.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">NS</div>
+                            <div>
+                                <div class="author-name">Niko Saf</div>
+                                <div class="author-desc">Tax Preparation Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">I've been working with Ryan for the past three years and couldn't be
+                            happier. He's helped me navigate complex tax situations, saved me time and stress, and I have
+                            complete trust in his expertise and honesty. I would highly recommend him to anyone. Five
+                            stars.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">CM</div>
+                            <div>
+                                <div class="author-name">Connor Matthews</div>
+                                <div class="author-desc">Bookkeeping Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">There's no shortage of accountants out there, but not many take the
+                            time to really understand your business and what makes your industry different. Ryan does. If
+                            you're looking for someone who's actually engaged and brings ideas to the table, I'd
+                            definitely recommend reaching out to him.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RR</div>
+                            <div>
+                                <div class="author-name">Rayce Robinsonn</div>
+                                <div class="author-desc">QuickBooks Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Set 2 (duplicate for seamless loop) -->
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Ryan is extremely knowledgeable and very trustworthy when it comes to
+                            doing my taxes. He is the absolute best and I highly recommend him. Professional, honest, and
+                            always available.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">YR</div>
+                            <div>
+                                <div class="author-name">Yily Rivera</div>
+                                <div class="author-desc">Tax Preparation Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Ryan and his team have literally saved me! He tore down my file and
+                            helped me build it back the RIGHT way. Our P&amp;L finally makes sense after all these years.
+                            Highly recommend!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">KK</div>
+                            <div>
+                                <div class="author-name">Kristen Klimas</div>
+                                <div class="author-desc">Bookkeeping Cleanup Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Mr She's goes above and beyond to make sure everything is transparent
+                            as possible and the best service is provided. Can't go wrong with Shea Business Solutions.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">DF</div>
+                            <div>
+                                <div class="author-name">Dylan Fudge</div>
+                                <div class="author-desc">Accounting Services Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Absolute pleasure to work with and the help Ryan provided was
+                            immense! He made the complicated simple. I'll be sure to refer him to my family and friends
+                            for sure!</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">DB</div>
+                            <div>
+                                <div class="author-name">Derek Bernier</div>
+                                <div class="author-desc">Accounting Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">Ryan was awesome — helped me with multiple years of taxes. He always
+                            kept everything focused on how he could help me and made sure I knew all my options when
+                            filing.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">NS</div>
+                            <div>
+                                <div class="author-name">Niko Saf</div>
+                                <div class="author-desc">Tax Preparation Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">I've been working with Ryan for the past three years and couldn't be
+                            happier. He's helped me navigate complex tax situations, saved me time and stress, and I have
+                            complete trust in his expertise and honesty. I would highly recommend him to anyone. Five
+                            stars.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">CM</div>
+                            <div>
+                                <div class="author-name">Connor Matthews</div>
+                                <div class="author-desc">Bookkeeping Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">There's no shortage of accountants out there, but not many take the
+                            time to really understand your business and what makes your industry different. Ryan does. If
+                            you're looking for someone who's actually engaged and brings ideas to the table, I'd
+                            definitely recommend reaching out to him.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RR</div>
+                            <div>
+                                <div class="author-name">Rayce Robinsonn</div>
+                                <div class="author-desc">QuickBooks Client</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="google-badge" style="margin-top:2.5rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                5.0 stars — verified Google reviews &nbsp;
+                <a href="https://share.google/r2Vu1r1mJtu3Nw1jH" target="_blank" rel="noopener">Read all reviews
+                    &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS / CASE STUDIES -->
+    <section id="results">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">Client Success Stories</span>
+                <h2>Real-World <span class="gold">Results</span></h2>
+                <p>How we help Orlando and Central Florida businesses clean up their accounting, stay compliant, and
+                    grow.</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" /></svg></div>
+                    <h4>Orlando Construction Contractor</h4>
+                    <p><strong>Challenge:</strong> 2 years behind on reconciliations, mixed personal and business
+                        expenses, facing a Florida Department of Revenue payroll tax audit.</p>
+                    <p><strong>Action:</strong> Full QuickBooks reconstructive cleanup, separated owner draws, correctly
+                        classified subcontractors, prepared tax-ready financials.</p>
+                    <p><strong>Outcome:</strong> Passed the payroll audit with zero penalties and uncovered $14,500 in
+                        missed write-offs.</p>
+                </div>
+                <div class="result-card">
+                    <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" /></svg></div>
+                    <h4>Lake Nona Boutique Fitness Gym</h4>
+                    <p><strong>Challenge:</strong> Messy books and inaccurate P&amp;L reports blocked a bank loan to
+                        expand the gym space.</p>
+                    <p><strong>Action:</strong> Rebuilt the Chart of Accounts, integrated Mindbody with QuickBooks
+                        Online, implemented real-time monthly reporting.</p>
+                    <p><strong>Outcome:</strong> Verified financials secured a $75,000 expansion loan and optimized their
+                        S-Corp tax structure.</p>
+                </div>
+                <div class="result-card">
+                    <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3" />
+                            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" /></svg>
+                    </div>
+                    <h4>Orlando Custom Manufacturer</h4>
+                    <p><strong>Challenge:</strong> A metal fabrication plant had inaccurate COGS tracking and messy raw
+                        materials inventory, distorting P&amp;L reports.</p>
+                    <p><strong>Action:</strong> Restructured inventory tracking, linked job-costing software, set up
+                        accurate allocations for materials and direct labor.</p>
+                    <p><strong>Outcome:</strong> Precise margin reporting per production run and a corrected $22,000
+                        inventory valuation error.</p>
+                </div>
+                <div class="result-card">
+                    <div class="svc-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23" />
+                            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" /></svg></div>
+                    <h4>Orlando Local Restaurant</h4>
+                    <p><strong>Challenge:</strong> Complex weekly payroll, tips allocation errors, and 6 months behind on
+                        bookkeeping.</p>
+                    <p><strong>Action:</strong> Corrected tip allocation, reconstructed historical bookkeeping,
+                        configured automated payroll tracking in QuickBooks Online.</p>
+                    <p><strong>Outcome:</strong> Reconciled all accounts, established payroll for 15 employees, and
+                        delivered accurate food-cost margins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT (expertise story preserved) -->
+    <section id="about">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div class="about-img-wrap">
+                    <div class="about-img-border"></div>
+                    <div class="about-img-border-2"></div>
+                    <img src="images/ryan_hero.jpeg"
+                        alt="Ryan Shea – QuickBooks Level 2 ProAdvisor Orlando FL" class="about-img-main">
+                    <div class="about-gold-bar">
+                        <div class="about-gold-bar-text">QuickBooks Level 2 ProAdvisor &bull; Certified Payroll &bull;
+                            BBB Accredited</div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <span class="section-label">About Ryan Shea</span>
+                    <h2><span style="color:#fff;">Clean Books.</span> <span class="gold">No Surprises.</span></h2>
+                    <p>Shea Business Solutions Bookkeeping &amp; Tax is a small business accounting firm serving the
+                        Orlando, FL area. As a <strong>QuickBooks Level 2 ProAdvisor</strong> and <strong>Certified
+                            QuickBooks Payroll specialist</strong>, I work directly with small business owners to get
+                        their finances organized, accurate, and working for them.</p>
+                    <p>With over 10 years of hands-on QuickBooks and accounting experience, I've helped businesses across
+                        Orlando and Central Florida — from construction companies and restaurants to law offices and
+                        medical practices — build clean books and understand their numbers.</p>
+                    <p>As Orlando's most responsive QuickBooks bookkeeping service, I am committed to a
+                        same-business-day response standard. I believe that small businesses deserve real-time support,
+                        not weeks of waiting. Whether you're starting fresh with QuickBooks, need a major cleanup, or
+                        want reliable monthly bookkeeping and tax support, I'm here to provide honest, proactive, and
+                        expert guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-label">FAQ</span>
+                <h2>Frequently Asked <span class="gold">Questions</span></h2>
+                <p>Common questions from Orlando small business owners about QuickBooks, bookkeeping, and accounting.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <h3>What bookkeeping services do you offer for small businesses in Orlando?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We provide comprehensive bookkeeping services for Orlando-area small businesses, including
+                            QuickBooks setup and management, monthly reconciliations, P&amp;L and balance sheet
+                            reporting, and tax preparation. Our goal is to give you clean books and clear financial
+                            visibility every month.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <h3>What does a QuickBooks Level 2 ProAdvisor do?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A QuickBooks Level 2 ProAdvisor is a certified expert with advanced QuickBooks knowledge
+                            beyond the basic level. We can set up your QuickBooks from scratch, clean up years of messy
+                            data, build custom reporting, integrate payroll, and train your team. It means you are
+                            working with someone who truly knows the software inside and out.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <h3>How much does bookkeeping cost for a small business in Orlando?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Monthly bookkeeping starts at $200/month, with the price scaling based on your transaction
+                            volume and complexity. Tax preparation starts as low as $90. Cleanup work is quoted after a
+                            free assessment. We keep pricing transparent so you will always know exactly what you are
+                            paying before we start.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <h3>Do you help with QuickBooks cleanup for messy books?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. This is one of our most common services. Whether your QuickBooks has not been
+                            touched in years or was set up incorrectly, we do a full cleanup and rebuild so your data is
+                            accurate, your reports make sense, and you can move forward with confidence. We handle
+                            one-year and multi-year cleanups.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <h3>What types of businesses do you work with?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We work with a wide range of Orlando-area small businesses including construction companies,
+                            gyms and fitness studios, restaurants, law offices, dental practices, manufacturing
+                            businesses, bakeries, and med spas. Every industry has unique financial needs and we
+                            understand the differences.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                        <h3>How quickly do you respond to client questions?</h3>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Same-day response is our standard. One of the most common complaints business owners have
+                            about their accountants is that they can't get a timely answer. We prioritize fast, clear
+                            communication and you will always hear back from us the same business day.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="section-inner">
+            <div class="contact-grid">
+                <div class="contact-left">
+                    <span class="section-label">Get In Touch</span>
+                    <h2>Ready to Get Your Books <span class="gold">In Order?</span></h2>
+                    <p>Call or text us directly, schedule a free meeting, or fill out the form. We get back to every
+                        inquiry the same day. No obligation, just a straight conversation.</p>
+                    <div class="contact-actions">
+                        <a href="tel:+16037598547" class="contact-action-btn">
+                            <div class="action-btn-icon"><svg viewBox="0 0 24 24" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.25 8.09a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.09 6.09l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                                </svg></div>
+                            <div class="action-btn-text"><span class="action-btn-label">Call or Text</span><span
+                                    class="action-btn-value">(603) 759-8547</span></div>
+                            <span class="action-btn-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://calendar.app.google/XUuJ8UZcHRmSJWCv6" target="_blank" rel="noopener"
+                            class="contact-action-btn">
+                            <div class="action-btn-icon"><svg viewBox="0 0 24 24" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" /></svg></div>
+                            <div class="action-btn-text"><span class="action-btn-label">Free Consultation</span><span
+                                    class="action-btn-value">Schedule a Meeting</span></div>
+                            <span class="action-btn-arrow">&rarr;</span>
+                        </a>
+                        <a href="mailto:ryan&#64;sheabusinesssolutions&#46;com" class="contact-action-btn">
+                            <div class="action-btn-icon"><svg viewBox="0 0 24 24" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" /></svg></div>
+                            <div class="action-btn-text"><span class="action-btn-label">Email</span><span
+                                    class="action-btn-value">ryan@sheabusinesssolutions.com</span></div>
+                            <span class="action-btn-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form-wrap">
+                    <h3 class="form-title">Send a Message</h3>
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
+                        <input type="hidden" name="subject" value="New Inquiry - Shea Business Solutions Website (Preview)">
+                        <input type="hidden" name="from_name" value="SBS Website">
+                        <input type="checkbox" name="botcheck" style="display:none">
+                        <div class="form-row">
+                            <div class="form-group"><label>Full Name *</label><input type="text" name="name"
+                                    placeholder="John Smith" required></div>
+                            <div class="form-group"><label>Phone *</label><input type="tel" name="phone"
+                                    placeholder="(555) 000-0000" required></div>
+                        </div>
+                        <div class="form-group"><label>Email Address *</label><input type="email" name="email"
+                                placeholder="john@yourbusiness.com" required></div>
+                        <div class="form-group">
+                            <label>Service Interested In</label>
+                            <select name="service">
+                                <option value="">Select a service...</option>
+                                <option>Monthly Bookkeeping</option>
+                                <option>QuickBooks Setup / Cleanup</option>
+                                <option>Payroll Processing</option>
+                                <option>Tax Preparation</option>
+                                <option>P&amp;L / Balance Sheet Reporting</option>
+                                <option>Account Reconciliations</option>
+                                <option>Multiple Services</option>
+                                <option>Not Sure Yet</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label>Message *</label><textarea name="message"
+                                placeholder="Tell us a little about your business and what you need help with..."
+                                required></textarea></div>
+                        <button type="submit" class="form-submit">Send Message &rarr;</button>
+                    </form>
+                    <div class="form-success" id="formSuccess">
+                        <p style="font-size:1.8rem;color:var(--gold);margin-bottom:0.5rem;">&#10003;</p>
+                        <p style="font-weight:500;color:var(--off-white);margin-bottom:0.5rem;">Message received!</p>
+                        <p style="color:var(--text-muted);font-size:0.85rem;">We'll be in touch the same day.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo"><img src="images/logo_header.png"
+                        alt="Shea Business Solutions Bookkeeping &amp; Tax – QuickBooks ProAdvisor Orlando FL"></div>
+                <p class="footer-tagline">QuickBooks Level 2 ProAdvisor offering bookkeeping, payroll, and tax
+                    preparation for small businesses in Orlando, FL.</p>
+                <div class="footer-map">
+                    <iframe src="https://maps.google.com/maps?cid=13996863349911463635&amp;output=embed" loading="lazy"
+                        title="Shea Business Solutions Bookkeeping &amp; Tax on Google Maps"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor</a></li>
+                    <li><a href="flat-rate-bookkeeping-orlando.html">Flat-Rate Bookkeeping</a></li>
+                    <li><a href="catch-up-bookkeeping-orlando.html">Catch-Up Bookkeeping</a></li>
+                    <li><a href="payroll-services-orlando.html">Payroll Services</a></li>
+                    <li><a href="construction-bookkeeping-orlando.html">Construction Bookkeeping</a></li>
+                    <li><a href="restaurant-bookkeeping-orlando.html">Restaurant Bookkeeping</a></li>
+                    <li><a href="fitness-gym-bookkeeping-orlando.html">Gym &amp; Fitness Bookkeeping</a></li>
+                    <li><a href="manufacturing-bookkeeping-orlando.html">Manufacturing Bookkeeping</a></li>
+                    <li><a href="quickbooks-setup-orlando.html">QuickBooks Setup</a></li>
+                    <li><a href="quickbooks-cleanup-orlando.html">QuickBooks Cleanup</a></li>
+                    <li><a href="quickbooks-migration-orlando.html">QuickBooks Migration</a></li>
+                    <li><a href="quickbooks-proadvisor-cost-orlando.html">Bookkeeping Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Ryan</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Client Reviews</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="Blog/">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Areas We Serve</h4>
+                <ul>
+                    <li><a href="bookkeeping-baldwin-park-fl.html">Baldwin Park</a></li>
+                    <li><a href="bookkeeping-dr-phillips-fl.html">Dr. Phillips</a></li>
+                    <li><a href="bookkeeping-lake-nona-fl.html">Lake Nona</a></li>
+                    <li><a href="bookkeeping-windermere-fl.html">Windermere</a></li>
+                    <li><a href="bookkeeping-winter-park-fl.html">Winter Park</a></li>
+                    <li><a href="bookkeeping-kissimmee-fl.html">Kissimmee</a></li>
+                    <li><a href="bookkeeping-sanford-fl.html">Sanford</a></li>
+                    <li><a href="bookkeeping-oviedo-fl.html">Oviedo</a></li>
+                    <li><a href="bookkeeping-apopka-fl.html">Apopka</a></li>
+                    <li><a href="bookkeeping-st-cloud-fl.html">St. Cloud</a></li>
+                    <li><a href="bookkeeping-celebration-fl.html">Celebration</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>Contact</h4>
+                <a href="tel:+16037598547">(603) 759-8547</a>
+                <a href="mailto:ryan&#64;sheabusinesssolutions&#46;com">ryan@sheabusinesssolutions.com</a>
+                <a href="https://calendar.app.google/XUuJ8UZcHRmSJWCv6" target="_blank" rel="noopener">Schedule a
+                    Meeting</a>
+                <p style="margin-top:0.75rem;">Mon&ndash;Fri, 9am&ndash;5pm EST</p>
+                <p style="margin-top:0.5rem;">Shea Business Solutions Bookkeeping &amp; Tax<br>1809 Great Falls Way<br>Orlando, FL 32824</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">&copy; 2025 Shea Business Solutions LLC. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="/">Live Homepage</a>
+                <a href="Blog/">Blog</a>
+                <a href="https://share.google/r2Vu1r1mJtu3Nw1jH" target="_blank" rel="noopener">Google Reviews</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE STICKY CALL BAR -->
+    <a href="tel:+16037598547" class="mobile-call-bar" aria-label="Call Shea Business Solutions now">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .93h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+        </svg>
+        Call Now — (603) 759-8547
+    </a>
+
+    <script>
+        // Nav shrink on scroll
+        var nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 40) { nav.classList.add('scrolled'); }
+            else { nav.classList.remove('scrolled'); }
+        });
+
+        // Mobile menu
+        function toggleMenu() {
+            var m = document.getElementById('mobileMenu');
+            var h = document.querySelector('.hamburger');
+            var open = m.classList.toggle('open');
+            h.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+        function closeMenu() {
+            document.getElementById('mobileMenu').classList.remove('open');
+            document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+        }
+        function toggleMM(btn) {
+            btn.parentElement.classList.toggle('open');
+        }
+
+        // FAQ accordion
+        function toggleFAQ(btn) {
+            var item = btn.parentElement;
+            var ans = item.querySelector('.faq-answer');
+            var isOpen = item.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            ans.style.maxHeight = isOpen ? ans.scrollHeight + 'px' : null;
+        }
+
+        // Contact form (web3forms)
+        var form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var data = new FormData(form);
+                fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+                    .then(function (r) { return r.json(); })
+                    .then(function () {
+                        form.style.display = 'none';
+                        document.getElementById('formSuccess').style.display = 'block';
+                    })
+                    .catch(function () {
+                        form.style.display = 'none';
+                        document.getElementById('formSuccess').style.display = 'block';
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>
