@@ -791,7 +791,33 @@
         .breadcrumb a { color: var(--gold); text-decoration: none; }
         .breadcrumb a:hover { text-decoration: underline; }
         .footer-brand iframe { max-width: 340px; }
-    </style>
+    
+        /* --- visual-rhythm components (ADD 2026-07-17) --- */
+        .faq-acc { margin: 1rem 0 0; }
+        .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); overflow: hidden; }
+        .faq-item summary { list-style: none; cursor: pointer; padding: 1.1rem 3rem 1.1rem 1.3rem; position: relative; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--off-white); transition: color .2s; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; position: absolute; right: 1.3rem; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--gold); transition: transform .25s; line-height: 1; }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item summary:hover { color: var(--gold); }
+        .faq-item .faq-a { padding: 0 1.3rem 1.2rem; color: var(--text-light); }
+        .faq-item .faq-a p { margin: 0 0 0.6rem; }
+        .faq-item .faq-a p:last-child { margin-bottom: 0; }
+        .faq-item[open] { border-color: var(--border-strong); }
+        .check-list { list-style: none; margin: 1.4rem 0; padding: 0; display: grid; gap: 0.7rem; }
+        .check-list li { position: relative; padding-left: 1.9rem; color: var(--text-light); }
+        .check-list li::before { content: '\2713'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: 700; }
+        .pull-quote { margin: 1.9rem 0; padding: 0.3rem 0 0.3rem 1.5rem; border-left: 3px solid var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.4; color: var(--off-white); font-style: italic; }
+        .fact-card { margin: 1.7rem 0; padding: 1.4rem 1.5rem; border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; background: rgba(201,168,76,0.05); }
+        .fact-card h4 { font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--gold); margin: 0 0 0.7rem; }
+        .fact-card p { margin: 0 0 0.6rem; color: var(--text-light); }
+        .fact-card p:last-child { margin-bottom: 0; }
+        .compare-table { width: 100%; border-collapse: collapse; margin: 1.7rem 0; font-size: 0.98rem; }
+        .compare-table th, .compare-table td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); }
+        .compare-table th { color: var(--gold); font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.78rem; }
+        .compare-table td { color: var(--text-light); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        </style>
     
 </head><body>
     <!-- Google Tag Manager (noscript) -->
@@ -873,7 +899,7 @@
 
             <p class="fade-up">Around the historic core, Sanford carries the working economy of a county seat and a transportation hub. Orlando Sanford International Airport, the SunRail commuter station, and the southern terminus of the Amtrak Auto Train all put logistics, travel, and service businesses in the mix. The result is a business base that ranges from a nano-brewery with four employees to contractors, auto shops, and professional offices spread along 17-92 and First Street.</p>
 
-            <p class="fade-up">Different trades, same pattern in the books. Card-heavy revenue, inventory that has to be tracked, a handful of W-2 employees or 1099 crews, and an owner closing the register at 11pm and doing the bookkeeping after that.</p>
+            <div class="fact-card fade-up"><p>Different trades, same pattern in the books. Card-heavy revenue, inventory that has to be tracked, a handful of W-2 employees or 1099 crews, and an owner closing the register at 11pm and doing the bookkeeping after that.</p></div>
 
             <h2 class="fade-up">The Bookkeeping Problems We See in a Brewery-and-Restaurant District</h2>
 
@@ -883,7 +909,7 @@
 
             <p class="fade-up">Breweries carry an inventory problem on top of that. Raw materials, grain, hops, packaging, and finished kegs and cans all move through the business, and when cost of goods sold is not tracked cleanly the margin per batch is a guess.</p>
 
-            <p class="fade-up">An Orlando-area custom manufacturer we cleaned up had a $22,000 inventory valuation error distorting every P&amp;L until we restructured the tracking; a brewery running loose inventory has the same exposure on a smaller scale. Getting COGS right is what turns a taproom P&amp;L into a number you can actually price against.</p>
+            <div class="fact-card fade-up"><p>An Orlando-area custom manufacturer we cleaned up had a $22,000 inventory valuation error distorting every P&amp;L until we restructured the tracking; a brewery running loose inventory has the same exposure on a smaller scale. Getting COGS right is what turns a taproom P&amp;L into a number you can actually price against.</p></div>
 
             <p class="fade-up">Restaurants add tips. Pooled tips in the operating account are money owed to staff, not income, and they have to flow through payroll correctly or the W-2s are wrong in January. We covered these patterns in our post on <a href="https://www.sheabusinesssolutions.com/Blog/bookkeeping-mistakes-small-business-orlando.html">common bookkeeping mistakes Orlando businesses make</a>, and the <a href="restaurant-bookkeeping-orlando.html">restaurant bookkeeping</a> page goes deeper on the food-and-beverage version.</p>
 
@@ -927,20 +953,33 @@
 
             <h2 class="fade-up">Frequently Asked Questions</h2>
 
-            <h3 class="fade-up">Can you handle brewery inventory in QuickBooks?</h3>
-            <p class="fade-up">Yes. Raw materials, grain, hops, and packaging need clean inventory and cost-of-goods tracking, or the margin on every batch is a guess. We structure that tracking so the P&amp;L shows what production actually costs.</p>
-
-            <h3 class="fade-up">Why does my taproom P&amp;L show zero merchant fees?</h3>
-            <p class="fade-up">Because card deposits were booked straight to income. Toast, Square, and Clover deposit sales net of processing fees, and in a high-volume taproom those fees can rank among the five biggest expenses in the business. We reconcile deposits against the POS so the fee line is real.</p>
-
-            <h3 class="fade-up">What does bookkeeping cost for a Sanford business?</h3>
-            <p class="fade-up">Monthly bookkeeping starts at $200 per month and scales with volume. Payroll support starts at $100 per month, and tax preparation starts at $90 depending on complexity, with prior-year review available.</p>
-
-            <h3 class="fade-up">How far behind is too far behind?</h3>
-            <p class="fade-up">There is no too far. Catch-up bookkeeping is one of our core specialties: we reconcile every open month, strip duplicates, recategorize what the bank feed guessed wrong, and clear the old transactions distorting the balance sheet.</p>
-
-
-        </div>
+            <div class="faq-acc fade-up">
+                <details class="faq-item">
+                    <summary>Can you handle brewery inventory in QuickBooks?</summary>
+                    <div class="faq-a">
+                        <p>Yes. Raw materials, grain, hops, and packaging need clean inventory and cost-of-goods tracking, or the margin on every batch is a guess. We structure that tracking so the P&amp;L shows what production actually costs.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>Why does my taproom P&amp;L show zero merchant fees?</summary>
+                    <div class="faq-a">
+                        <p>Because card deposits were booked straight to income. Toast, Square, and Clover deposit sales net of processing fees, and in a high-volume taproom those fees can rank among the five biggest expenses in the business. We reconcile deposits against the POS so the fee line is real.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>What does bookkeeping cost for a Sanford business?</summary>
+                    <div class="faq-a">
+                        <p>Monthly bookkeeping starts at $200 per month and scales with volume. Payroll support starts at $100 per month, and tax preparation starts at $90 depending on complexity, with prior-year review available.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>How far behind is too far behind?</summary>
+                    <div class="faq-a">
+                        <p>There is no too far. Catch-up bookkeeping is one of our core specialties: we reconcile every open month, strip duplicates, recategorize what the bank feed guessed wrong, and clear the old transactions distorting the balance sheet.</p>
+                    </div>
+                </details>
+            </div>
+</div>
 
         <!-- LAST UPDATED -->
         <p class="fade-up" style="margin-top: 2.5rem; font-size: 0.9rem; opacity: 0.75;">Last updated: July 16, 2026</p>

@@ -791,7 +791,33 @@
         .breadcrumb a { color: var(--gold); text-decoration: none; }
         .breadcrumb a:hover { text-decoration: underline; }
         .footer-brand iframe { max-width: 340px; }
-    </style>
+    
+        /* --- visual-rhythm components (ADD 2026-07-17) --- */
+        .faq-acc { margin: 1rem 0 0; }
+        .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); overflow: hidden; }
+        .faq-item summary { list-style: none; cursor: pointer; padding: 1.1rem 3rem 1.1rem 1.3rem; position: relative; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--off-white); transition: color .2s; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; position: absolute; right: 1.3rem; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--gold); transition: transform .25s; line-height: 1; }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item summary:hover { color: var(--gold); }
+        .faq-item .faq-a { padding: 0 1.3rem 1.2rem; color: var(--text-light); }
+        .faq-item .faq-a p { margin: 0 0 0.6rem; }
+        .faq-item .faq-a p:last-child { margin-bottom: 0; }
+        .faq-item[open] { border-color: var(--border-strong); }
+        .check-list { list-style: none; margin: 1.4rem 0; padding: 0; display: grid; gap: 0.7rem; }
+        .check-list li { position: relative; padding-left: 1.9rem; color: var(--text-light); }
+        .check-list li::before { content: '\2713'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: 700; }
+        .pull-quote { margin: 1.9rem 0; padding: 0.3rem 0 0.3rem 1.5rem; border-left: 3px solid var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.4; color: var(--off-white); font-style: italic; }
+        .fact-card { margin: 1.7rem 0; padding: 1.4rem 1.5rem; border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; background: rgba(201,168,76,0.05); }
+        .fact-card h4 { font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--gold); margin: 0 0 0.7rem; }
+        .fact-card p { margin: 0 0 0.6rem; color: var(--text-light); }
+        .fact-card p:last-child { margin-bottom: 0; }
+        .compare-table { width: 100%; border-collapse: collapse; margin: 1.7rem 0; font-size: 0.98rem; }
+        .compare-table th, .compare-table td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); }
+        .compare-table th { color: var(--gold); font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.78rem; }
+        .compare-table td { color: var(--text-light); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        </style>
     
 </head><body>
     <!-- Google Tag Manager (noscript) -->
@@ -881,7 +907,7 @@
 
             <p class="fade-up">Contractor payroll is second. A mix of employees and subs means W-9s have to be on file before the final invoice is paid, 1099-NEC forms have to go out in January, and misclassifying a worker is exactly what triggers a state audit. We covered the traps in our post on <a href="https://www.sheabusinesssolutions.com/Blog/bookkeeping-mistakes-small-business-orlando.html">common bookkeeping mistakes Orlando businesses make</a>, and the <a href="payroll-services-orlando.html">payroll services</a> page covers the employer filings.</p>
 
-            <p class="fade-up">Growth itself is the third problem. A business doubling its revenue in two years outgrows the shoebox and the spreadsheet fast, and the books that worked at $150,000 fall apart at $500,000. Getting current, accurate monthly financials in place is what lets an owner price work, manage cash, and borrow when it is time to expand.</p>
+            <div class="fact-card fade-up"><p>Growth itself is the third problem. A business doubling its revenue in two years outgrows the shoebox and the spreadsheet fast, and the books that worked at $150,000 fall apart at $500,000. Getting current, accurate monthly financials in place is what lets an owner price work, manage cash, and borrow when it is time to expand.</p></div>
 
             <h2 class="fade-up">What Shea Business Solutions Handles for St. Cloud Businesses</h2>
 
@@ -921,20 +947,33 @@
 
             <h2 class="fade-up">Frequently Asked Questions</h2>
 
-            <h3 class="fade-up">Can you set up job costing for my St. Cloud contracting business?</h3>
-            <p class="fade-up">Yes. When materials, subcontractor payments, and labor do not land against the right job, the profit on that job is a guess. We set up job costing so every job shows its real margin.</p>
-
-            <h3 class="fade-up">I fell behind while the business was growing. Can you catch the books up?</h3>
-            <p class="fade-up">Yes. An Orlando-area contractor we cleaned up was two years behind with a state payroll audit pending; reconstructing 24 months of records got the file straight. We reconcile every open month and clear what is distorting the balance sheet.</p>
-
-            <h3 class="fade-up">What does bookkeeping cost for a St. Cloud business?</h3>
-            <p class="fade-up">Monthly bookkeeping starts at $200 per month and scales with volume. Payroll support starts at $100 per month, and tax preparation starts at $90 depending on complexity, with prior-year review available.</p>
-
-            <h3 class="fade-up">Do we need to meet in person to start?</h3>
-            <p class="fade-up">No. The first conversation is a free consultation, by phone or video, about your business and where the books stand. You get a clear scope and exact pricing before anything starts.</p>
-
-
-        </div>
+            <div class="faq-acc fade-up">
+                <details class="faq-item">
+                    <summary>Can you set up job costing for my St. Cloud contracting business?</summary>
+                    <div class="faq-a">
+                        <p>Yes. When materials, subcontractor payments, and labor do not land against the right job, the profit on that job is a guess. We set up job costing so every job shows its real margin.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>I fell behind while the business was growing. Can you catch the books up?</summary>
+                    <div class="faq-a">
+                        <p>Yes. An Orlando-area contractor we cleaned up was two years behind with a state payroll audit pending; reconstructing 24 months of records got the file straight. We reconcile every open month and clear what is distorting the balance sheet.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>What does bookkeeping cost for a St. Cloud business?</summary>
+                    <div class="faq-a">
+                        <p>Monthly bookkeeping starts at $200 per month and scales with volume. Payroll support starts at $100 per month, and tax preparation starts at $90 depending on complexity, with prior-year review available.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>Do we need to meet in person to start?</summary>
+                    <div class="faq-a">
+                        <p>No. The first conversation is a free consultation, by phone or video, about your business and where the books stand. You get a clear scope and exact pricing before anything starts.</p>
+                    </div>
+                </details>
+            </div>
+</div>
 
         <!-- LAST UPDATED -->
         <p class="fade-up" style="margin-top: 2.5rem; font-size: 0.9rem; opacity: 0.75;">Last updated: July 16, 2026</p>

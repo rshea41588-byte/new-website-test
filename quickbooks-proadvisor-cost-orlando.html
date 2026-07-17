@@ -817,7 +817,33 @@
             .hero-grid .breadcrumb { justify-content: center; }
             .hero-form-card { margin-top: 1.6rem; }
         }
-    </style>
+    
+        /* --- visual-rhythm components (ADD 2026-07-17) --- */
+        .faq-acc { margin: 1rem 0 0; }
+        .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); overflow: hidden; }
+        .faq-item summary { list-style: none; cursor: pointer; padding: 1.1rem 3rem 1.1rem 1.3rem; position: relative; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--off-white); transition: color .2s; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; position: absolute; right: 1.3rem; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--gold); transition: transform .25s; line-height: 1; }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item summary:hover { color: var(--gold); }
+        .faq-item .faq-a { padding: 0 1.3rem 1.2rem; color: var(--text-light); }
+        .faq-item .faq-a p { margin: 0 0 0.6rem; }
+        .faq-item .faq-a p:last-child { margin-bottom: 0; }
+        .faq-item[open] { border-color: var(--border-strong); }
+        .check-list { list-style: none; margin: 1.4rem 0; padding: 0; display: grid; gap: 0.7rem; }
+        .check-list li { position: relative; padding-left: 1.9rem; color: var(--text-light); }
+        .check-list li::before { content: '\2713'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: 700; }
+        .pull-quote { margin: 1.9rem 0; padding: 0.3rem 0 0.3rem 1.5rem; border-left: 3px solid var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.4; color: var(--off-white); font-style: italic; }
+        .fact-card { margin: 1.7rem 0; padding: 1.4rem 1.5rem; border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; background: rgba(201,168,76,0.05); }
+        .fact-card h4 { font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--gold); margin: 0 0 0.7rem; }
+        .fact-card p { margin: 0 0 0.6rem; color: var(--text-light); }
+        .fact-card p:last-child { margin-bottom: 0; }
+        .compare-table { width: 100%; border-collapse: collapse; margin: 1.7rem 0; font-size: 0.98rem; }
+        .compare-table th, .compare-table td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); }
+        .compare-table th { color: var(--gold); font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.78rem; }
+        .compare-table td { color: var(--text-light); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        </style>
 </head>
 
 <body>
@@ -993,22 +1019,39 @@
 
             <h2 class="fade-up">Frequently Asked Questions</h2>
 
-            <h3 class="fade-up">How much does a QuickBooks ProAdvisor cost in Orlando?</h3>
-            <p class="fade-up">Ongoing bookkeeping with a Level 2 ProAdvisor starts at $200 per month and scales with transaction volume. One-time projects like setup, cleanup, and migration are quoted flat after a free assessment.</p>
-
-            <h3 class="fade-up">How much does monthly bookkeeping cost?</h3>
-            <p class="fade-up">Monthly bookkeeping starts at $200 and scales with how many transactions and accounts you have. You get the exact price before any work begins, and it stays fixed.</p>
-
-            <h3 class="fade-up">What does payroll and tax preparation cost?</h3>
-            <p class="fade-up">Payroll processing starts at $100 per month and scales with employees and pay frequency. Tax preparation starts at $90 per return for individuals, LLCs, partnerships, and S-Corps.</p>
-
-            <h3 class="fade-up">How much is a QuickBooks cleanup or setup?</h3>
-            <p class="fade-up">Both are quoted flat after a free review, so you know the full price before work starts. The number depends on how far behind or how tangled the file is, not an open-ended hourly rate.</p>
-
-            <h3 class="fade-up">Do you serve businesses across the Orlando area?</h3>
-            <p class="fade-up">Yes. We price and provide bookkeeping, payroll, and QuickBooks services for small businesses throughout Orlando and Central Florida, including Winter Park, Dr. Phillips, Windermere, Lake Nona, and Baldwin Park.</p>
-
-        </div>
+            <div class="faq-acc fade-up">
+                <details class="faq-item">
+                    <summary>How much does a QuickBooks ProAdvisor cost in Orlando?</summary>
+                    <div class="faq-a">
+                        <p>Ongoing bookkeeping with a Level 2 ProAdvisor starts at $200 per month and scales with transaction volume. One-time projects like setup, cleanup, and migration are quoted flat after a free assessment.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>How much does monthly bookkeeping cost?</summary>
+                    <div class="faq-a">
+                        <p>Monthly bookkeeping starts at $200 and scales with how many transactions and accounts you have. You get the exact price before any work begins, and it stays fixed.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>What does payroll and tax preparation cost?</summary>
+                    <div class="faq-a">
+                        <p>Payroll processing starts at $100 per month and scales with employees and pay frequency. Tax preparation starts at $90 per return for individuals, LLCs, partnerships, and S-Corps.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>How much is a QuickBooks cleanup or setup?</summary>
+                    <div class="faq-a">
+                        <p>Both are quoted flat after a free review, so you know the full price before work starts. The number depends on how far behind or how tangled the file is, not an open-ended hourly rate.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>Do you serve businesses across the Orlando area?</summary>
+                    <div class="faq-a">
+                        <p>Yes. We price and provide bookkeeping, payroll, and QuickBooks services for small businesses throughout Orlando and Central Florida, including Winter Park, Dr. Phillips, Windermere, Lake Nona, and Baldwin Park.</p>
+                    </div>
+                </details>
+            </div>
+</div>
 
         <!-- LAST UPDATED -->
         <p class="fade-up" style="margin-top: 2.5rem; font-size: 0.9rem; opacity: 0.75;">Last updated: July 16, 2026</p>

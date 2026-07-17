@@ -807,7 +807,33 @@
         .breadcrumb a { color: var(--gold); text-decoration: none; }
         .breadcrumb a:hover { text-decoration: underline; }
         .footer-brand iframe { max-width: 340px; }
-    </style>
+    
+        /* --- visual-rhythm components (ADD 2026-07-17) --- */
+        .faq-acc { margin: 1rem 0 0; }
+        .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); overflow: hidden; }
+        .faq-item summary { list-style: none; cursor: pointer; padding: 1.1rem 3rem 1.1rem 1.3rem; position: relative; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--off-white); transition: color .2s; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; position: absolute; right: 1.3rem; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--gold); transition: transform .25s; line-height: 1; }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item summary:hover { color: var(--gold); }
+        .faq-item .faq-a { padding: 0 1.3rem 1.2rem; color: var(--text-light); }
+        .faq-item .faq-a p { margin: 0 0 0.6rem; }
+        .faq-item .faq-a p:last-child { margin-bottom: 0; }
+        .faq-item[open] { border-color: var(--border-strong); }
+        .check-list { list-style: none; margin: 1.4rem 0; padding: 0; display: grid; gap: 0.7rem; }
+        .check-list li { position: relative; padding-left: 1.9rem; color: var(--text-light); }
+        .check-list li::before { content: '\2713'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: 700; }
+        .pull-quote { margin: 1.9rem 0; padding: 0.3rem 0 0.3rem 1.5rem; border-left: 3px solid var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.4; color: var(--off-white); font-style: italic; }
+        .fact-card { margin: 1.7rem 0; padding: 1.4rem 1.5rem; border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; background: rgba(201,168,76,0.05); }
+        .fact-card h4 { font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--gold); margin: 0 0 0.7rem; }
+        .fact-card p { margin: 0 0 0.6rem; color: var(--text-light); }
+        .fact-card p:last-child { margin-bottom: 0; }
+        .compare-table { width: 100%; border-collapse: collapse; margin: 1.7rem 0; font-size: 0.98rem; }
+        .compare-table th, .compare-table td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); }
+        .compare-table th { color: var(--gold); font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.78rem; }
+        .compare-table td { color: var(--text-light); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        </style>
     
 </head>
 
@@ -892,7 +918,7 @@
 
             <p class="fade-up">The Town Center runs a different economy. A hundred acres of restaurants, bars, salons, and shops, with the shipping-container food stalls at Boxi Park on one end and sit-down spots like Park Pizza &amp; Brewing and Chroma nearby. Restaurant books in a district like this live and die on tip allocation, weekly payroll, and food-cost tracking, and those three things get botched more than anything else we see in hospitality files.</p>
 
-            <p class="fade-up">Then there is the Narcoossee Road corridor, where most of Lake Nona's everyday small business actually lives. Nona Commons at 10743 Narcoossee. Lake Nona Plaza at 13900. Vickrey Place next to Valencia College's Lake Nona campus and Lake Nona High School.</p>
+            <div class="fact-card fade-up"><p>Then there is the Narcoossee Road corridor, where most of Lake Nona's everyday small business actually lives. Nona Commons at 10743 Narcoossee. Lake Nona Plaza at 13900. Vickrey Place next to Valencia College's Lake Nona campus and Lake Nona High School.</p></div>
 
             <p class="fade-up">Lake Nona Landing with its half million square feet of retail and office space. Those plazas hold med spas, chiropractors, tutoring centers, real estate teams, insurance agencies, and quick-service franchises.</p>
 
@@ -906,9 +932,9 @@
 
             <p class="fade-up">Florida also handed commercial tenants a change worth catching. The state repealed its sales tax on commercial rent effective October 1, 2025. Before that date, rent carried a 2 percent state tax plus the county surtax.</p>
 
-            <p class="fade-up">If your books kept coding the same total payment after that month, either your landlord is still collecting tax they should not be, or your rent expense is overstated. It takes a few minutes to verify against your lease and your fall statements, and it is exactly the kind of item that slips past an owner doing their own books at midnight.</p>
+            <div class="fact-card fade-up"><p>If your books kept coding the same total payment after that month, either your landlord is still collecting tax they should not be, or your rent expense is overstated. It takes a few minutes to verify against your lease and your fall statements, and it is exactly the kind of item that slips past an owner doing their own books at midnight.</p></div>
 
-            <p class="fade-up">Software payouts are the second trap, especially for the gyms, studios, and salons this area is thick with. Booking platforms like Mindbody deposit your revenue in batches with the processing fees already taken out. If the bank feed entry gets accepted as income, your revenue is understated, your merchant fees never show up as an expense, and your margins read wrong in both directions.</p>
+            <div class="fact-card fade-up"><p>Software payouts are the second trap, especially for the gyms, studios, and salons this area is thick with. Booking platforms like Mindbody deposit your revenue in batches with the processing fees already taken out. If the bank feed entry gets accepted as income, your revenue is understated, your merchant fees never show up as an expense, and your margins read wrong in both directions.</p></div>
 
             <p class="fade-up">The fix is grossing up each payout and booking the fees separately, every month, no shortcuts. We know this one well because we did it for a boutique fitness gym right here in Lake Nona: rebuilt their chart of accounts, connected Mindbody to QuickBooks Online, and produced verified financial statements that secured a $75,000 expansion loan the owner could not previously secure on messy books.</p>
 
@@ -922,7 +948,7 @@
 
             <p class="fade-up">Federal estimated taxes catch new owners hardest. An S corp owner taking distributions, or a sole proprietor having a strong first year in a new plaza, owes quarterly estimated payments in April, June, September, and January. Miss them and the IRS adds an underpayment penalty that is pure waste.</p>
 
-            <p class="fade-up">Clean monthly books make the safe-harbor math a five-minute exercise. Guessing from a bank balance does not.</p>
+            <blockquote class="pull-quote fade-up">Clean monthly books make the safe-harbor math a five-minute exercise. Guessing from a bank balance does not.</blockquote>
 
             <p class="fade-up">Then January arrives. 1099-NEC forms are due to contractors and the IRS by January 31, and the businesses that suffer are the ones collecting W-9s during the last week of the month from subcontractors who have stopped answering the phone. One detail trips up almost every do-it-yourself filer: payments made by credit card or through a payment processor do not belong on your 1099-NEC at all, because the processor reports them on a 1099-K.</p>
 
@@ -940,7 +966,7 @@
 
             <p class="fade-up">Every cleanup starts with a <strong>free assessment</strong> of your QuickBooks file. We look at what is there, list the specific problems, and quote a flat rate before any work begins. Most cleanups finish within one to three weeks.</p>
 
-            <p class="fade-up">For a fuller picture of the warning signs and the process, read our guide on the <a href="https://www.sheabusinesssolutions.com/Blog/quickbooks-cleanup-orlando.html">five signs your QuickBooks needs a cleanup</a>. The short version: the longer the file sits, the more the repair costs.</p>
+            <div class="fact-card fade-up"><p>For a fuller picture of the warning signs and the process, read our guide on the <a href="https://www.sheabusinesssolutions.com/Blog/quickbooks-cleanup-orlando.html">five signs your QuickBooks needs a cleanup</a>. The short version: the longer the file sits, the more the repair costs.</p></div>
 
             <h2 class="fade-up">What It Costs</h2>
 
@@ -963,20 +989,33 @@
 
             <h2 class="fade-up">Frequently Asked Questions</h2>
 
-            <h3 class="fade-up">My lease is triple net. What does that mean for the books?</h3>
-            <p class="fade-up">CAM charges, property tax pass-throughs, and an annual reconciliation statement from the landlord that deserves a line-by-line check against what you actually paid. That check only works if rent was booked correctly month by month instead of lumped into one blob.</p>
-
-            <h3 class="fade-up">Florida has no income tax. What filings do I still owe?</h3>
-            <p class="fade-up">Employers file the RT-6 reemployment tax return every quarter, and businesses selling taxable goods file the DR-15 sales tax return monthly or quarterly depending on volume. Florida even pays a small collection allowance for filing electronically on time, which many owners never claim.</p>
-
-            <h3 class="fade-up">What does bookkeeping cost for a Lake Nona business?</h3>
-            <p class="fade-up">Monthly bookkeeping starts at $200 per month, and payroll support starts at $100 per month. Cleanup and catch-up work gets a flat quote after we look at your QuickBooks file.</p>
-
-            <h3 class="fade-up">Is the first call really free?</h3>
-            <p class="fade-up">Yes, and it carries no obligation. We look at your QuickBooks file, tell you honestly what shape it is in, and give you a flat quote.</p>
-
-
-        </div>
+            <div class="faq-acc fade-up">
+                <details class="faq-item">
+                    <summary>My lease is triple net. What does that mean for the books?</summary>
+                    <div class="faq-a">
+                        <p>CAM charges, property tax pass-throughs, and an annual reconciliation statement from the landlord that deserves a line-by-line check against what you actually paid. That check only works if rent was booked correctly month by month instead of lumped into one blob.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>Florida has no income tax. What filings do I still owe?</summary>
+                    <div class="faq-a">
+                        <p>Employers file the RT-6 reemployment tax return every quarter, and businesses selling taxable goods file the DR-15 sales tax return monthly or quarterly depending on volume. Florida even pays a small collection allowance for filing electronically on time, which many owners never claim.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>What does bookkeeping cost for a Lake Nona business?</summary>
+                    <div class="faq-a">
+                        <p>Monthly bookkeeping starts at $200 per month, and payroll support starts at $100 per month. Cleanup and catch-up work gets a flat quote after we look at your QuickBooks file.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>Is the first call really free?</summary>
+                    <div class="faq-a">
+                        <p>Yes, and it carries no obligation. We look at your QuickBooks file, tell you honestly what shape it is in, and give you a flat quote.</p>
+                    </div>
+                </details>
+            </div>
+</div>
 
         <!-- LAST UPDATED -->
         <p class="fade-up" style="margin-top: 2.5rem; font-size: 0.9rem; opacity: 0.75;">Last updated: July 16, 2026</p>

@@ -771,7 +771,33 @@
         .breadcrumb a { color: var(--gold); text-decoration: none; }
         .breadcrumb a:hover { text-decoration: underline; }
         .footer-brand iframe { max-width: 340px; }
-    </style>
+    
+        /* --- visual-rhythm components (ADD 2026-07-17) --- */
+        .faq-acc { margin: 1rem 0 0; }
+        .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); overflow: hidden; }
+        .faq-item summary { list-style: none; cursor: pointer; padding: 1.1rem 3rem 1.1rem 1.3rem; position: relative; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--off-white); transition: color .2s; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; position: absolute; right: 1.3rem; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--gold); transition: transform .25s; line-height: 1; }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item summary:hover { color: var(--gold); }
+        .faq-item .faq-a { padding: 0 1.3rem 1.2rem; color: var(--text-light); }
+        .faq-item .faq-a p { margin: 0 0 0.6rem; }
+        .faq-item .faq-a p:last-child { margin-bottom: 0; }
+        .faq-item[open] { border-color: var(--border-strong); }
+        .check-list { list-style: none; margin: 1.4rem 0; padding: 0; display: grid; gap: 0.7rem; }
+        .check-list li { position: relative; padding-left: 1.9rem; color: var(--text-light); }
+        .check-list li::before { content: '\2713'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: 700; }
+        .pull-quote { margin: 1.9rem 0; padding: 0.3rem 0 0.3rem 1.5rem; border-left: 3px solid var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.4; color: var(--off-white); font-style: italic; }
+        .fact-card { margin: 1.7rem 0; padding: 1.4rem 1.5rem; border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; background: rgba(201,168,76,0.05); }
+        .fact-card h4 { font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--gold); margin: 0 0 0.7rem; }
+        .fact-card p { margin: 0 0 0.6rem; color: var(--text-light); }
+        .fact-card p:last-child { margin-bottom: 0; }
+        .compare-table { width: 100%; border-collapse: collapse; margin: 1.7rem 0; font-size: 0.98rem; }
+        .compare-table th, .compare-table td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); }
+        .compare-table th { color: var(--gold); font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.78rem; }
+        .compare-table td { color: var(--text-light); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        </style>
     
 </head>
 
@@ -858,7 +884,7 @@
 
             <p class="fade-up">And behind all of it sits a whole layer of home-service companies. The Butler Chain of Lakes, thirteen connected lakes that in 1985 became the first lake system in Florida designated Outstanding Florida Waters, is ringed with lakefront estates, and those estates need pool techs, landscape crews, dock and seawall contractors, AC companies, painters, and pressure washers year round, and those trades run on trucks, subcontractors, and deposits, which is exactly the kind of money flow that turns a QuickBooks file into spaghetti by August.</p>
 
-            <p class="fade-up">Add the real estate agents. Windermere addresses move at prices that generate large, irregular commission checks, and commission income with no withholding is how agents end up owing the IRS a surprise five-figure bill in April. More on that below.</p>
+            <div class="fact-card fade-up"><p>Add the real estate agents. Windermere addresses move at prices that generate large, irregular commission checks, and commission income with no withholding is how agents end up owing the IRS a surprise five-figure bill in April. More on that below.</p></div>
 
             <h2 class="fade-up">Why Owners Here Hand Off the Books</h2>
 
@@ -868,9 +894,9 @@
 
             <p class="fade-up">There are also Florida-specific traps that catch plaza tenants in particular. Florida is the only state in the country that charges sales tax on commercial rent.</p>
 
-            <p class="fade-up">The state portion dropped from 4.5 percent to 2 percent on June 1, 2024, with the county surtax still stacked on top, so if your bank rule was built years ago and codes the whole landlord payment to Rent Expense, your P&amp;L has been quietly overstating rent and burying the tax ever since. If your lease payment has been booked as a single Rent Expense line since before the rate change, that is worth checking, and it is a five minute fix once someone actually looks.</p>
+            <div class="fact-card fade-up"><p>The state portion dropped from 4.5 percent to 2 percent on June 1, 2024, with the county surtax still stacked on top, so if your bank rule was built years ago and codes the whole landlord payment to Rent Expense, your P&amp;L has been quietly overstating rent and burying the tax ever since. If your lease payment has been booked as a single Rent Expense line since before the rate change, that is worth checking, and it is a five minute fix once someone actually looks.</p></div>
 
-            <p class="fade-up">Retail and cafe owners hit a different version of the same problem. Card processors deposit your sales net of their fees.</p>
+            <div class="fact-card fade-up"><p>Retail and cafe owners hit a different version of the same problem. Card processors deposit your sales net of their fees.</p></div>
 
             <p class="fade-up">Book the deposit as income and you have understated revenue and thrown away the processing fee deduction in one move. The fix is recording gross sales and the fee separately, which takes discipline every single day or a bookkeeper who reconciles the merchant statements monthly.</p>
 
@@ -884,7 +910,7 @@
 
             <p class="fade-up">He has a new phone number, he is on a job in Ocala, and you are the one facing the penalty per missing form. The fix is procedural: make a completed W-9 a condition of the first payment, not a favor asked for later.</p>
 
-            <p class="fade-up">The rest of the calendar stacks up too. Employers file the RT-6 reemployment tax return every quarter. Businesses collecting sales tax file the DR-15 monthly or quarterly depending on volume.</p>
+            <div class="fact-card fade-up"><p>The rest of the calendar stacks up too. Employers file the RT-6 reemployment tax return every quarter. Businesses collecting sales tax file the DR-15 monthly or quarterly depending on volume.</p></div>
 
             <p class="fade-up">Owners of profitable pass-through businesses owe federal estimated payments four times a year, and skipping them means penalties even when the eventual return is correct. And every Florida LLC and corporation owes the state an annual report by May 1, with a 400 dollar late fee that the state does not waive because you were busy.</p>
 
@@ -902,7 +928,7 @@
 
             <p class="fade-up">All of that is fixable, and cleanup is one of the core things we do. The process starts with a <strong>free assessment</strong> of your QuickBooks file. We look at what is there, tell you what needs fixing, and give you a flat-rate quote before any work starts, with no open-ended hourly billing.</p>
 
-            <p class="fade-up">If you want to see what the work involves, we wrote up the warning signs in <a href="https://www.sheabusinesssolutions.com/Blog/quickbooks-cleanup-orlando.html">5 Signs Your QuickBooks Needs a Cleanup</a>. One-year and multi-year catch-ups are both routine for us.</p>
+            <div class="fact-card fade-up"><p>If you want to see what the work involves, we wrote up the warning signs in <a href="https://www.sheabusinesssolutions.com/Blog/quickbooks-cleanup-orlando.html">5 Signs Your QuickBooks Needs a Cleanup</a>. One-year and multi-year catch-ups are both routine for us.</p></div>
 
             <h2 class="fade-up">What We Handle for Windermere Businesses</h2>
 
@@ -924,7 +950,7 @@
 
             <p class="fade-up">New owners get this backwards regularly, and it is worth sorting out before you open rather than after a code enforcement letter shows up. Local business tax receipts in Florida also expire September 30 every year, so the renewal belongs on the same calendar as your quarterly filings.</p>
 
-            <p class="fade-up">We serve both sides of that line. The town shops on Main Street, the plaza tenants along Conroy Windermere Road and Winter Garden Vineland Road, the trades working the lakefront, and the home-based businesses scattered through Horizon West all get the same monthly close.</p>
+            <div class="fact-card fade-up"><p>We serve both sides of that line. The town shops on Main Street, the plaza tenants along Conroy Windermere Road and Winter Garden Vineland Road, the trades working the lakefront, and the home-based businesses scattered through Horizon West all get the same monthly close.</p></div>
 
             <h2 class="fade-up">Getting Started</h2>
 
@@ -939,20 +965,33 @@
 
             <h2 class="fade-up">Frequently Asked Questions</h2>
 
-            <h3 class="fade-up">Can you fix books that got away from me?</h3>
-            <p class="fade-up">Yes. The first step is a free, no-pressure conversation. Send over access to your QuickBooks file, or just describe where things stand, and we tell you exactly what needs to happen and what it will cost, in writing, before anything gets billed.</p>
-
-            <h3 class="fade-up">I pay subcontractors. What is the 1099 trap?</h3>
-            <p class="fade-up">The 1099-NEC deadline is January 31, and the filing is only easy if you collected W-9s before the first check went out. We make a completed W-9 a condition of the first payment so January stays calm.</p>
-
-            <h3 class="fade-up">What does bookkeeping cost for a Windermere business?</h3>
-            <p class="fade-up">Monthly plans start at $200 per month and scale with transaction volume, agreed in writing up front. Tax returns start at $90, prepared from books we already know are accurate.</p>
-
-            <h3 class="fade-up">How fast does the handoff go?</h3>
-            <p class="fade-up">Most new clients are surprised how fast the handoff goes. Grant QuickBooks access, describe where things stand, and you get an honest written assessment of what needs to happen and what it costs before anything is billed.</p>
-
-
-        </div>
+            <div class="faq-acc fade-up">
+                <details class="faq-item">
+                    <summary>Can you fix books that got away from me?</summary>
+                    <div class="faq-a">
+                        <p>Yes. The first step is a free, no-pressure conversation. Send over access to your QuickBooks file, or just describe where things stand, and we tell you exactly what needs to happen and what it will cost, in writing, before anything gets billed.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>I pay subcontractors. What is the 1099 trap?</summary>
+                    <div class="faq-a">
+                        <p>The 1099-NEC deadline is January 31, and the filing is only easy if you collected W-9s before the first check went out. We make a completed W-9 a condition of the first payment so January stays calm.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>What does bookkeeping cost for a Windermere business?</summary>
+                    <div class="faq-a">
+                        <p>Monthly plans start at $200 per month and scale with transaction volume, agreed in writing up front. Tax returns start at $90, prepared from books we already know are accurate.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>How fast does the handoff go?</summary>
+                    <div class="faq-a">
+                        <p>Most new clients are surprised how fast the handoff goes. Grant QuickBooks access, describe where things stand, and you get an honest written assessment of what needs to happen and what it costs before anything is billed.</p>
+                    </div>
+                </details>
+            </div>
+</div>
 
         <!-- LAST UPDATED -->
         <p class="fade-up" style="margin-top: 2.5rem; font-size: 0.9rem; opacity: 0.75;">Last updated: July 16, 2026</p>

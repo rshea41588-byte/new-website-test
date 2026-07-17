@@ -791,7 +791,33 @@
         .breadcrumb a { color: var(--gold); text-decoration: none; }
         .breadcrumb a:hover { text-decoration: underline; }
         .footer-brand iframe { max-width: 340px; }
-    </style>
+    
+        /* --- visual-rhythm components (ADD 2026-07-17) --- */
+        .faq-acc { margin: 1rem 0 0; }
+        .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); overflow: hidden; }
+        .faq-item summary { list-style: none; cursor: pointer; padding: 1.1rem 3rem 1.1rem 1.3rem; position: relative; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--off-white); transition: color .2s; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; position: absolute; right: 1.3rem; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--gold); transition: transform .25s; line-height: 1; }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item summary:hover { color: var(--gold); }
+        .faq-item .faq-a { padding: 0 1.3rem 1.2rem; color: var(--text-light); }
+        .faq-item .faq-a p { margin: 0 0 0.6rem; }
+        .faq-item .faq-a p:last-child { margin-bottom: 0; }
+        .faq-item[open] { border-color: var(--border-strong); }
+        .check-list { list-style: none; margin: 1.4rem 0; padding: 0; display: grid; gap: 0.7rem; }
+        .check-list li { position: relative; padding-left: 1.9rem; color: var(--text-light); }
+        .check-list li::before { content: '\2713'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: 700; }
+        .pull-quote { margin: 1.9rem 0; padding: 0.3rem 0 0.3rem 1.5rem; border-left: 3px solid var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.4; color: var(--off-white); font-style: italic; }
+        .fact-card { margin: 1.7rem 0; padding: 1.4rem 1.5rem; border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; background: rgba(201,168,76,0.05); }
+        .fact-card h4 { font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--gold); margin: 0 0 0.7rem; }
+        .fact-card p { margin: 0 0 0.6rem; color: var(--text-light); }
+        .fact-card p:last-child { margin-bottom: 0; }
+        .compare-table { width: 100%; border-collapse: collapse; margin: 1.7rem 0; font-size: 0.98rem; }
+        .compare-table th, .compare-table td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); }
+        .compare-table th { color: var(--gold); font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.78rem; }
+        .compare-table td { color: var(--text-light); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        </style>
     
 </head>
 
@@ -867,7 +893,7 @@
 
             <p class="fade-up">The work happens in QuickBooks and it happens remotely. No office you have to drive to, no new software to learn, no shoebox of receipts changing hands in a parking lot.</p>
 
-            <p class="fade-up">You keep running the shop. We keep the file clean.</p>
+            <blockquote class="pull-quote fade-up">You keep running the shop. We keep the file clean.</blockquote>
 
             <h2 class="fade-up">Who Is Actually Doing Business in Winter Park</h2>
 
@@ -877,7 +903,7 @@
 
             <p class="fade-up">West Fairbanks between I-4 and Orlando Avenue is still mostly older single-story commercial buildings full of service businesses and trades, though the city has been pushing redevelopment there, and projects like Fairbanks Crossing at Denning Drive are bringing in small-format storefronts and restaurant spaces. Add the medical and dental offices clustered around AdventHealth Winter Park, plus the law firms, design studios, and consultants working out of small offices near Orange Avenue, and the business base here is far wider than the postcard version of Park Avenue.</p>
 
-            <p class="fade-up">Different industries, same pattern in the books. High rent, card-heavy revenue, a handful of W-2 employees or a bench of 1099 contractors, and an owner doing data entry at 10pm because hiring a full-time bookkeeper makes no sense at their size.</p>
+            <div class="fact-card fade-up"><p>Different industries, same pattern in the books. High rent, card-heavy revenue, a handful of W-2 employees or a bench of 1099 contractors, and an owner doing data entry at 10pm because hiring a full-time bookkeeper makes no sense at their size.</p></div>
 
             <h2 class="fade-up">The Bookkeeping Problems We See in Retail-Heavy Markets Like This One</h2>
 
@@ -887,13 +913,13 @@
 
             <p class="fade-up">Undeposited Funds is the other retail classic. QuickBooks parks received payments in that account until someone matches them to an actual bank deposit. When nobody does the matching, the account balloons quietly for months, income gets double-counted the moment the bank feed pulls the same deposits in, and suddenly the file says the business earned far more than it did.</p>
 
-            <p class="fade-up">We covered these patterns in our post on <a href="https://www.sheabusinesssolutions.com/Blog/bookkeeping-mistakes-small-business-orlando.html">common bookkeeping mistakes Orlando businesses make</a>. They hit harder in a market like Winter Park where nearly every dollar arrives by card.</p>
+            <div class="fact-card fade-up"><p>We covered these patterns in our post on <a href="https://www.sheabusinesssolutions.com/Blog/bookkeeping-mistakes-small-business-orlando.html">common bookkeeping mistakes Orlando businesses make</a>. They hit harder in a market like Winter Park where nearly every dollar arrives by card.</p></div>
 
             <p class="fade-up">Restaurants carry one more layer: tips. Pooled tips sitting in the operating account are money owed to staff, not income to the business, and they have to flow through payroll correctly or the W-2s will be wrong in January and expensive to fix in February.</p>
 
             <p class="fade-up">And there is a fresh one specific to Florida commercial tenants. The state repealed its sales tax on commercial rent effective October 1, 2025. Florida had been the only state charging it. If you lease space on Park Avenue, in Winter Park Village, or anywhere along Fairbanks, your rent invoices should have dropped that tax line for any rental period starting in October 2025. We still find books where the old coding carries forward on autopilot, and occasionally a landlord statement that never caught up.</p>
 
-            <p class="fade-up">Worth checking. At Park Avenue rents, it is real money.</p>
+            <blockquote class="pull-quote fade-up">Worth checking. At Park Avenue rents, it is real money.</blockquote>
 
             <h2 class="fade-up">What Shea Business Solutions Handles for Winter Park Businesses</h2>
 
@@ -917,7 +943,7 @@
 
             <p class="fade-up">Retailers and restaurants remit sales tax on their own schedule on top of that. We walked through the employer side in detail in our guide to <a href="https://www.sheabusinesssolutions.com/Blog/payroll-taxes-florida-small-business.html">Florida payroll taxes for small businesses</a>.</p>
 
-            <p class="fade-up">Two more dates sneak up on people. Contractors you paid during the year need their 1099-NEC forms by January 31, and the time to collect a W-9 is before the final invoice gets paid, not after the contractor stops returning calls. Then April 1 brings the tangible personal property return, filed with the county property appraiser, covering business equipment, furniture, and fixtures.</p>
+            <div class="fact-card fade-up"><p>Two more dates sneak up on people. Contractors you paid during the year need their 1099-NEC forms by January 31, and the time to collect a W-9 is before the final invoice gets paid, not after the contractor stops returning calls. Then April 1 brings the tangible personal property return, filed with the county property appraiser, covering business equipment, furniture, and fixtures.</p></div>
 
             <p class="fade-up">Espresso machines, dental chairs, kitchen hoods, salon stations, all of it. The first $25,000 of assessed value is exempt, but the exemption only applies if the return gets filed. Skip it and the appraiser can assess you without it.</p>
 
@@ -944,20 +970,33 @@
 
             <h2 class="fade-up">Frequently Asked Questions</h2>
 
-            <h3 class="fade-up">Do you work with Winter Park businesses remotely?</h3>
-            <p class="fade-up">Yes. The books run in QuickBooks Online, so nothing requires an office visit. The first conversation is a free consultation by phone or video, and you get a clear scope and exact pricing before anything starts.</p>
-
-            <h3 class="fade-up">Why do my Toast or Square deposits never match my sales?</h3>
-            <p class="fade-up">Card processors deposit your sales net of processing fees. If those deposits get booked straight to income, revenue is understated and merchant fees never appear on the P&amp;L at all. We reconcile deposits against the POS reports so both numbers read correctly.</p>
-
-            <h3 class="fade-up">What does bookkeeping cost for a Winter Park business?</h3>
-            <p class="fade-up">Monthly bookkeeping starts at $200 per month and scales with transaction volume. Payroll support starts at $100 per month, and tax preparation starts at $90 depending on complexity.</p>
-
-            <h3 class="fade-up">My books have not been reconciled in months. Can you catch them up?</h3>
-            <p class="fade-up">Yes. Cleanup is one of our core specialties. We reconcile every open month, strip out duplicates, recategorize what the bank feed guessed wrong, and resolve the old uncleared transactions distorting the balance sheet.</p>
-
-
-        </div>
+            <div class="faq-acc fade-up">
+                <details class="faq-item">
+                    <summary>Do you work with Winter Park businesses remotely?</summary>
+                    <div class="faq-a">
+                        <p>Yes. The books run in QuickBooks Online, so nothing requires an office visit. The first conversation is a free consultation by phone or video, and you get a clear scope and exact pricing before anything starts.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>Why do my Toast or Square deposits never match my sales?</summary>
+                    <div class="faq-a">
+                        <p>Card processors deposit your sales net of processing fees. If those deposits get booked straight to income, revenue is understated and merchant fees never appear on the P&amp;L at all. We reconcile deposits against the POS reports so both numbers read correctly.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>What does bookkeeping cost for a Winter Park business?</summary>
+                    <div class="faq-a">
+                        <p>Monthly bookkeeping starts at $200 per month and scales with transaction volume. Payroll support starts at $100 per month, and tax preparation starts at $90 depending on complexity.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>My books have not been reconciled in months. Can you catch them up?</summary>
+                    <div class="faq-a">
+                        <p>Yes. Cleanup is one of our core specialties. We reconcile every open month, strip out duplicates, recategorize what the bank feed guessed wrong, and resolve the old uncleared transactions distorting the balance sheet.</p>
+                    </div>
+                </details>
+            </div>
+</div>
 
         <!-- LAST UPDATED -->
         <p class="fade-up" style="margin-top: 2.5rem; font-size: 0.9rem; opacity: 0.75;">Last updated: July 16, 2026</p>

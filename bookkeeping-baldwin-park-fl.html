@@ -801,7 +801,33 @@
         .breadcrumb a { color: var(--gold); text-decoration: none; }
         .breadcrumb a:hover { text-decoration: underline; }
         .footer-brand iframe { max-width: 340px; }
-    </style>
+    
+        /* --- visual-rhythm components (ADD 2026-07-17) --- */
+        .faq-acc { margin: 1rem 0 0; }
+        .faq-item { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 0.75rem; background: rgba(255,255,255,0.02); overflow: hidden; }
+        .faq-item summary { list-style: none; cursor: pointer; padding: 1.1rem 3rem 1.1rem 1.3rem; position: relative; font-family: 'Jost', sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--off-white); transition: color .2s; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: '+'; position: absolute; right: 1.3rem; top: 50%; transform: translateY(-50%); font-size: 1.5rem; color: var(--gold); transition: transform .25s; line-height: 1; }
+        .faq-item[open] summary::after { content: '\2212'; }
+        .faq-item summary:hover { color: var(--gold); }
+        .faq-item .faq-a { padding: 0 1.3rem 1.2rem; color: var(--text-light); }
+        .faq-item .faq-a p { margin: 0 0 0.6rem; }
+        .faq-item .faq-a p:last-child { margin-bottom: 0; }
+        .faq-item[open] { border-color: var(--border-strong); }
+        .check-list { list-style: none; margin: 1.4rem 0; padding: 0; display: grid; gap: 0.7rem; }
+        .check-list li { position: relative; padding-left: 1.9rem; color: var(--text-light); }
+        .check-list li::before { content: '\2713'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: 700; }
+        .pull-quote { margin: 1.9rem 0; padding: 0.3rem 0 0.3rem 1.5rem; border-left: 3px solid var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; line-height: 1.4; color: var(--off-white); font-style: italic; }
+        .fact-card { margin: 1.7rem 0; padding: 1.4rem 1.5rem; border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; background: rgba(201,168,76,0.05); }
+        .fact-card h4 { font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; color: var(--gold); margin: 0 0 0.7rem; }
+        .fact-card p { margin: 0 0 0.6rem; color: var(--text-light); }
+        .fact-card p:last-child { margin-bottom: 0; }
+        .compare-table { width: 100%; border-collapse: collapse; margin: 1.7rem 0; font-size: 0.98rem; }
+        .compare-table th, .compare-table td { text-align: left; padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); }
+        .compare-table th { color: var(--gold); font-family: 'Jost', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.78rem; }
+        .compare-table td { color: var(--text-light); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        </style>
     
 </head>
 
@@ -883,7 +909,7 @@
 
             <p class="fade-up">The neighborhood was master-planned on the grounds of the old Orlando Naval Training Center, which closed in 1999, and that origin matters for one practical reason: almost nobody here owns their commercial space. The district was built with roughly 355,000 square feet of freestanding commercial space plus about 128,800 square feet of live/work units, and nearly all of it is leased.</p>
 
-            <p class="fade-up">Leases mean rent schedules, CAM charges, security deposits sitting on the balance sheet, and, until recently, Florida's sales tax on commercial rent. That last one changed in 2025, and it is worth a closer look further down.</p>
+            <div class="fact-card fade-up"><p>Leases mean rent schedules, CAM charges, security deposits sitting on the balance sheet, and, until recently, Florida's sales tax on commercial rent. That last one changed in 2025, and it is worth a closer look further down.</p></div>
 
             <h2 class="fade-up">Where the Books Go Wrong in a District Like This</h2>
 
@@ -893,7 +919,7 @@
 
             <p class="fade-up">The class-based fitness businesses have their own pattern. Membership software drafts dozens of cards on the first of the month, a few drafts fail, some members freeze or refund, and the processor batches the whole mess into deposits that never match the membership report.</p>
 
-            <p class="fade-up">Reconciling that every month is tedious and necessary. A studio that skips it has no real number for monthly recurring revenue, only a guess.</p>
+            <div class="fact-card fade-up"><p>Reconciling that every month is tedious and necessary. A studio that skips it has no real number for monthly recurring revenue, only a guess.</p></div>
 
             <p class="fade-up">Salons and grooming shops tend to run on booth rent or commission splits, and that one decision drives everything downstream. A booth renter is a contractor who gets a 1099-NEC by January 31, not an employee who gets a W-2. Misclassify one and the error tends to surface during an unemployment claim rather than at any convenient moment.</p>
 
@@ -948,7 +974,7 @@
 
             <p class="fade-up">Cleanup work deserves its own mention, because Baldwin Park has plenty of businesses young enough to have opened, gotten busy, and never looked at QuickBooks again. A cleanup starts with a free assessment: Ryan opens your file, checks how far back the reconciliations actually go, samples the categorization, and hands you a fixed quote for the entire job. No hourly meter running.</p>
 
-            <p class="fade-up">Once the historical work is done, the file rolls straight into monthly service so it never degrades to that state again. If you want to know what the process involves before you hand anyone your file, <a href="https://www.sheabusinesssolutions.com/Blog/quickbooks-cleanup-orlando.html">the cleanup guide covers it</a>, and there is a separate walkthrough of <a href="https://www.sheabusinesssolutions.com/Blog/payroll-taxes-florida-small-business.html">Florida payroll taxes</a> for anyone about to hire their first employee.</p>
+            <div class="fact-card fade-up"><p>Once the historical work is done, the file rolls straight into monthly service so it never degrades to that state again. If you want to know what the process involves before you hand anyone your file, <a href="https://www.sheabusinesssolutions.com/Blog/quickbooks-cleanup-orlando.html">the cleanup guide covers it</a>, and there is a separate walkthrough of <a href="https://www.sheabusinesssolutions.com/Blog/payroll-taxes-florida-small-business.html">Florida payroll taxes</a> for anyone about to hire their first employee.</p></div>
 
             <div class="callout fade-up">
                 <p><strong>Every engagement is quoted fixed-price before work begins.</strong> Shea Business Solutions is BBB accredited, holds a 5.0 rating on Google, and works to a same-business-day response standard on client questions. The reviews themselves tend to focus on trust, expertise, and cleanup work that finally made the numbers make sense.</p>
@@ -958,7 +984,7 @@
 
             <p class="fade-up">Everything operates on QuickBooks Online, so there is no shoebox handoff and no office visit required. Bank and card feeds connect directly, receipts go in through the app, and the monthly close happens while you run your business. You get the P&amp;L and balance sheet each month with a plain-English note about anything unusual: a duplicate charge, a vendor payment that posted twice, a deposit that never cleared.</p>
 
-            <p class="fade-up">Ryan works with clients across the Orlando area, and Baldwin Park's position on the Winter Park border puts it squarely in the normal service territory. Call or text <a href="tel:+16037598547">(603) 759-8547</a>, or <a href="https://calendar.app.google/XUuJ8UZcHRmSJWCv6" target="_blank" rel="noopener">book a meeting directly</a>. The first conversation is free, takes about twenty minutes, and ends with either a fixed quote or an honest statement that you do not need the service yet.</p>
+            <div class="fact-card fade-up"><p>Ryan works with clients across the Orlando area, and Baldwin Park's position on the Winter Park border puts it squarely in the normal service territory. Call or text <a href="tel:+16037598547">(603) 759-8547</a>, or <a href="https://calendar.app.google/XUuJ8UZcHRmSJWCv6" target="_blank" rel="noopener">book a meeting directly</a>. The first conversation is free, takes about twenty minutes, and ends with either a fixed quote or an honest statement that you do not need the service yet.</p></div>
 
             <!-- ALSO SERVING -->
         <p class="fade-up" style="margin-top: 2.5rem; font-size: 0.95rem;"><strong>Also serving nearby:</strong> <a href="https://www.sheabusinesssolutions.com/bookkeeping-winter-park-fl.html">Winter Park</a> &bull; <a href="https://www.sheabusinesssolutions.com/bookkeeping-dr-phillips-fl.html">Dr. Phillips</a> &bull; <a href="https://www.sheabusinesssolutions.com/bookkeeping-windermere-fl.html">Windermere</a> &bull; <a href="https://www.sheabusinesssolutions.com/bookkeeping-lake-nona-fl.html">Lake Nona</a></p>
@@ -974,20 +1000,33 @@
 
             <h2 class="fade-up">Frequently Asked Questions</h2>
 
-            <h3 class="fade-up">Why are my cafe's sales understated in QuickBooks?</h3>
-            <p class="fade-up">Almost always the point of sale. Toast and Square deposit card sales into your bank account net of processing fees, so recording the bank deposit as revenue understates sales and hides merchant fees. We gross the deposits back up against the POS reports.</p>
-
-            <h3 class="fade-up">How does the monthly engagement run?</h3>
-            <p class="fade-up">Everything operates on QuickBooks Online, so there is no shoebox handoff and no office visit required. Bank and card feeds connect directly, and the monthly close happens while you run your business.</p>
-
-            <h3 class="fade-up">What do I actually get each month?</h3>
-            <p class="fade-up">The P&amp;L and balance sheet each month with a plain-English note about anything unusual, so you are never reading reports cold.</p>
-
-            <h3 class="fade-up">What does bookkeeping cost in Baldwin Park?</h3>
-            <p class="fade-up">Monthly bookkeeping starts at $200 per month and scales with transaction volume. Payroll support starts at $100 per month, and tax preparation starts at $90 for simple individual returns, with business returns quoted per engagement.</p>
-
-
-    </article>
+            <div class="faq-acc fade-up">
+                <details class="faq-item">
+                    <summary>Why are my cafe's sales understated in QuickBooks?</summary>
+                    <div class="faq-a">
+                        <p>Almost always the point of sale. Toast and Square deposit card sales into your bank account net of processing fees, so recording the bank deposit as revenue understates sales and hides merchant fees. We gross the deposits back up against the POS reports.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>How does the monthly engagement run?</summary>
+                    <div class="faq-a">
+                        <p>Everything operates on QuickBooks Online, so there is no shoebox handoff and no office visit required. Bank and card feeds connect directly, and the monthly close happens while you run your business.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>What do I actually get each month?</summary>
+                    <div class="faq-a">
+                        <p>The P&amp;L and balance sheet each month with a plain-English note about anything unusual, so you are never reading reports cold.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>What does bookkeeping cost in Baldwin Park?</summary>
+                    <div class="faq-a">
+                        <p>Monthly bookkeeping starts at $200 per month and scales with transaction volume. Payroll support starts at $100 per month, and tax preparation starts at $90 for simple individual returns, with business returns quoted per engagement.</p>
+                    </div>
+                </details>
+            </div>
+</article>
 
         <!-- LAST UPDATED -->
         <p class="fade-up" style="margin-top: 2.5rem; font-size: 0.9rem; opacity: 0.75;">Last updated: July 16, 2026</p>
