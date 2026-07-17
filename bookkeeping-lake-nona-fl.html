@@ -762,6 +762,7 @@
         /* MOBILE */
         @media (max-width: 768px) {
             .nav-links, .nav-cta { display: none; }
+            body { padding-bottom: 4.5rem; }
             .hamburger { display: flex; }
             .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
             .footer-bottom { flex-direction: column; text-align: center; }
@@ -782,22 +783,24 @@
         .mobile-call-cta {
             display: none;
             position: fixed;
-            bottom: 1.25rem;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            justify-content: center;
             background: var(--gold);
             color: var(--charcoal);
             font-family: 'Jost', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.08em;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.03em;
             text-decoration: none;
-            padding: 0.8rem 1.8rem;
+            padding: 1rem 1.25rem calc(1rem + env(safe-area-inset-bottom));
             z-index: 998;
             white-space: nowrap;
-            box-shadow: 0 4px 24px rgba(201,168,76,0.4);
+            box-shadow: 0 -4px 24px rgba(0,0,0,0.35);
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
 
         @media (max-width: 768px) { .mobile-call-cta { display: flex; } }
@@ -1191,6 +1194,11 @@
         } catch (e) {
             document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
         }
+
+        // Safety net: reveal any fade-up not yet triggered so no content stays invisible on load.
+        window.addEventListener('load', () => setTimeout(() => {
+            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('visible'));
+        }, 600));
 
         // Copy email to clipboard on desktop, native mailto on mobile
         document.addEventListener("DOMContentLoaded", () => {
