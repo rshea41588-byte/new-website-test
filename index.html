@@ -3474,6 +3474,7 @@
                 if (data.success) {
                     this.style.display = 'none';
                     document.getElementById('formSuccess').style.display = 'block';
+                    window.location.href = '/thank-you/'; // redirect to thank-you page on lead submit
                 } else {
                     alert('Something went wrong. Please try again.');
                     btn.textContent = 'Send Message →';
