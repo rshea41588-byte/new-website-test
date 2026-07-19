@@ -1524,14 +1524,15 @@
         /* Long footer lists (Services=18, Areas=11) flow in 2 sub-columns at the
            two-column footer width so a tall list never towers over the brand
            column and strands the sections below it. */
-        .footer-list-2col {
+        .footer-col ul.footer-list-2col {
             display: block;
             columns: 2;
             column-gap: 1.5rem;
         }
 
-        .footer-list-2col li {
+        .footer-col ul.footer-list-2col li {
             break-inside: avoid;
+            margin-bottom: 0.6rem;
         }
 
         /* Wide screens: all six sections sit in one clean top-aligned row. */
@@ -1541,7 +1542,7 @@
                 gap: 1.25rem 1.25rem;
             }
 
-            .footer-list-2col {
+            .footer-col ul.footer-list-2col {
                 columns: 1;
             }
         }
@@ -1767,7 +1768,7 @@
                 gap: 2rem;
             }
 
-            .footer-list-2col {
+            .footer-col ul.footer-list-2col {
                 columns: 1;
             }
 
