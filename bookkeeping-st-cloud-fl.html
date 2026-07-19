@@ -848,6 +848,22 @@
           .sbs-about-btns{justify-content:center}
           .sbs-about-band{padding:3rem 1.25rem}
         }
+    
+        /* ===== Bloomview visual-rhythm pack (additive, ADD-only) ===== */
+        .article-body > ul.fade-up{list-style:none;margin:1.9rem 0 2.1rem;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;}
+        .article-body > ul.fade-up > li{position:relative;background:var(--charcoal-mid);border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:12px;padding:1.25rem 1.25rem 1.25rem 3rem;margin:0;line-height:1.6;color:var(--text-light);font-size:.98rem;}
+        .article-body > ul.fade-up > li::marker{content:none;}
+        .article-body > ul.fade-up > li::before{content:"\2713";position:absolute;left:1.05rem;top:1.2rem;width:1.35rem;height:1.35rem;display:flex;align-items:center;justify-content:center;background:var(--gold);color:var(--charcoal);border-radius:50%;font-size:.82rem;font-weight:700;line-height:1;}
+        .article-body > ul.fade-up > li strong{display:block;font-family:'Jost',sans-serif;color:var(--gold-light);font-weight:600;margin-bottom:.3rem;}
+        .article-body h2.fade-up{position:relative;}
+        .article-body h2.fade-up::after{content:"";display:block;width:44px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);border-radius:2px;margin-top:.6rem;}
+        .fact-card{position:relative;overflow:hidden;}
+        .fact-card::before{content:"\201C";position:absolute;top:-.7rem;right:.9rem;font-family:'Cormorant Garamond',serif;font-size:5rem;color:var(--gold);opacity:.14;line-height:1;pointer-events:none;}
+        .bv-proof-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:2.2rem 0 2.6rem;}
+        .bv-proof-tile{background:var(--charcoal-mid);padding:1.5rem 1rem;text-align:center;display:flex;flex-direction:column;gap:.4rem;}
+        .bv-proof-num{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.95rem;color:var(--gold);line-height:1;}
+        .bv-proof-lab{font-size:.82rem;color:var(--text-muted);line-height:1.35;}
+        @media(max-width:640px){.bv-proof-strip{grid-template-columns:repeat(2,1fr);}.bv-proof-tile{padding:1.25rem .75rem;}.bv-proof-num{font-size:1.7rem;}}
     </style>
     
 </head><body>
@@ -931,6 +947,13 @@
             <p class="fade-up">The work happens in QuickBooks and it happens remotely. No office to drive to, no new software to learn.</p>
 
             <p class="fade-up">You keep running the business. We keep the file clean.</p>
+
+            <div class="bv-proof-strip fade-up" aria-label="Why Shea Business Solutions">
+                <div class="bv-proof-tile"><span class="bv-proof-num">5.0</span><span class="bv-proof-lab">Average Google rating</span></div>
+                <div class="bv-proof-tile"><span class="bv-proof-num">Same&#8209;Day</span><span class="bv-proof-lab">Answer on every message</span></div>
+                <div class="bv-proof-tile"><span class="bv-proof-num">Flat&#8209;Rate</span><span class="bv-proof-lab">Quoted before work starts</span></div>
+                <div class="bv-proof-tile"><span class="bv-proof-num">Level&nbsp;2</span><span class="bv-proof-lab">Certified QuickBooks ProAdvisor</span></div>
+            </div>
 
             <h2 class="fade-up">Who Is Actually Doing Business in St. Cloud</h2>
 
