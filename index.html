@@ -1516,8 +1516,34 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem 2.5rem;
+            align-items: start;
+        }
+
+        /* Long footer lists (Services=18, Areas=11) flow in 2 sub-columns at the
+           two-column footer width so a tall list never towers over the brand
+           column and strands the sections below it. */
+        .footer-list-2col {
+            display: block;
+            columns: 2;
+            column-gap: 1.5rem;
+        }
+
+        .footer-list-2col li {
+            break-inside: avoid;
+        }
+
+        /* Wide screens: all six sections sit in one clean top-aligned row. */
+        @media (min-width: 1264px) {
+            .footer-inner {
+                grid-template-columns: 1.3fr repeat(5, 1fr);
+                gap: 1.25rem 1.5rem;
+            }
+
+            .footer-list-2col {
+                columns: 1;
+            }
         }
 
         .footer-logo img {
@@ -1739,6 +1765,10 @@
             .footer-inner {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .footer-list-2col {
+                columns: 1;
             }
 
             .footer-bottom {
@@ -2935,7 +2965,7 @@
             </div>
             <div class="footer-col">
                 <h4>Services</h4>
-                <ul>
+                <ul class="footer-list-2col">
                     <li><a href="quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor</a></li>
                     <li><a href="flat-rate-bookkeeping-orlando.html">Flat-Rate Bookkeeping</a></li>
                     <li><a href="catch-up-bookkeeping-orlando.html">Catch-Up Bookkeeping</a></li>
@@ -2981,7 +3011,7 @@
             </div>
             <div class="footer-col">
                 <h4>Areas We Serve</h4>
-                <ul>
+                <ul class="footer-list-2col">
                     <li><a href="bookkeeping-baldwin-park-fl.html">Baldwin Park</a></li>
                     <li><a href="bookkeeping-dr-phillips-fl.html">Dr. Phillips</a></li>
                     <li><a href="bookkeeping-lake-nona-fl.html">Lake Nona</a></li>
