@@ -27,7 +27,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/icon1.png" type="image/png" sizes="48x48">
-    <title>QuickBooks ProAdvisor Orlando | Shea Business Solutions</title>
+    <title>Orlando Bookkeeping, Payroll &amp; Tax Services | Shea Business Solutions</title>
     <meta name="description"
         content="Expert QuickBooks Level 2 ProAdvisor in Orlando, FL. Bookkeeping, payroll, and tax prep for small businesses. 5-star rated. Schedule a free consultation.">
     <meta name="keywords"
@@ -560,6 +560,70 @@
             gap: 1rem;
             margin-bottom: 3rem;
         }
+
+        .hero-title .hero-loc {
+            color: var(--gold);
+        }
+
+        .hero-tagline {
+            color: var(--off-white);
+            font-style: italic;
+        }
+
+        .hero-form {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(200, 164, 92, 0.25);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin: -1.25rem 0 2.5rem;
+            max-width: 520px;
+        }
+
+        .hero-form-title {
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-form-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.6rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-form-fields input {
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            padding: 0.7rem 0.85rem;
+            color: var(--off-white);
+            font-size: 0.9rem;
+            font-family: inherit;
+            width: 100%;
+        }
+
+        .hero-form-fields input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .hero-form-submit {
+            width: 100%;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        @media (max-width: 640px) {
+            .hero-form-fields {
+                grid-template-columns: 1fr;
+            }
+        }
+
 
         .hero-stats {
             display: flex;
@@ -2047,14 +2111,13 @@
                     <span>QuickBooks Level 2 ProAdvisor &bull; Orlando, FL</span>
                 </div>
                 <h1 class="hero-title">
-                    Focus on<br>
-                    <span class="line2">your business,</span>
-                    <span class="line3"><span class="strike-word">not</span> the numbers.</span>
-                    <span class="sr-only"> — QuickBooks Level 2 ProAdvisor & Bookkeeping Services in Orlando, FL</span>
+                    Bookkeeping, Payroll<br>
+                    <span class="line2">&amp; Tax Services</span>
+                    <span class="line3 hero-loc">in Orlando, FL</span>
                 </h1>
-                <p class="hero-subtitle">We handle your books, payroll, and taxes — so you can focus on what you do
-                    best. Clean
-                    financials, clear reporting, zero surprises.</p>
+                <p class="hero-subtitle"><em class="hero-tagline">Focus on your business, <span
+                            class="strike-word">not</span> the numbers.</em><br>We handle the books, payroll, and
+                    taxes. Clean financials, clear reporting, zero surprises.</p>
                 <div class="hero-actions">
                     <a href="tel:+16037598547" class="btn btn-primary">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -2076,6 +2139,21 @@
                         Schedule a Meeting
                     </a>
                 </div>
+                <form id="heroForm" class="hero-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
+                    <input type="hidden" name="subject" value="New Hero Lead - Shea Business Solutions Website">
+                    <input type="hidden" name="from_name" value="SBS Website">
+                    <input type="hidden" name="message" value="Quick consultation request from the homepage hero form.">
+                    <input type="checkbox" name="botcheck" style="display:none">
+                    <div class="hero-form-title">Get a free consultation</div>
+                    <div class="hero-form-fields">
+                        <input type="text" name="name" placeholder="Name" aria-label="Full name" required>
+                        <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" required>
+                        <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary hero-form-submit">Request a Free Consultation
+                        &rarr;</button>
+                </form>
                 <div class="hero-stats">
                     <div class="stat-item">
                         <div class="stat-number">10+</div>
@@ -3520,6 +3598,31 @@
         }
 
         // Contact form
+        document.getElementById('heroForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const btn = this.querySelector('.hero-form-submit');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: new FormData(this)
+                });
+                const data = await res.json();
+                if (data.success) {
+                    window.location.href = '/thank-you/'; // redirect fires GA4 + OpenAI lead events
+                } else {
+                    alert('Something went wrong. Please try again.');
+                    btn.textContent = 'Request a Free Consultation \u2192';
+                    btn.disabled = false;
+                }
+            } catch (error) {
+                alert('Something went wrong. Please try again.');
+                btn.textContent = 'Request a Free Consultation \u2192';
+                btn.disabled = false;
+            }
+        });
+
         document.getElementById('contactForm').addEventListener('submit', async function (e) {
             e.preventDefault();
 
