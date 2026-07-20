@@ -1744,13 +1744,24 @@
 
         @media (max-width: 1024px) {
             .hero-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
             }
 
+            /* Mobile order: title -> form -> photo -> CTAs -> stats */
+            .hero-text,
             .hero-visual {
-                order: -1;
+                display: contents;
             }
+
+            .hero-eyebrow { order: 1; margin-bottom: 0; }
+            .hero-title { order: 2; margin-bottom: 0; }
+            .hero-subtitle { order: 3; margin-bottom: 0; }
+            .hero-form { order: 4; align-self: center; }
+            .hero-badge-wrap { order: 5; align-self: center; }
+            .hero-actions { order: 6; margin-bottom: 0; }
+            .hero-stats { order: 7; }
 
             .hero-badge-wrap {
                 width: 300px;
