@@ -575,8 +575,8 @@
             border: 1px solid rgba(200, 164, 92, 0.25);
             border-radius: 12px;
             padding: 1.25rem;
-            margin: -1.25rem 0 2.5rem;
-            max-width: 520px;
+            width: 100%;
+            max-width: 460px;
         }
 
         .hero-form-title {
@@ -650,8 +650,10 @@
 
         .hero-visual {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 2rem;
             position: relative;
         }
 
@@ -2139,21 +2141,6 @@
                         Schedule a Meeting
                     </a>
                 </div>
-                <form id="heroForm" class="hero-form" action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
-                    <input type="hidden" name="subject" value="New Hero Lead - Shea Business Solutions Website">
-                    <input type="hidden" name="from_name" value="SBS Website">
-                    <input type="hidden" name="message" value="Quick consultation request from the homepage hero form.">
-                    <input type="checkbox" name="botcheck" style="display:none">
-                    <div class="hero-form-title">Get a free consultation</div>
-                    <div class="hero-form-fields">
-                        <input type="text" name="name" placeholder="Name" aria-label="Full name" required>
-                        <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" required>
-                        <input type="email" name="email" placeholder="Email" aria-label="Email" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary hero-form-submit">Request a Free Consultation
-                        &rarr;</button>
-                </form>
                 <div class="hero-stats">
                     <div class="stat-item">
                         <div class="stat-number">10+</div>
@@ -2170,6 +2157,21 @@
                 </div>
             </div>
             <div class="hero-visual">
+                <form id="heroForm" class="hero-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
+                    <input type="hidden" name="subject" value="New Hero Lead - Shea Business Solutions Website">
+                    <input type="hidden" name="from_name" value="SBS Website">
+                    <input type="hidden" name="message" value="Quick consultation request from the homepage hero form.">
+                    <input type="checkbox" name="botcheck" style="display:none">
+                    <div class="hero-form-title">Get a free consultation</div>
+                    <div class="hero-form-fields">
+                        <input type="text" name="name" placeholder="Name" aria-label="Full name" required>
+                        <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" required>
+                        <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary hero-form-submit">Request a Free Consultation
+                        &rarr;</button>
+                </form>
                 <div class="hero-badge-wrap">
                     <div class="hero-badge-ring"></div>
                     <div class="hero-img-frame"><img width="1823" height="2000"
