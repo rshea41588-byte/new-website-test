@@ -745,6 +745,18 @@
     oaiq("init", { pixelId: "1F5g6WgWCyxiUeo7YqJkgL" });
   </script>
   <script async src="https://bzrcdn.openai.com/sdk/oaiq.min.js"></script>
+  <!-- OpenAI Ads: phone-call lead conversion (any tel: click, once per session) -->
+  <script>
+    document.addEventListener("click", function (ev) {
+      try {
+        var a = ev.target && ev.target.closest ? ev.target.closest('a[href^="tel:"]') : null;
+        if (!a || sessionStorage.getItem("oaiq_call_fired")) return;
+        var eid = "call_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
+        oaiq("measure", "lead_created", { type: "customer_action" }, { event_id: eid });
+        sessionStorage.setItem("oaiq_call_fired", "1");
+      } catch (e) {}
+    }, true);
+  </script>
 </head>
 
 <body>
