@@ -166,6 +166,23 @@
             .call-btn { font-size: 1.2rem; }
         }
     </style>
+  <!-- OpenAI Ads Measurement Pixel -->
+  <script>
+    window.oaiq = window.oaiq || function () { (window.oaiq.q = window.oaiq.q || []).push(arguments); };
+    oaiq("init", { pixelId: "1F5g6WgWCyxiUeo7YqJkgL" });
+  </script>
+  <script async src="https://bzrcdn.openai.com/sdk/oaiq.min.js"></script>
+  <!-- OpenAI Ads: lead conversion (fires once per session; mirrors GA4 generate_lead) -->
+  <script>
+    (function () {
+      try {
+        if (sessionStorage.getItem("oaiq_lead_fired")) return;
+        var eid = "lead_" + Date.now() + "_" + Math.random().toString(36).slice(2, 10);
+        oaiq("measure", "lead_created", { type: "customer_action" }, { event_id: eid });
+        sessionStorage.setItem("oaiq_lead_fired", "1");
+      } catch (e) {}
+    })();
+  </script>
 </head>
 
 <body>
