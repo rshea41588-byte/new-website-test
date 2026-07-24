@@ -2100,6 +2100,7 @@
             <span></span><span></span><span></span>
         </button>
     </nav>
+<main>
 
     <div class="mobile-menu" id="mobileMenu">
         <a href="#services" onclick="closeMenu()">Services</a>
@@ -2173,7 +2174,7 @@
                     <input type="hidden" name="subject" value="New Hero Lead - Shea Business Solutions Website">
                     <input type="hidden" name="from_name" value="SBS Website">
                     <input type="hidden" name="message" value="Quick consultation request from the homepage hero form.">
-                    <input type="checkbox" name="botcheck" style="display:none">
+                    <input type="checkbox" name="botcheck" style="display:none" aria-hidden="true" tabindex="-1">
                     <div class="hero-form-title">Get a free consultation</div>
                     <div class="hero-form-fields">
                         <input type="text" name="name" placeholder="Name" aria-label="Full name" required>
@@ -3011,18 +3012,18 @@
                         <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
                         <input type="hidden" name="subject" value="New Inquiry - Shea Business Solutions Website">
                         <input type="hidden" name="from_name" value="SBS Website">
-                        <input type="checkbox" name="botcheck" style="display:none">
+                        <input type="checkbox" name="botcheck" style="display:none" aria-hidden="true" tabindex="-1">
                         <div class="form-row">
                             <div class="form-group"><label>Full Name *</label><input type="text" name="name"
-                                    placeholder="John Smith" required></div>
+                                    placeholder="John Smith" required aria-label="Full name"></div>
                             <div class="form-group"><label>Phone *</label><input type="tel" name="phone"
-                                    placeholder="(555) 000-0000" required></div>
+                                    placeholder="(555) 000-0000" required aria-label="Phone number"></div>
                         </div>
                         <div class="form-group"><label>Email Address *</label><input type="email" name="email"
-                                placeholder="john@yourbusiness.com" required></div>
+                                placeholder="john@yourbusiness.com" required aria-label="Email address"></div>
                         <div class="form-group">
                             <label>Service Interested In</label>
-                            <select name="service">
+                            <select name="service" aria-label="Service needed">
                                 <option value="">Select a service...</option>
                                 <option>Monthly Bookkeeping</option>
                                 <option>QuickBooks Setup / Cleanup</option>
@@ -3036,7 +3037,7 @@
                         </div>
                         <div class="form-group"><label>Message *</label><textarea name="message"
                                 placeholder="Tell us a little about your business and what you need help with..."
-                                required></textarea>
+                                required aria-label="Message"></textarea>
                         </div>
                         <button type="submit" class="form-submit">Send Message &rarr;</button>
                     </form>
@@ -3055,7 +3056,8 @@
         <h2 style="font-size:1.35rem;margin-bottom:0.5rem;">Tax Preparation Across the Orlando Area</h2>
         <p style="font-size:0.95rem;line-height:1.6;">Beyond monthly bookkeeping, Shea Business Solutions prepares business and individual tax returns for clients throughout Central Florida. Explore tax preparation in <a href="https://www.sheabusinesssolutions.com/tax-baldwin-park-fl.html">Baldwin Park</a>, <a href="https://www.sheabusinesssolutions.com/tax-dr-phillips-fl.html">Dr. Phillips</a>, <a href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona</a>, <a href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere</a>, and <a href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park</a>.</p>
     </section>
-    <footer>
+    </main>
+<footer>
         <div class="footer-inner">
             <div class="footer-brand">
                 <div class="footer-logo"><img width="1426" height="460"
