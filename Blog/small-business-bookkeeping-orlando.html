@@ -788,6 +788,70 @@
         }
 
         @media (max-width: 768px) { .mobile-call-cta { display: flex; } }
+            /* == BV nav dropdowns (added) == */
+        .nav-links { gap: 2.2rem; }
+        .nav-links > li { position: relative; }
+        .nav-links > li > a,
+        .nav-links > li > .nav-trigger {
+            font-family: 'Jost', sans-serif; font-size: 0.76rem; font-weight: 500;
+            letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light);
+            text-decoration: none; background: none; border: none; cursor: pointer;
+            transition: color 0.2s; display: inline-flex; align-items: center;
+            gap: 0.35rem; padding: 0.5rem 0;
+        }
+        .nav-links > li > a:hover,
+        .nav-links > li > .nav-trigger:hover,
+        .nav-links > li:hover > .nav-trigger { color: var(--gold); }
+        .nav-caret {
+            width: 8px; height: 8px; border-right: 1.5px solid currentColor;
+            border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px);
+            transition: transform 0.25s ease;
+        }
+        .nav-links > li:hover .nav-caret { transform: rotate(-135deg) translateY(-2px); }
+        .dropdown {
+            position: absolute; top: calc(100% + 12px); left: 50%;
+            transform: translateX(-50%) translateY(8px); background: rgba(22, 22, 22, 0.99);
+            backdrop-filter: blur(14px); border: 1px solid var(--border); padding: 1.25rem;
+            min-width: 300px; opacity: 0; visibility: hidden;
+            transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); z-index: 1000;
+        }
+        .dropdown.wide { min-width: 560px; display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem 1.75rem; }
+        .nav-links > li:hover .dropdown,
+        .nav-links > li:focus-within .dropdown {
+            opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+        }
+        .dropdown::before { content: ''; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
+        .dd-group-label {
+            grid-column: 1 / -1; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--gold); padding: 0.4rem 0.5rem;
+            border-bottom: 1px solid var(--border); margin-bottom: 0.25rem;
+        }
+        .dd-group-label:not(:first-child) { margin-top: 0.75rem; }
+        .dropdown a.dd-link {
+            display: block; font-family: 'Jost', sans-serif; font-size: 0.82rem; font-weight: 300;
+            letter-spacing: 0.02em; text-transform: none; color: var(--text-light);
+            text-decoration: none; padding: 0.5rem 0.6rem; border-left: 2px solid transparent;
+            transition: all 0.18s ease;
+        }
+        .dropdown a.dd-link::after { display: none; }
+        .dropdown a.dd-link:hover { color: var(--gold); background: rgba(201, 168, 76, 0.06); border-left-color: var(--gold); }
+        .mm-section { border-bottom: 1px solid var(--border); }
+        .mm-toggle {
+            width: 100%; background: none; border: none; color: var(--off-white);
+            font-family: 'Jost', sans-serif; font-size: 0.95rem; font-weight: 400;
+            letter-spacing: 0.08em; text-transform: uppercase; text-align: left;
+            padding: 0.85rem 0; cursor: pointer; display: flex;
+            justify-content: space-between; align-items: center;
+        }
+        .mm-toggle .plus { color: var(--gold); font-size: 1.3rem; font-weight: 300; transition: transform 0.25s; }
+        .mm-section.open .mm-toggle .plus { transform: rotate(45deg); }
+        .mm-panel { display: none; flex-direction: column; padding: 0 0 0.75rem 0.75rem; }
+        .mm-section.open .mm-panel { display: flex; }
+        .mm-panel a { color: var(--text-light); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.02em; padding: 0.5rem 0; }
+        .mm-panel a:hover { color: var(--gold); }
+        .mm-cta { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+        /* == end BV nav dropdowns == */
     </style>
   <!-- OpenAI Ads Measurement Pixel -->
   <script>
@@ -854,13 +918,61 @@
             <img width="1426" height="460" src="../images/logo_header.png" alt="Shea Business Solutions – QuickBooks ProAdvisor Orlando FL">
         </a>
         <ul class="nav-links">
-            <li><a href="https://www.sheabusinesssolutions.com/#services">Services</a></li>
+            <li>
+                <button class="nav-trigger" aria-haspopup="true">Services <span class="nav-caret"></span></button>
+                <div class="dropdown wide">
+                    <span class="dd-group-label">QuickBooks</span>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-setup-orlando.html">QuickBooks Setup</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-cleanup-orlando.html">QuickBooks Cleanup</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-migration-orlando.html">QuickBooks Migration</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-training-orlando.html">QuickBooks Training</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-cost-orlando.html">ProAdvisor Pricing</a>
+                    <span class="dd-group-label">Bookkeeping &amp; Payroll</span>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-services-orlando.html">Bookkeeping Services</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/flat-rate-bookkeeping-orlando.html">Flat-Rate Bookkeeping</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/catch-up-bookkeeping-orlando.html">Catch-Up Bookkeeping</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/payroll-services-orlando.html">Payroll Services</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-tax-package-orlando.html">Bookkeeping + Tax Package</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/construction-bookkeeping-orlando.html">Construction Bookkeeping</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/restaurant-bookkeeping-orlando.html">Restaurant Bookkeeping</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/fitness-gym-bookkeeping-orlando.html">Gym &amp; Fitness Bookkeeping</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/manufacturing-bookkeeping-orlando.html">Manufacturing Bookkeeping</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/dental-med-spa-bookkeeping-orlando.html">Dental &amp; Med-Spa Bookkeeping</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/ecommerce-bookkeeping-orlando.html">E-commerce Bookkeeping</a>
+                    <span class="dd-group-label">Tax Preparation</span>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/small-business-tax-prep-orlando.html">Small-Business Tax Prep</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/tax-prep-cost-orlando.html">Tax Prep Cost</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/tax-dr-phillips-fl.html">Dr. Phillips</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/tax-baldwin-park-fl.html">Baldwin Park</a>
+                </div>
+            </li>
+            <li>
+                <button class="nav-trigger" aria-haspopup="true">Service Areas <span class="nav-caret"></span></button>
+                <div class="dropdown wide">
+                    <span class="dd-group-label">Bookkeeping by City</span>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-winter-park-fl.html">Winter Park</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-dr-phillips-fl.html">Dr. Phillips</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-windermere-fl.html">Windermere</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-lake-nona-fl.html">Lake Nona</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html">Baldwin Park</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-kissimmee-fl.html">Kissimmee</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-sanford-fl.html">Sanford</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-oviedo-fl.html">Oviedo</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-apopka-fl.html">Apopka</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-st-cloud-fl.html">St. Cloud</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-celebration-fl.html">Celebration</a>
+                </div>
+            </li>
             <li><a href="https://www.sheabusinesssolutions.com/#pricing">Pricing</a></li>
             <li><a href="https://www.sheabusinesssolutions.com/#process">Process</a></li>
             <li><a href="https://www.sheabusinesssolutions.com/#testimonials">Reviews</a></li>
             <li><a href="https://www.sheabusinesssolutions.com/#about">About</a></li>
             <li><a href="https://www.sheabusinesssolutions.com/#contact">Contact</a></li>
-            <li><a href="https://www.sheabusinesssolutions.com/Blog/" class="active">Blog</a></li>
+            <li><a href="https://www.sheabusinesssolutions.com/Blog/">Blog</a></li>
         </ul>
         <div class="nav-cta">
             <a href="tel:+16037598547" class="nav-phone">
@@ -879,15 +991,63 @@
 <main>
 
     <div class="mobile-menu" id="mobileMenu">
-        <a href="https://www.sheabusinesssolutions.com/#services" onclick="closeMenu()">Services</a>
-        <a href="https://www.sheabusinesssolutions.com/#pricing" onclick="closeMenu()">Pricing</a>
-        <a href="https://www.sheabusinesssolutions.com/#process" onclick="closeMenu()">Process</a>
-        <a href="https://www.sheabusinesssolutions.com/#testimonials" onclick="closeMenu()">Reviews</a>
-        <a href="https://www.sheabusinesssolutions.com/#about" onclick="closeMenu()">About</a>
-        <a href="https://www.sheabusinesssolutions.com/#contact" onclick="closeMenu()">Contact</a>
-        <a href="https://www.sheabusinesssolutions.com/Blog/" onclick="closeMenu()" style="color:var(--gold);">Blog</a>
-        <a href="tel:+16037598547" style="color:var(--gold);">&#9742; (603) 759-8547</a>
-    </div>
+            <div class="mm-section">
+                <button class="mm-toggle" onclick="toggleMM(this)">Services <span class="plus">+</span></button>
+                <div class="mm-panel">
+                <a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor</a>
+                <a href="https://www.sheabusinesssolutions.com/quickbooks-setup-orlando.html">QuickBooks Setup</a>
+                <a href="https://www.sheabusinesssolutions.com/quickbooks-cleanup-orlando.html">QuickBooks Cleanup</a>
+                <a href="https://www.sheabusinesssolutions.com/quickbooks-migration-orlando.html">QuickBooks Migration</a>
+                <a href="https://www.sheabusinesssolutions.com/quickbooks-training-orlando.html">QuickBooks Training</a>
+                <a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-cost-orlando.html">ProAdvisor Pricing</a>
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-services-orlando.html">Bookkeeping Services</a>
+                <a href="https://www.sheabusinesssolutions.com/flat-rate-bookkeeping-orlando.html">Flat-Rate Bookkeeping</a>
+                <a href="https://www.sheabusinesssolutions.com/catch-up-bookkeeping-orlando.html">Catch-Up Bookkeeping</a>
+                <a href="https://www.sheabusinesssolutions.com/payroll-services-orlando.html">Payroll Services</a>
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-tax-package-orlando.html">Bookkeeping + Tax Package</a>
+                <a href="https://www.sheabusinesssolutions.com/construction-bookkeeping-orlando.html">Construction Bookkeeping</a>
+                <a href="https://www.sheabusinesssolutions.com/restaurant-bookkeeping-orlando.html">Restaurant Bookkeeping</a>
+                <a href="https://www.sheabusinesssolutions.com/fitness-gym-bookkeeping-orlando.html">Gym &amp; Fitness Bookkeeping</a>
+                <a href="https://www.sheabusinesssolutions.com/manufacturing-bookkeeping-orlando.html">Manufacturing Bookkeeping</a>
+                <a href="https://www.sheabusinesssolutions.com/dental-med-spa-bookkeeping-orlando.html">Dental &amp; Med-Spa Bookkeeping</a>
+                <a href="https://www.sheabusinesssolutions.com/ecommerce-bookkeeping-orlando.html">E-commerce Bookkeeping</a>
+                <a href="https://www.sheabusinesssolutions.com/small-business-tax-prep-orlando.html">Small-Business Tax Prep</a>
+                <a href="https://www.sheabusinesssolutions.com/tax-prep-cost-orlando.html">Tax Prep Cost</a>
+                <a href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park</a>
+                <a href="https://www.sheabusinesssolutions.com/tax-dr-phillips-fl.html">Dr. Phillips</a>
+                <a href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere</a>
+                <a href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona</a>
+                <a href="https://www.sheabusinesssolutions.com/tax-baldwin-park-fl.html">Baldwin Park</a>
+                </div>
+            </div>
+            <div class="mm-section">
+                <button class="mm-toggle" onclick="toggleMM(this)">Service Areas <span class="plus">+</span></button>
+                <div class="mm-panel">
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-winter-park-fl.html">Winter Park</a>
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-dr-phillips-fl.html">Dr. Phillips</a>
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-windermere-fl.html">Windermere</a>
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-lake-nona-fl.html">Lake Nona</a>
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html">Baldwin Park</a>
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-kissimmee-fl.html">Kissimmee</a>
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-sanford-fl.html">Sanford</a>
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-oviedo-fl.html">Oviedo</a>
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-apopka-fl.html">Apopka</a>
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-st-cloud-fl.html">St. Cloud</a>
+                <a href="https://www.sheabusinesssolutions.com/bookkeeping-celebration-fl.html">Celebration</a>
+                </div>
+            </div>
+            <a href="https://www.sheabusinesssolutions.com/#pricing" onclick="closeMenu()">Pricing</a>
+            <a href="https://www.sheabusinesssolutions.com/#process" onclick="closeMenu()">Process</a>
+            <a href="https://www.sheabusinesssolutions.com/#testimonials" onclick="closeMenu()">Reviews</a>
+            <a href="https://www.sheabusinesssolutions.com/#about" onclick="closeMenu()">About</a>
+            <a href="https://www.sheabusinesssolutions.com/#faq" onclick="closeMenu()">FAQ</a>
+            <a href="https://www.sheabusinesssolutions.com/#contact" onclick="closeMenu()">Contact</a>
+            <a href="https://www.sheabusinesssolutions.com/Blog/" onclick="closeMenu()">Blog</a>
+            <div class="mm-cta">
+                <a href="https://calendar.app.google/XUuJ8UZcHRmSJWCv6" target="_blank" rel="noopener" class="btn btn-primary">Schedule Meeting</a>
+                <a href="tel:+16037598547" style="color:var(--gold);">&#9742; (603) 759-8547</a>
+            </div>
+        </div>
 
     <!-- POST HERO -->
     <section class="post-hero">
@@ -1299,6 +1459,10 @@
 
         function closeMenu() {
             document.getElementById('mobileMenu').classList.remove('open');
+        }
+        function toggleMM(btn) {
+            var s = btn.closest('.mm-section');
+            if (s) s.classList.toggle('open');
         }
 
         try {
