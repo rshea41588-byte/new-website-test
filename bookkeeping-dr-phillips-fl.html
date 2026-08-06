@@ -1632,5 +1632,36 @@
         }).observe(s, { attributes: true, attributeFilter: ['hidden'] });
     })();
     </script>
+    <!-- Bloomview: first-party lead-log beacon. Sibling block - the .hero-lead-form handler and
+         the GA4 generate_lead observer above are untouched. Fire-and-forget: sendBeacon cannot
+         delay, block or fail the real web3forms submission. -->
+    <script>
+    (function () {
+        if (!/(^|\.)sheabusinesssolutions\.com$/.test(location.hostname)) return;
+        var f = document.querySelector('.hero-lead-form');
+        var s = document.querySelector('.hero-form-success');
+        if (!f || !s) return;
+        var snap = null;
+        f.addEventListener('submit', function () {
+            try {
+                var d = new FormData(f);
+                snap = {
+                    name: d.get('name') || '', phone: d.get('phone') || '',
+                    email: d.get('email') || '', message: d.get('message') || '',
+                    subject: d.get('subject') || '', form: 'hero-lead-form', page: location.href
+                };
+            } catch (e) {}
+        }, true);
+        var sent = false;
+        new MutationObserver(function () {
+            if (sent || s.hidden || !snap) return;
+            sent = true;
+            try {
+                navigator.sendBeacon('/api/lead-log',
+                    new Blob([JSON.stringify(snap)], { type: 'text/plain;charset=UTF-8' }));
+            } catch (e) {}
+        }).observe(s, { attributes: true, attributeFilter: ['hidden'] });
+    })();
+    </script>
 </body>
 </html>

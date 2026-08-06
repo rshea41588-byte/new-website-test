@@ -3980,6 +3980,28 @@
             </a>
         </div>
     </aside>
+    <!-- Bloomview: lead-log snapshot. Sibling block - the two web3forms handlers above are
+         untouched. These forms redirect to /thank-you/ on success, so the payload is stashed at
+         submit time and only SENT from /thank-you/ (i.e. only after web3forms accepted it). -->
+    <script>
+    (function () {
+        if (!/(^|\.)sheabusinesssolutions\.com$/.test(location.hostname)) return;
+        ['heroForm', 'contactForm'].forEach(function (id) {
+            var f = document.getElementById(id);
+            if (!f) return;
+            f.addEventListener('submit', function () {
+                try {
+                    var d = new FormData(f);
+                    sessionStorage.setItem('bvg_lead_pending', JSON.stringify({
+                        name: d.get('name') || '', phone: d.get('phone') || '',
+                        email: d.get('email') || '', message: d.get('message') || '',
+                        subject: d.get('subject') || '', form: id, page: location.href
+                    }));
+                } catch (e) {}
+            }, true);
+        });
+    })();
+    </script>
 </body>
 
 </html>

@@ -230,6 +230,21 @@
         // Fire the lead conversion once on load to GA4 (G-LYDBN7KGBN)
         gtag('event', 'generate_lead', {});
     </script>
+    <!-- Bloomview: first-party lead-log beacon. Sibling block - the GA4 generate_lead call
+         above is untouched. Drains the snapshot the homepage stashed at submit time; reaching
+         this page is the success signal, and the key is cleared so one lead is never sent twice. -->
+    <script>
+    (function () {
+        if (!/(^|\.)sheabusinesssolutions\.com$/.test(location.hostname)) return;
+        try {
+            var raw = sessionStorage.getItem('bvg_lead_pending');
+            if (!raw) return;
+            sessionStorage.removeItem('bvg_lead_pending');
+            navigator.sendBeacon('/api/lead-log',
+                new Blob([raw], { type: 'text/plain;charset=UTF-8' }));
+        } catch (e) {}
+    })();
+    </script>
 </body>
 
 </html>
