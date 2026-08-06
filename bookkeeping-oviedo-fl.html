@@ -791,6 +791,24 @@
         }
 
         @media (max-width: 768px) { .mobile-call-cta { display: flex; } }
+
+        /* hero lead form */
+        .post-hero .post-hero-inner { max-width: 1080px; }
+        .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2.5rem; align-items: center; text-align: left; }
+        .hero-grid .breadcrumb { justify-content: flex-start; }
+        .hero-form-card { background: rgba(10,10,10,0.55); border: 1px solid rgba(201,168,76,0.35); border-radius: 12px; padding: 1.6rem; backdrop-filter: blur(4px); text-align: left; }
+        .hero-form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--off-white); margin-bottom: 0.3rem; }
+        .hero-form-sub { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-bottom: 1rem; }
+        .hero-form-card label { display: block; font-size: 0.7rem; letter-spacing: 0.07em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.3rem; }
+        .hero-form-card input, .hero-form-card textarea { width: 100%; padding: 0.6rem 0.75rem; margin-bottom: 0.85rem; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.18); border-radius: 6px; color: var(--off-white); font-family: 'Jost', sans-serif; font-size: 0.9rem; }
+        .hero-form-btn { width: 100%; padding: 0.8rem 1rem; background: var(--gold); color: #141414; border: 0; border-radius: 6px; font-family: 'Jost', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.04em; cursor: pointer; }
+        .hero-form-btn:hover { background: var(--gold-light); }
+        .hero-form-success p { color: var(--gold); font-size: 0.95rem; padding: 1rem 0; }
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-grid .breadcrumb { justify-content: center; }
+            .hero-form-card { margin-top: 1.6rem; }
+        }
     
         /* breadcrumb trail */
         .breadcrumb { font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(255,255,255,0.55); margin-bottom: 1.1rem; display: flex; gap: 0.5rem; align-items: center; justify-content: center; }
@@ -1105,6 +1123,8 @@
     <!-- PAGE HERO -->
     <section class="post-hero">
         <div class="post-hero-inner fade-up">
+            <div class="hero-grid">
+            <div class="hero-copy">
             <nav class="breadcrumb" aria-label="Breadcrumb"><a href="https://www.sheabusinesssolutions.com/">Home</a><span aria-hidden="true">&rsaquo;</span><span aria-current="page">Bookkeeping in Oviedo, FL</span></nav>
             <span class="post-category-tag">Service Area</span>
             <h1>Bookkeeping Services in<br><span class="gold">Oviedo, FL</span></h1>
@@ -1114,6 +1134,27 @@
                 <span class="post-meta-item">Serving Oviedo &amp; the Orlando Area</span>
                 <span class="post-meta-divider"></span>
                 <span class="post-meta-item">Free Consultation</span>
+            </div>
+        </div>
+            <aside class="hero-form-card">
+                <p class="hero-form-title">Get a Free Assessment</p>
+                <p class="hero-form-sub">Tell us where the books stand. You get an answer the same business day.</p>
+                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; 19 Google Reviews</span></div>
+                <form class="hero-lead-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
+                    <input type="hidden" name="subject" value="New Lead (Bookkeeping Oviedo page) - Shea Business Solutions Website">
+                    <input type="hidden" name="from_name" value="SBS Website">
+                    <input type="checkbox" name="botcheck" style="display:none" aria-hidden="true" tabindex="-1">
+                    <label for="hf-name">Full Name *</label>
+                    <input id="hf-name" type="text" name="name" placeholder="John Smith" required>
+                    <label for="hf-phone">Phone *</label>
+                    <input id="hf-phone" type="tel" name="phone" placeholder="(555) 000-0000" required>
+                    <label for="hf-msg">What do you need help with? *</label>
+                    <textarea id="hf-msg" name="message" rows="3" placeholder="Behind on the books, payroll, cleanup, setup..." required></textarea>
+                    <button type="submit" class="hero-form-btn">Request a Free Assessment</button>
+                </form>
+                <div class="hero-form-success" hidden><p>Message received. We'll be in touch the same business day.</p></div>
+            </aside>
             </div>
         </div>
     </section>
@@ -1555,6 +1596,40 @@
                 setTimeout(() => tooltip.remove(), 300);
             }, 2000);
         }
+    </script>
+    <script>
+    (function () {
+        var f = document.querySelector('.hero-lead-form');
+        if (!f) return;
+        f.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var b = f.querySelector('button');
+            b.disabled = true; b.textContent = 'Sending...';
+            fetch(f.action, { method: 'POST', body: new FormData(f) })
+                .then(function (r) { return r.json(); })
+                .then(function (d) {
+                    if (d.success) { f.hidden = true; document.querySelector('.hero-form-success').hidden = false; }
+                    else { b.disabled = false; b.textContent = 'Request a Free Assessment'; }
+                })
+                .catch(function () { b.disabled = false; b.textContent = 'Request a Free Assessment'; });
+        });
+    })();
+    </script>
+    <!-- GA4: inline-success lead conversion (sibling observer; the existing hero-lead-form handler is untouched) -->
+    <script>
+    (function () {
+        if (!/(^|\.)sheabusinesssolutions\.com$/.test(location.hostname)) return;
+        var s = document.querySelector('.hero-form-success');
+        if (!s) return;
+        var fired = false;
+        new MutationObserver(function () {
+            if (fired || s.hidden) return;
+            fired = true;
+            if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', { send_to: 'G-LYDBN7KGBN', form_id: 'hero-lead-form', page_location: location.href });
+            }
+        }).observe(s, { attributes: true, attributeFilter: ['hidden'] });
+    })();
     </script>
 </body>
 </html>
