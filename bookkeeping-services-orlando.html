@@ -22,6 +22,8 @@
         gtag('js', new Date());
         gtag('config', 'G-LYDBN7KGBN'); // Bloomview Growth agency GA4 (added alongside, does not replace)
     </script>
+    <!-- GA4: phone-call click tracking (sibling listener; does not touch the OpenAI Ads tel listener) -->
+    <script>document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(a&&typeof gtag==='function'){gtag('event','phone_call',{phone_number:a.getAttribute('href').slice(4),link_text:(a.textContent||'').trim().slice(0,80),page_location:location.href});}},true);</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -1647,6 +1649,22 @@
                 })
                 .catch(function () { b.disabled = false; b.textContent = 'Request a Free Assessment'; });
         });
+    })();
+    </script>
+    <!-- GA4: inline-success lead conversion (sibling observer; the existing hero-lead-form handler is untouched) -->
+    <script>
+    (function () {
+        if (!/(^|\.)sheabusinesssolutions\.com$/.test(location.hostname)) return;
+        var s = document.querySelector('.hero-form-success');
+        if (!s) return;
+        var fired = false;
+        new MutationObserver(function () {
+            if (fired || s.hidden) return;
+            fired = true;
+            if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', { send_to: 'G-LYDBN7KGBN', form_id: 'hero-lead-form', page_location: location.href });
+            }
+        }).observe(s, { attributes: true, attributeFilter: ['hidden'] });
     })();
     </script>
 </body>
