@@ -986,12 +986,13 @@
     }, true);
   </script>
 <style>
-/* SBS visibility fixes 2026-08-06 (nav overlay + blog table + content link color) — CSS only, additive */
+/* SBS visibility fixes 2026-08-06 (rev2: nav overlay + blog table + blog caption + content link color) — CSS only, additive */
 nav.breadcrumb{position:static;height:auto;padding:0;background:none;backdrop-filter:none;border-bottom:none;z-index:auto;}
 .sbs-blog table{background:#fff;}
 .sbs-blog tbody td{color:#1a1a1a;}
-.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-related a:not([class]),footer a:not([class]){color:var(--gold,#C9A84C);}
-.article-body a:not([class]),.sbs-blog a:not([class]){text-decoration:underline;text-underline-offset:2px;}
+body .sbs-blog p.cap{color:#f5f2ec;}
+main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-related a:not([class]),footer a:not([class]){color:var(--gold,#C9A84C);}
+.article-body a:not([class]),.sbs-blog a:not([class]),main .tax-crosslink a:not([class]){text-decoration:underline;text-underline-offset:2px;}
 </style>
 </head>
 
