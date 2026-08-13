@@ -380,6 +380,11 @@
             position: relative;
         }
 
+        /* breadcrumb trail */
+        .breadcrumb { font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(255,255,255,0.55); margin-bottom: 1.1rem; display: flex; gap: 0.5rem; align-items: center; justify-content: center; }
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
         .post-category-tag {
             display: inline-block;
             font-family: 'Jost', sans-serif;
@@ -1020,6 +1025,7 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
     <!-- POST HERO -->
     <section class="post-hero">
         <div class="post-hero-inner fade-up">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="https://www.sheabusinesssolutions.com/">Home</a><span aria-hidden="true">&rsaquo;</span><a href="https://www.sheabusinesssolutions.com/Blog/">Blog</a><span aria-hidden="true">&rsaquo;</span><span aria-current="page">5 Signs Your QuickBooks Needs a Cleanup</span></nav>
             <span class="post-category-tag">QuickBooks Tips</span>
             <h1>5 Signs Your QuickBooks<br><span class="gold">Needs a Cleanup</span></h1>
             <div class="post-meta" style="margin-top:1.5rem;">

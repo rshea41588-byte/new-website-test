@@ -221,6 +221,11 @@
 
         .gold { color: var(--gold); }
 
+        /* breadcrumb trail */
+        .breadcrumb { font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(255,255,255,0.55); margin-bottom: 1.1rem; display: flex; gap: 0.5rem; align-items: center; justify-content: center; }
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
         .section-label {
             font-family: 'Jost', sans-serif;
             font-size: 0.7rem;
@@ -982,6 +987,7 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
     <!-- HERO -->
     <section class="blog-hero">
         <div class="blog-hero-inner">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="https://www.sheabusinesssolutions.com/">Home</a><span aria-hidden="true">&rsaquo;</span><span aria-current="page">Blog</span></nav>
             <span class="section-label">QuickBooks &amp; Bookkeeping Insights</span>
             <h1>The <span class="gold">Shea Business</span> Blog</h1>
             <p>Practical QuickBooks tips, bookkeeping advice, payroll guidance, and tax insights for Orlando small business owners — straight from a certified QuickBooks Level 2 ProAdvisor.</p>

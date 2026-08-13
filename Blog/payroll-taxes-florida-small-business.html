@@ -377,6 +377,11 @@
             position: relative;
         }
 
+        /* breadcrumb trail */
+        .breadcrumb { font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.05em; color: rgba(255,255,255,0.55); margin-bottom: 1.1rem; display: flex; gap: 0.5rem; align-items: center; justify-content: center; }
+        .breadcrumb a { color: var(--gold); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
         .post-category-tag {
             display: inline-flex;
             align-items: center;
@@ -1349,6 +1354,7 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
     <!-- CTA SECTION -->
     <div class="post-cta">
         <div class="post-cta-inner fade-up">
+            <nav class="breadcrumb" aria-label="Breadcrumb"><a href="https://www.sheabusinesssolutions.com/">Home</a><span aria-hidden="true">&rsaquo;</span><a href="https://www.sheabusinesssolutions.com/Blog/">Blog</a><span aria-hidden="true">&rsaquo;</span><span aria-current="page">Florida Payroll Taxes for Small Businesses</span></nav>
             <span class="section-label">Get Expert Help Today</span>
             <h2>Payroll Done <span class="gold">Right</span> — Every Quarter</h2>
             <p>Confused about your payroll tax obligations? Not sure if your QuickBooks Payroll is set up correctly for Florida? We offer a free consultation to review your setup and make sure you're fully compliant — before the IRS sends you a notice.</p>
