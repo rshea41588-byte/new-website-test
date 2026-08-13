@@ -22,7 +22,9 @@ import { join } from 'node:path';
 
 const ROOT = new URL('.', import.meta.url).pathname;
 const MARKER = 'SBS tap targets 2026-08-12';
-const BLOCK_RE = new RegExp(`\\n?<style>\\n\\/\\* ${MARKER}[\\s\\S]*?<\\/style>`, 'g');
+// \r? on both breaks: these files carry MIXED CRLF/LF endings, and an LF-only
+// pattern silently fails to strip the prior block, which duplicates it on re-run.
+const BLOCK_RE = new RegExp(`\\r?\\n?<style>\\r?\\n\\/\\* ${MARKER}[\\s\\S]*?<\\/style>`, 'g');
 
 const BLOCK = `<style>
 /* ${MARKER} — 40px minimum tap targets on mobile, CSS only, additive */
@@ -31,7 +33,7 @@ const BLOCK = `<style>
 .footer-col ul li a{display:block;padding:9px 0;}
 .footer-col a{padding:9px 0;margin-bottom:0;}
 .footer-social a{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;}
-nav.breadcrumb a{display:inline-block;padding:10px 0;}
+nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 .hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center;padding:10px;}
 }
 </style>`;
