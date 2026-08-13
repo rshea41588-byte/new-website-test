@@ -1056,6 +1056,17 @@ body .sbs-blog p.cap{color:#f5f2ec;}
 main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-related a:not([class]),footer a:not([class]){color:var(--gold,#C9A84C);}
 .article-body a:not([class]),.sbs-blog a:not([class]),main .tax-crosslink a:not([class]){text-decoration:underline;text-underline-offset:2px;}
 </style>
+<style>
+/* SBS tap targets 2026-08-12 — 40px minimum tap targets on mobile, CSS only, additive */
+@media (max-width:768px){
+.footer-col ul{gap:0;}
+.footer-col ul li a{display:block;padding:9px 0;}
+.footer-col a{padding:9px 0;margin-bottom:0;}
+.footer-social a{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;}
+nav.breadcrumb a{display:inline-block;padding:10px 0;}
+.hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center;padding:10px;}
+}
+</style>
 </head>
 
 <body>
@@ -1067,7 +1078,7 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
     <!-- NAV -->
     <nav id="mainNav">
         <a href="https://www.sheabusinesssolutions.com/" class="nav-logo">
-            <img width="1426" height="460" src="images/logo_header.png" alt="Shea Business Solutions QuickBooks ProAdvisor Orlando FL">
+            <picture style="display:block"><source type="image/webp" srcset="images/logo_header.webp"><img width="1426" height="460" src="images/logo_header.png" alt="Shea Business Solutions QuickBooks ProAdvisor Orlando FL" loading="lazy"></picture>
         </a>
         <ul class="nav-links">
             <li>
@@ -1495,7 +1506,7 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
         <div class="footer-inner">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img src="images/logo_header.png" width="220" height="55" loading="lazy" alt="Shea Business Solutions QuickBooks ProAdvisor Orlando FL">
+                    <picture style="display:block"><source type="image/webp" srcset="images/logo_header.webp"><img src="images/logo_header.png" width="220" height="55" loading="lazy" alt="Shea Business Solutions QuickBooks ProAdvisor Orlando FL"></picture>
                 </div>
                 <p class="footer-tagline">QuickBooks Level 2 ProAdvisor offering bookkeeping, payroll, and tax preparation for small businesses in Orlando, FL.</p>
                 <a href="https://www.bbb.org/us/fl/orlando/profile/bookkeeping-services/shea-business-solutions-llc-0733-235977459/#sealclick"
@@ -1526,6 +1537,8 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
                     <li><a href="https://www.sheabusinesssolutions.com/quickbooks-migration-orlando.html">QuickBooks Migration</a></li>
                     <li><a href="https://www.sheabusinesssolutions.com/quickbooks-training-orlando.html">QuickBooks Training</a></li>
                     <li><a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-cost-orlando.html">Bookkeeping Pricing</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/payroll-services-cost-orlando.html">Payroll Pricing</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/restaurant-payroll-orlando.html">Restaurant Payroll</a></li>
                 </ul>
             </div>
             <div class="footer-col">

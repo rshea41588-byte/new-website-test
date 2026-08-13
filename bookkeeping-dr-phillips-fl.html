@@ -963,6 +963,17 @@ body .sbs-blog p.cap{color:#f5f2ec;}
 main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-related a:not([class]),footer a:not([class]){color:var(--gold,#C9A84C);}
 .article-body a:not([class]),.sbs-blog a:not([class]),main .tax-crosslink a:not([class]){text-decoration:underline;text-underline-offset:2px;}
 </style>
+<style>
+/* SBS tap targets 2026-08-12 — 40px minimum tap targets on mobile, CSS only, additive */
+@media (max-width:768px){
+.footer-col ul{gap:0;}
+.footer-col ul li a{display:block;padding:9px 0;}
+.footer-col a{padding:9px 0;margin-bottom:0;}
+.footer-social a{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;}
+nav.breadcrumb a{display:inline-block;padding:10px 0;}
+.hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center;padding:10px;}
+}
+</style>
 </head>
 
 <body>
@@ -974,7 +985,7 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
     <!-- NAV -->
     <nav id="mainNav">
         <a href="https://www.sheabusinesssolutions.com/" class="nav-logo">
-            <img width="1426" height="460" src="images/logo_header.png" alt="Shea Business Solutions, QuickBooks ProAdvisor serving Dr. Phillips and Orlando FL">
+            <picture style="display:block"><source type="image/webp" srcset="images/logo_header.webp"><img width="1426" height="460" src="images/logo_header.png" alt="Shea Business Solutions, QuickBooks ProAdvisor serving Dr. Phillips and Orlando FL" loading="lazy"></picture>
         </a>
         <ul class="nav-links">
             <li>
@@ -1256,6 +1267,20 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
 
             <p class="fade-up">You rarely need to make that drive, because the first consultation and the monthly work both run remotely. One local note: Dr. Phillips is unincorporated Orange County, so the local business tax side is handled by the <a href="https://www.octaxcol.com/" target="_blank" rel="noopener">Orange County Tax Collector</a> rather than a city office.</p>
 
+            <!-- services-in-this-town directory added 2026-08-12, ADD-only (Website Checklist CITY #6) -->
+            <h2 class="fade-up">Service Pages for Dr. Phillips Businesses</h2>
+
+            <p class="fade-up">Each service below has its own page with the detail behind it:</p>
+
+            <ul class="fade-up">
+                <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-services-orlando.html">Monthly bookkeeping for Dr. Phillips businesses</a></li>
+                <li><a href="https://www.sheabusinesssolutions.com/catch-up-bookkeeping-orlando.html">Catch-up bookkeeping when Dr. Phillips books fall behind</a></li>
+                <li><a href="https://www.sheabusinesssolutions.com/flat-rate-bookkeeping-orlando.html">Flat-rate bookkeeping pricing for Dr. Phillips owners</a></li>
+                <li><a href="https://www.sheabusinesssolutions.com/payroll-services-orlando.html">Payroll services for Dr. Phillips employers</a></li>
+                <li><a href="https://www.sheabusinesssolutions.com/small-business-tax-prep-orlando.html">Small-business tax preparation for Dr. Phillips</a></li>
+                <li><a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor work for Dr. Phillips businesses</a></li>
+            </ul>
+
             <h2 class="fade-up">Frequently Asked Questions</h2>
 
             <div class="faq-acc fade-up">
@@ -1399,7 +1424,7 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
         <div class="footer-inner">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <img width="1426" height="460" loading="lazy" src="images/logo_header.png" alt="Shea Business Solutions, QuickBooks ProAdvisor serving Dr. Phillips and Orlando FL">
+                    <picture style="display:block"><source type="image/webp" srcset="images/logo_header.webp"><img width="1426" height="460" loading="lazy" src="images/logo_header.png" alt="Shea Business Solutions, QuickBooks ProAdvisor serving Dr. Phillips and Orlando FL"></picture>
                 </div>
                 <p class="footer-tagline">QuickBooks Level 2 ProAdvisor offering bookkeeping, payroll, and tax preparation for small businesses in Orlando, FL.</p>
                 <a href="https://www.bbb.org/us/fl/orlando/profile/bookkeeping-services/shea-business-solutions-llc-0733-235977459/#sealclick"
@@ -1427,6 +1452,8 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
                     <li><a href="https://www.sheabusinesssolutions.com/quickbooks-migration-orlando.html">QuickBooks Migration</a></li>
                     <li><a href="https://www.sheabusinesssolutions.com/quickbooks-training-orlando.html">QuickBooks Training</a></li>
                     <li><a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-cost-orlando.html">Bookkeeping Pricing</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/payroll-services-cost-orlando.html">Payroll Pricing</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/restaurant-payroll-orlando.html">Restaurant Payroll</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -1473,6 +1500,8 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
                     <li><a href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona Tax Prep</a></li>
                     <li><a href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere Tax Prep</a></li>
                     <li><a href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park Tax Prep</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/small-business-tax-prep-orlando.html">Small Business Tax Prep</a></li>
+                    <li><a href="https://www.sheabusinesssolutions.com/tax-prep-cost-orlando.html">Tax Prep Cost Guide</a></li>
                 </ul>
             </div>
         </div>
