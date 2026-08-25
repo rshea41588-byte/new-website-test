@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- bvg-thankyou-v2 2026-08-25 | host=www.sheabusinesssolutions.com | path=/thank-you/ | Website Checklist v15 rows 136-137 -->
 <html lang="en">
 
 <head>
@@ -18,7 +19,7 @@
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/images/icon1.png" type="image/png" sizes="48x48">
     <title>Thank You | Shea Business Solutions</title>
-    <meta name="description" content="Thanks for reaching out to Shea Business Solutions. For the fastest response, call (603) 759-8547 now.">
+    <meta name="description" content="Thanks for reaching out to Shea Business Solutions. Ryan Shea calls you back the same business day from (603) 759-8547.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -167,6 +168,52 @@
             .card { padding: 2.25rem 1.35rem; }
             .call-btn { font-size: 1.2rem; }
         }
+
+        /* --- bvg merchandising 2026-08-25 --- */
+        .card { max-width: 700px; text-align: left; }
+        .card > .check, .card > h1, .card > .subcopy { text-align: center; }
+        .check { margin-left: auto; margin-right: auto; }
+        h1 { text-align: center; }
+        .subcopy { text-align: center; }
+
+        .steps { list-style: none; margin: 0 0 2rem; padding: 0; }
+        .steps li { display: flex; gap: 1rem; padding: 1.1rem 0; border-top: 1px solid rgba(255,255,255,0.07); }
+        .steps li:first-child { border-top: none; }
+        .steps .n {
+            flex: 0 0 30px; height: 30px; border-radius: 50%;
+            background: rgba(201,168,76,0.14); border: 1px solid rgba(201,168,76,0.45);
+            color: var(--gold); font-size: 0.9rem; font-weight: 600;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .steps strong { display: block; color: var(--off-white); font-weight: 600; margin-bottom: 0.25rem; }
+        .steps p { color: var(--text-light); font-size: 0.98rem; margin: 0; }
+
+        .book-btn {
+            display: block; width: 100%; max-width: 440px; margin: 0.85rem auto 0;
+            text-align: center; color: var(--gold); text-decoration: none;
+            border: 1px solid rgba(201,168,76,0.45); border-radius: 12px;
+            padding: 0.85rem 1.25rem; font-size: 1rem; font-weight: 500;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+        .book-btn:hover { background: rgba(201,168,76,0.08); border-color: var(--gold); }
+
+        .proof { margin-top: 2.25rem; padding-top: 1.75rem; border-top: 1px solid rgba(255,255,255,0.07); }
+        .proof-head { text-align: center; color: var(--text-light); font-size: 1rem; margin-bottom: 1.25rem; }
+        .proof-head .stars { color: var(--gold); letter-spacing: 1px; }
+        .proof-head a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.4); }
+        .proof blockquote {
+            margin: 0 0 1rem; padding: 0.9rem 1.1rem;
+            background: rgba(255,255,255,0.03); border-left: 2px solid var(--gold);
+            border-radius: 0 10px 10px 0; color: var(--text-light); font-size: 0.97rem;
+        }
+        .proof cite { display: block; margin-top: 0.5rem; font-style: normal; font-size: 0.85rem; color: var(--text-muted); }
+        .nb { white-space: nowrap; }
+        .cred { text-align: center; color: var(--text-muted); font-size: 0.87rem; margin-top: 1.25rem; line-height: 1.7; }
+        .back-link { margin-left: auto; margin-right: auto; display: block; width: fit-content; text-align: center; }
+
+        @media (max-width: 480px) {
+            .steps li { gap: 0.75rem; }
+        }
     </style>
   <!-- OpenAI Ads Measurement Pixel -->
   <script>
@@ -254,17 +301,60 @@
             <div class="check" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
             </div>
-            <h1>Thanks &mdash; we received <span class="gold">your request.</span></h1>
-            <p class="subcopy">For the fastest response, call us now &mdash; we book consultations same-day when we can.</p>
+            <h1>Got it &mdash; <span class="gold">your request is in.</span></h1>
+            <p class="subcopy">Here is exactly what happens next.</p>
+
+            <ol class="steps">
+                <li>
+                    <span class="n">1</span>
+                    <div>
+                        <strong>Ryan Shea calls you back the same business day.</strong>
+                        <p>The most common complaint business owners have about their accountant is that they cannot get a timely answer. You will always hear back from us the same business day.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="n">2</span>
+                    <div>
+                        <strong>The call comes from <span class="nb">(603) 759-8547</span>.</strong>
+                        <p>That is the same number on our Google Business Profile and on every page of this site. Save it now so you know who is calling.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="n">3</span>
+                    <div>
+                        <strong>The first conversation is a free 60-minute consultation, by phone or video.</strong>
+                        <p>We go through your Orlando business, your books and what you actually need. You get a clear scope and a flat price before any work starts. No pressure, no commitment.</p>
+                    </div>
+                </li>
+            </ol>
 
             <a class="call-btn" href="tel:+16037598547">
-                <small>Tap to call</small>
+                <small>Do not want to wait?</small>
                 Call (603) 759-8547 Now
             </a>
+            <a class="book-btn" href="https://calendly.com/sheabusinesssolutions/free-60-minute-accounting-consultation" target="_blank" rel="noopener">Or book your free 60-minute consultation &rarr;</a>
 
-            <div class="trust">
-                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                <span>5.0 rating from 19 Google reviews</span>
+            <div class="proof">
+                <p class="proof-head">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    5.0 on Google &mdash;
+                    <a href="https://www.google.com/maps?cid=13996863349911463635" target="_blank" rel="noopener">read every review</a>
+                </p>
+
+                <blockquote>
+                    &ldquo;Ryan and his team have literally saved me! He tore down my file and helped me build it back the RIGHT way. Our P&amp;L finally makes sense after all these years. Highly recommend!&rdquo;
+                    <cite>Kristen Klimas &middot; Bookkeeping Cleanup Client &middot; Google review</cite>
+                </blockquote>
+
+                <blockquote>
+                    &ldquo;Ryan is extremely knowledgeable and very trustworthy when it comes to doing my taxes. He is the absolute best and I highly recommend him. Professional, honest, and always available.&rdquo;
+                    <cite>Yily Rivera &middot; Tax Preparation Client &middot; Google review</cite>
+                </blockquote>
+
+                <p class="cred">
+                    QuickBooks Level 2 ProAdvisor &middot; Certified QuickBooks Payroll &middot; BBB accredited business<br>
+                    Over 10 years of hands-on QuickBooks and accounting experience. Cleanups and file reconstructions are most of what new clients arrive needing.
+                </p>
             </div>
 
             <a class="back-link" href="/">Back to Shea Business Solutions</a>
@@ -276,8 +366,13 @@
     </footer>
 
     <script>
-        // Fire the lead conversion once on load to GA4 (G-LYDBN7KGBN)
-        gtag('event', 'generate_lead', {});
+        /* GA4 lead conversion. Bloomview 2026-08-25: was firing on ANY load of this page, so a
+           refresh or a direct visit counted as a lead. Now gated on the same bvg_lead_pending
+           stash the OpenAI block reads - this runs BEFORE the beacon block below clears it. */
+        (function () {
+            try { if (!sessionStorage.getItem('bvg_lead_pending')) return; } catch (e) { return; }
+            gtag('event', 'generate_lead', {});
+        })();
     </script>
     <!-- Bloomview: first-party lead-log beacon. Sibling block - the GA4 generate_lead call
          above is untouched. Drains the snapshot the homepage stashed at submit time; reaching
