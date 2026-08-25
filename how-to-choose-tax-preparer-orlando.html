@@ -988,6 +988,33 @@
   <script async src="https://bzrcdn.openai.com/sdk/oaiq.min.js"></script>
   <!-- OpenAI Ads conversions v2 (Bloomview 2026-08-25): lead_created = form leads | appointment_scheduled = Calendly CTA click | phone_call = custom, tel: click -->
   <script>
+  /* Bloomview first-touch attribution (2026-08-25). Ads land on one page and the visitor often
+     submits on another, so the lead beacon was recording the SUBMIT page - an ad lead read as
+     organic. Stash the first page of the session once; bvgFT() flattens it onto every lead. */
+  (function () {
+    try {
+      if (!sessionStorage.getItem("bvg_ft")) {
+        var q = new URLSearchParams(location.search);
+        var ft = { landing: (location.pathname + location.search).slice(0, 200), ref: (document.referrer || "").slice(0, 200) };
+        ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","oppref"].forEach(function (k) {
+          var v = q.get(k); if (v) ft[k] = v.slice(0, 120);
+        });
+        sessionStorage.setItem("bvg_ft", JSON.stringify(ft));
+      }
+    } catch (e) {}
+  })();
+  window.bvgFT = function () {
+    try {
+      var raw = sessionStorage.getItem("bvg_ft"); if (!raw) return "";
+      var f = JSON.parse(raw), out = [];
+      if (f.landing) out.push("landing=" + f.landing);
+      if (f.ref) out.push("ref=" + f.ref);
+      ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","oppref"].forEach(function (k) {
+        if (f[k]) out.push(k + "=" + f[k]);
+      });
+      return out.join(" | ");
+    } catch (e) { return ""; }
+  };
   (function () {
     if (!/(^|\.)sheabusinesssolutions\.com$/.test(location.hostname)) return;
     if (window.__bvgOaiq2) return; window.__bvgOaiq2 = true;
@@ -1764,7 +1791,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 snap = {
                     name: d.get('name') || '', phone: d.get('phone') || '',
                     email: d.get('email') || '', message: d.get('message') || '',
-                    subject: d.get('subject') || '', form: 'hero-lead-form', page: location.href
+                    subject: d.get('subject') || '', form: 'hero-lead-form', page: location.href, ft: (window.bvgFT ? window.bvgFT() : '')
                 };
             } catch (e) {}
         }, true);

@@ -69,6 +69,10 @@ module.exports = async function handler(req, res) {
     subject: str(payload.subject, 200),
     form: str(payload.form, 60),
     page: str(payload.page, 300),
+    // First-touch attribution: the landing page, referrer and utm/oppref of the session's
+    // FIRST page view. Without it a lead that landed on an ad and submitted elsewhere reads as
+    // organic, which is exactly what made the ChatGPT ads unmeasurable. Added 2026-08-25.
+    ft: str(payload.ft, 500),
     ip: str(Array.isArray(fwd) ? fwd[0] : (fwd || '').split(',')[0], 60),
   };
 
