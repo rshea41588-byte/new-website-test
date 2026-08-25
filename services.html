@@ -1188,6 +1188,15 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 .hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center;padding:10px;}
 }
 </style>
+<style>
+/* Bloomview hero trust-chip fix 2026-08-25 (bvg-chipfix-2026-08-25) — .post-meta is a wrapping flex row, so at
+   phone widths each item took its own line and left its `.post-meta-divider` bullet dangling at
+   the end. Stack the chips and drop the separators below 600px. CSS only, additive. */
+@media(max-width:600px){
+  .post-meta{flex-direction:column;align-items:center;gap:.45rem;}
+  .post-meta .post-meta-divider{display:none;}
+}
+</style>
 </head>
 
 <body>
