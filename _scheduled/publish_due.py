@@ -39,6 +39,30 @@ def apply_index(meta):
     anchor = '<div class="blog-grid">'; i = idx.index(anchor) + len(anchor)
     write(p, idx[:i] + card + idx[i:])
 
+def validate_schema(src_path, slug):
+    """Schema-validation build gate: every JSON-LD block in a page must parse,
+    and the page must carry the canonical Article + FAQPage + BreadcrumbList graph.
+    A failure raises, which fails the Actions run and stops the publish."""
+    import re as _re
+    t = read(src_path)
+    blocks = _re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, _re.S)
+    if not blocks:
+        raise SystemExit(f"SCHEMA GATE FAIL [{slug}]: no JSON-LD found")
+    types = set()
+    for b in blocks:
+        try:
+            doc = json.loads(b)
+        except Exception as e:
+            raise SystemExit(f"SCHEMA GATE FAIL [{slug}]: invalid JSON-LD ({e})")
+        for node in (doc.get("@graph", [doc]) if isinstance(doc, dict) else []):
+            ntype = node.get("@type")
+            if isinstance(ntype, list): types.update(ntype)
+            elif ntype: types.add(ntype)
+    missing = {"Article", "FAQPage", "BreadcrumbList"} - types
+    if missing:
+        raise SystemExit(f"SCHEMA GATE FAIL [{slug}]: missing schema types {sorted(missing)}")
+    print(f"  schema gate OK [{slug}]: {sorted(types)}")
+
 def main():
     manifest = json.load(io.open(os.path.join(SCHED, "manifest.json"), encoding="utf-8"))
     today = (datetime.date.fromisoformat(os.environ["PUBLISH_TODAY"])
@@ -56,6 +80,7 @@ def main():
         if not os.path.exists(src):
             print(f"WARN: due but queued file missing: {slug}"); continue
         print(("[DRY] would publish: " if DRY else "publishing: ") + f"{slug} (due {meta['publish_date']})")
+        validate_schema(src, slug)                     # SCHEMA VALIDATION GATE (fails the build on invalid/missing JSON-LD)
         if DRY: continue
         os.replace(src, dest)                          # move out of queue into Blog/
         apply_sitemap(meta); apply_index(meta)
