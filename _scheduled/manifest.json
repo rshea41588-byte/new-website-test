@@ -1,3 +1,22 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "slug": "how-to-read-pl-balance-sheet-orlando.html",
+      "publish_date": "2026-09-01",
+      "card_title": "How to Read Your P&amp;L and Balance Sheet",
+      "card_desc": "Your P&amp;L and balance sheet in plain English: what each one is for, the lines that matter, and the few numbers worth watching every month.",
+      "tag": "Financial Reporting",
+      "date_label": "September 2026",
+      "readtime": "7 min read"
+    },
+    {
+      "slug": "cash-basis-vs-accrual-accounting-orlando.html",
+      "publish_date": "2026-09-05",
+      "card_title": "Cash Basis vs. Accrual: Which Method Fits Your Business?",
+      "card_desc": "Cash basis or accrual? How each records income and expenses, a side-by-side comparison, which fits your business, and whether you can switch.",
+      "tag": "Accounting Basics",
+      "date_label": "September 2026",
+      "readtime": "7 min read"
+    }
+  ]
 }
