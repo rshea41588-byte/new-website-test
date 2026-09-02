@@ -45,7 +45,8 @@
     {
       "@type": [
         "AccountingService",
-        "LocalBusiness"
+        "LocalBusiness",
+        "Organization"
       ],
       "@id": "https://www.sheabusinesssolutions.com/#business",
       "founder": {
@@ -84,6 +85,22 @@
         {
           "@type": "AdministrativeArea",
           "name": "Central Florida"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
         }
       ],
       "knowsAbout": ["Bookkeeping", "Monthly bookkeeping", "QuickBooks Online", "QuickBooks Payroll", "QuickBooks cleanup", "Bank reconciliation", "Payroll processing", "Small business tax preparation", "Financial statement preparation"],
@@ -849,6 +866,11 @@
         /* FADE UP */
         .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: none; }
+/* L5 2026-09-01: reveal failsafes - reduced-motion, print, forced reveal (ADD-only) */
+.fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; } }
+@media print { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1 !important; transform: none !important; transition: none !important; } }
+
 
         /* MOBILE CALL */
         .mobile-call-cta {
@@ -1082,7 +1104,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" title="Google Tag Manager" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -1224,7 +1246,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
 
     <!-- PAGE HERO -->
-    <section class="post-hero">
+    <section data-section="hero" class="post-hero">
         <div class="post-hero-inner fade-up">
             <div class="hero-grid">
             <div class="hero-copy">
@@ -1239,10 +1261,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <span class="post-meta-item">Returns From $90</span>
             </div>
         </div>
-            <aside class="hero-form-card">
+            <aside class="hero-form-card" id="quote-form">
                 <p class="hero-form-title">Get a Free Assessment</p>
                 <p class="hero-form-sub">Tell us where the books stand. You get an answer the same business day.</p>
-                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div>
+                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
                 <form class="hero-lead-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
                     <input type="hidden" name="subject" value="New Lead (Tax Prep Winter Park page) - Shea Business Solutions Website">
@@ -1262,6 +1284,16 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
     </section>
 
+        <!-- Bloomview entity block (additive) -->
+    <section class="sbs-entity-facts fade-up" aria-label="About Shea Business Solutions Bookkeeping &amp; Tax" style="max-width:1100px;margin:2rem auto 0;padding:1.75rem 1.5rem;background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px">
+      <p class="sbs-about-eyebrow" style="margin-top:0">About Shea Business Solutions Bookkeeping &amp; Tax</p>
+      <p>Shea Business Solutions Bookkeeping &amp; Tax is an Orlando accounting firm run by Ryan Shea, a QuickBooks Level 2 Certified ProAdvisor and Certified Payroll Specialist.</p>
+      <p>The firm provides monthly bookkeeping, payroll, and tax preparation for small businesses in Winter Park, FL.</p>
+      <p>It works from Orlando and serves Winter Park along with nearby Central Florida communities, among them Lake Nona, Winter Park, Celebration, and Kissimmee.</p>
+      <p>Its ProAdvisor certification comes from <a href="https://quickbooks.intuit.com/" target="_blank" rel="noopener">Intuit</a>, maker of QuickBooks, and the day-to-day work runs inside QuickBooks Online and QuickBooks Payroll.</p>
+      <p>Shea Business Solutions Bookkeeping &amp; Tax is a BBB Accredited Business and answers every call, text, and email the same business day.</p>
+    </section>
+
     <!-- ARTICLE BODY -->
     <article class="article-wrapper">
         <div class="article-body">
@@ -1270,33 +1302,33 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <p class="fade-up">Returns start at $90 depending on complexity, and the work runs remotely. No office to drive to, no receipts to drop off. You send the file access, we do the return.</p>
 
-            <h2 class="fade-up">Where the Return Actually Goes Wrong</h2>
+            <h2 class="fade-up">Where a Winter Park Return Actually Goes Wrong</h2>
 
             <p class="fade-up">Most tax problems in Winter Park are not tax problems at all. They start in the books. When a P&amp;L is built on POS deposits recorded net of processing fees, the return understates revenue and never claims the merchant fees as an expense. When Undeposited Funds has been piling up all year, the same income gets counted twice and the business looks more profitable than it was. A return prepared on top of that is wrong before the first form is filled in. We handle the <a href="https://www.sheabusinesssolutions.com/bookkeeping-winter-park-fl.html">bookkeeping side in Winter Park</a> too, so the numbers going onto the return are numbers that reconcile.</p>
 
             <p class="fade-up">The retail and restaurant mix on Park Avenue and in Winter Park Village adds its own wrinkles. Inventory that was never adjusted at year end, owner draws mixed in with real expenses, gift card sales booked as income the day they sold instead of the day they were redeemed. Each of those moves the taxable number. Sorting them before filing is cheaper than amending later.</p>
 
-            <h2 class="fade-up">S-Corp Owners: The Salary Question</h2>
+            <h2 class="fade-up">Winter Park S-Corp Owners: The Salary Question</h2>
 
             <p class="fade-up">A lot of Winter Park businesses elected S-corp status to cut self-employment tax, and plenty of them did it without anyone explaining the catch. An S-corp owner who works in the business has to pay themselves a reasonable W-2 salary before taking distributions. The owner who runs the whole company and reports a $12,000 salary against $140,000 in profit is the exact profile the IRS looks at. Getting that salary set at a defensible number, and running it through payroll during the year rather than reconstructing it in April, is one of the details that separates a clean S-corp return from an audit letter. We set the payroll up so the W-2 and the return agree.</p>
 
             <p class="fade-up">This ties directly to the books. Reasonable compensation only works if payroll actually ran through QuickBooks across the year. Trying to back-date a year of owner salary in one December check draws exactly the attention you were trying to avoid.</p>
 
-            <h2 class="fade-up">1099s, W-9s, and the January Scramble</h2>
+            <h2 class="fade-up">1099s, W-9s, and the January Scramble in Winter Park</h2>
 
             <p class="fade-up">Winter Park businesses lean hard on contractors: the freelance designer, the cleaning crew, the part-time bookkeeper before they hired us. Anyone unincorporated you paid $600 or more during the year needs a 1099-NEC, and it is due to both the contractor and the IRS by January 31. The time to collect a W-9 is before you cut the final check, while the money is still in your hands, not in January when the contractor has moved on and stopped answering. We track the contractor payments through the year so the 1099 run in January is a report, not a treasure hunt.</p>
 
-            <h2 class="fade-up">What to Have Ready Before We File</h2>
+            <h2 class="fade-up">What Winter Park Owners Should Have Ready Before We File</h2>
 
             <p class="fade-up">When it is time to file, a short list of documents keeps the return moving. Last year's return, so we can carry forward depreciation and any losses. Your year-end payroll reports and the W-2s and 1099s you issued. A summary of equipment bought during the year, with the dates it went into service. Any K-1s from other partnerships or S-corps you hold a piece of. Mortgage interest and property tax figures if you claim a home office. Most of this already lives in a reconciled QuickBooks file, which is one reason we keep the books and the return in the same hands. The owners who hand over a clean file in February file early and stop thinking about it. The ones who wait until April to reconcile a year of transactions are the ones filing an extension and paying interest on an estimate.</p>
 
-            <h2 class="fade-up">Quarterly Estimates and the Florida Calendar</h2>
+            <h2 class="fade-up">Quarterly Estimates and the Florida Calendar in Winter Park</h2>
 
             <p class="fade-up">Florida has no personal income tax, which owners sometimes hear as no obligations. Federal estimated payments still come due four times a year for anyone whose income flows through to a personal return, on the fifteenth of April, June, September, and January. Miss them and the underpayment penalty gets added back at filing. The safe-harbor rules let you base those payments on last year's tax, which only works if last year's return was accurate and this year's books are current. Guessing at estimates on three-month-old books is how owners end up either starving their cash flow or writing a surprise check in April.</p>
 
             <p class="fade-up">There is also the tangible personal property return due to the Orange County property appraiser by April 1, covering business furniture, equipment, and fixtures. The first $25,000 of assessed value is exempt, but only if the return gets filed. For a Park Avenue shop with display cases and a POS system, or a restaurant with a full kitchen, that return is easy to forget and costly to skip.</p>
 
-            <h2 class="fade-up">Behind on Filing? Start There</h2>
+            <h2 class="fade-up">Behind on Filing in Winter Park? Start There</h2>
 
             <p class="fade-up">Some Winter Park owners reach out with a return that never got filed and a stack of notices. An extension buys time to file, not time to pay, so the interest keeps running on anything owed. The fix is to get the books reconciled, get the missing year built correctly, and file before the penalties stack higher. If your books are the reason the return is stuck, the <a href="https://www.sheabusinesssolutions.com/Blog/quickbooks-cleanup-orlando.html">signs your QuickBooks needs a cleanup</a> are worth a read first.</p>
 
@@ -1326,7 +1358,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             </ul>
 
             <!-- FAQ (added 2026-07-22, ADD-only) -->
-            <section class="sbsfaq">
+            <section data-section="faq" class="sbsfaq">
             <style>
             .sbsfaq{max-width:860px;margin:3rem auto 1rem;}.sbsfaq h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:#F5F2EC;margin:0 0 1.25rem;}
             .sbsfaq-item{border:1px solid rgba(255,255,255,0.12);border-radius:10px;margin-bottom:0.75rem;background:rgba(255,255,255,0.02);overflow:hidden;}
@@ -1340,7 +1372,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             .sbsfaq-item .sbsfaq-a p:last-child{margin-bottom:0;}
             </style>
             <h2 class="fade-up">Winter Park Tax Questions, Answered</h2>
-                <details class="sbsfaq-item">
+                <details open class="sbsfaq-item">
                     <summary>How much does tax preparation cost in Winter Park?</summary>
                     <div class="sbsfaq-a"><p>Returns start at $90 and the price depends on complexity. The first conversation is a free consultation by phone or video, and you get a clear scope and a flat price before any work starts.</p></div>
                 </details>
@@ -1368,7 +1400,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 </section>
 
         <!-- LOCAL TAX RESOURCES (additive) -->
-        <section class="sbs-local-resources fade-up" aria-label="Local tax resources" style="margin:2rem 0 0;padding:1.4rem 1.6rem;background:var(--charcoal-mid);border:1px solid var(--border);border-radius:12px">
+        <section data-section="local-resources" class="sbs-local-resources fade-up" aria-label="Local tax resources" style="margin:2rem 0 0;padding:1.4rem 1.6rem;background:var(--charcoal-mid);border:1px solid var(--border);border-radius:12px">
             <h2 style="color:var(--off-white);margin:0 0 .6rem;font-size:1.15rem">Winter Park Tax Resources</h2>
             <p style="color:var(--text-light);line-height:1.75;margin:0">For city business questions, the <a href="https://cityofwinterpark.org/" target="_blank" rel="noopener">City of Winter Park</a> site covers local licensing and city services. Property tax bills and payment schedules for Winter Park addresses run through the <a href="https://www.octaxcol.com/" target="_blank" rel="noopener">Orange County Tax Collector</a>, which handles business tax receipts for the county as well.</p>
         </section>
@@ -1382,7 +1414,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <div class="author-info">
                 <h3>Ryan Shea</h3>
                 <span class="author-title">QuickBooks Level 2 ProAdvisor &bull; Orlando, FL</span>
-                <p>Ryan Shea is the founder of Shea Business Solutions, a bookkeeping firm serving small businesses throughout the Orlando, Florida area, including Winter Park. As a certified QuickBooks Level 2 ProAdvisor, Ryan handles monthly bookkeeping, payroll, and tax preparation, keeping the books tax-ready so the return matches what the business actually did.</p>
+                <p>Ryan Shea is the founder of <a href="https://www.sheabusinesssolutions.com/" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Shea Business Solutions</a>, a bookkeeping firm serving small businesses throughout the Orlando, Florida area, including Winter Park. As a certified QuickBooks Level 2 ProAdvisor, Ryan handles monthly bookkeeping, payroll, and tax preparation, keeping the books tax-ready so the return matches what the business actually did.</p>
             </div>
         </div>
 
@@ -1391,7 +1423,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </article>
 
     <!-- Bloomview driving-directions block (additive): keyless neighbor area maps + Google Maps routes to the published GBP address -->
-    <section class="sbs-directions fade-up" aria-label="Driving directions to Shea Business Solutions" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="directions" class="sbs-directions fade-up" aria-label="Driving directions to Shea Business Solutions" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">Driving Directions</p>
         <h2 style="color:var(--off-white);margin:0 0 .75rem;text-align:center">Driving Directions to Orlando from Near Winter Park, FL</h2>
@@ -1421,7 +1453,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 
     <!-- REVIEWS BAND (additive) -->
-    <section class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="reviews" class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">5.0 on Google</p>
         <h2 style="color:var(--off-white);margin:0 0 2rem;text-align:center">What Orlando-Area Clients Say</h2>
@@ -1738,6 +1770,9 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
   else wire();
 })();
+</script>
+<script>/* L5 2026-09-01 reveal failsafe: force-reveal any fade-up the observer never fired on */
+setTimeout(function(){var n=document.querySelectorAll(".fade-up:not(.visible)");for(var i=0;i<n.length;i++){n[i].classList.add("fu-force");n[i].classList.add("visible");}},900);
 </script>
 </body>
 </html>

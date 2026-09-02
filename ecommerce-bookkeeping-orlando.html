@@ -58,7 +58,8 @@
     {
       "@type": [
         "AccountingService",
-        "LocalBusiness"
+        "LocalBusiness",
+        "Organization"
       ],
       "@id": "https://www.sheabusinesssolutions.com/#business",
             "founder": {
@@ -92,6 +93,22 @@
         {
           "@type": "AdministrativeArea",
           "name": "Central Florida"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
         }
       ],
       "knowsAbout": ["Bookkeeping", "Monthly bookkeeping", "QuickBooks Online", "QuickBooks Payroll", "QuickBooks cleanup", "Bank reconciliation", "Payroll processing", "Small business tax preparation", "Financial statement preparation"],
@@ -832,6 +849,11 @@
         /* FADE UP */
         .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: none; }
+/* L5 2026-09-01: reveal failsafes - reduced-motion, print, forced reveal (ADD-only) */
+.fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; } }
+@media print { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1 !important; transform: none !important; transition: none !important; } }
+
 
         /* MOBILE CALL */
         .mobile-call-cta {
@@ -1151,7 +1173,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" title="Google Tag Manager" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -1297,7 +1319,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
 
     <!-- PAGE HERO -->
-    <section class="post-hero">
+    <section data-section="hero" class="post-hero">
         <div class="post-hero-inner fade-up">
             <div class="hero-grid">
             <div class="hero-copy">
@@ -1312,10 +1334,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <span class="post-meta-item">QuickBooks Level 2 ProAdvisor</span>
             </div>
         </div>
-            <aside class="hero-form-card">
+            <aside class="hero-form-card" id="quote-form">
                 <p class="hero-form-title">Get a Free Assessment</p>
                 <p class="hero-form-sub">Tell us where the books stand. You get an answer the same business day.</p>
-                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div>
+                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
                 <form class="hero-lead-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
                     <input type="hidden" name="subject" value="New Lead (E-Commerce Bookkeeping page) - Shea Business Solutions Website">
@@ -1335,7 +1357,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
     </section>
     <!-- Bloomview visual-rhythm: trust band (additive) -->
-    <section class="sbs-trust-band fade-up" aria-label="Credentials and service standards">
+    <section data-section="trust" class="sbs-trust-band fade-up" aria-label="Credentials and service standards">
       <div class="sbs-trust-inner">
         <div class="sbs-trust-item"><span class="sbs-trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg></span><h2>Level 2 QuickBooks ProAdvisor</h2></div>
         <div class="sbs-trust-item"><span class="sbs-trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><h2>Certified Payroll Specialist</h2></div>
@@ -1400,14 +1422,14 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <p class="fade-up">Order volume buries ledgers fast. If you are months back, we get you current with <a href="https://www.sheabusinesssolutions.com/catch-up-bookkeeping-orlando.html">catch-up bookkeeping</a>, then move you onto <a href="https://www.sheabusinesssolutions.com/flat-rate-bookkeeping-orlando.html">flat-rate monthly bookkeeping</a>. Monthly service starts at $200 and scales with transaction volume; a proper <a href="https://www.sheabusinesssolutions.com/quickbooks-setup-orlando.html">QuickBooks setup</a> is where new stores should start instead.</p>
 
             <div class="mid-cta fade-up">
-                <p class="mid-cta-text">Want a real number for your situation? Call, or use the form at the top of this page. Every message gets a same-business-day answer.</p>
+                <p class="mid-cta-text">Want a real number for your situation? Call, or use the <a href="#quote-form">quote form on this page</a>. Every message gets a same-business-day answer.</p>
                 <div class="mid-cta-btns"><a href="tel:+16037598547" class="btn btn-primary">Call (603) 759-8547</a><a href="https://calendly.com/sheabusinesssolutions/free-60-minute-accounting-consultation" target="_blank" rel="noopener" class="btn btn-outline">Schedule a Free Meeting</a></div>
             </div>
 
             <h2 class="fade-up">Frequently Asked Questions</h2>
 
             <div class="faq-acc fade-up">
-                <details class="faq-item">
+                <details open class="faq-item">
                     <summary>Do you work with Shopify sellers?</summary>
                     <div class="faq-a">
                         <p>We set up and troubleshoot QuickBooks Online integrations for platforms like Shopify and Square as part of the ProAdvisor work, so channel sales flow into the books instead of being keyed by hand. If your platform exports to QuickBooks, we can wire it in and verify the data lands correctly.</p>
@@ -1442,13 +1464,13 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 
         <!-- ACCESS BLOCK -->
-        <section class="sbs-access fade-up" aria-label="Service area and access" style="background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px;padding:1.75rem;margin:2.5rem 0">
+        <section data-section="service-areas" class="sbs-access fade-up" aria-label="Service area and access" style="background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px;padding:1.75rem;margin:2.5rem 0">
             <h2 style="color:var(--off-white);margin:0 0 .75rem;font-size:1.25rem">Getting Here and How Far We Go</h2>
             <p style="color:var(--text-light);line-height:1.75;margin:0">E-commerce sellers rarely need a meeting at all. The practice works out of south Orlando, off the Central Florida GreeneWay (SR-417) between the Beachline (SR-528) and Osceola Parkway. Three corridors define the service radius. <a href="https://www.sheabusinesssolutions.com/service-areas.html">SR-417</a> runs the eastern edge from Sanford and Oviedo in Seminole County down through Lake Nona into Osceola County toward Kissimmee and St. Cloud. I-4 and SR-408 carry the middle, covering Winter Park, Baldwin Park and downtown. SR-429 and Florida's Turnpike handle the western side toward Apopka, Windermere and Dr. Phillips. Because the work runs remotely through QuickBooks, distance changes the drive and not the turnaround, and questions still get an answer the same business day.</p>
         </section>
 
         <!-- RELATED READING (additive) -->
-        <section class="sbs-related fade-up" aria-label="Related reading" style="margin:2rem 0 0;padding:1.4rem 1.6rem;background:var(--charcoal-mid);border:1px solid var(--border);border-radius:12px">
+        <section data-section="related-services" class="sbs-related fade-up" aria-label="Related reading" style="margin:2rem 0 0;padding:1.4rem 1.6rem;background:var(--charcoal-mid);border:1px solid var(--border);border-radius:12px">
             <h2 style="color:var(--off-white);margin:0 0 .6rem;font-size:1.15rem">Related Reading</h2>
             <p style="color:var(--text-light);line-height:1.75;margin:0">If you are still working out where to start, read <a href="https://www.sheabusinesssolutions.com/bookkeeping-services-orlando.html">bookkeeping services in Orlando</a> and <a href="https://www.sheabusinesssolutions.com/Blog/how-long-does-quickbooks-setup-take.html">how long QuickBooks setup takes</a>. You can also browse the <a href="https://www.sheabusinesssolutions.com/services.html">full list of Orlando services</a> and the <a href="https://www.sheabusinesssolutions.com/service-areas.html">towns we serve around Orlando</a>. Sellers who also run a physical storefront should read <a href="https://www.sheabusinesssolutions.com/retail-bookkeeping-orlando.html">retail bookkeeping in Orlando</a>.</p>
         </section>
@@ -1475,7 +1497,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     <!-- POST CTA -->
     
     <!-- Bloomview visual-rhythm: meet-the-bookkeeper photo band (additive) -->
-    <section class="sbs-entity-facts fade-up" aria-label="About Shea Business Solutions Bookkeeping &amp; Tax" style="max-width:1100px;margin:2rem auto 0;padding:1.75rem 1.5rem;background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px">
+    <section data-section="about-business" class="sbs-entity-facts fade-up" aria-label="About Shea Business Solutions Bookkeeping &amp; Tax" style="max-width:1100px;margin:2rem auto 0;padding:1.75rem 1.5rem;background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px">
       <h2 style="margin-top:0">About Shea Business Solutions Bookkeeping &amp; Tax</h2>
       <p>Shea Business Solutions Bookkeeping &amp; Tax is an Orlando accounting firm run by Ryan Shea, a QuickBooks Level 2 Certified ProAdvisor and Certified Payroll Specialist.</p>
       <p>The firm provides e-commerce bookkeeping for small businesses, along with monthly bookkeeping, payroll, and tax preparation.</p>
@@ -1484,7 +1506,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
       <p>Shea Business Solutions Bookkeeping &amp; Tax holds a 5.0 Google rating, is a BBB Accredited Business, and answers every call, text, and email the same business day.</p>
     </section>
 
-    <section class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="reviews" class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">5.0 on Google</p>
         <h2 style="color:var(--off-white);margin:0 0 2rem;text-align:center">What Orlando Clients Say</h2>
@@ -1505,10 +1527,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <cite style="color:var(--off-white);font-style:normal;font-weight:600">Y.R. <span style="color:var(--text-muted);font-weight:400;font-size:.85rem">&middot; Verified Google review</span></cite>
           </blockquote>
         </div>
-        <p style="margin:2rem 0 0;text-align:center"><a href="https://share.google/r2Vu1r1mJtu3Nw1jH" target="_blank" rel="noopener" style="color:var(--gold);font-weight:600">Read all 19 Google reviews &rsaquo;</a></p>
+        <p style="margin:2rem 0 0;text-align:center"><a href="https://share.google/r2Vu1r1mJtu3Nw1jH" target="_blank" rel="noopener" style="color:var(--gold);font-weight:600">Read all Google reviews &rsaquo;</a></p>
       </div>
     </section>
-    <section class="sbs-about-band fade-up" aria-label="Meet Ryan Shea">
+    <section data-section="who-we-are" class="sbs-about-band fade-up" aria-label="Meet Ryan Shea">
       <div class="sbs-about-inner">
         <picture><source type="image/webp" srcset="images/ryan_about.webp"><img class="sbs-about-photo" src="images/ryan_about.jpeg" width="1823" height="2000" loading="lazy" alt="Ryan J. Shea, owner of Shea Business Solutions"></picture>
         <div class="sbs-about-copy">
@@ -1542,7 +1564,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </div>
 
     <!-- FOOTER -->
-    <section class="tax-crosslink" aria-label="Tax preparation services" style="max-width:1100px;margin:0 auto;padding:2rem 1.5rem;">
+    <section data-section="tax-crosslink" class="tax-crosslink" aria-label="Tax preparation services" style="max-width:1100px;margin:0 auto;padding:2rem 1.5rem;">
         <h2 style="font-size:1.35rem;margin-bottom:0.5rem;">Tax Preparation Across the Orlando Area</h2>
         <p style="font-size:0.95rem;line-height:1.6;">Beyond monthly bookkeeping, Shea Business Solutions prepares business and individual tax returns for clients throughout Central Florida. Explore tax preparation in <a href="https://www.sheabusinesssolutions.com/tax-baldwin-park-fl.html">Baldwin Park</a>, <a href="https://www.sheabusinesssolutions.com/tax-dr-phillips-fl.html">Dr. Phillips</a>, <a href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona</a>, <a href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere</a>, and <a href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park</a>.</p>
     </section>
@@ -1709,8 +1731,12 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         }
 
         // Safety net: reveal any fade-up not yet triggered so no content stays invisible on load.
+        setTimeout(() => {
+            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('fu-force', 'visible'));
+        }, 900);
+
         window.addEventListener('load', () => setTimeout(() => {
-            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('visible'));
+            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('fu-force', 'visible'));
         }, 600));
 
         // Copy email to clipboard on desktop, native mailto on mobile

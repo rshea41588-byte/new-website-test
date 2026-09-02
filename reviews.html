@@ -648,6 +648,11 @@
         /* FADE UP */
         .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: none; }
+/* L5 2026-09-01: reveal failsafes - reduced-motion, print, forced reveal (ADD-only) */
+.fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; } }
+@media print { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1 !important; transform: none !important; transition: none !important; } }
+
 
         /* MOBILE CALL */
         .mobile-call-cta {
@@ -834,7 +839,8 @@
     {
       "@type": [
         "AccountingService",
-        "LocalBusiness"
+        "LocalBusiness",
+        "Organization"
       ],
       "@id": "https://www.sheabusinesssolutions.com/#business",
       "name": "Shea Business Solutions Bookkeeping & Tax",
@@ -979,7 +985,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" title="Google Tag Manager" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -1125,7 +1131,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
 
     <!-- PAGE HERO -->
-    <section class="post-hero">
+    <section data-section="hero" class="post-hero">
         <div class="post-hero-inner fade-up">
             <nav class="breadcrumb" aria-label="Breadcrumb"><a href="https://www.sheabusinesssolutions.com/">Home</a><span aria-hidden="true">&rsaquo;</span><span aria-current="page">Shea Business Solutions Reviews</span></nav>
             <span class="post-category-tag">Client Reviews</span>
@@ -1252,9 +1258,9 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <p class="fade-up">Thinking about handing off your books? The first conversation is a free consultation by phone or video. You get a clear scope and a flat price before any work starts: monthly bookkeeping from $200, tax preparation from $90, cleanups quoted after a free review of your file. Call or text <a href="tel:+16037598547">(603) 759-8547</a> or <a href="https://calendly.com/sheabusinesssolutions/free-60-minute-accounting-consultation" target="_blank" rel="noopener">schedule a meeting</a>, and you will hear back the same business day.</p>
 
             <!-- FAQ -->
-            <section class="sbsfaq">
+            <section data-section="faq" class="sbsfaq">
             <h2 class="fade-up">Review Questions, Answered</h2>
-                <details class="sbsfaq-item">
+                <details open class="sbsfaq-item">
                     <summary>Are these reviews real?</summary>
                     <div class="sbsfaq-a"><p>Yes. Every quote on this page is word for word from a public Google review of Shea Business Solutions. The full set is on our <a href="https://share.google/r2Vu1r1mJtu3Nw1jH" target="_blank" rel="noopener">Google profile</a>.</p></div>
                 </details>
@@ -1505,5 +1511,8 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             }, 2000);
         }
     </script>
-<script>(function(){var seen={};document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',p=h.slice(4),t=(a.textContent||'').trim().slice(0,80);if(typeof gtag==='function'){gtag('event','phone_call',{phone_number:p,link_text:t,page_location:location.href});}var now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon('https://bloomviewgrowth.com/collect/phone-click.php',new URLSearchParams({phone:p,text:t,page:location.pathname+location.search}));}}catch(err){}},true);})();</script></body>
+<script>(function(){var seen={};document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',p=h.slice(4),t=(a.textContent||'').trim().slice(0,80);if(typeof gtag==='function'){gtag('event','phone_call',{phone_number:p,link_text:t,page_location:location.href});}var now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon('https://bloomviewgrowth.com/collect/phone-click.php',new URLSearchParams({phone:p,text:t,page:location.pathname+location.search}));}}catch(err){}},true);})();</script><script>/* L5 2026-09-01 reveal failsafe: force-reveal any fade-up the observer never fired on */
+setTimeout(function(){var n=document.querySelectorAll(".fade-up:not(.visible)");for(var i=0;i<n.length;i++){n[i].classList.add("fu-force");n[i].classList.add("visible");}},900);
+</script>
+</body>
 </html>

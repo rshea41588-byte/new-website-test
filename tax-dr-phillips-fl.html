@@ -45,7 +45,8 @@
     {
       "@type": [
         "AccountingService",
-        "LocalBusiness"
+        "LocalBusiness",
+        "Organization"
       ],
       "@id": "https://www.sheabusinesssolutions.com/#business",
       "founder": {
@@ -88,6 +89,22 @@
         {
           "@type": "AdministrativeArea",
           "name": "Southwest Orange County"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
         }
       ],
       "knowsAbout": ["Bookkeeping", "Monthly bookkeeping", "QuickBooks Online", "QuickBooks Payroll", "QuickBooks cleanup", "Bank reconciliation", "Payroll processing", "Small business tax preparation", "Financial statement preparation"],
@@ -853,6 +870,11 @@
         /* FADE UP */
         .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: none; }
+/* L5 2026-09-01: reveal failsafes - reduced-motion, print, forced reveal (ADD-only) */
+.fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; } }
+@media print { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1 !important; transform: none !important; transition: none !important; } }
+
 
         /* MOBILE CALL */
         .mobile-call-cta {
@@ -1086,7 +1108,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" title="Google Tag Manager" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -1228,7 +1250,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
 
     <!-- PAGE HERO -->
-    <section class="post-hero">
+    <section data-section="hero" class="post-hero">
         <div class="post-hero-inner fade-up">
             <div class="hero-grid">
             <div class="hero-copy">
@@ -1243,10 +1265,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <span class="post-meta-item">Returns From $90</span>
             </div>
         </div>
-            <aside class="hero-form-card">
+            <aside class="hero-form-card" id="quote-form">
                 <p class="hero-form-title">Get a Free Assessment</p>
                 <p class="hero-form-sub">Tell us where the books stand. You get an answer the same business day.</p>
-                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div>
+                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
                 <form class="hero-lead-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
                     <input type="hidden" name="subject" value="New Lead (Tax Prep Dr. Phillips page) - Shea Business Solutions Website">
@@ -1266,6 +1288,16 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
     </section>
 
+        <!-- Bloomview entity block (additive) -->
+    <section class="sbs-entity-facts fade-up" aria-label="About Shea Business Solutions Bookkeeping &amp; Tax" style="max-width:1100px;margin:2rem auto 0;padding:1.75rem 1.5rem;background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px">
+      <p class="sbs-about-eyebrow" style="margin-top:0">About Shea Business Solutions Bookkeeping &amp; Tax</p>
+      <p>Shea Business Solutions Bookkeeping &amp; Tax is an Orlando accounting firm run by Ryan Shea, a QuickBooks Level 2 Certified ProAdvisor and Certified Payroll Specialist.</p>
+      <p>The firm provides monthly bookkeeping, payroll, and tax preparation for small businesses in Dr. Phillips, FL.</p>
+      <p>It works from Orlando and serves Dr. Phillips along with nearby Central Florida communities, among them Lake Nona, Winter Park, Celebration, and Kissimmee.</p>
+      <p>Its ProAdvisor certification comes from <a href="https://quickbooks.intuit.com/" target="_blank" rel="noopener">Intuit</a>, maker of QuickBooks, and the day-to-day work runs inside QuickBooks Online and QuickBooks Payroll.</p>
+      <p>Shea Business Solutions Bookkeeping &amp; Tax is a BBB Accredited Business and answers every call, text, and email the same business day.</p>
+    </section>
+
     <!-- ARTICLE BODY -->
     <article class="article-wrapper">
         <div class="article-body">
@@ -1274,27 +1306,27 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <p class="fade-up">Returns start at $90 depending on complexity, and everything runs remotely. You keep the restaurant open. We keep the return honest to the numbers.</p>
 
-            <h2 class="fade-up">Restaurant Returns Are Their Own Animal</h2>
+            <h2 class="fade-up">Restaurant Returns in Dr. Phillips Are Their Own Animal</h2>
 
             <p class="fade-up">A restaurant return on Sand Lake Road lives or dies on how the books treated three things: tips, card fees, and cost of goods. Tips run through payroll and belong to staff, not to the business, so any pooled tips sitting in the operating account distort income if they were never cleared out. Card processors from Toast to Square deposit net of their fees, and a P&amp;L that booked those deposits straight to sales is understating revenue while hiding one of the largest expense lines in the whole operation. And food cost only comes out right if inventory got adjusted at year end. We straighten all of that on the <a href="https://www.sheabusinesssolutions.com/bookkeeping-dr-phillips-fl.html">bookkeeping side in Dr. Phillips</a> so the return starts from real margins instead of guesses.</p>
 
             <p class="fade-up">Owners with more than one location or a food-truck arm off the main restaurant add another layer, because the entity structure decides which return each piece lands on. Sorting that before filing keeps you from paying tax twice on the same dollar.</p>
 
-            <h2 class="fade-up">1099s and the W-9 You Should Have Collected in June</h2>
+            <h2 class="fade-up">1099s and the W-9 Dr. Phillips Owners Should Have Collected in June</h2>
 
             <p class="fade-up">Hospitality leans on contractors more than almost any trade: the DJ, the deep-cleaning crew, the repair tech who fixes the walk-in cooler at 2am, the freelance marketer running your Instagram. Anyone unincorporated you paid $600 or more needs a 1099-NEC by January 31. The single most common reason a restaurant blows that deadline is a missing W-9. Collect it before the first invoice gets paid, staple it to the vendor record, and January becomes a printing job instead of a phone chase. We log contractor payments through the year, so the 1099 batch is ready before the deadline instead of scrambled together after it.</p>
 
-            <h2 class="fade-up">Quarterly Estimates on a Cash-Heavy Business</h2>
+            <h2 class="fade-up">Quarterly Estimates on a Cash-Heavy Dr. Phillips Business</h2>
 
             <p class="fade-up">Restaurant income swings hard with the season, and that makes federal estimated payments tricky. They come due four times a year, on the fifteenth of April, June, September, and January, for any owner whose profit flows to a personal return. The trap in Dr. Phillips is a strong tourist-season winter followed by a soft summer: owners size their estimates off the good months and get squeezed in the slow ones, or ignore them entirely and eat an underpayment penalty in April. Basing the payments on the prior year's tax under the safe-harbor rules smooths that out, but it depends on current, reconciled books. Estimates built on stale numbers are just a different way to be wrong.</p>
 
             <p class="fade-up">Florida has no personal income tax, so there is no state return for the profit itself. The tangible personal property return is the one that catches restaurant owners, due to the Orange County property appraiser by April 1 and covering kitchen equipment, hoods, walk-ins, and furniture. A full commercial kitchen blows past the $25,000 exemption fast, and the exemption only counts if the return is filed.</p>
 
-            <h2 class="fade-up">Tax-Ready Books Are the Whole Game</h2>
+            <h2 class="fade-up">Tax-Ready Books Are the Whole Game in Dr. Phillips</h2>
 
             <p class="fade-up">A tax return is only as good as the file it came from. When we prepare a return for a Dr. Phillips business, the first pass is always the books: are the accounts reconciled, is the owner draw separated from real expense, did the merchant fees land where they belong. Fixing that first is what makes the return defensible. If your file has drifted, our post on <a href="https://www.sheabusinesssolutions.com/Blog/bookkeeping-mistakes-small-business-orlando.html">common bookkeeping mistakes Orlando businesses make</a> shows the ones that bite hardest at tax time.</p>
 
-            <h2 class="fade-up">Sales Tax Is a Separate Job</h2>
+            <h2 class="fade-up">Sales Tax Is a Separate Job in Dr. Phillips</h2>
 
             <p class="fade-up">Restaurants and retail on Sand Lake Road carry a tax that has nothing to do with the income return: Florida sales tax. It gets collected on every taxable sale and sent to the state on the DR-15, usually monthly for a busy restaurant, with the return due on the first of the month and late after the twentieth. Sales tax is trust money. It belongs to the state from the moment a customer pays it, and dipping into it to cover payroll in a slow week turns into a personal liability the owner cannot walk away from, even behind an LLC. We keep sales tax payable tracked in the books so the amount you remit matches the amount you actually collected, and so it never gets quietly borrowed against and forgotten in a soft month.</p>
 
@@ -1326,7 +1358,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             </ul>
 
             <!-- FAQ (added 2026-07-22, ADD-only) -->
-            <section class="sbsfaq">
+            <section data-section="faq" class="sbsfaq">
             <style>
             .sbsfaq{max-width:860px;margin:3rem auto 1rem;}.sbsfaq h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:#F5F2EC;margin:0 0 1.25rem;}
             .sbsfaq-item{border:1px solid rgba(255,255,255,0.12);border-radius:10px;margin-bottom:0.75rem;background:rgba(255,255,255,0.02);overflow:hidden;}
@@ -1340,7 +1372,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             .sbsfaq-item .sbsfaq-a p:last-child{margin-bottom:0;}
             </style>
             <h2 class="fade-up">Dr. Phillips Tax Questions, Answered</h2>
-                <details class="sbsfaq-item">
+                <details open class="sbsfaq-item">
                     <summary>How much does tax preparation cost in Dr. Phillips?</summary>
                     <div class="sbsfaq-a"><p>Returns start at $90 depending on complexity. The first conversation is a free consultation by phone or video, and you get a clear scope and a flat price before any work starts.</p></div>
                 </details>
@@ -1368,7 +1400,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 </section>
 
         <!-- LOCAL TAX RESOURCES (additive) -->
-        <section class="sbs-local-resources fade-up" aria-label="Local tax resources" style="margin:2rem 0 0;padding:1.4rem 1.6rem;background:var(--charcoal-mid);border:1px solid var(--border);border-radius:12px">
+        <section data-section="local-resources" class="sbs-local-resources fade-up" aria-label="Local tax resources" style="margin:2rem 0 0;padding:1.4rem 1.6rem;background:var(--charcoal-mid);border:1px solid var(--border);border-radius:12px">
             <h2 style="color:var(--off-white);margin:0 0 .6rem;font-size:1.15rem">Dr. Phillips Tax Resources</h2>
             <p style="color:var(--text-light);line-height:1.75;margin:0">Dr. Phillips sits in unincorporated Orange County, so county services and permits come through <a href="https://www.ocfl.net/" target="_blank" rel="noopener">Orange County government</a> rather than a city hall. State-level filings, sales tax registration included, run through the <a href="https://floridarevenue.com/" target="_blank" rel="noopener">Florida Department of Revenue</a>.</p>
         </section>
@@ -1382,7 +1414,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <div class="author-info">
                 <h3>Ryan Shea</h3>
                 <span class="author-title">QuickBooks Level 2 ProAdvisor &bull; Orlando, FL</span>
-                <p>Ryan Shea is the founder of Shea Business Solutions, a bookkeeping firm serving small businesses throughout the Orlando, Florida area, including Dr. Phillips. As a certified QuickBooks Level 2 ProAdvisor, Ryan handles monthly bookkeeping, payroll, and tax preparation, keeping the books tax-ready so the return matches what the business actually did.</p>
+                <p>Ryan Shea is the founder of <a href="https://www.sheabusinesssolutions.com/" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Shea Business Solutions</a>, a bookkeeping firm serving small businesses throughout the Orlando, Florida area, including Dr. Phillips. As a certified QuickBooks Level 2 ProAdvisor, Ryan handles monthly bookkeeping, payroll, and tax preparation, keeping the books tax-ready so the return matches what the business actually did.</p>
             </div>
         </div>
 
@@ -1391,7 +1423,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </article>
 
     <!-- Bloomview driving-directions block (additive): keyless neighbor area maps + Google Maps routes to the published GBP address -->
-    <section class="sbs-directions fade-up" aria-label="Driving directions to Shea Business Solutions" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="directions" class="sbs-directions fade-up" aria-label="Driving directions to Shea Business Solutions" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">Driving Directions</p>
         <h2 style="color:var(--off-white);margin:0 0 .75rem;text-align:center">Driving Directions to Orlando from Near Dr. Phillips, FL</h2>
@@ -1421,7 +1453,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 
     <!-- REVIEWS BAND (additive) -->
-    <section class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="reviews" class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">5.0 on Google</p>
         <h2 style="color:var(--off-white);margin:0 0 2rem;text-align:center">What Orlando-Area Clients Say</h2>
@@ -1738,6 +1770,9 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
   else wire();
 })();
+</script>
+<script>/* L5 2026-09-01 reveal failsafe: force-reveal any fade-up the observer never fired on */
+setTimeout(function(){var n=document.querySelectorAll(".fade-up:not(.visible)");for(var i=0;i<n.length;i++){n[i].classList.add("fu-force");n[i].classList.add("visible");}},900);
 </script>
 </body>
 </html>

@@ -45,7 +45,8 @@
     {
       "@type": [
         "AccountingService",
-        "LocalBusiness"
+        "LocalBusiness",
+        "Organization"
       ],
       "@id": "https://www.sheabusinesssolutions.com/#business",
       "founder": {
@@ -87,6 +88,22 @@
           "@type": "City",
           "name": "Orlando",
           "sameAs": "https://en.wikipedia.org/wiki/Orlando,_Florida"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
         }
       ],
       "knowsAbout": ["Bookkeeping", "Monthly bookkeeping", "QuickBooks Online", "QuickBooks Payroll", "QuickBooks cleanup", "Bank reconciliation", "Payroll processing", "Small business tax preparation", "Financial statement preparation"],
@@ -852,6 +869,11 @@
         /* FADE UP */
         .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: none; }
+/* L5 2026-09-01: reveal failsafes - reduced-motion, print, forced reveal (ADD-only) */
+.fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; } }
+@media print { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1 !important; transform: none !important; transition: none !important; } }
+
 
         /* MOBILE CALL */
         .mobile-call-cta {
@@ -1085,7 +1107,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" title="Google Tag Manager" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -1227,7 +1249,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
 
     <!-- PAGE HERO -->
-    <section class="post-hero">
+    <section data-section="hero" class="post-hero">
         <div class="post-hero-inner fade-up">
             <div class="hero-grid">
             <div class="hero-copy">
@@ -1242,10 +1264,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <span class="post-meta-item">Returns From $90</span>
             </div>
         </div>
-            <aside class="hero-form-card">
+            <aside class="hero-form-card" id="quote-form">
                 <p class="hero-form-title">Get a Free Assessment</p>
                 <p class="hero-form-sub">Tell us where the books stand. You get an answer the same business day.</p>
-                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div>
+                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
                 <form class="hero-lead-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
                     <input type="hidden" name="subject" value="New Lead (Tax Prep Lake Nona page) - Shea Business Solutions Website">
@@ -1265,6 +1287,16 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
     </section>
 
+        <!-- Bloomview entity block (additive) -->
+    <section class="sbs-entity-facts fade-up" aria-label="About Shea Business Solutions Bookkeeping &amp; Tax" style="max-width:1100px;margin:2rem auto 0;padding:1.75rem 1.5rem;background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px">
+      <p class="sbs-about-eyebrow" style="margin-top:0">About Shea Business Solutions Bookkeeping &amp; Tax</p>
+      <p>Shea Business Solutions Bookkeeping &amp; Tax is an Orlando accounting firm run by Ryan Shea, a QuickBooks Level 2 Certified ProAdvisor and Certified Payroll Specialist.</p>
+      <p>The firm provides monthly bookkeeping, payroll, and tax preparation for small businesses in Lake Nona, FL.</p>
+      <p>It works from Orlando and serves Lake Nona along with nearby Central Florida communities, among them Lake Nona, Winter Park, Celebration, and Kissimmee.</p>
+      <p>Its ProAdvisor certification comes from <a href="https://quickbooks.intuit.com/" target="_blank" rel="noopener">Intuit</a>, maker of QuickBooks, and the day-to-day work runs inside QuickBooks Online and QuickBooks Payroll.</p>
+      <p>Shea Business Solutions Bookkeeping &amp; Tax is a BBB Accredited Business and answers every call, text, and email the same business day.</p>
+    </section>
+
     <!-- ARTICLE BODY -->
     <article class="article-wrapper">
         <div class="article-body">
@@ -1273,29 +1305,29 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <p class="fade-up">Returns start at $90 depending on complexity, handled remotely. You run the practice or the startup. We build the return on numbers that reconcile.</p>
 
-            <h2 class="fade-up">Know Your Filing Deadline, Not Just April 15</h2>
+            <h2 class="fade-up">Know Your Filing Deadline in Lake Nona, Not Just April 15</h2>
 
             <p class="fade-up">The Lake Nona founder who set up an S-corp or a multi-member LLC is on a different clock than a sole proprietor, and missing it is expensive. S-corp returns on Form 1120-S and partnership returns on Form 1065 are due March 15, a full month before the individual deadline. The late-filing penalty on those returns is charged per owner, per month, so a two-partner LLC that files a few months late can rack up a four-figure penalty on a return that owed nothing. An extension on Form 7004 pushes the filing date, but it does not push any tax owed on the personal side. We track which return each entity owes and file the extension before the March date, not after.</p>
 
             <p class="fade-up">This is the single most common surprise for newly formed Lake Nona businesses. They circle April 15 on the calendar and find out in April that the business return was due in March.</p>
 
-            <h2 class="fade-up">Medical Practices and Professional Firms</h2>
+            <h2 class="fade-up">Medical Practices and Professional Firms in Lake Nona</h2>
 
             <p class="fade-up">A Medical City practice or a professional firm near Town Center usually files as an S-corp or a partnership with W-2 staff and 1099 contractors mixed together. The return depends on payroll being right: owner salaries set at defensible levels, staff wages reconciled to the payroll filings, and retirement plan contributions recorded so the deduction actually lands. Practices with a solo 401(k) or a SEP have real contribution room, but the deduction only works if the plan was funded on time and the books captured it. We handle the <a href="https://www.sheabusinesssolutions.com/bookkeeping-lake-nona-fl.html">bookkeeping side in Lake Nona</a> so the payroll numbers on the return match what the practice actually paid.</p>
 
-            <h2 class="fade-up">Startups: The First Return Sets the Pattern</h2>
+            <h2 class="fade-up">Lake Nona Startups: The First Return Sets the Pattern</h2>
 
             <p class="fade-up">A first-year startup carries decisions that ripple for years. Startup costs get capitalized and deducted on a schedule, not all at once. Equipment bought to launch may qualify for Section 179 or bonus depreciation, but only if it was placed in service and recorded before year end. The way founders classify early spending, and whether contractor payments got tracked for 1099s, shapes the first return and every one after it. Getting the books structured correctly at the start is far cheaper than untangling two years of it later.</p>
 
-            <h2 class="fade-up">Quarterly Estimates and the Florida Angle</h2>
+            <h2 class="fade-up">Quarterly Estimates and the Florida Angle for Lake Nona Owners</h2>
 
             <p class="fade-up">Once a Lake Nona business turns a profit that flows to a personal return, federal estimated payments come due four times a year, on the fifteenth of April, June, September, and January. New owners often skip the first year and get hit with an underpayment penalty they never saw coming. Basing the estimates on current books keeps them close to the real number. Florida has no personal income tax, so the profit faces no state return, but the tangible personal property return is still due to the Orange County property appraiser by April 1 for any business with equipment or furniture, with the first $25,000 exempt only when the return is filed.</p>
 
-            <h2 class="fade-up">Books That Are Ready Before You Ask</h2>
+            <h2 class="fade-up">Lake Nona Books That Are Ready Before You Ask</h2>
 
             <p class="fade-up">Every return we prepare for a Lake Nona business starts from the books. Reconciled accounts, clean owner draws, contractor payments already tracked. A tax-ready file makes the return faster and cheaper and keeps it defensible if a question ever comes. If you are not sure your file is there yet, the <a href="https://www.sheabusinesssolutions.com/Blog/quickbooks-cleanup-orlando.html">signs your QuickBooks needs a cleanup</a> are the fastest self-check.</p>
 
-            <h2 class="fade-up">Remote Founders and Multi-State Nexus</h2>
+            <h2 class="fade-up">Remote Lake Nona Founders and Multi-State Nexus</h2>
 
             <p class="fade-up">Lake Nona's tech founders rarely stay inside Florida's borders for long. Sell to customers in other states, hire a developer who lives in Georgia, or run payroll for a remote team, and you can create nexus, an obligation to file or collect tax somewhere you have never set foot. A remote employee in another state can pull the business onto that state's income and payroll filings. Selling enough into a state can trigger a sales tax registration there under the economic nexus rules that now cover most of the country. Founders who assume Florida's no-income-tax rule follows them everywhere get a hard introduction to this in year two, usually by letter.</p>
 
@@ -1327,7 +1359,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             </ul>
 
             <!-- FAQ (added 2026-07-22, ADD-only) -->
-            <section class="sbsfaq">
+            <section data-section="faq" class="sbsfaq">
             <style>
             .sbsfaq{max-width:860px;margin:3rem auto 1rem;}.sbsfaq h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:600;color:#F5F2EC;margin:0 0 1.25rem;}
             .sbsfaq-item{border:1px solid rgba(255,255,255,0.12);border-radius:10px;margin-bottom:0.75rem;background:rgba(255,255,255,0.02);overflow:hidden;}
@@ -1341,7 +1373,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             .sbsfaq-item .sbsfaq-a p:last-child{margin-bottom:0;}
             </style>
             <h2 class="fade-up">Lake Nona Tax Questions, Answered</h2>
-                <details class="sbsfaq-item">
+                <details open class="sbsfaq-item">
                     <summary>How much does tax preparation cost in Lake Nona?</summary>
                     <div class="sbsfaq-a"><p>Returns start at $90 depending on complexity, handled remotely. The first conversation is a free consultation by phone or video, and you get a clear scope and a flat price before anything starts.</p></div>
                 </details>
@@ -1369,7 +1401,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 </section>
 
         <!-- LOCAL TAX RESOURCES (additive) -->
-        <section class="sbs-local-resources fade-up" aria-label="Local tax resources" style="margin:2rem 0 0;padding:1.4rem 1.6rem;background:var(--charcoal-mid);border:1px solid var(--border);border-radius:12px">
+        <section data-section="local-resources" class="sbs-local-resources fade-up" aria-label="Local tax resources" style="margin:2rem 0 0;padding:1.4rem 1.6rem;background:var(--charcoal-mid);border:1px solid var(--border);border-radius:12px">
             <h2 style="color:var(--off-white);margin:0 0 .6rem;font-size:1.15rem">Lake Nona Tax Resources</h2>
             <p style="color:var(--text-light);line-height:1.75;margin:0">Lake Nona sits inside Orlando city limits, so local business licensing questions route through the <a href="https://www.orlando.gov/" target="_blank" rel="noopener">City of Orlando</a>. For Florida sales tax registration and other state filings, the <a href="https://floridarevenue.com/" target="_blank" rel="noopener">Florida Department of Revenue</a> is the source.</p>
         </section>
@@ -1383,7 +1415,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <div class="author-info">
                 <h3>Ryan Shea</h3>
                 <span class="author-title">QuickBooks Level 2 ProAdvisor &bull; Orlando, FL</span>
-                <p>Ryan Shea is the founder of Shea Business Solutions, a bookkeeping firm serving small businesses throughout the Orlando, Florida area, including Lake Nona. As a certified QuickBooks Level 2 ProAdvisor, Ryan handles monthly bookkeeping, payroll, and tax preparation, keeping the books tax-ready so the return matches what the business actually did.</p>
+                <p>Ryan Shea is the founder of <a href="https://www.sheabusinesssolutions.com/" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Shea Business Solutions</a>, a bookkeeping firm serving small businesses throughout the Orlando, Florida area, including Lake Nona. As a certified QuickBooks Level 2 ProAdvisor, Ryan handles monthly bookkeeping, payroll, and tax preparation, keeping the books tax-ready so the return matches what the business actually did.</p>
             </div>
         </div>
 
@@ -1392,7 +1424,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </article>
 
     <!-- Bloomview driving-directions block (additive): keyless neighbor area maps + Google Maps routes to the published GBP address -->
-    <section class="sbs-directions fade-up" aria-label="Driving directions to Shea Business Solutions" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="directions" class="sbs-directions fade-up" aria-label="Driving directions to Shea Business Solutions" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">Driving Directions</p>
         <h2 style="color:var(--off-white);margin:0 0 .75rem;text-align:center">Driving Directions to Orlando from Near Lake Nona, FL</h2>
@@ -1422,7 +1454,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 
     <!-- REVIEWS BAND (additive) -->
-    <section class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="reviews" class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">5.0 on Google</p>
         <h2 style="color:var(--off-white);margin:0 0 2rem;text-align:center">What Orlando-Area Clients Say</h2>
@@ -1739,6 +1771,9 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
   else wire();
 })();
+</script>
+<script>/* L5 2026-09-01 reveal failsafe: force-reveal any fade-up the observer never fired on */
+setTimeout(function(){var n=document.querySelectorAll(".fade-up:not(.visible)");for(var i=0;i<n.length;i++){n[i].classList.add("fu-force");n[i].classList.add("visible");}},900);
 </script>
 </body>
 </html>

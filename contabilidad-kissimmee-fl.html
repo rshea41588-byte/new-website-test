@@ -47,7 +47,8 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["AccountingService", "LocalBusiness"],
+      "@type": ["AccountingService", "LocalBusiness",
+        "Organization"],
       "@id": "https://www.sheabusinesssolutions.com/#business",
       "founder": {"@id": "https://www.sheabusinesssolutions.com/#ryan-shea"},
       "name": "Shea Business Solutions Bookkeeping & Tax",
@@ -59,6 +60,22 @@
       "address": {"@type": "PostalAddress", "streetAddress": "1809 Great Falls Way", "addressLocality": "Orlando", "addressRegion": "FL", "postalCode": "32824", "addressCountry": "US"},
       "geo": {"@type": "GeoCoordinates", "latitude": "28.3772", "longitude": "-81.3505"},
       "areaServed": [{"@type": "City", "name": "Kissimmee", "sameAs": "https://en.wikipedia.org/wiki/Kissimmee,_Florida"}, {"@type": "City", "name": "Orlando", "sameAs": "https://en.wikipedia.org/wiki/Orlando,_Florida"}, {"@type": "AdministrativeArea", "name": "Central Florida"}],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
       "knowsAbout": ["Bookkeeping", "Monthly bookkeeping", "QuickBooks Online", "QuickBooks Payroll", "QuickBooks cleanup", "Bank reconciliation", "Payroll processing", "Small business tax preparation", "Financial statement preparation"],
       "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Servicios de Contabilidad, Nómina e Impuestos", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Contabilidad Mensual", "description": "Contabilidad mensual integral que incluye categorización de transacciones, conciliación de cuentas bancarias y de tarjeta de crédito, y reportes de estado de resultados y balance general para pequeñas empresas."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Configuración y Limpieza de QuickBooks", "description": "Configuración de QuickBooks Online y limpieza de varios años por un ProAdvisor Certificado Nivel 2, incluyendo la creación del plan de cuentas y correcciones del balance general."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Nómina Integral", "description": "Configuración y procesamiento de nómina a través de QuickBooks Payroll, cubriendo los impuestos de nómina de Florida, las declaraciones federales y los formularios W-2 y 1099 de fin de año."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Preparación y Planificación de Impuestos", "description": "Planificación fiscal durante todo el año y preparación de declaraciones para pequeñas empresas, sociedades, S-Corps, LLC y personas."}}]},
       "priceRange": "$$",
@@ -721,6 +738,11 @@
         /* FADE UP */
         .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: none; }
+/* L5 2026-09-01: reveal failsafes - reduced-motion, print, forced reveal (ADD-only) */
+.fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; } }
+@media print { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1 !important; transform: none !important; transition: none !important; } }
+
 
         /* MOBILE CALL */
         .mobile-call-cta {
@@ -1031,7 +1053,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 </style>
 </head><body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" title="Google Tag Manager" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -1178,7 +1200,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
 
     <!-- PAGE HERO -->
-    <section class="post-hero">
+    <section data-section="hero" class="post-hero">
         <div class="post-hero-inner fade-up">
             <div class="hero-grid">
             <div class="hero-copy">
@@ -1193,10 +1215,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <span class="post-meta-item">Consulta Gratuita</span>
             </div>
         </div>
-            <aside class="hero-form-card">
+            <aside class="hero-form-card" id="quote-form">
                 <p class="hero-form-title">Reciba una Evaluación Gratuita</p>
                 <p class="hero-form-sub">Cuéntenos cómo están sus libros. Recibe una respuesta el mismo día hábil.</p>
-                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Reseñas de Google</span></div>
+                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Reseñas de Google</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
                 <form class="hero-lead-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
                     <input type="hidden" name="subject" value="New Lead (Bookkeeping Kissimmee page) - Shea Business Solutions Website">
@@ -1216,7 +1238,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
     </section>
     <!-- Bloomview visual-rhythm: trust band (additive) -->
-    <section class="sbs-trust-band fade-up" aria-label="Credenciales y estándares de servicio">
+    <section data-section="trust" class="sbs-trust-band fade-up" aria-label="Credenciales y estándares de servicio">
       <div class="sbs-trust-inner">
         <div class="sbs-trust-item"><span class="sbs-trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg></span><h2>QuickBooks ProAdvisor Nivel 2</h2></div>
         <div class="sbs-trust-item"><span class="sbs-trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><h2>Especialista Certificado en Nómina</h2></div>
@@ -1254,7 +1276,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <div class="fact-card fade-up"><p>Distintos rubros, el mismo patrón en los libros. Ingresos con mucho movimiento de tarjeta y de efectivo a la vez, un puñado de empleados W-2 o un equipo de cuadrillas 1099, altibajos de temporada ligados al calendario turístico, y un dueño metiendo datos a las 10 de la noche porque un contador de tiempo completo no tiene sentido para su tamaño.</p></div>
 
-            <h2 class="fade-up">Los Problemas de Contabilidad que Vemos en una Economía Turística</h2>
+            <h2 class="fade-up">Los Problemas de Contabilidad que Vemos en la Economía Turística de Kissimmee</h2>
 
             <p class="fade-up">La hospitalidad y el comercio minorista dominan Kissimmee, y sus libros se rompen en los mismos lugares predecibles. El que más corregimos es la trampa del depósito del POS. Toast, Square y Clover depositan las ventas con tarjeta <strong>ya descontadas las comisiones de procesamiento</strong>.</p>
 
@@ -1266,7 +1288,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <p class="fade-up">El efectivo añade un matiz propio de Kissimmee. En un mercado con tantas pequeñas empresas que reciben efectivo, el efectivo sin depositar y los retiros del dueño mezclados en la cuenta operativa son la forma más rápida de distorsionar a la vez un estado de resultados y una declaración de impuestos. La separación clara entre lo del negocio y lo personal es donde empiezan la mayoría de las limpiezas aquí.</p>
 
-            <h2 class="fade-up">Rentas de Corto Plazo y el Impuesto Turístico que Nadie Presupuesta</h2>
+            <h2 class="fade-up">Rentas de Corto Plazo en Kissimmee y el Impuesto Turístico que Nadie Presupuesta</h2>
 
             <p class="fade-up">El condado de Osceola es uno de los mercados de rentas vacacionales más grandes del país, y muchos dueños de Kissimmee operan un puñado de casas de renta de corto plazo como un verdadero negocio. Esas vienen con una capa fiscal que la contabilidad estándar ignora. Las estancias de corto plazo pagan el impuesto sobre ventas de Florida y, encima, el impuesto de desarrollo turístico del condado, ambos cobrados al huésped y remitidos según un calendario, y plataformas como Airbnb y Vrbo gestionan una parte, pero no siempre todo.</p>
 
@@ -1287,13 +1309,13 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <p class="fade-up">El precio se mantiene fijo y se indica por adelantado en la <a href="https://www.sheabusinesssolutions.com/#pricing">sección de precios</a>. La respuesta el mismo día es el estándar, y eso importa más de lo que parece cuando una duda de nómina llega la mañana en que vence.</p>
 
-            <h2 class="fade-up">El Calendario de Declaraciones de Florida que Sorprende a los Nuevos Dueños</h2>
+            <h2 class="fade-up">El Calendario de Declaraciones de Florida que Sorprende a los Nuevos Dueños en Kissimmee</h2>
 
             <p class="fade-up">Florida no tiene impuesto estatal sobre la renta, y los dueños lo interpretan como que no hay declaraciones estatales. No es así. Un negocio de Kissimmee con apenas un empleado presenta el reporte de impuesto de reempleo RT-6 cada trimestre sobre los primeros 7,000 dólares del salario de cada empleado, y los comercios minoristas y de hospitalidad remiten el impuesto sobre ventas según su propio calendario.</p>
 
             <p class="fade-up">Repasamos el lado del empleador en nuestra guía sobre los <a href="https://www.sheabusinesssolutions.com/Blog/payroll-taxes-florida-small-business.html">impuestos de nómina de Florida para pequeñas empresas</a>. Los contratistas a los que pagó necesitan los formularios 1099-NEC antes del 31 de enero, y la declaración de propiedad personal tangible del 1 de abril cubre el equipo, el mobiliario y las instalaciones del negocio, con los primeros 25,000 dólares del valor tasado exentos solo si la declaración realmente se presenta.</p>
 
-            <h2 class="fade-up">¿Atrasado con Sus Libros? Eso Tiene Solución</h2>
+            <h2 class="fade-up">¿Atrasado con Sus Libros en Kissimmee? Eso Tiene Solución</h2>
 
             <p class="fade-up">Muchos dueños de Kissimmee nos contactan en la misma situación: el archivo no se concilia desde la temporada pasada, el estado de resultados dejó de tener sentido y se acerca la temporada de impuestos. La <a href="https://www.sheabusinesssolutions.com/catch-up-bookkeeping-orlando.html">puesta al día</a> es una de nuestras especialidades principales. Conciliamos cada mes abierto, eliminamos duplicados, recategorizamos lo que el movimiento bancario adivinó mal, y depuramos las viejas transacciones sin conciliar que distorsionan el balance general.</p>
 
@@ -1325,10 +1347,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <li><a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-orlando.html">Trabajo de QuickBooks ProAdvisor para negocios de Kissimmee</a></li>
             </ul>
 
-            <h2 class="fade-up">Preguntas Frecuentes</h2>
+            <h2 class="fade-up">Preguntas Frecuentes Sobre Contabilidad en Kissimmee</h2>
 
             <div class="faq-acc fade-up">
-                <details class="faq-item">
+                <details open class="faq-item">
                     <summary>¿Hacen la contabilidad de rentas vacacionales en Kissimmee?</summary>
                     <div class="faq-a">
                         <p>Sí. Las estancias de corto plazo pagan el impuesto sobre ventas de Florida más el impuesto de desarrollo turístico del condado de Osceola, y plataformas como Airbnb y Vrbo gestionan una parte, pero no siempre todo. Mantenemos esa capa fiscal controlada para que nunca llegue una notificación sorpresa.</p>
@@ -1364,7 +1386,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <div class="author-info">
                 <h3>Ryan Shea</h3>
                 <span class="author-title">ProAdvisor de QuickBooks Nivel 2 &bull; Orlando, FL</span>
-                <p>Ryan Shea es el fundador de Shea Business Solutions, una firma de contabilidad que atiende a pequeñas empresas de toda el área de Orlando, Florida, incluida Kissimmee. Como ProAdvisor Certificado de QuickBooks Nivel 2, Ryan se especializa en la configuración y limpieza de QuickBooks, la contabilidad mensual, el procesamiento de nómina y la preparación de impuestos, para dar a los dueños de negocio estados financieros en los que de verdad puedan confiar.</p>
+                <p>Ryan Shea es el fundador de <a href="https://www.sheabusinesssolutions.com/" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Shea Business Solutions</a>, una firma de contabilidad que atiende a pequeñas empresas de toda el área de Orlando, Florida, incluida Kissimmee. Como ProAdvisor Certificado de QuickBooks Nivel 2, Ryan se especializa en la configuración y limpieza de QuickBooks, la contabilidad mensual, el procesamiento de nómina y la preparación de impuestos, para dar a los dueños de negocio estados financieros en los que de verdad puedan confiar.</p>
             </div>
         </div>
 
@@ -1374,7 +1396,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </article>
 
     <!-- Bloomview driving-directions block (additive): keyless neighbor area maps + Google Maps routes to the published GBP address -->
-    <section class="sbs-directions fade-up" aria-label="Indicaciones para llegar a Shea Business Solutions" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="directions" class="sbs-directions fade-up" aria-label="Indicaciones para llegar a Shea Business Solutions" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">Cómo Llegar</p>
         <h2 style="color:var(--off-white);margin:0 0 .75rem;text-align:center">Cómo Llegar Cerca de Kissimmee, FL</h2>
@@ -1405,7 +1427,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     <!-- POST CTA -->
     
     <!-- Bloomview visual-rhythm: real Google-review cards (additive, verbatim reviews) -->
-    <section class="sbs-reviews-band fade-up" aria-label="Reseñas de clientes" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="reviews" class="sbs-reviews-band fade-up" aria-label="Reseñas de clientes" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">5.0 en Google</p>
         <h2 style="color:var(--off-white);margin:0 0 2rem;text-align:center">Lo Que Dicen los Clientes de Orlando</h2>
@@ -1430,7 +1452,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
       </div>
     </section>
     <!-- Bloomview visual-rhythm: meet-the-bookkeeper photo band (additive) -->
-    <section class="sbs-about-band fade-up" aria-label="Conozca a Ryan Shea">
+    <section data-section="who-we-are" class="sbs-about-band fade-up" aria-label="Conozca a Ryan Shea">
       <div class="sbs-about-inner">
         <picture><source type="image/webp" srcset="images/ryan_about.webp"><img class="sbs-about-photo" src="images/ryan_about.jpeg" width="1823" height="2000" loading="lazy" alt="Ryan J. Shea, owner of Shea Business Solutions"></picture>
         <div class="sbs-about-copy">
@@ -1464,7 +1486,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </div>
 
     <!-- FOOTER -->
-    <section class="tax-crosslink" aria-label="Servicios de preparación de impuestos" style="max-width:1100px;margin:0 auto;padding:2rem 1.5rem;">
+    <section data-section="tax-crosslink" class="tax-crosslink" aria-label="Servicios de preparación de impuestos" style="max-width:1100px;margin:0 auto;padding:2rem 1.5rem;">
         <h2 style="font-size:1.35rem;margin-bottom:0.5rem;">Preparación de Impuestos en el Área de Orlando</h2>
         <p style="font-size:0.95rem;line-height:1.6;">Además de la contabilidad mensual, Shea Business Solutions prepara declaraciones de impuestos de negocios e individuales para clientes de todo el centro de Florida. Explore la preparación de impuestos en <a href="https://www.sheabusinesssolutions.com/tax-baldwin-park-fl.html">Baldwin Park</a>, <a href="https://www.sheabusinesssolutions.com/tax-dr-phillips-fl.html">Dr. Phillips</a>, <a href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona</a>, <a href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere</a> y <a href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park</a>.</p>
     </section>
@@ -1628,8 +1650,12 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         }
 
         // Safety net: reveal any fade-up not yet triggered so no content stays invisible on load.
+        setTimeout(() => {
+            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('fu-force', 'visible'));
+        }, 900);
+
         window.addEventListener('load', () => setTimeout(() => {
-            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('visible'));
+            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('fu-force', 'visible'));
         }, 600));
 
         // Copy email to clipboard on desktop, native mailto on mobile

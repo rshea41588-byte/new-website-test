@@ -46,7 +46,8 @@
     {
       "@type": [
         "AccountingService",
-        "LocalBusiness"
+        "LocalBusiness",
+        "Organization"
       ],
       "@id": "https://www.sheabusinesssolutions.com/#business",
             "founder": {
@@ -85,6 +86,22 @@
         {
           "@type": "AdministrativeArea",
           "name": "Central Florida"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
         }
       ],
       "knowsAbout": ["Bookkeeping", "Monthly bookkeeping", "QuickBooks Online", "QuickBooks Payroll", "QuickBooks cleanup", "Bank reconciliation", "Payroll processing", "Small business tax preparation", "Financial statement preparation"],
@@ -816,6 +833,11 @@
         /* FADE UP */
         .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: none; }
+/* L5 2026-09-01: reveal failsafes - reduced-motion, print, forced reveal (ADD-only) */
+.fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; } }
+@media print { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1 !important; transform: none !important; transition: none !important; } }
+
 
         /* MOBILE CALL */
         .mobile-call-cta {
@@ -1128,7 +1150,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" title="Google Tag Manager" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -1274,7 +1296,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
 
     <!-- PAGE HERO -->
-    <section class="post-hero">
+    <section data-section="hero" class="post-hero">
         <div class="post-hero-inner fade-up">
             <div class="hero-grid">
             <div class="hero-copy">
@@ -1289,10 +1311,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <span class="post-meta-item">Free Consultation</span>
             </div>
         </div>
-            <aside class="hero-form-card">
+            <aside class="hero-form-card" id="quote-form">
                 <p class="hero-form-title">Get a Free Assessment</p>
                 <p class="hero-form-sub">Tell us where the books stand. You get an answer the same business day.</p>
-                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div>
+                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
                 <form class="hero-lead-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
                     <input type="hidden" name="subject" value="New Lead (Bookkeeping Winter Park page) - Shea Business Solutions Website">
@@ -1311,8 +1333,18 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             </div>
         </div>
     </section>
+        <!-- Bloomview entity block (additive) -->
+    <section data-section="about-business" class="sbs-entity-facts fade-up" aria-label="About Shea Business Solutions Bookkeeping &amp; Tax" style="max-width:1100px;margin:2rem auto 0;padding:1.75rem 1.5rem;background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px">
+      <p class="sbs-about-eyebrow" style="margin-top:0">About <a href="https://www.sheabusinesssolutions.com/" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Shea Business Solutions</a> Bookkeeping &amp; Tax</p>
+      <p>Shea Business Solutions Bookkeeping &amp; Tax is an Orlando accounting firm run by Ryan Shea, a QuickBooks Level 2 Certified ProAdvisor and Certified Payroll Specialist.</p>
+      <p>The firm provides monthly bookkeeping, payroll, and tax preparation for small businesses in Winter Park, FL.</p>
+      <p>It works from Orlando and serves Winter Park along with nearby Central Florida communities, among them Lake Nona, Winter Park, Celebration, and Kissimmee.</p>
+      <p>Its ProAdvisor certification comes from <a href="https://quickbooks.intuit.com/" target="_blank" rel="noopener">Intuit</a>, maker of QuickBooks, and the day-to-day work runs inside QuickBooks Online and QuickBooks Payroll.</p>
+      <p>Shea Business Solutions Bookkeeping &amp; Tax is a BBB Accredited Business and answers every call, text, and email the same business day.</p>
+    </section>
+
     <!-- Bloomview visual-rhythm: trust band (additive) -->
-    <section class="sbs-trust-band fade-up" aria-label="Credentials and service standards">
+    <section data-section="trust" class="sbs-trust-band fade-up" aria-label="Credentials and service standards">
       <div class="sbs-trust-inner">
         <div class="sbs-trust-item"><span class="sbs-trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg></span><h2>Level 2 QuickBooks ProAdvisor</h2></div>
         <div class="sbs-trust-item"><span class="sbs-trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><h2>Certified Payroll Specialist</h2></div>
@@ -1351,7 +1383,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <div class="fact-card fade-up"><p>Different industries, same pattern in the books. High rent, card-heavy revenue, a handful of W-2 employees or a bench of 1099 contractors, and an owner doing data entry at 10pm because hiring a full-time bookkeeper makes no sense at their size.</p></div>
 
-            <h2 class="fade-up">The Bookkeeping Problems We See in Retail-Heavy Markets Like This One</h2>
+            <h2 class="fade-up">The Bookkeeping Problems We See in Retail-Heavy Winter Park</h2>
 
             <p class="fade-up">Restaurants and retail dominate Winter Park's commercial mix, and their books break in predictable places. The one we fix most often is the POS deposit trap. Toast, Square, and Clover deposit your card sales <strong>net of processing fees</strong>.</p>
 
@@ -1383,7 +1415,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <p class="fade-up">Same-day response is the standard for client questions, which matters more than it sounds like it should. Ask any owner who has waited nine days for their accountant to answer an email in March.</p>
 
-            <h2 class="fade-up">The Florida Filing Calendar That Catches New Owners</h2>
+            <h2 class="fade-up">The Florida Filing Calendar That Catches New Winter Park Owners</h2>
 
             <p class="fade-up">Florida has no state income tax, and owners sometimes read that as "no state filings." Not so. A Winter Park business with even one employee files an RT-6 reemployment tax report every quarter, paid on the first $7,000 of each employee's wages.</p>
 
@@ -1395,7 +1427,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <p class="fade-up">Owners of pass-through businesses also carry quarterly federal estimated payments, which are hard to size correctly when the books are three months behind. Current books are what make those numbers real instead of guesses.</p>
 
-            <h2 class="fade-up">Behind on Your Books? That Is Fixable</h2>
+            <h2 class="fade-up">Behind on Your Books in Winter Park? That Is Fixable</h2>
 
             <p class="fade-up">A lot of Winter Park owners reach out in exactly this position: the file has not been reconciled since last spring, the P&amp;L stopped making sense, and tax season is coming. Cleanup is one of our core specialties. We reconcile every open month, strip out duplicates, recategorize what the bank feed guessed wrong, and resolve the old uncleared transactions distorting the balance sheet.</p>
 
@@ -1429,10 +1461,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <li><a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor work for Winter Park businesses</a></li>
             </ul>
 
-            <h2 class="fade-up">Frequently Asked Questions</h2>
+            <h2 class="fade-up">Frequently Asked Questions About Bookkeeping in Winter Park</h2>
 
             <div class="faq-acc fade-up">
-                <details class="faq-item">
+                <details open class="faq-item">
                     <summary>Do you work with Winter Park businesses remotely?</summary>
                     <div class="faq-a">
                         <p>Yes. The books run in QuickBooks Online, so nothing requires an office visit. The first conversation is a free consultation by phone or video, and you get a clear scope and exact pricing before anything starts.</p>
@@ -1482,7 +1514,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </article>
 
     <!-- Bloomview driving-directions block (additive): keyless neighbor area maps + Google Maps routes to the published GBP address -->
-    <section class="sbs-directions fade-up" aria-label="Driving directions to Shea Business Solutions" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="directions" class="sbs-directions fade-up" aria-label="Driving directions to Shea Business Solutions" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">Driving Directions</p>
         <h2 style="color:var(--off-white);margin:0 0 .75rem;text-align:center">Driving Directions Near Winter Park, FL</h2>
@@ -1513,7 +1545,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     <!-- POST CTA -->
     
     <!-- Bloomview visual-rhythm: real Google-review cards (additive, verbatim reviews) -->
-    <section class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="reviews" class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">5.0 on Google</p>
         <h2 style="color:var(--off-white);margin:0 0 2rem;text-align:center">What Orlando Clients Say</h2>
@@ -1538,7 +1570,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
       </div>
     </section>
     <!-- Bloomview visual-rhythm: meet-the-bookkeeper photo band (additive) -->
-    <section class="sbs-about-band fade-up" aria-label="Meet Ryan Shea">
+    <section data-section="who-we-are" class="sbs-about-band fade-up" aria-label="Meet Ryan Shea">
       <div class="sbs-about-inner">
         <picture><source type="image/webp" srcset="images/ryan_about.webp"><img class="sbs-about-photo" src="images/ryan_about.jpeg" width="1823" height="2000" loading="lazy" alt="Ryan J. Shea, owner of Shea Business Solutions"></picture>
         <div class="sbs-about-copy">
@@ -1572,7 +1604,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </div>
 
     <!-- FOOTER -->
-    <section class="tax-crosslink" aria-label="Tax preparation services" style="max-width:1100px;margin:0 auto;padding:2rem 1.5rem;">
+    <section data-section="tax-crosslink" class="tax-crosslink" aria-label="Tax preparation services" style="max-width:1100px;margin:0 auto;padding:2rem 1.5rem;">
         <h2 style="font-size:1.35rem;margin-bottom:0.5rem;">Tax Preparation Across the Orlando Area</h2>
         <p style="font-size:0.95rem;line-height:1.6;">Beyond monthly bookkeeping, Shea Business Solutions prepares business and individual tax returns for clients throughout Central Florida. Explore tax preparation in <a href="https://www.sheabusinesssolutions.com/tax-baldwin-park-fl.html">Baldwin Park</a>, <a href="https://www.sheabusinesssolutions.com/tax-dr-phillips-fl.html">Dr. Phillips</a>, <a href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona</a>, <a href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere</a>, and <a href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park</a>.</p>
     </section>
@@ -1736,8 +1768,12 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         }
 
         // Safety net: reveal any fade-up not yet triggered so no content stays invisible on load.
+        setTimeout(() => {
+            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('fu-force', 'visible'));
+        }, 900);
+
         window.addEventListener('load', () => setTimeout(() => {
-            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('visible'));
+            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('fu-force', 'visible'));
         }, 600));
 
         // Copy email to clipboard on desktop, native mailto on mobile

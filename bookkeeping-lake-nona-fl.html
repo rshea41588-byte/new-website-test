@@ -52,7 +52,8 @@
       "provider": {
         "@type": [
           "AccountingService",
-          "LocalBusiness"
+          "LocalBusiness",
+        "Organization"
         ],
         "@id": "https://www.sheabusinesssolutions.com/#business",
         "founder": {
@@ -95,6 +96,22 @@
           "@type": "City",
           "name": "Orlando",
           "sameAs": "https://en.wikipedia.org/wiki/Orlando,_Florida"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
         }
       ],
       "knowsAbout": ["Bookkeeping", "Monthly bookkeeping", "QuickBooks Online", "QuickBooks Payroll", "QuickBooks cleanup", "Bank reconciliation", "Payroll processing", "Small business tax preparation", "Financial statement preparation"],
@@ -830,6 +847,11 @@
         /* FADE UP */
         .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: none; }
+/* L5 2026-09-01: reveal failsafes - reduced-motion, print, forced reveal (ADD-only) */
+.fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; } }
+@media print { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1 !important; transform: none !important; transition: none !important; } }
+
 
         /* MOBILE CALL */
         .mobile-call-cta {
@@ -1142,7 +1164,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" title="Google Tag Manager" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -1288,7 +1310,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
 
     <!-- PAGE HERO -->
-    <section class="post-hero">
+    <section data-section="hero" class="post-hero">
         <div class="post-hero-inner fade-up">
             <div class="hero-grid">
             <div class="hero-copy">
@@ -1304,10 +1326,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <span class="post-meta-item">By Ryan Shea, QuickBooks Level 2 ProAdvisor</span>
             </div>
         </div>
-            <aside class="hero-form-card">
+            <aside class="hero-form-card" id="quote-form">
                 <p class="hero-form-title">Get a Free Assessment</p>
                 <p class="hero-form-sub">Tell us where the books stand. You get an answer the same business day.</p>
-                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div>
+                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
                 <form class="hero-lead-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
                     <input type="hidden" name="subject" value="New Lead (Bookkeeping Lake Nona page) - Shea Business Solutions Website">
@@ -1326,8 +1348,18 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             </div>
         </div>
     </section>
+        <!-- Bloomview entity block (additive) -->
+    <section data-section="about-business" class="sbs-entity-facts fade-up" aria-label="About Shea Business Solutions Bookkeeping &amp; Tax" style="max-width:1100px;margin:2rem auto 0;padding:1.75rem 1.5rem;background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px">
+      <p class="sbs-about-eyebrow" style="margin-top:0">About <a href="https://www.sheabusinesssolutions.com/" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;">Shea Business Solutions</a> Bookkeeping &amp; Tax</p>
+      <p>Shea Business Solutions Bookkeeping &amp; Tax is an Orlando accounting firm run by Ryan Shea, a QuickBooks Level 2 Certified ProAdvisor and Certified Payroll Specialist.</p>
+      <p>The firm provides monthly bookkeeping, payroll, and tax preparation for small businesses in Lake Nona, FL.</p>
+      <p>It works from Orlando and serves Lake Nona along with nearby Central Florida communities, among them Lake Nona, Winter Park, Celebration, and Kissimmee.</p>
+      <p>Its ProAdvisor certification comes from <a href="https://quickbooks.intuit.com/" target="_blank" rel="noopener">Intuit</a>, maker of QuickBooks, and the day-to-day work runs inside QuickBooks Online and QuickBooks Payroll.</p>
+      <p>Shea Business Solutions Bookkeeping &amp; Tax is a BBB Accredited Business and answers every call, text, and email the same business day.</p>
+    </section>
+
     <!-- Bloomview visual-rhythm: trust band (additive) -->
-    <section class="sbs-trust-band fade-up" aria-label="Credentials and service standards">
+    <section data-section="trust" class="sbs-trust-band fade-up" aria-label="Credentials and service standards">
       <div class="sbs-trust-inner">
         <div class="sbs-trust-item"><span class="sbs-trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg></span><h2>Level 2 QuickBooks ProAdvisor</h2></div>
         <div class="sbs-trust-item"><span class="sbs-trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><h2>Certified Payroll Specialist</h2></div>
@@ -1368,7 +1400,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <p class="fade-up">Add the trade contractors working the home construction that never stops out here, plus the year-round visitor traffic from KPMG Lakehouse and the USTA National Campus, and you get a customer base that spends money twelve months a year. Seasonal slumps that flatten other Orlando submarkets barely register on this side of the 417.</p>
 
-            <h2 class="fade-up">Why Owners Here Hand Off the Books</h2>
+            <h2 class="fade-up">Why Lake Nona Owners Hand Off the Books</h2>
 
             <p class="fade-up">Rent is the first reason. Space in the newer plazas is expensive, and most retail leases are triple net.</p>
 
@@ -1386,7 +1418,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <p class="fade-up">A dentist seeing patients all day is not researching whether a duplicate insurance deposit inflated Tuesday's income. Handing that work to someone who does it daily costs less than the errors it prevents.</p>
 
-            <h2 class="fade-up">Quarterly Taxes, 1099s, and the January Scramble</h2>
+            <h2 class="fade-up">Quarterly Taxes, 1099s, and the January Scramble in Lake Nona</h2>
 
             <p class="fade-up">Florida has no personal income tax, but the paperwork does not stop. Employers file the RT-6 reemployment tax return every quarter. Businesses selling taxable goods file the DR-15 sales tax return monthly or quarterly depending on volume, and Florida pays a small collection allowance for filing electronically on time that plenty of owners never claim because they file late or on paper.</p>
 
@@ -1402,7 +1434,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <p><strong>A quick self-check:</strong> open your QuickBooks balance sheet and look at Opening Balance Equity. That account is a temporary holding bucket QuickBooks creates during setup, and it should sit at zero once a file is built correctly. A five-figure balance parked there for years means the setup was never finished, and the rest of the file usually confirms it.</p>
             </div>
 
-            <h2 class="fade-up">Messy QuickBooks? Fix It Before It Compounds</h2>
+            <h2 class="fade-up">Messy QuickBooks in Lake Nona? Fix It Before It Compounds</h2>
 
             <p class="fade-up">Cleanup is the service Lake Nona owners ask about most. The pattern repeats: a bank feed running unattended since 2023, hundreds of transactions parked in Uncategorized Expense, duplicates from a CSV import layered on top of the feed, and reconciliations that stopped when the numbers stopped matching.</p>
 
@@ -1412,7 +1444,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <div class="fact-card fade-up"><p>For a fuller picture of the warning signs and the process, read our guide on the <a href="https://www.sheabusinesssolutions.com/Blog/quickbooks-cleanup-orlando.html">five signs your QuickBooks needs a cleanup</a>. The short version: the longer the file sits, the more the repair costs.</p></div>
 
-            <h2 class="fade-up">What It Costs</h2>
+            <h2 class="fade-up">What Bookkeeping Costs in Lake Nona</h2>
 
             <p class="fade-up">Monthly bookkeeping starts at <strong>$200 per month</strong> and scales with transaction volume. That covers transaction categorization, bank and credit card reconciliations, a monthly P&amp;L and balance sheet, and QuickBooks management, with email and phone support included. Payroll starts at <strong>$100 per month</strong> and scales with headcount, covering calculations, filings, direct deposit setup, and W-2 and 1099 preparation.</p>
             <p class="fade-up">Current pricing for the monthly service lives on the <a href="https://www.sheabusinesssolutions.com/bookkeeping-services-orlando.html">bookkeeping services in Orlando</a> page.</p>
@@ -1421,7 +1453,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
             <p class="fade-up">Two things stay constant regardless of package. You get an exact price before anything starts, and you get a same-business-day response when you have a question. Owners fire bookkeepers over slow replies far more often than over price, and this practice was built around that fact.</p>
 
-            <h2 class="fade-up">Talk to a Bookkeeper Who Knows the Area</h2>
+            <h2 class="fade-up">Talk to a Bookkeeper Who Knows Lake Nona</h2>
 
             <p class="fade-up">If you run a business in Lake Nona, Laureate Park, or anywhere along Narcoossee Road and the books have gotten away from you, the first call is free and carries no obligation. We will look at your QuickBooks file, tell you honestly what shape it is in, and give you a flat quote.</p>
 
@@ -1446,10 +1478,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <li><a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor work for Lake Nona businesses</a></li>
             </ul>
 
-            <h2 class="fade-up">Frequently Asked Questions</h2>
+            <h2 class="fade-up">Frequently Asked Questions About Bookkeeping in Lake Nona</h2>
 
             <div class="faq-acc fade-up">
-                <details class="faq-item">
+                <details open class="faq-item">
                     <summary>My Lake Nona lease is triple net. What does that mean for the books?</summary>
                     <div class="faq-a">
                         <p>CAM charges, property tax pass-throughs, and an annual reconciliation statement from the landlord that deserves a line-by-line check against what you actually paid. That check only works if rent was booked correctly month by month instead of lumped into one blob.</p>
@@ -1499,7 +1531,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </article>
 
     <!-- Bloomview driving-directions block (additive): keyless neighbor area maps + Google Maps routes to the published GBP address -->
-    <section class="sbs-directions fade-up" aria-label="Driving directions to Shea Business Solutions" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="directions" class="sbs-directions fade-up" aria-label="Driving directions to Shea Business Solutions" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">Driving Directions</p>
         <h2 style="color:var(--off-white);margin:0 0 .75rem;text-align:center">Driving Directions Near Lake Nona, FL</h2>
@@ -1530,7 +1562,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     <!-- POST CTA -->
     
     <!-- Bloomview visual-rhythm: real Google-review cards (additive, verbatim reviews) -->
-    <section class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="reviews" class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">5.0 on Google</p>
         <h2 style="color:var(--off-white);margin:0 0 2rem;text-align:center">What Orlando Clients Say</h2>
@@ -1555,7 +1587,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
       </div>
     </section>
     <!-- Bloomview visual-rhythm: meet-the-bookkeeper photo band (additive) -->
-    <section class="sbs-about-band fade-up" aria-label="Meet Ryan Shea">
+    <section data-section="who-we-are" class="sbs-about-band fade-up" aria-label="Meet Ryan Shea">
       <div class="sbs-about-inner">
         <picture><source type="image/webp" srcset="images/ryan_about.webp"><img class="sbs-about-photo" src="images/ryan_about.jpeg" width="1823" height="2000" loading="lazy" alt="Ryan J. Shea, owner of Shea Business Solutions"></picture>
         <div class="sbs-about-copy">
@@ -1589,7 +1621,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </div>
 
     <!-- FOOTER -->
-    <section class="tax-crosslink" aria-label="Tax preparation services" style="max-width:1100px;margin:0 auto;padding:2rem 1.5rem;">
+    <section data-section="tax-crosslink" class="tax-crosslink" aria-label="Tax preparation services" style="max-width:1100px;margin:0 auto;padding:2rem 1.5rem;">
         <h2 style="font-size:1.35rem;margin-bottom:0.5rem;">Tax Preparation Across the Orlando Area</h2>
         <p style="font-size:0.95rem;line-height:1.6;">Beyond monthly bookkeeping, Shea Business Solutions prepares business and individual tax returns for clients throughout Central Florida. Explore tax preparation in <a href="https://www.sheabusinesssolutions.com/tax-baldwin-park-fl.html">Baldwin Park</a>, <a href="https://www.sheabusinesssolutions.com/tax-dr-phillips-fl.html">Dr. Phillips</a>, <a href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona</a>, <a href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere</a>, and <a href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park</a>.</p>
     </section>
@@ -1753,8 +1785,12 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         }
 
         // Safety net: reveal any fade-up not yet triggered so no content stays invisible on load.
+        setTimeout(() => {
+            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('fu-force', 'visible'));
+        }, 900);
+
         window.addEventListener('load', () => setTimeout(() => {
-            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('visible'));
+            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('fu-force', 'visible'));
         }, 600));
 
         // Copy email to clipboard on desktop, native mailto on mobile

@@ -31,7 +31,7 @@
     <link rel="icon" href="images/icon1.png" type="image/png" sizes="48x48">
     <title>Shea Business Solutions | Bookkeeping &amp; Tax in Orlando FL</title>
     <meta name="description"
-        content="Expert QuickBooks Level 2 ProAdvisor in Orlando, FL. Bookkeeping, payroll, and tax prep for small businesses. 5-star rated. Schedule a free consultation.">
+        content="Expert QuickBooks Level 2 ProAdvisor in Orlando, FL. Bookkeeping, payroll, and tax prep for small businesses. 5.0 Google rating. Schedule a free consultation.">
     <meta name="keywords"
         content="QuickBooks ProAdvisor Orlando, bookkeeping Orlando FL, small business accounting Orlando, tax preparation Orlando, payroll services Orlando, QuickBooks cleanup Orlando, Shea Business Solutions">
     <meta name="geo.region" content="US-FL">
@@ -40,7 +40,7 @@
     <link rel="alternate" type="text/markdown" href="/llms.txt" title="Plain text summary for AI agents">
     <meta property="og:title" content="Shea Business Solutions Bookkeeping &amp; Tax | QuickBooks ProAdvisor – Orlando, FL">
     <meta property="og:description"
-        content="Expert bookkeeping, QuickBooks setup, payroll, and tax prep for small businesses in Orlando. BBB Accredited. 5-star Google reviews.">
+        content="Expert bookkeeping, QuickBooks setup, payroll, and tax prep for small businesses in Orlando. BBB Accredited. 5.0 Google rating.">
     <meta property="og:url" content="https://www.sheabusinesssolutions.com/">
     <meta property="og:type" content="website">
     <script type="application/ld+json">{
@@ -988,6 +988,11 @@
             opacity: 1;
             transform: translateY(0);
         }
+/* L5 2026-09-01: reveal failsafes - reduced-motion, print, forced reveal (ADD-only) */
+.fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; } }
+@media print { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1 !important; transform: none !important; transition: none !important; } }
+
 
         /* TRUST BAR */
         .trust-bar {
@@ -2363,7 +2368,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" title="Google Tag Manager" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -2512,7 +2517,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
 
     <!-- HERO -->
-    <section id="home">
+    <section data-section="hero" id="home">
         <div class="hero-bg"></div>
         <div class="hero-grid"></div>
         <div class="hero-content">
@@ -2573,7 +2578,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                     <input type="hidden" name="message" value="Quick consultation request from the homepage hero form.">
                     <input type="checkbox" name="botcheck" style="display:none" aria-hidden="true" tabindex="-1">
                     <div class="hero-form-title">Get a free consultation</div>
-                    <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div>
+                    <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
                     <div class="hero-form-fields">
                         <input type="text" name="name" placeholder="Name" aria-label="Full name" required>
                         <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" required>
@@ -2653,7 +2658,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </div>
 
     <!-- SERVICES -->
-    <section id="services">
+    <section data-section="services" id="services">
         <div class="section-inner">
             <div class="section-header fade-up">
                 <span class="section-label">What We Do</span>
@@ -2727,7 +2732,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </section>
 
     <!-- PRICING -->
-    <section id="pricing">
+    <section data-section="offer" id="pricing">
         <div class="section-inner">
             <div class="section-header fade-up">
                 <span class="section-label">Pricing</span>
@@ -2800,7 +2805,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </section>
 
     <!-- PROCESS -->
-    <section id="process">
+    <section data-section="how-it-works" id="process">
         <div class="section-inner">
             <div class="section-header fade-up">
                 <span class="section-label">Our Process</span>
@@ -2845,7 +2850,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </section>
 
     <!-- TESTIMONIALS -->
-    <section id="testimonials">
+    <section data-section="reviews" id="testimonials">
         <div class="section-inner">
             <div class="section-header fade-up">
                 <span class="section-label">Client Reviews</span>
@@ -3094,7 +3099,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
+    <section data-section="who-we-are" id="about">
         <div class="section-inner">
             <div class="about-grid">
                 <div class="about-img-wrap fade-up">
@@ -3132,7 +3137,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </section>
 
         <!-- CLIENT SUCCESS STORIES SECTION -->
-    <section id="case-studies" style="background:var(--charcoal-dark);border-top:1px solid var(--border);padding:5rem 0;">
+    <section data-section="case-studies" id="case-studies" style="background:var(--charcoal-dark);border-top:1px solid var(--border);padding:5rem 0;">
         <div class="section-inner">
             <div class="section-header fade-up">
                 <span class="section-label">Client Success Stories</span>
@@ -3194,7 +3199,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </section>
 
         <!-- RESOURCES / CASE STUDY SECTION -->
-    <section id="resources"
+    <section data-section="local-resources" id="resources"
         style="background:var(--charcoal-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
         <div class="section-inner">
             <div class="section-header fade-up">
@@ -3279,7 +3284,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </section>
 
     <!-- FAQ -->
-    <section id="faq">
+    <section data-section="faq" id="faq">
         <div class="section-inner">
             <div class="section-header fade-up">
                 <span class="section-label">FAQ</span>
@@ -3289,8 +3294,8 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 </p>
             </div>
             <div class="faq-grid fade-up">
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="false">
+                <div class="faq-item open">
+                    <button class="faq-question" onclick="toggleFAQ(this)" aria-expanded="true">
                         <h3 class="faq-title">What bookkeeping services do you offer for small businesses in Orlando?</h3>
                         <span class="faq-icon">+</span>
                     </button>
@@ -3357,7 +3362,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
+    <section data-section="contact" id="contact">
         <div class="section-inner">
             <div class="contact-grid">
                 <div class="contact-left fade-up">
@@ -3406,7 +3411,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 </div>
                 <div class="contact-form-wrap fade-up">
                     <h3 class="form-title">Send a Message</h3>
-                    <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div>
+                    <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
                     <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
                         <input type="hidden" name="subject" value="New Inquiry - Shea Business Solutions Website">
@@ -3448,10 +3453,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 </div>
             </div>
         </div>
-    </section>
+    <figure class="sbs-area-map" style="margin:2rem auto 0;max-width:1100px"><iframe src="https://maps.google.com/maps?q=28.5384,-81.3789&amp;z=9&amp;output=embed" width="100%" height="320" style="border:0;border-radius:12px;display:block" loading="lazy" title="Greater Orlando service area map" referrerpolicy="no-referrer-when-downgrade"></iframe><figcaption style="font-size:.85rem;opacity:.75;margin-top:.6rem">Greater Orlando service area covered by Shea Business Solutions.</figcaption></figure></section>
 
     <!-- FOOTER -->
-    <section class="tax-crosslink" aria-label="Tax preparation services" style="max-width:1100px;margin:0 auto;padding:2rem 1.5rem;">
+    <section data-section="tax-crosslink" class="tax-crosslink" aria-label="Tax preparation services" style="max-width:1100px;margin:0 auto;padding:2rem 1.5rem;">
         <h2 style="font-size:1.35rem;margin-bottom:0.5rem;">Tax Preparation Across the Orlando Area</h2>
         <p style="font-size:0.95rem;line-height:1.6;">Beyond monthly bookkeeping, Shea Business Solutions prepares business and individual tax returns for clients throughout Central Florida. Explore tax preparation in <a href="https://www.sheabusinesssolutions.com/tax-baldwin-park-fl.html">Baldwin Park</a>, <a href="https://www.sheabusinesssolutions.com/tax-dr-phillips-fl.html">Dr. Phillips</a>, <a href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona</a>, <a href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere</a>, and <a href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park</a>.</p>
     </section>
@@ -4241,6 +4246,9 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         });
     })();
     </script>
-<script>(function(){var seen={};document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',p=h.slice(4),t=(a.textContent||'').trim().slice(0,80);if(typeof gtag==='function'){gtag('event','phone_call',{phone_number:p,link_text:t,page_location:location.href});}var now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon('https://bloomviewgrowth.com/collect/phone-click.php',new URLSearchParams({phone:p,text:t,page:location.pathname+location.search}));}}catch(err){}},true);})();</script></body>
+<script>(function(){var seen={};document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',p=h.slice(4),t=(a.textContent||'').trim().slice(0,80);if(typeof gtag==='function'){gtag('event','phone_call',{phone_number:p,link_text:t,page_location:location.href});}var now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon('https://bloomviewgrowth.com/collect/phone-click.php',new URLSearchParams({phone:p,text:t,page:location.pathname+location.search}));}}catch(err){}},true);})();</script><script>/* L5 2026-09-01 reveal failsafe: force-reveal any fade-up the observer never fired on */
+setTimeout(function(){var n=document.querySelectorAll(".fade-up:not(.visible)");for(var i=0;i<n.length;i++){n[i].classList.add("fu-force");n[i].classList.add("visible");}},900);
+</script>
+</body>
 
 </html>

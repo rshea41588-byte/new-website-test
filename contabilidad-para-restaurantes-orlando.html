@@ -55,7 +55,8 @@
       "contentLocation": {"@type": "Place", "name": "Orlando, Florida", "sameAs": "https://en.wikipedia.org/wiki/Orlando,_Florida"}
     },
     {
-      "@type": ["AccountingService", "LocalBusiness"],
+      "@type": ["AccountingService", "LocalBusiness",
+        "Organization"],
       "@id": "https://www.sheabusinesssolutions.com/#business",
       "founder": {"@id": "https://www.sheabusinesssolutions.com/#ryan-shea"},
       "name": "Shea Business Solutions Bookkeeping & Tax",
@@ -67,6 +68,22 @@
       "address": {"@type": "PostalAddress", "streetAddress": "1809 Great Falls Way", "addressLocality": "Orlando", "addressRegion": "FL", "postalCode": "32824", "addressCountry": "US"},
       "geo": {"@type": "GeoCoordinates", "latitude": "28.3772", "longitude": "-81.3505"},
       "areaServed": [{"@type": "City", "name": "Orlando", "sameAs": "https://en.wikipedia.org/wiki/Orlando,_Florida"}, {"@type": "AdministrativeArea", "name": "Central Florida"}],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
       "knowsAbout": ["Bookkeeping", "Restaurant bookkeeping", "Tip allocation", "Weekly payroll", "QuickBooks Online", "QuickBooks Payroll", "Bank reconciliation", "Food cost reporting", "Small business tax preparation"],
       "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Servicios de Contabilidad, Nómina e Impuestos", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Contabilidad Mensual", "description": "Contabilidad mensual integral: categorización de transacciones, conciliación de cuentas bancarias y de tarjeta, y estados de resultados y balance general para pequeñas empresas de Orlando."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Configuración y Limpieza de QuickBooks", "description": "Configuración de QuickBooks Online y limpieza de varios años por un ProAdvisor Certificado Nivel 2, incluyendo el plan de cuentas y correcciones del balance general."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Nómina Integral", "description": "Configuración y procesamiento de nómina con QuickBooks Payroll, cubriendo los impuestos de nómina de Florida, las declaraciones federales y los formularios W-2 y 1099 de fin de año."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Preparación y Planificación de Impuestos", "description": "Planificación fiscal durante todo el año y preparación de declaraciones para pequeñas empresas, sociedades, S-Corps, LLC y personas."}}]},
       "priceRange": "$$",
@@ -730,6 +747,11 @@
         /* FADE UP */
         .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: none; }
+/* L5 2026-09-01: reveal failsafes - reduced-motion, print, forced reveal (ADD-only) */
+.fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce) { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; } }
+@media print { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1 !important; transform: none !important; transition: none !important; } }
+
 
         /* MOBILE CALL */
         .mobile-call-cta {
@@ -1049,7 +1071,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" height="0" width="0"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" title="Google Tag Manager" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
@@ -1196,7 +1218,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
 
     <!-- PAGE HERO -->
-    <section class="post-hero">
+    <section data-section="hero" class="post-hero">
         <div class="post-hero-inner fade-up">
             <div class="hero-grid">
             <div class="hero-copy">
@@ -1211,10 +1233,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <span class="post-meta-item">ProAdvisor de QuickBooks Nivel 2</span>
             </div>
         </div>
-            <aside class="hero-form-card">
+            <aside class="hero-form-card" id="quote-form">
                 <p class="hero-form-title">Reciba una Evaluación Gratuita</p>
                 <p class="hero-form-sub">Cuéntenos cómo están sus libros. Recibe una respuesta el mismo día hábil.</p>
-                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Reseñas de Google</span></div>
+                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Reseñas de Google</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
                 <form class="hero-lead-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
                     <input type="hidden" name="subject" value="New Lead (Restaurant Bookkeeping page) - Shea Business Solutions Website">
@@ -1234,7 +1256,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
     </section>
     <!-- Bloomview visual-rhythm: trust band (additive) -->
-    <section class="sbs-trust-band fade-up" aria-label="Credenciales y estándares de servicio">
+    <section data-section="trust" class="sbs-trust-band fade-up" aria-label="Credenciales y estándares de servicio">
       <div class="sbs-trust-inner">
         <div class="sbs-trust-item"><span class="sbs-trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg></span><h2>QuickBooks ProAdvisor Nivel 2</h2></div>
         <div class="sbs-trust-item"><span class="sbs-trust-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><h2>Especialista Certificado en Nómina</h2></div>
@@ -1307,7 +1329,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <h2 class="fade-up">Preguntas Frecuentes</h2>
 
             <div class="faq-acc fade-up">
-                <details class="faq-item">
+                <details open class="faq-item">
                     <summary>¿Manejan la nómina de restaurantes con propinas?</summary>
                     <div class="faq-a">
                         <p>Sí. Configuramos el manejo de salarios con propina y la asignación de propinas, procesamos la nómina semanal y la registramos directamente en sus libros. Automatizamos la nómina semanal de un restaurante de Orlando con 15 empleados mientras corregíamos sus errores de asignación de propinas.</p>
@@ -1342,13 +1364,13 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 
 
         <!-- ACCESS BLOCK -->
-        <section class="sbs-access fade-up" aria-label="Zona de servicio y acceso" style="background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px;padding:1.75rem;margin:2.5rem 0">
+        <section data-section="service-areas" class="sbs-access fade-up" aria-label="Zona de servicio y acceso" style="background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px;padding:1.75rem;margin:2.5rem 0">
             <h2 style="color:var(--off-white);margin:0 0 .75rem;font-size:1.25rem">Cómo Llegar y Hasta Dónde Vamos</h2>
             <p style="color:var(--text-light);line-height:1.75;margin:0">Los restaurantes son el grupo que con más frecuencia quiere una reunión en persona. La firma opera desde el sur de Orlando, junto a la Central Florida GreeneWay (SR-417), entre la Beachline (SR-528) y Osceola Parkway. Tres corredores definen el radio de servicio. La <a href="https://www.sheabusinesssolutions.com/service-areas.html">SR-417</a> recorre el borde oriental desde Sanford y Oviedo en el condado de Seminole, baja por Lake Nona hacia el condado de Osceola rumbo a Kissimmee y St. Cloud. La I-4 y la SR-408 cubren el centro, con Winter Park, Baldwin Park y el downtown. La SR-429 y la Florida's Turnpike cubren el lado occidental hacia Apopka, Windermere y Dr. Phillips. Como el trabajo se realiza de forma remota a través de QuickBooks, la distancia cambia el trayecto y no los tiempos de entrega, y las preguntas siguen recibiendo respuesta el mismo día hábil.</p>
         </section>
 
         <!-- RELATED READING (additive) -->
-        <section class="sbs-related fade-up" aria-label="Lecturas relacionadas" style="margin:2rem 0 0;padding:1.4rem 1.6rem;background:var(--charcoal-mid);border:1px solid var(--border);border-radius:12px">
+        <section data-section="related-services" class="sbs-related fade-up" aria-label="Lecturas relacionadas" style="margin:2rem 0 0;padding:1.4rem 1.6rem;background:var(--charcoal-mid);border:1px solid var(--border);border-radius:12px">
             <h2 style="color:var(--off-white);margin:0 0 .6rem;font-size:1.15rem">Lecturas Relacionadas</h2>
             <p style="color:var(--text-light);line-height:1.75;margin:0">Si todavía está definiendo por dónde empezar, lea sobre los <a href="https://www.sheabusinesssolutions.com/bookkeeping-services-orlando.html">servicios de contabilidad en Orlando</a> y <a href="https://www.sheabusinesssolutions.com/Blog/what-does-a-quickbooks-cleanup-involve.html">en qué consiste una limpieza de QuickBooks</a>. También puede revisar la <a href="https://www.sheabusinesssolutions.com/services.html">lista completa de servicios en Orlando</a> y las <a href="https://www.sheabusinesssolutions.com/service-areas.html">localidades que atendemos alrededor de Orlando</a>.</p>
         </section>
@@ -1375,7 +1397,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     <!-- POST CTA -->
     
     <!-- Bloomview visual-rhythm: meet-the-bookkeeper photo band (additive) -->
-    <section class="sbs-entity-facts fade-up" aria-label="Acerca de Shea Business Solutions Bookkeeping &amp; Tax" style="max-width:1100px;margin:2rem auto 0;padding:1.75rem 1.5rem;background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px">
+    <section data-section="about-business" class="sbs-entity-facts fade-up" aria-label="Acerca de Shea Business Solutions Bookkeeping &amp; Tax" style="max-width:1100px;margin:2rem auto 0;padding:1.75rem 1.5rem;background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px">
       <h2 style="margin-top:0">Acerca de Shea Business Solutions Bookkeeping &amp; Tax</h2>
       <p>Shea Business Solutions Bookkeeping &amp; Tax es una firma de contabilidad de Orlando dirigida por Ryan Shea, ProAdvisor Certificado de QuickBooks Nivel 2 y Especialista Certificado en Nómina.</p>
       <p>La firma ofrece contabilidad para restaurantes y pequeñas empresas, junto con contabilidad mensual, nómina y preparación de impuestos.</p>
@@ -1384,7 +1406,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
       <p>Shea Business Solutions Bookkeeping &amp; Tax tiene una calificación de 5.0 en Google, es un Negocio Acreditado por el BBB y responde cada llamada, mensaje y correo el mismo día hábil.</p>
     </section>
 
-    <section class="sbs-reviews-band fade-up" aria-label="Reseñas de clientes" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
+    <section data-section="reviews" class="sbs-reviews-band fade-up" aria-label="Reseñas de clientes" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">5.0 en Google</p>
         <h2 style="color:var(--off-white);margin:0 0 2rem;text-align:center">Lo Que Dicen los Clientes de Orlando</h2>
@@ -1408,7 +1430,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         <p style="margin:2rem 0 0;text-align:center"><a href="https://share.google/r2Vu1r1mJtu3Nw1jH" target="_blank" rel="noopener" style="color:var(--gold);font-weight:600">Lea más reseñas de Google &rsaquo;</a></p>
       </div>
     </section>
-    <section class="sbs-about-band fade-up" aria-label="Conozca a Ryan Shea">
+    <section data-section="who-we-are" class="sbs-about-band fade-up" aria-label="Conozca a Ryan Shea">
       <div class="sbs-about-inner">
         <picture><source type="image/webp" srcset="images/ryan_about.webp"><img class="sbs-about-photo" src="images/ryan_about.jpeg" width="1823" height="2000" loading="lazy" alt="Ryan J. Shea, owner of Shea Business Solutions"></picture>
         <div class="sbs-about-copy">
@@ -1442,7 +1464,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </div>
 
     <!-- FOOTER -->
-    <section class="tax-crosslink" aria-label="Servicios de preparación de impuestos" style="max-width:1100px;margin:0 auto;padding:2rem 1.5rem;">
+    <section data-section="tax-crosslink" class="tax-crosslink" aria-label="Servicios de preparación de impuestos" style="max-width:1100px;margin:0 auto;padding:2rem 1.5rem;">
         <h2 style="font-size:1.35rem;margin-bottom:0.5rem;">Preparación de Impuestos en el Área de Orlando</h2>
         <p style="font-size:0.95rem;line-height:1.6;">Además de la contabilidad mensual, Shea Business Solutions prepara declaraciones de impuestos de negocios e individuales para clientes de todo el centro de Florida. Explore la preparación de impuestos en <a href="https://www.sheabusinesssolutions.com/tax-baldwin-park-fl.html">Baldwin Park</a>, <a href="https://www.sheabusinesssolutions.com/tax-dr-phillips-fl.html">Dr. Phillips</a>, <a href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona</a>, <a href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere</a> y <a href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park</a>.</p>
     </section>
@@ -1606,8 +1628,12 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         }
 
         // Safety net: reveal any fade-up not yet triggered so no content stays invisible on load.
+        setTimeout(() => {
+            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('fu-force', 'visible'));
+        }, 900);
+
         window.addEventListener('load', () => setTimeout(() => {
-            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('visible'));
+            document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('fu-force', 'visible'));
         }, 600));
 
         // Copy email to clipboard on desktop, native mailto on mobile
