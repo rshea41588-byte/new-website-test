@@ -1350,15 +1350,13 @@
         }
 
         .testimonials-track {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            animation: scrollLeft 40s linear infinite;
-            width: max-content;
+            width: 100%;
         }
 
-        .testimonials-track:hover {
-            animation-play-state: paused;
-        }
+        
 
         @keyframes scrollLeft {
             0% {
@@ -2910,119 +2908,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                             </div>
                         </div>
                     </div>
-                    <!-- Set 2 (duplicate for seamless loop) -->
-                    <div class="testimonial-card">
-                        <span class="testimonial-quote">&ldquo;</span>
-                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="testimonial-text">Ryan is extremely knowledgeable and very trustworthy when it comes
-                            to doing my
-                            taxes. He is the absolute best and I highly recommend him. Professional, honest, and always
-                            available.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">YR</div>
-                            <div>
-                                <div class="author-name">Yily Rivera</div>
-                                <div class="author-desc">Tax Preparation Client</div>
-                            </div>
-                        </div>
                     </div>
-                    <div class="testimonial-card">
-                        <span class="testimonial-quote">&ldquo;</span>
-                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="testimonial-text">Ryan and his team have literally saved me! He tore down my file and
-                            helped me
-                            build it back the RIGHT way. Our P&amp;L finally makes sense after all these years. Highly
-                            recommend!</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">KK</div>
-                            <div>
-                                <div class="author-name">Kristen Klimas</div>
-                                <div class="author-desc">Bookkeeping Cleanup Client</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <span class="testimonial-quote">&ldquo;</span>
-                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="testimonial-text">Mr She's goes above and beyond to make sure everything is
-                            transparent as
-                            possible and the best service is provided. Can't go wrong with Shea Business Solutions.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">DF</div>
-                            <div>
-                                <div class="author-name">Dylan Fudge</div>
-                                <div class="author-desc">Accounting Services Client</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <span class="testimonial-quote">&ldquo;</span>
-                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="testimonial-text">Absolute pleasure to work with and the help Ryan provided was
-                            immense! He made
-                            the complicated simple. I'll be sure to refer him to my family and friends for sure!</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">DB</div>
-                            <div>
-                                <div class="author-name">Derek Bernier</div>
-                                <div class="author-desc">Accounting Client</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <span class="testimonial-quote">&ldquo;</span>
-                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="testimonial-text">Ryan was awesome — helped me with multiple years of taxes. He always
-                            kept
-                            everything focused on how he could help me and made sure I knew all my options when filing.
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">NS</div>
-                            <div>
-                                <div class="author-name">Niko Saf</div>
-                                <div class="author-desc">Tax Preparation Client</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <span class="testimonial-quote">&ldquo;</span>
-                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="testimonial-text">I’ve been working with Ryan for the past three years and couldn’t be
-                            happier.
-                            He’s helped me navigate complex tax situations, saved me time and stress, and I have
-                            complete trust in his
-                            expertise and honesty. I would highly recommend him to anyone—if I didn’t have Ryan, I would
-                            have been
-                            completely screwed. Five stars.</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">AB</div>
-                            <div>
-                                <div class="author-name">Connor Matthews</div>
-                                <div class="author-desc">Bookkeeping Client</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <span class="testimonial-quote">&ldquo;</span>
-                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                        <p class="testimonial-text">There's no shortage of accountants out there, but not many take the
-                            time to
-                            really understand your business and what makes your industry different. Ryan does. I’ve
-                            always appreciated
-                            how he thinks outside the box and looks at the full picture, not just the numbers. If you’re
-                            looking for
-                            someone who’s actually engaged and brings ideas to the table, I’d definitely recommend
-                            reaching out to
-                            him..</p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">SM</div>
-                            <div>
-                                <div class="author-name">Rayce Robinsonn</div>
-                                <div class="author-desc">QuickBooks Client</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="google-badge fade-up" style="margin-top:2.5rem;">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
@@ -3415,7 +3301,12 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     
         <!-- LAST UPDATED -->
         <p class="fade-up" style="margin-top: 2.5rem; font-size: 0.9rem; opacity: 0.75;">Last updated: September 2, 2026</p>
-    </main>
+    
+    <div class="sbs-sticky-cta" role="group" aria-label="Call or request a quote">
+        <a class="sbs-sticky-call" href="tel:+16037598547">Call (603) 759-8547</a>
+        <a class="sbs-sticky-quote" href="#contact">Get a quote</a>
+    </div>
+</main>
 <footer>
         <div class="footer-inner">
             <div class="footer-brand">
@@ -4131,6 +4022,17 @@ setTimeout(function(){var n=document.querySelectorAll(".fade-up:not(.visible)");
 setTimeout(function(){try{document.querySelectorAll('.fade-up').forEach(function(el){el.classList.add('visible','fu-force')})}catch(e){}},1200);
 try{if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.fade-up').forEach(function(el){el.classList.add('visible','fu-force')})}}catch(e){}
 </script>
+
+    <style>
+        .sbs-sticky-cta{display:none}
+        @media (max-width:768px){
+            .sbs-sticky-cta{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;position:fixed;left:0;right:0;bottom:0;z-index:9000;padding:.6rem .75rem;background:var(--charcoal,#1A1A1A);border-top:1px solid var(--border-strong,rgba(201,168,76,.5))}
+            .sbs-sticky-cta a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:12px;font-family:'Jost',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none}
+            .sbs-sticky-call{background:var(--gold,#C9A84C);color:#1A1A1A}
+            .sbs-sticky-quote{background:transparent;color:var(--gold,#C9A84C);border:1px solid var(--gold,#C9A84C)}
+            body{padding-bottom:76px}
+        }
+    </style>
 </body>
 
 </html>
