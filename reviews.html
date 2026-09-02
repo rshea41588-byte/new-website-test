@@ -833,7 +833,8 @@
   })();
   </script>
 
-    <script type="application/ld+json">{
+    <script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -879,6 +880,33 @@
         "https://www.linkedin.com/in/ryan-shea-6173122a7/",
         "https://www.instagram.com/sheabusinesssolutions/",
         "https://www.youtube.com/@SheaBusinessSolutions"
+      ],
+      "knowsAbout": [
+        "Bookkeeping",
+        "Monthly bookkeeping",
+        "QuickBooks Online",
+        "QuickBooks Payroll",
+        "QuickBooks cleanup",
+        "Bank reconciliation",
+        "Payroll processing",
+        "Small business tax preparation",
+        "Financial statement preparation"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
       ]
     },
     {
@@ -947,9 +975,39 @@
           "item": "https://www.sheabusinesssolutions.com/reviews.html"
         }
       ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.sheabusinesssolutions.com/#ryan-shea",
+      "name": "Ryan Shea",
+      "jobTitle": "QuickBooks Level 2 ProAdvisor & Owner",
+      "worksFor": {
+        "@id": "https://www.sheabusinesssolutions.com/#business"
+      },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Professional Certification",
+          "name": "QuickBooks ProAdvisor Level 2 Certified",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit QuickBooks"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Professional Certification",
+          "name": "Certified QuickBooks Payroll Specialist",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit QuickBooks"
+          }
+        }
+      ]
     }
   ]
-}</script>
+}
+    </script>
 
 <style>
 /* SBS visibility fixes 2026-08-06 (rev2: nav overlay + blog table + blog caption + content link color) — CSS only, additive */
@@ -992,7 +1050,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     <!-- NAV -->
     <nav id="mainNav">
         <a href="https://www.sheabusinesssolutions.com/" class="nav-logo">
-            <picture style="display:block"><source type="image/webp" srcset="images/logo_header.webp"><img width="1426" height="460" src="images/logo_header.png" alt="Shea Business Solutions QuickBooks ProAdvisor Orlando FL" loading="lazy"></picture>
+            <picture style="display:block"><source type="image/webp" srcset="images/logo_header.webp"><img width="1426" height="460" src="images/logo_header.webp" alt="Shea Business Solutions QuickBooks ProAdvisor Orlando FL" loading="eager" fetchpriority="high"></picture>
         </a>
         <ul class="nav-links">
             <li>
@@ -1310,12 +1368,15 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </div>
 
     <!-- FOOTER -->
+    
+        <!-- LAST UPDATED -->
+        <p class="fade-up" style="margin-top: 2.5rem; font-size: 0.9rem; opacity: 0.75;">Last updated: September 2, 2026</p>
     </main>
 <footer>
         <div class="footer-inner">
             <div class="footer-brand">
                 <div class="footer-logo">
-                    <picture style="display:block"><source type="image/webp" srcset="images/logo_header.webp"><img width="1426" height="460" src="images/logo_header.png" alt="Shea Business Solutions QuickBooks ProAdvisor Orlando FL" loading="lazy"></picture>
+                    <picture style="display:block"><source type="image/webp" srcset="images/logo_header.webp"><img width="1426" height="460" src="images/logo_header.webp" alt="Shea Business Solutions LLC logo, bookkeeping and tax firm in Orlando, Florida" loading="lazy"></picture>
                 </div>
                 <p class="footer-tagline">QuickBooks Level 2 ProAdvisor offering bookkeeping, payroll, and tax preparation for small businesses in Orlando, FL.</p>
                 <a href="https://www.bbb.org/us/fl/orlando/profile/bookkeeping-services/shea-business-solutions-llc-0733-235977459/#sealclick"
