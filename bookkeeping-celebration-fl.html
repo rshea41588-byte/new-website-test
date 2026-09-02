@@ -1206,6 +1206,12 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 .post-meta .post-meta-item{border:1px solid rgba(201,168,76,.35);background:rgba(201,168,76,.08);border-radius:999px;padding:.35rem .8rem;color:var(--text-light);line-height:1.2}
 .post-meta .post-meta-divider{display:none}
 @media(max-width:600px){.post-meta{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:.5rem}}
+
+/* L5 2026-09-02: ORDER 1 social-proof strip sits between the fixed nav and the hero; hero top padding trimmed by the strip's height so the fold is unchanged */
+.sbs-proof-strip:hover{background:var(--charcoal-light)}
+#home{padding-top:2.2rem}
+.post-hero{padding-top:2.2rem}
+@media(max-width:640px){.sbs-proof-strip{font-size:.85rem}}
 </style>
 </head><body>
     <!-- Google Tag Manager (noscript) -->
@@ -1271,6 +1277,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
         </div>
 
     <!-- PAGE HERO -->
+    <a data-section="social-proof" class="sbs-proof-strip" href="https://www.google.com/maps?cid=13996863349911463635" target="_blank" rel="noopener nofollow" aria-label="Rated 5.0 from 22 Google reviews - open the Google Business Profile" style="display:block;width:100%;background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);border-bottom:1px solid rgba(201,168,76,.22);padding:.6rem 1rem;text-align:center;text-decoration:none;margin-top:80px"><span style="color:#C9A84C;letter-spacing:2px;font-size:.95rem" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span style="color:var(--off-white);font-size:.9rem;font-weight:700">5.0</span> <span style="color:var(--text-light);font-size:.9rem">from 22 Google reviews</span></a>
     <section data-section="hero" class="post-hero">
         <div class="post-hero-inner fade-up">
             <div class="hero-grid">
@@ -1289,7 +1296,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <aside class="hero-form-card" id="quote-form">
                 <p class="hero-form-title">Get a Free Assessment</p>
                 <p class="hero-form-sub">Tell us where the books stand. You get an answer the same business day.</p>
-                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; Google Reviews</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
+                <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; 22 Google reviews</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
                 <form class="hero-lead-form" action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="8bbf8bd5-9752-4920-b4dc-2d5c4c5fdb33">
                     <input type="hidden" name="subject" value="New Lead (Bookkeeping Celebration page) - Shea Business Solutions Website">
@@ -1537,7 +1544,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <cite style="color:var(--off-white);font-style:normal;font-weight:600">Y.R. <span style="color:var(--text-muted);font-weight:400;font-size:.85rem">&middot; Verified Google review</span><span class="bv-jobline" style="display:block;color:var(--text-muted);font-weight:400;font-size:.82rem;margin-top:.3rem">Tax preparation</span></cite>
           </blockquote>
         </div>
-        <p style="margin:2rem 0 0;text-align:center"><a href="https://share.google/r2Vu1r1mJtu3Nw1jH" target="_blank" rel="noopener nofollow" style="color:var(--gold);font-weight:600">Read more Google reviews &rsaquo;</a></p>
+        <p style="margin:2rem 0 0;text-align:center"><a href="https://www.google.com/maps?cid=13996863349911463635" target="_blank" rel="noopener nofollow" style="color:var(--gold);font-weight:600">Read more Google reviews &rsaquo;</a></p>
       </div>
     </section>
     <!-- Bloomview visual-rhythm: meet-the-bookkeeper photo band (additive) -->
@@ -1837,5 +1844,6 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
   else wire();
 })();
 </script>
+
 </body>
 </html>
