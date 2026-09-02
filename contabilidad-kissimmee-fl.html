@@ -1230,6 +1230,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 .bv-jobline{display:block}
 .sbs-entity-facts,.sbs-directions,.sbs-reviews-band,.sbs-closing-form,.sbsfaq,.sbsfaq-item,.stat-item,.sbs-area-map,.footer-brand,.tldr-eyebrow,.bvcalc-disclaimer,.sbs-access{box-sizing:border-box}
 </style>
+<style>/* Bloomview L5 2026-09-02 (row 253): the town-map band gets its own treatment so it is not the same as the prose band above it. */
+.sbs-town-map[data-bvband]{background:linear-gradient(160deg,var(--charcoal-light) 0%,var(--charcoal-mid) 100%);border-top:1px solid rgba(201,168,76,.18);max-width:none!important;padding:2.5rem 1.5rem!important;margin:2.5rem 0 0!important}
+.sbs-town-map[data-bvband] > *{max-width:1000px;margin-left:auto;margin-right:auto}
+</style>
 </head><body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9T5BHBW" title="Google Tag Manager" height="0" width="0"
@@ -1510,7 +1514,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </article>
 
     <!-- Bloomview driving-directions block (additive): keyless neighbor area maps + Google Maps routes to the published GBP address -->
-    <section data-section="area-map" class="sbs-town-map fade-up" aria-label="Map of Kissimmee, FL" style="max-width:1000px;margin:2.5rem auto 0;padding:0 1.5rem">
+    <section data-section="area-map" class="sbs-town-map fade-up" data-bvband="1" aria-label="Map of Kissimmee, FL" style="max-width:1000px;margin:2.5rem auto 0;padding:0 1.5rem">
       <h2 style="color:var(--off-white);margin:0 0 .75rem;font-size:1.25rem">Where Kissimmee, FL sits on the map</h2>
       <iframe src="https://maps.google.com/maps?q=Kissimmee%2C+FL&amp;z=12&amp;hl=en&amp;output=embed" width="100%" height="320" style="border:0;border-radius:12px;display:block" loading="lazy" title="Map of Kissimmee, FL" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
