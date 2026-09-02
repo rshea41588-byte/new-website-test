@@ -44,12 +44,15 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["AccountingService", "LocalBusiness",
-        "Organization"],
+      "@type": [
+        "AccountingService",
+        "LocalBusiness",
+        "Organization"
+      ],
       "@id": "https://www.sheabusinesssolutions.com/#business",
-            "founder": {
-              "@id": "https://www.sheabusinesssolutions.com/#ryan-shea"
-            },
+      "founder": {
+        "@id": "https://www.sheabusinesssolutions.com/#ryan-shea"
+      },
       "name": "Shea Business Solutions Bookkeeping & Tax",
       "image": "https://www.sheabusinesssolutions.com/images/logo.png",
       "description": "QuickBooks Level 2 ProAdvisor offering bookkeeping, payroll, and tax preparation for small businesses in Orlando and Winter Springs, FL.",
@@ -64,11 +67,26 @@
         "postalCode": "32824",
         "addressCountry": "US"
       },
-      "geo": {"@type": "GeoCoordinates", "latitude": "28.3772", "longitude": "-81.3505"},
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "28.3772",
+        "longitude": "-81.3505"
+      },
       "areaServed": [
-        {"@type": "City", "name": "Winter Springs", "sameAs": "https://en.wikipedia.org/wiki/Winter_Springs,_Florida"},
-        {"@type": "City", "name": "Orlando", "sameAs": "https://en.wikipedia.org/wiki/Orlando,_Florida"},
-        {"@type": "AdministrativeArea", "name": "Seminole County, Florida"}
+        {
+          "@type": "City",
+          "name": "Winter Springs",
+          "sameAs": "https://en.wikipedia.org/wiki/Winter_Springs,_Florida"
+        },
+        {
+          "@type": "City",
+          "name": "Orlando",
+          "sameAs": "https://en.wikipedia.org/wiki/Orlando,_Florida"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Seminole County, Florida"
+        }
       ],
       "openingHoursSpecification": [
         {
@@ -86,22 +104,75 @@
           "closes": "23:59"
         }
       ],
-      "knowsAbout": ["Bookkeeping", "Monthly bookkeeping", "QuickBooks Online", "QuickBooks Payroll", "QuickBooks cleanup", "Bank reconciliation", "Payroll processing", "Small business tax preparation"],
+      "knowsAbout": [
+        "Bookkeeping",
+        "Monthly bookkeeping",
+        "QuickBooks Online",
+        "QuickBooks Payroll",
+        "QuickBooks cleanup",
+        "Bank reconciliation",
+        "Payroll processing",
+        "Small business tax preparation"
+      ],
       "priceRange": "$$",
       "sameAs": [
         "https://www.facebook.com/SheaBusinessSolutions",
         "https://www.linkedin.com/in/ryan-shea-6173122a7/",
         "https://www.instagram.com/sheabusinesssolutions/",
         "https://www.youtube.com/@SheaBusinessSolutions"
-      ]
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Bookkeeping, Payroll & Tax Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monthly Bookkeeping",
+              "description": "Full-service monthly bookkeeping including transaction categorization, bank and credit card reconciliation, and P&L and balance sheet reporting for small businesses."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "QuickBooks Setup and Cleanup",
+              "description": "QuickBooks Online setup and multi-year cleanup by a Level 2 Certified ProAdvisor, including chart-of-accounts builds and balance sheet corrections."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Full-Service Payroll",
+              "description": "Payroll setup and processing through QuickBooks Payroll, covering Florida payroll taxes, federal filings, and year-end W-2s and 1099s."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Tax Preparation and Planning",
+              "description": "Year-round tax planning and return preparation for small businesses, partnerships, S-Corps, LLCs, and individuals."
+            }
+          }
+        ]
+      }
     },
     {
       "@type": "Service",
       "@id": "https://www.sheabusinesssolutions.com/bookkeeping-winter-springs-fl.html#service",
       "name": "Bookkeeping Services in Winter Springs, FL",
       "serviceType": "Bookkeeping, QuickBooks setup and cleanup, payroll processing, and tax preparation",
-      "provider": {"@id": "https://www.sheabusinesssolutions.com/#business"},
-      "areaServed": {"@type": "City", "name": "Winter Springs", "sameAs": "https://en.wikipedia.org/wiki/Winter_Springs,_Florida"},
+      "provider": {
+        "@id": "https://www.sheabusinesssolutions.com/#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Winter Springs",
+        "sameAs": "https://en.wikipedia.org/wiki/Winter_Springs,_Florida"
+      },
       "url": "https://www.sheabusinesssolutions.com/bookkeeping-winter-springs-fl.html",
       "description": "Monthly bookkeeping, QuickBooks setup and cleanup, payroll, and tax preparation for small businesses in Winter Springs, Seminole County, Florida, handled by a QuickBooks Level 2 ProAdvisor."
     },
@@ -110,23 +181,73 @@
       "@id": "https://www.sheabusinesssolutions.com/bookkeeping-winter-springs-fl.html#webpage",
       "url": "https://www.sheabusinesssolutions.com/bookkeeping-winter-springs-fl.html",
       "name": "Bookkeeping Winter Springs FL | Shea Business Solutions Bookkeeping & Tax",
-      "isPartOf": {"@id": "https://www.sheabusinesssolutions.com/#website"},
-      "about": {"@id": "https://www.sheabusinesssolutions.com/bookkeeping-winter-springs-fl.html#service"}
+      "isPartOf": {
+        "@id": "https://www.sheabusinesssolutions.com/#website"
+      },
+      "about": {
+        "@id": "https://www.sheabusinesssolutions.com/bookkeeping-winter-springs-fl.html#service"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.sheabusinesssolutions.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Bookkeeping in Winter Springs, FL", "item": "https://www.sheabusinesssolutions.com/bookkeeping-winter-springs-fl.html"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.sheabusinesssolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Bookkeeping in Winter Springs, FL",
+          "item": "https://www.sheabusinesssolutions.com/bookkeeping-winter-springs-fl.html"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "Do you work with home-based and service businesses in Winter Springs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Winter Springs runs heavily on home-based professionals, service firms, and small practices, and those are the books we handle every day. The work is done in QuickBooks Online and remotely, so there is no office to drive to."}},
-        {"@type": "Question", "name": "My personal and Winter Springs business spending is in one account. Can you separate it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and it is the most common cleanup we run for owners in a community like this. We reconstruct the records, separate owner draws from real expenses, and rebuild a profit and loss you can actually read."}},
-        {"@type": "Question", "name": "What does bookkeeping cost for a Winter Springs business?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing is flat and quoted up front after a free assessment, not billed by the hour. Cost depends on transaction volume, how many accounts you run, and whether you need payroll or a cleanup first, so we scope it before any work starts."}},
-        {"@type": "Question", "name": "How does getting started actually work for a Winter Springs business?", "acceptedAnswer": {"@type": "Answer", "text": "The first conversation is a free consultation, by phone or video, about your business and where the books stand. No pressure, and you get a clear scope and an exact quote before anything begins."}}
+        {
+          "@type": "Question",
+          "name": "Do you work with home-based and service businesses in Winter Springs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Winter Springs runs heavily on home-based professionals, service firms, and small practices, and those are the books we handle every day. The work is done in QuickBooks Online and remotely, so there is no office to drive to."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My personal and Winter Springs business spending is in one account. Can you separate it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and it is the most common cleanup we run for owners in a community like this. We reconstruct the records, separate owner draws from real expenses, and rebuild a profit and loss you can actually read."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does bookkeeping cost for a Winter Springs business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pricing is flat and quoted up front after a free assessment, not billed by the hour. Cost depends on transaction volume, how many accounts you run, and whether you need payroll or a cleanup first, so we scope it before any work starts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does getting started actually work for a Winter Springs business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The first conversation is a free consultation, by phone or video, about your business and where the books stand. No pressure, and you get a clear scope and an exact quote before anything begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who actually does the work on my account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ryan Shea, a QuickBooks Level 2 Certified ProAdvisor and Certified QuickBooks Payroll Specialist, handles the work directly. Every call, text, and email is answered the same business day, and the work runs remotely in QuickBooks Online and QuickBooks Payroll."
+          }
+        }
       ]
     },
     {
@@ -1390,6 +1511,12 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                     <summary>How does getting started actually work for a Winter Springs business?</summary>
                     <div class="faq-a">
                         <p>The first conversation is a free consultation, by phone or video, about your business and where the books stand. No pressure, and you get a clear scope and an exact quote before anything begins.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>Who actually does the work on my account?</summary>
+                    <div class="faq-a">
+                        <p>Ryan Shea, a QuickBooks Level 2 Certified ProAdvisor and Certified QuickBooks Payroll Specialist, handles the work directly. Every call, text, and email is answered the same business day, and the work runs remotely in QuickBooks Online and QuickBooks Payroll.</p>
                     </div>
                 </details>
             </div>

@@ -47,19 +47,50 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["AccountingService", "LocalBusiness",
-        "Organization"],
+      "@type": [
+        "AccountingService",
+        "LocalBusiness",
+        "Organization"
+      ],
       "@id": "https://www.sheabusinesssolutions.com/#business",
-      "founder": {"@id": "https://www.sheabusinesssolutions.com/#ryan-shea"},
+      "founder": {
+        "@id": "https://www.sheabusinesssolutions.com/#ryan-shea"
+      },
       "name": "Shea Business Solutions Bookkeeping & Tax",
       "image": "https://www.sheabusinesssolutions.com/images/logo.png",
       "description": "ProAdvisor de QuickBooks Nivel 2 que ofrece servicios de contabilidad, nómina, preparación de impuestos y contabilidad para pequeñas empresas en Orlando y Kissimmee, FL.",
       "url": "https://www.sheabusinesssolutions.com/",
       "telephone": "+16037598547",
       "email": "ryan@sheabusinesssolutions.com",
-      "address": {"@type": "PostalAddress", "streetAddress": "1809 Great Falls Way", "addressLocality": "Orlando", "addressRegion": "FL", "postalCode": "32824", "addressCountry": "US"},
-      "geo": {"@type": "GeoCoordinates", "latitude": "28.3772", "longitude": "-81.3505"},
-      "areaServed": [{"@type": "City", "name": "Kissimmee", "sameAs": "https://en.wikipedia.org/wiki/Kissimmee,_Florida"}, {"@type": "City", "name": "Orlando", "sameAs": "https://en.wikipedia.org/wiki/Orlando,_Florida"}, {"@type": "AdministrativeArea", "name": "Central Florida"}],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1809 Great Falls Way",
+        "addressLocality": "Orlando",
+        "addressRegion": "FL",
+        "postalCode": "32824",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "28.3772",
+        "longitude": "-81.3505"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Kissimmee",
+          "sameAs": "https://en.wikipedia.org/wiki/Kissimmee,_Florida"
+        },
+        {
+          "@type": "City",
+          "name": "Orlando",
+          "sameAs": "https://en.wikipedia.org/wiki/Orlando,_Florida"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Central Florida"
+        }
+      ],
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
@@ -76,18 +107,76 @@
           "closes": "23:59"
         }
       ],
-      "knowsAbout": ["Bookkeeping", "Monthly bookkeeping", "QuickBooks Online", "QuickBooks Payroll", "QuickBooks cleanup", "Bank reconciliation", "Payroll processing", "Small business tax preparation", "Financial statement preparation"],
-      "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Servicios de Contabilidad, Nómina e Impuestos", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Contabilidad Mensual", "description": "Contabilidad mensual integral que incluye categorización de transacciones, conciliación de cuentas bancarias y de tarjeta de crédito, y reportes de estado de resultados y balance general para pequeñas empresas."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Configuración y Limpieza de QuickBooks", "description": "Configuración de QuickBooks Online y limpieza de varios años por un ProAdvisor Certificado Nivel 2, incluyendo la creación del plan de cuentas y correcciones del balance general."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Nómina Integral", "description": "Configuración y procesamiento de nómina a través de QuickBooks Payroll, cubriendo los impuestos de nómina de Florida, las declaraciones federales y los formularios W-2 y 1099 de fin de año."}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Preparación y Planificación de Impuestos", "description": "Planificación fiscal durante todo el año y preparación de declaraciones para pequeñas empresas, sociedades, S-Corps, LLC y personas."}}]},
+      "knowsAbout": [
+        "Bookkeeping",
+        "Monthly bookkeeping",
+        "QuickBooks Online",
+        "QuickBooks Payroll",
+        "QuickBooks cleanup",
+        "Bank reconciliation",
+        "Payroll processing",
+        "Small business tax preparation",
+        "Financial statement preparation"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Contabilidad, Nómina e Impuestos",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Contabilidad Mensual",
+              "description": "Contabilidad mensual integral que incluye categorización de transacciones, conciliación de cuentas bancarias y de tarjeta de crédito, y reportes de estado de resultados y balance general para pequeñas empresas."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Configuración y Limpieza de QuickBooks",
+              "description": "Configuración de QuickBooks Online y limpieza de varios años por un ProAdvisor Certificado Nivel 2, incluyendo la creación del plan de cuentas y correcciones del balance general."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Nómina Integral",
+              "description": "Configuración y procesamiento de nómina a través de QuickBooks Payroll, cubriendo los impuestos de nómina de Florida, las declaraciones federales y los formularios W-2 y 1099 de fin de año."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Preparación y Planificación de Impuestos",
+              "description": "Planificación fiscal durante todo el año y preparación de declaraciones para pequeñas empresas, sociedades, S-Corps, LLC y personas."
+            }
+          }
+        ]
+      },
       "priceRange": "$$",
-      "sameAs": ["https://www.facebook.com/SheaBusinessSolutions", "https://www.linkedin.com/in/ryan-shea-6173122a7/", "https://www.instagram.com/sheabusinesssolutions/", "https://www.youtube.com/@SheaBusinessSolutions"]
+      "sameAs": [
+        "https://www.facebook.com/SheaBusinessSolutions",
+        "https://www.linkedin.com/in/ryan-shea-6173122a7/",
+        "https://www.instagram.com/sheabusinesssolutions/",
+        "https://www.youtube.com/@SheaBusinessSolutions"
+      ]
     },
     {
       "@type": "Service",
       "@id": "https://www.sheabusinesssolutions.com/contabilidad-kissimmee-fl.html#service",
       "name": "Servicios de Contabilidad en Kissimmee, FL",
       "serviceType": "Contabilidad, configuración y limpieza de QuickBooks, procesamiento de nómina y preparación de impuestos",
-      "provider": {"@id": "https://www.sheabusinesssolutions.com/#business"},
-      "areaServed": {"@type": "City", "name": "Kissimmee", "sameAs": "https://en.wikipedia.org/wiki/Kissimmee,_Florida"},
+      "provider": {
+        "@id": "https://www.sheabusinesssolutions.com/#business"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Kissimmee",
+        "sameAs": "https://en.wikipedia.org/wiki/Kissimmee,_Florida"
+      },
       "url": "https://www.sheabusinesssolutions.com/contabilidad-kissimmee-fl.html",
       "inLanguage": "es-US",
       "description": "Contabilidad mensual, configuración y limpieza de QuickBooks, nómina y preparación de impuestos para pequeñas empresas en Kissimmee, Florida, a cargo de un ProAdvisor de QuickBooks Nivel 2."
@@ -98,14 +187,28 @@
       "url": "https://www.sheabusinesssolutions.com/contabilidad-kissimmee-fl.html",
       "name": "Contabilidad en Kissimmee, FL | Shea Business Solutions Bookkeeping & Tax",
       "inLanguage": "es-US",
-      "isPartOf": {"@id": "https://www.sheabusinesssolutions.com/#website"},
-      "about": {"@id": "https://www.sheabusinesssolutions.com/contabilidad-kissimmee-fl.html#service"}
+      "isPartOf": {
+        "@id": "https://www.sheabusinesssolutions.com/#website"
+      },
+      "about": {
+        "@id": "https://www.sheabusinesssolutions.com/contabilidad-kissimmee-fl.html#service"
+      }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.sheabusinesssolutions.com/"},
-        {"@type": "ListItem", "position": 2, "name": "Contabilidad en Kissimmee, FL", "item": "https://www.sheabusinesssolutions.com/contabilidad-kissimmee-fl.html"}
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://www.sheabusinesssolutions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contabilidad en Kissimmee, FL",
+          "item": "https://www.sheabusinesssolutions.com/contabilidad-kissimmee-fl.html"
+        }
       ]
     },
     {
@@ -113,10 +216,46 @@
       "@id": "https://www.sheabusinesssolutions.com/contabilidad-kissimmee-fl.html#faq",
       "inLanguage": "es-US",
       "mainEntity": [
-        {"@type": "Question", "name": "¿Hacen la contabilidad de rentas vacacionales en Kissimmee?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Las estancias de corto plazo pagan el impuesto sobre ventas de Florida más el impuesto de desarrollo turístico del condado de Osceola, y plataformas como Airbnb y Vrbo gestionan una parte, pero no siempre todo. Mantenemos esa capa fiscal controlada para que nunca llegue una notificación sorpresa."}},
-        {"@type": "Question", "name": "Los depósitos de tarjeta de mi restaurante en Kissimmee no coinciden con el reporte del POS. ¿Es un problema de contabilidad?", "acceptedAnswer": {"@type": "Answer", "text": "Es el que más corregimos en Kissimmee. Toast, Square y Clover depositan las ventas con tarjeta ya descontadas las comisiones de procesamiento, así que registrar los depósitos directo a ingresos subestima las ventas y oculta las comisiones. Conciliamos los depósitos contra los reportes del POS."}},
-        {"@type": "Question", "name": "¿Cuánto cuesta la contabilidad mensual en Kissimmee?", "acceptedAnswer": {"@type": "Answer", "text": "El precio depende del volumen de transacciones y del estado de sus libros. Todo comienza con una consulta gratuita y un presupuesto por escrito; el trabajo empieza solo después de que usted aprueba el número."}},
-        {"@type": "Question", "name": "¿Tengo que ir a una oficina para empezar desde Kissimmee?", "acceptedAnswer": {"@type": "Answer", "text": "No. La primera conversación es una consulta gratuita por teléfono o video, sin presión y sin compromiso, y recibe un alcance claro y el precio exacto por escrito antes de comenzar."}}
+        {
+          "@type": "Question",
+          "name": "¿Hacen la contabilidad de rentas vacacionales en Kissimmee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Las estancias de corto plazo pagan el impuesto sobre ventas de Florida más el impuesto de desarrollo turístico del condado de Osceola, y plataformas como Airbnb y Vrbo gestionan una parte, pero no siempre todo. Mantenemos esa capa fiscal controlada para que nunca llegue una notificación sorpresa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Los depósitos de tarjeta de mi restaurante en Kissimmee no coinciden con el reporte del POS. ¿Es un problema de contabilidad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es el que más corregimos en Kissimmee. Toast, Square y Clover depositan las ventas con tarjeta ya descontadas las comisiones de procesamiento, así que registrar los depósitos directo a ingresos subestima las ventas y oculta las comisiones. Conciliamos los depósitos contra los reportes del POS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta la contabilidad mensual en Kissimmee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El precio depende del volumen de transacciones y del estado de sus libros. Todo comienza con una consulta gratuita y un presupuesto por escrito; el trabajo empieza solo después de que usted aprueba el número."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Tengo que ir a una oficina para empezar desde Kissimmee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. La primera conversación es una consulta gratuita por teléfono o video, sin presión y sin compromiso, y recibe un alcance claro y el precio exacto por escrito antes de comenzar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Quién hace el trabajo en mi cuenta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ryan Shea, ProAdvisor Certificado de QuickBooks Nivel 2 y Especialista Certificado en Nóminas de QuickBooks, se encarga del trabajo directamente. Contesta cada llamada, mensaje y correo el mismo día hábil, y el trabajo se realiza de forma remota en QuickBooks Online y QuickBooks Payroll."
+          }
+        }
       ]
     },
     {
@@ -124,15 +263,33 @@
       "@id": "https://www.sheabusinesssolutions.com/#ryan-shea",
       "name": "Ryan Shea",
       "jobTitle": "QuickBooks Level 2 ProAdvisor & Owner",
-      "worksFor": {"@id": "https://www.sheabusinesssolutions.com/#business"},
+      "worksFor": {
+        "@id": "https://www.sheabusinesssolutions.com/#business"
+      },
       "hasCredential": [
-        {"@type": "EducationalOccupationalCredential", "credentialCategory": "Professional Certification", "name": "QuickBooks ProAdvisor Level 2 Certified", "recognizedBy": {"@type": "Organization", "name": "Intuit QuickBooks"}},
-        {"@type": "EducationalOccupationalCredential", "credentialCategory": "Professional Certification", "name": "Certified QuickBooks Payroll Specialist", "recognizedBy": {"@type": "Organization", "name": "Intuit QuickBooks"}}
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Professional Certification",
+          "name": "QuickBooks ProAdvisor Level 2 Certified",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit QuickBooks"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Professional Certification",
+          "name": "Certified QuickBooks Payroll Specialist",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Intuit QuickBooks"
+          }
+        }
       ]
     }
   ]
 }
-    </script>
+</script>
     <link rel="preload" as="font" type="font/woff2" href="/fonts/cormorant-garamond-600-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/fonts/jost-400-latin.woff2" crossorigin>
     <style>
@@ -1372,6 +1529,12 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                     <summary>¿Tengo que ir a una oficina para empezar desde Kissimmee?</summary>
                     <div class="faq-a">
                         <p>No. La primera conversación es una consulta gratuita por teléfono o video, sin presión y sin compromiso, y recibe un alcance claro y el precio exacto por escrito antes de comenzar.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>¿Quién hace el trabajo en mi cuenta?</summary>
+                    <div class="faq-a">
+                        <p>Ryan Shea, ProAdvisor Certificado de QuickBooks Nivel 2 y Especialista Certificado en Nóminas de QuickBooks, se encarga del trabajo directamente. Contesta cada llamada, mensaje y correo el mismo día hábil, y el trabajo se realiza de forma remota en QuickBooks Online y QuickBooks Payroll.</p>
                     </div>
                 </details>
             </div>
