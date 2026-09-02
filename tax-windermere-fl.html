@@ -1720,7 +1720,11 @@ try{if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').
             .sbs-sticky-call{background:var(--gold,#C9A84C);color:#1A1A1A}
             .sbs-sticky-quote{background:transparent;color:var(--gold,#C9A84C);border:1px solid var(--gold,#C9A84C)}
             body{padding-bottom:76px}
+            .sbs-sticky-cta{animation:sbsStickyIn .28s ease-out both}
         }
+        @keyframes sbsStickyIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+        @media (prefers-reduced-motion: reduce){.sbs-sticky-cta{animation:none}}
+        @media print{.sbs-sticky-cta{display:none}}
     </style>
 </body>
 </html>
