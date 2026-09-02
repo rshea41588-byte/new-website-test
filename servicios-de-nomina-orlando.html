@@ -834,7 +834,7 @@
         .compare-table tr:last-child td { border-bottom: none; }
         
         /* === Bloomview visual-rhythm layer (additive, 2026-07-18) === */
-        .sbs-trust-band{background:var(--charcoal-mid);border-top:1px solid var(--gold-dark);border-bottom:1px solid rgba(201,168,76,.18);padding:2.75rem 1.5rem}
+        .sbs-trust-band{background:linear-gradient(160deg,var(--charcoal-light) 0%,var(--charcoal-mid) 100%);border-top:1px solid var(--gold-dark);border-bottom:1px solid rgba(201,168,76,.18);padding:2.75rem 1.5rem}
         .sbs-trust-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
         .sbs-trust-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.7rem}
         .sbs-trust-ico{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.35);color:var(--gold);flex:none}
@@ -1077,6 +1077,11 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
   .post-meta .post-meta-divider{display:none;}
 }
 </style>
+<style>/* Bloomview L5 2026-09-02 (row 245): hero trust claims render as DISCRETE bounded chips in a row, one claim per chip. Additive - no claim text changed. */
+.post-meta .post-meta-item{border:1px solid rgba(201,168,76,.35);background:rgba(201,168,76,.08);border-radius:999px;padding:.35rem .8rem;color:var(--text-light);line-height:1.2}
+.post-meta .post-meta-divider{display:none}
+@media(max-width:600px){.post-meta{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:.5rem}}
+</style>
 </head>
 
 <body>
@@ -1091,57 +1096,8 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <picture style="display:block"><source type="image/webp" srcset="images/logo_header.webp"><img width="1426" height="460" src="images/logo_header.webp" alt="Shea Business Solutions QuickBooks ProAdvisor Orlando FL" loading="eager" fetchpriority="high"></picture>
         </a>
         <ul class="nav-links">
-            <li>
-                <button class="nav-trigger" aria-haspopup="true">Servicios <span class="nav-caret"></span></button>
-                <div class="dropdown wide">
-                    <span class="dd-group-label">QuickBooks</span>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-setup-orlando.html">QuickBooks Setup</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-cleanup-orlando.html">QuickBooks Cleanup</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-migration-orlando.html">QuickBooks Migration</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-training-orlando.html">QuickBooks Training</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-cost-orlando.html">ProAdvisor Pricing</a>
-                    <span class="dd-group-label">Contabilidad y Nómina</span>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-services-orlando.html">Bookkeeping Services</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/flat-rate-bookkeeping-orlando.html">Flat-Rate Bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/catch-up-bookkeeping-orlando.html">Catch-Up Bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/payroll-services-orlando.html">Payroll Services</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-tax-package-orlando.html">Bookkeeping + Tax Package</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/construction-bookkeeping-orlando.html">Construction Bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/restaurant-bookkeeping-orlando.html">Restaurant Bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/fitness-gym-bookkeeping-orlando.html">Gym &amp; Fitness Bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/manufacturing-bookkeeping-orlando.html">Manufacturing Bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/dry-cleaning-bookkeeping-orlando.html">Dry Cleaning Bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/dental-med-spa-bookkeeping-orlando.html">Dental &amp; Med-Spa Bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/ecommerce-bookkeeping-orlando.html">E-commerce Bookkeeping</a>
-                    <span class="dd-group-label">Preparación de Impuestos</span>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/small-business-tax-prep-orlando.html">Small-Business Tax Prep</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/tax-prep-cost-orlando.html">Tax Prep Cost</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park tax prep</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/tax-dr-phillips-fl.html">Dr. Phillips tax prep</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere tax prep</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona tax prep</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/tax-baldwin-park-fl.html">Baldwin Park tax prep</a>
-                </div>
-            </li>
-            <li>
-                <button class="nav-trigger" aria-haspopup="true">Zonas de Servicio <span class="nav-caret"></span></button>
-                <div class="dropdown wide">
-                    <span class="dd-group-label">Contabilidad por Ciudad</span>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-winter-park-fl.html">Winter Park bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-dr-phillips-fl.html">Dr. Phillips bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-windermere-fl.html">Windermere bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-lake-nona-fl.html">Lake Nona bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html">Baldwin Park bookkeeping</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-kissimmee-fl.html">Kissimmee</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-sanford-fl.html">Sanford</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-oviedo-fl.html">Oviedo</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-apopka-fl.html">Apopka</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-st-cloud-fl.html">St. Cloud</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-celebration-fl.html">Celebration</a>
-                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-winter-springs-fl.html">Winter Springs</a>
-                </div>
-            </li>
+            <li><a href="https://www.sheabusinesssolutions.com/services.html">Servicios</a></li>
+            <li><a href="https://www.sheabusinesssolutions.com/service-areas.html">Zonas de Servicio</a></li>
             <li><a href="https://www.sheabusinesssolutions.com/#pricing">Precios</a></li>
             <li><a href="https://www.sheabusinesssolutions.com/#process">Proceso</a></li>
             <li><a href="https://www.sheabusinesssolutions.com/#testimonials">Reseñas</a></li>
@@ -1170,49 +1126,14 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <div class="mm-section">
                 <button class="mm-toggle" onclick="toggleMM(this)">Servicios <span class="plus">+</span></button>
                 <div class="mm-panel">
-                <a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor</a>
-                <a href="https://www.sheabusinesssolutions.com/quickbooks-setup-orlando.html">QuickBooks Setup</a>
-                <a href="https://www.sheabusinesssolutions.com/quickbooks-cleanup-orlando.html">QuickBooks Cleanup</a>
-                <a href="https://www.sheabusinesssolutions.com/quickbooks-migration-orlando.html">QuickBooks Migration</a>
-                <a href="https://www.sheabusinesssolutions.com/quickbooks-training-orlando.html">QuickBooks Training</a>
-                <a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-cost-orlando.html">ProAdvisor Pricing</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-services-orlando.html">Bookkeeping Services</a>
-                <a href="https://www.sheabusinesssolutions.com/flat-rate-bookkeeping-orlando.html">Flat-Rate Bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/catch-up-bookkeeping-orlando.html">Catch-Up Bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/payroll-services-orlando.html">Payroll Services</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-tax-package-orlando.html">Bookkeeping + Tax Package</a>
-                <a href="https://www.sheabusinesssolutions.com/construction-bookkeeping-orlando.html">Construction Bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/restaurant-bookkeeping-orlando.html">Restaurant Bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/fitness-gym-bookkeeping-orlando.html">Gym &amp; Fitness Bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/manufacturing-bookkeeping-orlando.html">Manufacturing Bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/dry-cleaning-bookkeeping-orlando.html">Dry Cleaning Bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/dental-med-spa-bookkeeping-orlando.html">Dental &amp; Med-Spa Bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/ecommerce-bookkeeping-orlando.html">E-commerce Bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/small-business-tax-prep-orlando.html">Small-Business Tax Prep</a>
-                <a href="https://www.sheabusinesssolutions.com/tax-prep-cost-orlando.html">Tax Prep Cost</a>
-                <a href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park tax prep</a>
-                <a href="https://www.sheabusinesssolutions.com/tax-dr-phillips-fl.html">Dr. Phillips tax prep</a>
-                <a href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere tax prep</a>
-                <a href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona tax prep</a>
-                <a href="https://www.sheabusinesssolutions.com/tax-baldwin-park-fl.html">Baldwin Park tax prep</a>
-                </div>
+<a href="https://www.sheabusinesssolutions.com/services.html">Servicios</a>
+</div>
             </div>
             <div class="mm-section">
                 <button class="mm-toggle" onclick="toggleMM(this)">Zonas de Servicio <span class="plus">+</span></button>
                 <div class="mm-panel">
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-winter-park-fl.html">Winter Park bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-dr-phillips-fl.html">Dr. Phillips bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-windermere-fl.html">Windermere bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-lake-nona-fl.html">Lake Nona bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html">Baldwin Park bookkeeping</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-kissimmee-fl.html">Kissimmee</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-sanford-fl.html">Sanford</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-oviedo-fl.html">Oviedo</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-apopka-fl.html">Apopka</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-st-cloud-fl.html">St. Cloud</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-celebration-fl.html">Celebration</a>
-                <a href="https://www.sheabusinesssolutions.com/bookkeeping-winter-springs-fl.html">Winter Springs</a>
-                </div>
+<a href="https://www.sheabusinesssolutions.com/service-areas.html">Zonas de Servicio</a>
+</div>
             </div>
             <a href="https://www.sheabusinesssolutions.com/#pricing" onclick="closeMenu()">Precios</a>
             <a href="https://www.sheabusinesssolutions.com/#process" onclick="closeMenu()">Proceso</a>
@@ -1523,38 +1444,15 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <div class="footer-col">
                 <h3>Servicios</h3>
                 <ul>
-                    <li><a href="https://www.sheabusinesssolutions.com/services.html">All Services</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/flat-rate-bookkeeping-orlando.html">Flat-Rate Bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/catch-up-bookkeeping-orlando.html">Catch-Up Bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/financial-statement-preparation-orlando.html">Financial Statement Preparation</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/responsive-bookkeeping-firm-orlando.html">Responsive Bookkeeping Firm</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/payroll-services-orlando.html">Payroll Services</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/construction-bookkeeping-orlando.html">Construction Bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/restaurant-bookkeeping-orlando.html">Restaurant Bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/fitness-gym-bookkeeping-orlando.html">Gym &amp; Fitness Bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/manufacturing-bookkeeping-orlando.html">Manufacturing Bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/dry-cleaning-bookkeeping-orlando.html">Dry Cleaning Bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/quickbooks-setup-orlando.html">QuickBooks Setup</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/quickbooks-cleanup-orlando.html">QuickBooks Cleanup</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/quickbooks-migration-orlando.html">QuickBooks Migration</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/quickbooks-training-orlando.html">QuickBooks Training</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-cost-orlando.html">Bookkeeping Pricing</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/payroll-services-cost-orlando.html">Payroll Pricing</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/restaurant-payroll-orlando.html">Restaurant Payroll</a></li>
-                </ul>
+<li><a href="https://www.sheabusinesssolutions.com/services.html">Todos los servicios de contabilidad e impuestos en Orlando</a></li>
+</ul>
             </div>
             <div class="footer-col">
                 <h3>Empresa</h3>
                 <ul>
-                    <li><a href="https://www.sheabusinesssolutions.com/#about">Acerca de Ryan</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/#process">Nuestro Proceso</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/#pricing">Precios</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/#testimonials">Reseñas de Clientes</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/reviews.html">Reseñas de Google</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/#faq">FAQ</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/Blog/">Blog</a></li>
-                </ul>
+<li><a href="https://www.sheabusinesssolutions.com/reviews.html">Rese&ntilde;as de Google de Shea Business Solutions</a></li>
+<li><a href="https://www.sheabusinesssolutions.com/Blog/">Blog de contabilidad en Orlando</a></li>
+</ul>
             </div>
             <div class="footer-col">
                 <h3>Contacto</h3>
@@ -1566,34 +1464,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             <div class="footer-col">
                 <h3>Zonas que atendemos</h3>
                 <ul>
-                    <li><a href="https://www.sheabusinesssolutions.com/service-areas.html">All Service Areas</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-baldwin-park-fl.html">Baldwin Park bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-dr-phillips-fl.html">Dr. Phillips bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-lake-nona-fl.html">Lake Nona bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-windermere-fl.html">Windermere bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-winter-park-fl.html">Winter Park bookkeeping</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-kissimmee-fl.html">Kissimmee</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-sanford-fl.html">Sanford</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-oviedo-fl.html">Oviedo</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-apopka-fl.html">Apopka</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-st-cloud-fl.html">St. Cloud</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-celebration-fl.html">Celebration</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/bookkeeping-winter-springs-fl.html">Winter Springs</a></li>
-                </ul>
+<li><a href="https://www.sheabusinesssolutions.com/service-areas.html">Todas las zonas que atendemos cerca de Orlando</a></li>
+</ul>
             </div>
-            <div class="footer-col">
-                <h3>Preparación de impuestos</h3>
-                <ul>
-                    <li><a href="https://www.sheabusinesssolutions.com/tax-baldwin-park-fl.html">Baldwin Park Tax Prep</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/tax-dr-phillips-fl.html">Dr. Phillips Tax Prep</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/tax-lake-nona-fl.html">Lake Nona Tax Prep</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/tax-windermere-fl.html">Windermere Tax Prep</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/tax-winter-park-fl.html">Winter Park Tax Prep</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/small-business-tax-prep-orlando.html">Small Business Tax Prep</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/s-corp-tax-preparation-orlando.html">S-Corp Tax Prep</a></li>
-                    <li><a href="https://www.sheabusinesssolutions.com/tax-prep-cost-orlando.html">Tax Prep Cost Guide</a></li>
-                </ul>
-            </div>
+            
         </div>
         <div class="footer-social">
             
