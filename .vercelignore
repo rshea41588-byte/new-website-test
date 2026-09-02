@@ -4,3 +4,9 @@ _indexnow_key.txt
 _sm.xml
 _local_fontface.css
 _indexable.txt
+README.md
+docs/
+tooling/
+_session-trash/
+apply-tap-targets.mjs
+apply-visibility-fixes.mjs
