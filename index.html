@@ -1349,12 +1349,109 @@
             overflow: hidden;
         }
 
+        /* Review carousel.
+           Deliberately NOT the old marquee: that version duplicated all seven cards to fake a
+           seamless loop, and the duplicate set was removed on purpose. Every review here appears
+           exactly ONCE, so crawlers and AI assistants read seven distinct reviews, not fourteen.
+           It also does not auto-advance -- the reader drives it, so nothing moves under someone
+           who is mid-sentence. Snap scrolling works on touch, trackpad and keyboard with no JS;
+           the arrows are an enhancement on top. */
         .testimonials-track {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            display: flex;
             gap: 1.5rem;
             width: 100%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
+
+        /* NO `scroll-behavior: smooth` here on purpose. Measured in-browser: with it set, a
+           programmatic scroll never moves the track at all -- scrollLeft stays 0 even when the
+           call explicitly asks for behavior:'auto', and reduced-motion is off. The arrows animate
+           the scroll in JS instead, which is the same effect without depending on the browser's
+           smooth-scroll implementation. Native touch, trackpad and keyboard scrolling is
+           unaffected either way. */
+
+        .testimonials-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .testimonials-track>.testimonial-card {
+            scroll-snap-align: start;
+            flex: 0 0 calc((100% - 3rem) / 3);
+            min-width: 0;
+        }
+
+        .testimonials-track:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        .rev-nav {
+            display: flex;
+            gap: .75rem;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 1.25rem;
+        }
+
+        .rev-btn {
+            width: 44px;
+            height: 44px;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            background: var(--charcoal-mid);
+            border: 1px solid var(--border);
+            color: var(--off-white);
+            font-size: 1.1rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: border-color .3s ease, opacity .3s ease;
+        }
+
+        .rev-btn:hover:not([disabled]) {
+            border-color: var(--gold);
+        }
+
+        .rev-btn:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        .rev-btn[disabled] {
+            opacity: .35;
+            cursor: default;
+        }
+
+        .rev-count {
+            margin-right: auto;
+            font-size: .85rem;
+            color: var(--text-light);
+        }
+
+        /* Wide screens kept at four across. The grid this replaced was auto-fit, so on a ~2000px
+           display it already showed four cards; dropping to three would inflate every card and
+           read as a downgrade at exactly the width the site is most often demoed on. */
+        @media (min-width: 1500px) {
+            .testimonials-track>.testimonial-card {
+                flex-basis: calc((100% - 4.5rem) / 4);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .testimonials-track>.testimonial-card {
+                flex-basis: calc((100% - 1.5rem) / 2);
+            }
+        }
+
+        @media (max-width: 620px) {
+            .testimonials-track>.testimonial-card {
+                flex-basis: 100%;
+            }
+        }
+
 
         
 
@@ -2797,7 +2894,8 @@ main>section[data-section="faq"]{background:var(--charcoal-mid)!important}</styl
                 <p>Real words from real clients — a 5.0 rating on Google.</p>
             </div>
             <div class="testimonials-track-wrap fade-up">
-                <div class="testimonials-track" id="testimonialsTrack">
+                <div class="testimonials-track" id="testimonialsTrack" tabindex="0" role="group"
+                    aria-roledescription="carousel" aria-label="Client reviews — scroll or use the arrows">
                     <!-- Set 1 -->
                     <div class="testimonial-card">
                         <span class="testimonial-quote">&ldquo;</span>
@@ -2911,6 +3009,13 @@ main>section[data-section="faq"]{background:var(--charcoal-mid)!important}</styl
                         </div>
                     </div>
                     </div>
+                <div class="rev-nav" data-rev-nav hidden>
+                    <span class="rev-count" data-rev-count aria-live="polite"></span>
+                    <button type="button" class="rev-btn" data-rev-prev aria-controls="testimonialsTrack"
+                        aria-label="Previous reviews">&#8592;</button>
+                    <button type="button" class="rev-btn" data-rev-next aria-controls="testimonialsTrack"
+                        aria-label="Next reviews">&#8594;</button>
+                </div>
             </div>
             <div class="google-badge fade-up" style="margin-top:2.5rem;">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"
@@ -4046,6 +4151,127 @@ try{if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').
         <a class="sbs-sticky-call" href="tel:+16037598547">Call (603) 759-8547</a>
         <a class="sbs-sticky-quote" href="#contact">Get a quote</a>
     </div>
+
+    <!-- Review carousel arrows. Progressive enhancement only: the track is a native snap
+         scroller, so touch, trackpad and keyboard already work with this script absent. The
+         nav ships hidden and is revealed here, so a JS failure leaves no dead buttons. -->
+    <script>
+        (function () {
+            var track = document.getElementById('testimonialsTrack');
+            var nav = document.querySelector('[data-rev-nav]');
+            var prev = document.querySelector('[data-rev-prev]');
+            var next = document.querySelector('[data-rev-next]');
+            var count = document.querySelector('[data-rev-count]');
+            if (!track || !nav || !prev || !next) return;
+            var cards = track.querySelectorAll('.testimonial-card');
+            if (cards.length < 2) return;
+
+            function unit() {
+                var c = track.querySelector('.testimonial-card');
+                if (!c) return null;
+                var cs = getComputedStyle(track);
+                var gap = parseFloat(cs.columnGap || cs.gap) || 0;
+                return c.offsetWidth + gap;
+            }
+
+            function perView(u) {
+                return Math.max(1, Math.round(track.clientWidth / u));
+            }
+
+            function update() {
+                var u = unit();
+                if (!u) return;
+                var max = track.scrollWidth - track.clientWidth;
+                // 1px tolerance: sub-pixel layout means scrollLeft rarely lands on 0 or max exactly,
+                // and an arrow that never disables looks broken at the end of the row.
+                prev.disabled = track.scrollLeft <= 1;
+                next.disabled = track.scrollLeft >= max - 1;
+                if (count) {
+                    var n = cards.length;
+                    var first = Math.min(n, Math.round(track.scrollLeft / u) + 1);
+                    var last = Math.min(n, first + perView(u) - 1);
+                    count.textContent = (first === last ? 'Review ' + first
+                        : 'Reviews ' + first + '–' + last) + ' of ' + n;
+                }
+            }
+
+            // Scroll animated by hand rather than by scroll-behavior / behavior:'smooth'.
+            // Measured in-browser: every smooth path is a no-op here -- the track simply never
+            // moves -- while a plain scrollLeft assignment lands correctly and snaps. A short
+            // rAF tween gives the same feel and cannot be dropped by the browser.
+            var anim = null;
+
+            function glide(to) {
+                if (anim) { cancelAnimationFrame(anim); anim = null; }
+                var max = track.scrollWidth - track.clientWidth;
+                to = Math.max(0, Math.min(max, to));
+                var from = track.scrollLeft;
+                var dist = to - from;
+                var reduce = window.matchMedia
+                    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                // document.hidden matters: requestAnimationFrame is suspended in a background
+                // tab, so an rAF tween there would never advance and the carousel would be left
+                // stranded mid-scroll when the reader came back. Nobody can see an animation on a
+                // hidden tab anyway, so jump straight to the end state.
+                if (reduce || document.hidden || !dist || !window.requestAnimationFrame) {
+                    track.scrollLeft = to;
+                    update();
+                    return;
+                }
+                var dur = 380, t0 = null;
+                function frame(ts) {
+                    if (t0 === null) t0 = ts;
+                    var k = Math.min(1, (ts - t0) / dur);
+                    var e = 1 - Math.pow(1 - k, 3);          // easeOutCubic
+                    track.scrollLeft = from + dist * e;
+                    if (k < 1) { anim = requestAnimationFrame(frame); }
+                    else { anim = null; update(); }
+                }
+                anim = requestAnimationFrame(frame);
+            }
+
+            function move(dir) {
+                var u = unit();
+                if (!u) return;
+                glide(track.scrollLeft + dir * u * perView(u));
+            }
+
+            prev.addEventListener('click', function () { move(-1); });
+            next.addEventListener('click', function () { move(1); });
+
+            var t;
+            track.addEventListener('scroll', function () {
+                window.clearTimeout(t);
+                t = window.setTimeout(update, 80);
+            }, { passive: true });
+            window.addEventListener('resize', function () {
+                window.clearTimeout(t);
+                t = window.setTimeout(update, 120);
+            });
+
+            nav.hidden = false;
+
+            // Recompute when the track's box actually settles, not when this script happens to
+            // run. Called inline at parse time it read clientWidth 0 and latched "Review 1 of 7"
+            // while three cards were on screen; web fonts and late layout move it again after
+            // that. ResizeObserver covers first layout, font swap and resize in one; the load
+            // and resize listeners are the fallback where it is unavailable.
+            if (window.ResizeObserver) {
+                var ro = new ResizeObserver(update);
+                ro.observe(track);
+                // Observe a CARD as well, not just the track. The track sits inside a
+                // max-width:1200px container, so its own width never changes between a 1280px and
+                // a 1900px viewport -- only the cards resize as the flex-basis breakpoints swap.
+                // Watching the track alone, the observer never fired at those widths and the
+                // counter stayed on its first (pre-layout) reading of "Review 1 of 7" while four
+                // cards were on screen.
+                if (cards[0]) { ro.observe(cards[0]); }
+            } else {
+                window.addEventListener('load', update);
+            }
+            update();
+        })();
+    </script>
 </body>
 
 </html>
