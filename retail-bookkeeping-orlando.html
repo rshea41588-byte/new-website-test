@@ -1110,13 +1110,15 @@
     function once(k) { try { if (sessionStorage.getItem(k)) return false; sessionStorage.setItem(k, "1"); return true; } catch (e) { return true; } }
     function fire(n, d, o) { try { oaiq("measure", n, d, o); } catch (e) {} }
 
-    /* phone_call - CUSTOM event. Was reported as lead_created until 2026-08-25; split so that
-       lead_created means form leads only. Dylan's call. */
+    /* phone_call - CUSTOM event, reporting only (a custom event cannot be a campaign
+       objective). It ALSO fires lead_created, which is the event the campaign optimizes on.
+       Each source has its own dedup key, so a phone tap no longer consumes the session's
+       one lead_created and a later real form lead still counts. Corrected 2026-09-03. */
     document.addEventListener("click", function (ev) {
       var a = ev.target && ev.target.closest ? ev.target.closest('a[href^="tel:"]') : null;
       if (!a || !once("oaiq_call_fired")) return;
       fire("custom", { type: "custom" }, { custom_event_name: "phone_call", event_id: eid("call") });
-      lead(); /* ALSO count it as lead_created - the single event the campaign optimizes on */
+      lead("call"); /* ALSO count it as lead_created - the single event the campaign optimizes on */
     }, true);
 
     /* appointment_scheduled - fires on the Calendly CTA CLICK.
@@ -1126,7 +1128,7 @@
       var a = ev.target && ev.target.closest ? ev.target.closest('a[href*="calendly.com"]') : null;
       if (!a || !once("oaiq_appt_fired")) return;
       fire("appointment_scheduled", { type: "customer_action" }, { event_id: eid("appt") });
-      lead(); /* ALSO count it as lead_created - the single event the campaign optimizes on */
+      lead("book"); /* ALSO count it as lead_created - the single event the campaign optimizes on */
     }, true);
 
     /* lead_created - real form leads. Two success paths exist on this site:
@@ -1135,14 +1137,15 @@
            reads that stash BEFORE the body script on /thank-you/ removes it. It never removes it.
            Gating on the stash means a refresh or direct visit to /thank-you/ is NOT counted.
        (b) inline pages (city/money pages): the existing handler un-hides .hero-form-success. */
-    function lead() { if (once("oaiq_lead_fired")) fire("lead_created", { type: "customer_action" }, { event_id: eid("lead") }); }
+    function lead(src) { if (once("oaiq_lead_fired_" + (src || "form"))) fire("lead_created", { type: "customer_action" }, { event_id: eid("lead") }); }
+    try { window.bvgLead = lead; } catch (e) {}
     try {
-      if (/\/thank-you(\/|\/index\.html)?$/.test(location.pathname) && sessionStorage.getItem("bvg_lead_pending")) lead();
+      if (/\/thank-you(\/|\/index\.html)?$/.test(location.pathname) && sessionStorage.getItem("bvg_lead_pending")) lead("form");
     } catch (e) {}
     function wireInline() {
       var s = document.querySelector(".hero-form-success");
       if (!s) return;
-      new MutationObserver(function () { if (!s.hidden) lead(); }).observe(s, { attributes: true, attributeFilter: ["hidden"] });
+      new MutationObserver(function () { if (!s.hidden) lead("form"); }).observe(s, { attributes: true, attributeFilter: ["hidden"] });
     }
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", wireInline);
     else wireInline();
@@ -1296,9 +1299,9 @@ main>[data-section="closing-cta"]{background:var(--charcoal)!important}</style>
                     <input type="hidden" name="from_name" value="SBS Website">
                     <input type="checkbox" name="botcheck" style="display:none" aria-hidden="true" tabindex="-1">
                     <label for="hf-name">Full Name *</label>
-                    <input id="hf-name" type="text" name="name" placeholder="John Smith" required>
+                    <input id="hf-name" type="text" name="name" placeholder="John Smith" required autocomplete="name">
                     <label for="hf-phone">Phone *</label>
-                    <input id="hf-phone" type="tel" name="phone" placeholder="(555) 000-0000" required>
+                    <input id="hf-phone" type="tel" name="phone" placeholder="(555) 000-0000" required autocomplete="tel">
                     <label for="hf-msg">What do you need help with? *</label>
                     <textarea id="hf-msg" name="message" rows="3" placeholder="Shop type, sales channels, POS system, inventory questions..." required></textarea>
                     <button type="submit" class="hero-form-btn">Request a Free Assessment</button>

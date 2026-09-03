@@ -2312,13 +2312,15 @@
     function once(k) { try { if (sessionStorage.getItem(k)) return false; sessionStorage.setItem(k, "1"); return true; } catch (e) { return true; } }
     function fire(n, d, o) { try { oaiq("measure", n, d, o); } catch (e) {} }
 
-    /* phone_call - CUSTOM event. Was reported as lead_created until 2026-08-25; split so that
-       lead_created means form leads only. Dylan's call. */
+    /* phone_call - CUSTOM event, reporting only (a custom event cannot be a campaign
+       objective). It ALSO fires lead_created, which is the event the campaign optimizes on.
+       Each source has its own dedup key, so a phone tap no longer consumes the session's
+       one lead_created and a later real form lead still counts. Corrected 2026-09-03. */
     document.addEventListener("click", function (ev) {
       var a = ev.target && ev.target.closest ? ev.target.closest('a[href^="tel:"]') : null;
       if (!a || !once("oaiq_call_fired")) return;
       fire("custom", { type: "custom" }, { custom_event_name: "phone_call", event_id: eid("call") });
-      lead(); /* ALSO count it as lead_created - the single event the campaign optimizes on */
+      lead("call"); /* ALSO count it as lead_created - the single event the campaign optimizes on */
     }, true);
 
     /* appointment_scheduled - fires on the Calendly CTA CLICK.
@@ -2328,7 +2330,7 @@
       var a = ev.target && ev.target.closest ? ev.target.closest('a[href*="calendly.com"]') : null;
       if (!a || !once("oaiq_appt_fired")) return;
       fire("appointment_scheduled", { type: "customer_action" }, { event_id: eid("appt") });
-      lead(); /* ALSO count it as lead_created - the single event the campaign optimizes on */
+      lead("book"); /* ALSO count it as lead_created - the single event the campaign optimizes on */
     }, true);
 
     /* lead_created - real form leads. Two success paths exist on this site:
@@ -2337,14 +2339,15 @@
            reads that stash BEFORE the body script on /thank-you/ removes it. It never removes it.
            Gating on the stash means a refresh or direct visit to /thank-you/ is NOT counted.
        (b) inline pages (city/money pages): the existing handler un-hides .hero-form-success. */
-    function lead() { if (once("oaiq_lead_fired")) fire("lead_created", { type: "customer_action" }, { event_id: eid("lead") }); }
+    function lead(src) { if (once("oaiq_lead_fired_" + (src || "form"))) fire("lead_created", { type: "customer_action" }, { event_id: eid("lead") }); }
+    try { window.bvgLead = lead; } catch (e) {}
     try {
-      if (/\/thank-you(\/|\/index\.html)?$/.test(location.pathname) && sessionStorage.getItem("bvg_lead_pending")) lead();
+      if (/\/thank-you(\/|\/index\.html)?$/.test(location.pathname) && sessionStorage.getItem("bvg_lead_pending")) lead("form");
     } catch (e) {}
     function wireInline() {
       var s = document.querySelector(".hero-form-success");
       if (!s) return;
-      new MutationObserver(function () { if (!s.hidden) lead(); }).observe(s, { attributes: true, attributeFilter: ["hidden"] });
+      new MutationObserver(function () { if (!s.hidden) lead("form"); }).observe(s, { attributes: true, attributeFilter: ["hidden"] });
     }
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", wireInline);
     else wireInline();
@@ -2516,9 +2519,9 @@ main>section[data-section="faq"]{background:var(--charcoal-mid)!important}</styl
                     <div class="hero-form-title">Get a free consultation</div>
                     <div class="form-rating" style="display:flex;align-items:center;gap:.5rem;margin:0 0 .9rem;"><span style="color:#C9A84C;letter-spacing:2px;font-size:1rem;" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-size:.9rem;"><b>5.0</b> &middot; 22 Google reviews</span></div><p class="form-proof" style="margin:0 0 .9rem;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.72);border-left:2px solid #C9A84C;padding-left:.6rem;">&ldquo;Absolute pleasure to work with and the help Ryan provided was immense! He made the complicated simple.&rdquo; &mdash; <b>Derek Bernier</b>, verified Google review</p>
                     <div class="hero-form-fields">
-                        <input type="text" name="name" placeholder="Name" aria-label="Full name" required>
-                        <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" required>
-                        <input type="email" name="email" placeholder="Email" aria-label="Email" required>
+                        <input type="text" name="name" placeholder="Name" aria-label="Full name" required autocomplete="name">
+                        <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" required autocomplete="tel">
+                        <input type="email" name="email" placeholder="Email" aria-label="Email" required autocomplete="email">
                     </div>
                     <button type="submit" class="btn btn-primary hero-form-submit">Request a Free Consultation
                         &rarr;</button>
@@ -3261,12 +3264,12 @@ main>section[data-section="faq"]{background:var(--charcoal-mid)!important}</styl
                         <input type="checkbox" name="botcheck" style="display:none" aria-hidden="true" tabindex="-1">
                         <div class="form-row">
                             <div class="form-group"><label>Full Name *</label><input type="text" name="name"
-                                    placeholder="John Smith" required aria-label="Full name"></div>
+                                    placeholder="John Smith" required aria-label="Full name" autocomplete="name"></div>
                             <div class="form-group"><label>Phone *</label><input type="tel" name="phone"
-                                    placeholder="(555) 000-0000" required aria-label="Phone number"></div>
+                                    placeholder="(555) 000-0000" required aria-label="Phone number" autocomplete="tel"></div>
                         </div>
                         <div class="form-group"><label>Email Address *</label><input type="email" name="email"
-                                placeholder="john@yourbusiness.com" required aria-label="Email address"></div>
+                                placeholder="john@yourbusiness.com" required aria-label="Email address" autocomplete="email"></div>
                         <div class="form-group">
                             <label>Service Interested In</label>
                             <select name="service" aria-label="Service needed">
@@ -3807,6 +3810,11 @@ main>section[data-section="faq"]{background:var(--charcoal-mid)!important}</styl
                 });
                 const data = await res.json();
                 if (data.success) {
+                    /* 2026-09-03: fire the conversion HERE, at real web3forms success, instead of
+                       depending on /thank-you/ loading. keepalive:true on the SDK beacon survives
+                       the navigation. The /thank-you/ gate shares the same "form" dedup key, so
+                       this cannot double-count. */
+                    try { window.bvgLead && window.bvgLead('form'); } catch (e) {}
                     window.location.href = '/thank-you/';
                 } else {
                     alert('Something went wrong. Please try again.');
@@ -3838,6 +3846,8 @@ main>section[data-section="faq"]{background:var(--charcoal-mid)!important}</styl
                 if (data.success) {
                     this.style.display = 'none';
                     document.getElementById('formSuccess').style.display = 'block';
+                    /* 2026-09-03: see the hero handler above - conversion fires at success, not on /thank-you/. */
+                    try { window.bvgLead && window.bvgLead('form'); } catch (e) {}
                     window.location.href = '/thank-you/';
                 } else {
                     alert('Something went wrong. Please try again.');
