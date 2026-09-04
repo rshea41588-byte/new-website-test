@@ -2912,6 +2912,25 @@ main>section[data-section="faq"]{background:var(--charcoal-mid)!important}</styl
                             </div>
                         </div>
                     </div>
+                    <!-- Read verbatim from the live Google profile (CID 13996863349911463635) on
+                         2026-09-03. 5 stars, posted a month ago. Not paraphrased or trimmed. -->
+                    <div class="testimonial-card">
+                        <span class="testimonial-quote">&ldquo;</span>
+                        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="testimonial-text">I can’t recommend Shea Business Solutions
+                            Bookkeeping &amp; Tax enough! Managing a gym is busy, and my financials
+                            had fallen 4 years behind. Ryan tackled the QuickBooks reconstruction
+                            seamlessly and completely turned my business finances around. Thanks to
+                            his expertise, I finally have accurate reporting and total peace of
+                            mind.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">BM</div>
+                            <div>
+                                <div class="author-name">Brad Melanson</div>
+                                <div class="author-desc">QuickBooks Cleanup Client</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="testimonial-card">
                         <span class="testimonial-quote">&ldquo;</span>
                         <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -4266,9 +4285,13 @@ try{if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').
                 // counter stayed on its first (pre-layout) reading of "Review 1 of 7" while four
                 // cards were on screen.
                 if (cards[0]) { ro.observe(cards[0]); }
-            } else {
-                window.addEventListener('load', update);
             }
+            // Always recompute on load as well, ResizeObserver or not. The observer only fires on
+            // a CHANGE; when the final card sizing happens before this script attaches, nothing
+            // fires again and the counter keeps its pre-layout reading ("Review 1 of 8" with
+            // three cards visible). window.load is after fonts and images, so the measurement is
+            // final by then.
+            window.addEventListener('load', update);
             update();
         })();
     </script>
