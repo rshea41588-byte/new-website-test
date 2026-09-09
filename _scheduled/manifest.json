@@ -1,58 +1,76 @@
 {
-  "posts": [
-    {
-      "slug": "how-to-read-pl-balance-sheet-orlando.html",
-      "publish_date": "2026-09-01",
-      "card_title": "How to Read Your P&amp;L and Balance Sheet",
-      "card_desc": "Your P&amp;L and balance sheet in plain English: what each one is for, the lines that matter, and the few numbers worth watching every month.",
-      "tag": "Financial Reporting",
-      "date_label": "September 2026",
-      "readtime": "7 min read"
-    },
-    {
-      "slug": "cash-basis-vs-accrual-accounting-orlando.html",
-      "publish_date": "2026-09-05",
-      "card_title": "Cash Basis vs. Accrual: Which Method Fits Your Business?",
-      "card_desc": "Cash basis or accrual? How each records income and expenses, a side-by-side comparison, which fits your business, and whether you can switch.",
-      "tag": "Accounting Basics",
-      "date_label": "September 2026",
-      "readtime": "7 min read"
-    },
-    {
-      "slug": "diy-bookkeeping-vs-hiring-a-pro-orlando.html",
-      "publish_date": "2026-09-07",
-      "card_title": "DIY Bookkeeping vs. Hiring a Pro: How to Decide",
-      "card_desc": "DIY bookkeeping or hire a pro? What doing your own books really costs in time and risk, when it makes sense, and the signs it is time to hand it off.",
-      "tag": "Small-Business Guide",
-      "date_label": "September 2026",
-      "readtime": "6 min read"
-    },
-    {
-      "slug": "how-to-catch-up-on-behind-bookkeeping-orlando.html",
-      "publish_date": "2026-09-07",
-      "card_title": "Behind on Your Books? How to Catch Up on Months of Bookkeeping",
-      "card_desc": "Months behind on your bookkeeping? A step-by-step way to catch up: gather the records, rebuild the ledger, reconcile every account, and stay current after.",
-      "tag": "Catch-Up Bookkeeping",
-      "date_label": "September 2026",
-      "readtime": "7 min read"
-    },
-    {
-      "slug": "what-does-a-bookkeeper-do-orlando.html",
-      "publish_date": "2026-09-09",
-      "card_title": "What Does a Bookkeeper Do?",
-      "card_desc": "What a bookkeeper actually handles week to week and each month, what falls outside the role, and how to tell when your business needs one.",
-      "tag": "Bookkeeping Basics",
-      "date_label": "September 2026",
-      "readtime": "6 min read"
-    },
-    {
-      "slug": "bookkeeper-vs-accountant-orlando.html",
-      "publish_date": "2026-09-09",
-      "card_title": "Bookkeeper vs. Accountant: What's the Difference?",
-      "card_desc": "How a bookkeeper and an accountant differ, where the roles overlap, whether you need both, and which one to hire first.",
-      "tag": "Accounting Basics",
-      "date_label": "September 2026",
-      "readtime": "6 min read"
-    }
-  ]
+ "posts": [
+  {
+   "slug": "how-to-read-pl-balance-sheet-orlando.html",
+   "publish_date": "2026-09-01",
+   "card_title": "How to Read Your P&amp;L and Balance Sheet",
+   "card_desc": "Your P&amp;L and balance sheet in plain English: what each one is for, the lines that matter, and the few numbers worth watching every month.",
+   "tag": "Financial Reporting",
+   "date_label": "September 2026",
+   "readtime": "7 min read"
+  },
+  {
+   "slug": "cash-basis-vs-accrual-accounting-orlando.html",
+   "publish_date": "2026-09-05",
+   "card_title": "Cash Basis vs. Accrual: Which Method Fits Your Business?",
+   "card_desc": "Cash basis or accrual? How each records income and expenses, a side-by-side comparison, which fits your business, and whether you can switch.",
+   "tag": "Accounting Basics",
+   "date_label": "September 2026",
+   "readtime": "7 min read"
+  },
+  {
+   "slug": "diy-bookkeeping-vs-hiring-a-pro-orlando.html",
+   "publish_date": "2026-09-07",
+   "card_title": "DIY Bookkeeping vs. Hiring a Pro: How to Decide",
+   "card_desc": "DIY bookkeeping or hire a pro? What doing your own books really costs in time and risk, when it makes sense, and the signs it is time to hand it off.",
+   "tag": "Small-Business Guide",
+   "date_label": "September 2026",
+   "readtime": "6 min read"
+  },
+  {
+   "slug": "how-to-catch-up-on-behind-bookkeeping-orlando.html",
+   "publish_date": "2026-09-07",
+   "card_title": "Behind on Your Books? How to Catch Up on Months of Bookkeeping",
+   "card_desc": "Months behind on your bookkeeping? A step-by-step way to catch up: gather the records, rebuild the ledger, reconcile every account, and stay current after.",
+   "tag": "Catch-Up Bookkeeping",
+   "date_label": "September 2026",
+   "readtime": "7 min read"
+  },
+  {
+   "slug": "what-does-a-bookkeeper-do-orlando.html",
+   "publish_date": "2026-09-09",
+   "card_title": "What Does a Bookkeeper Do?",
+   "card_desc": "What a bookkeeper actually handles week to week and each month, what falls outside the role, and how to tell when your business needs one.",
+   "tag": "Bookkeeping Basics",
+   "date_label": "September 2026",
+   "readtime": "6 min read"
+  },
+  {
+   "slug": "bookkeeper-vs-accountant-orlando.html",
+   "publish_date": "2026-09-09",
+   "card_title": "Bookkeeper vs. Accountant: What's the Difference?",
+   "card_desc": "How a bookkeeper and an accountant differ, where the roles overlap, whether you need both, and which one to hire first.",
+   "tag": "Accounting Basics",
+   "date_label": "September 2026",
+   "readtime": "6 min read"
+  },
+  {
+   "slug": "how-to-choose-a-payroll-service-orlando.html",
+   "publish_date": "2026-09-09",
+   "card_title": "How to Choose a Payroll Service for Your Small Business",
+   "card_desc": "What to weigh before you pick a payroll service in Orlando: tax filing, QuickBooks sync, restaurants and tipped staff, responsive support, and what really drives the cost.",
+   "tag": "Payroll",
+   "date_label": "September 2026",
+   "readtime": "8 min read"
+  },
+  {
+   "slug": "bookkeeping-for-ecommerce-sellers-orlando.html",
+   "publish_date": "2026-09-09",
+   "card_title": "Bookkeeping for Orlando E-Commerce Sellers",
+   "card_desc": "Why online sellers need different books: platform and processor fees, multi-channel reconciliation, sales tax and economic nexus, inventory and COGS, and connecting Shopify to QuickBooks.",
+   "tag": "E-Commerce",
+   "date_label": "September 2026",
+   "readtime": "8 min read"
+  }
+ ]
 }
