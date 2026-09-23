@@ -63,6 +63,30 @@ def validate_schema(src_path, slug):
         raise SystemExit(f"SCHEMA GATE FAIL [{slug}]: missing schema types {sorted(missing)}")
     print(f"  schema gate OK [{slug}]: {sorted(types)}")
 
+def regate_outputs(meta):
+    """Post-transform gate: apply_sitemap()/apply_index() rewrite files AFTER validate_schema()
+    ran, so their OUTPUT is re-checked here. Any failure raises, which fails the Actions step
+    before the commit/push step runs, so nothing ships."""
+    import re as _re, xml.etree.ElementTree as _ET
+    slug = meta["slug"]
+    try:
+        root = _ET.fromstring(read(os.path.join(ROOT, "sitemap.xml")).encode("utf-8"))
+    except Exception as e:
+        raise SystemExit(f"POST-TRANSFORM GATE FAIL [{slug}]: sitemap.xml does not parse ({e})")
+    locs = [el.text for el in root.iter() if el.tag.endswith("loc")]
+    if locs.count(f"{BASE}/Blog/{slug}") != 1:
+        raise SystemExit(f"POST-TRANSFORM GATE FAIL [{slug}]: sitemap <loc> count != 1")
+    validate_schema(os.path.join(ROOT, "Blog", slug), slug)
+    for p in (os.path.join(ROOT, "Blog", "index.html"), os.path.join(ROOT, "Blog", slug)):
+        t = read(p)
+        if len(_re.findall(r"<h1[\s>]", t)) != 1:
+            raise SystemExit(f"POST-TRANSFORM GATE FAIL [{slug}]: {os.path.basename(p)} does not carry exactly one <h1>")
+        for b in _re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, _re.S):
+            try: json.loads(b)
+            except Exception as e:
+                raise SystemExit(f"POST-TRANSFORM GATE FAIL [{slug}]: invalid JSON-LD in {os.path.basename(p)} ({e})")
+    print(f"  post-transform gate OK [{slug}]")
+
 def main():
     manifest = json.load(io.open(os.path.join(SCHED, "manifest.json"), encoding="utf-8"))
     today = (datetime.date.fromisoformat(os.environ["PUBLISH_TODAY"])
@@ -84,6 +108,7 @@ def main():
         if DRY: continue
         os.replace(src, dest)                          # move out of queue into Blog/
         apply_sitemap(meta); apply_index(meta)
+        regate_outputs(meta)                           # re-run the gates on the transformed output
         published.append(slug)
     if not DRY and not published:
         print(f"No posts due as of {today}.")
