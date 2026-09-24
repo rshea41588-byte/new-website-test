@@ -89,6 +89,24 @@
    "tag": "Tax Season",
    "date_label": "September 2026",
    "readtime": "7 min read"
+  },
+  {
+   "slug": "how-to-reconcile-in-quickbooks-online.html",
+   "publish_date": "2026-09-24",
+   "card_title": "How to Reconcile an Account in QuickBooks Online",
+   "card_desc": "How to reconcile a bank or credit card account in QuickBooks Online, step by step, plus what to check when the difference or the beginning balance won't tie.",
+   "tag": "QuickBooks",
+   "date_label": "September 2026",
+   "readtime": "5 min read"
+  },
+  {
+   "slug": "what-is-a-ledger-in-accounting.html",
+   "publish_date": "2026-09-24",
+   "card_title": "What Is a Ledger in Accounting? The General Ledger Explained",
+   "card_desc": "What a ledger is, how the general ledger works with double-entry, the five account types, subsidiary ledgers and the trial balance, in plain English.",
+   "tag": "Accounting Basics",
+   "date_label": "September 2026",
+   "readtime": "5 min read"
   }
  ]
 }
