@@ -8,7 +8,8 @@ setTimeout(L,4000) -- the same 4 s upper bound the old idle timeout gave -- so t
 (background tabs, no PerformanceObserver). First interaction still loads them immediately. The inline
 dataLayer/gtag() and oaiq() queue shims are untouched, so no event is lost.
 
-Root *.html only (Blog/ is protected and excluded). Exact-string, idempotent, count-asserted.
+Main site pages only, including pages/. Blog/ is excluded.
+Exact-string, idempotent, count-asserted.
 """
 import glob, os, sys
 ROOT = sys.argv[1] if len(sys.argv) > 1 else '.'
@@ -16,7 +17,9 @@ OLD = "if('requestIdleCallback'in window){requestIdleCallback(L,{timeout:4000});
 NEW = ("/*psi100-paintgate-20260926*/function I(){if('requestIdleCallback'in window){requestIdleCallback(L,{timeout:4000});}else{setTimeout(L,4000);}}"
        "try{new PerformanceObserver(function(l,o){if(l.getEntries().length){o.disconnect();I();}}).observe({type:'paint',buffered:true});}catch(x){I();}setTimeout(L,4000);")
 n = 0
-for f in sorted(glob.glob(os.path.join(ROOT, '*.html'))):
+files = glob.glob(os.path.join(ROOT, '*.html'))
+files += glob.glob(os.path.join(ROOT, 'pages', '*', '*.html'))
+for f in sorted(files):
     s = open(f, encoding='utf-8', newline='').read()
     c = s.count(OLD)
     if not c or NEW in s:

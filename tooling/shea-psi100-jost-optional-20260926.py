@@ -3,7 +3,8 @@
 Fast/normal loads: Jost (preloaded) is ready inside the optional block period -> identical render.
 Slow first-time loads: text paints once in the metric-matched fallback, no late swap / reflow.
 Overrides from fontTools vs /System Arial, weight-300 (body + LCP subtitle) frequency-weighted advance:
-size-adjust 93.08%, ascent 114.96%, descent 40.29%, line-gap 0. Root *.html with the psi100 font block only."""
+size-adjust 93.08%, ascent 114.96%, descent 40.29%, line-gap 0.
+Main site pages with the psi100 font block only, including pages/."""
 import glob, os, sys
 ROOT = sys.argv[1] if len(sys.argv) > 1 else '.'
 MARK = '/*psi100-jost-optional-20260926*/'
@@ -13,7 +14,9 @@ FALLBACK = (MARK + "@font-face{font-family:'Jost Fallback';src:local('Arial'),lo
             "font-weight:300 600;size-adjust:93.08%;ascent-override:114.96%;descent-override:40.29%;line-gap-override:0%;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF,U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}select{font-family:\"Jost\",sans-serif!important}")
 BLOCK_START = "<style>/*psi100-fonts-20260926*/"
 n = 0
-for f in sorted(glob.glob(os.path.join(ROOT, '*.html'))):
+files = glob.glob(os.path.join(ROOT, '*.html'))
+files += glob.glob(os.path.join(ROOT, 'pages', '*', '*.html'))
+for f in sorted(files):
     s = open(f, encoding='utf-8', newline='').read()
     if MARK in s or BLOCK_START not in s: continue
     assert s.count(BLOCK_START) == 1 and s.count(FACE_OLD) == 2, f

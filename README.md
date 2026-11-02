@@ -1,31 +1,42 @@
 # Shea Business Solutions Website
 
-This repository contains the static website files for the official website of **Shea Business Solutions** (https://www.sheabusinesssolutions.com), a professional bookkeeping, QuickBooks consulting, and payroll services provider based in Orlando, FL.
+These are the source files for the [Shea Business Solutions website](https://www.sheabusinesssolutions.com/). Vercel publishes the site from the production branch, `main`.
 
-## 📁 Project Structure
+## Where to edit
 
-* **`index.html`**: The main website landing page (services, pricing, process, client reviews, FAQ, and contact form).
-* **`Blog/`**: The directory containing our high-value, SEO-optimized static blog system:
-  * `index.html` - The main blog listing page.
-  * `quickbooks-cleanup-orlando.html` - Orlando business guide to QuickBooks cleanup.
-  * `bookkeeping-mistakes-small-business-orlando.html` - 7 common bookkeeping mistakes and fixes.
-  * `quickbooks-proadvisor-orlando.html` - Explaining QuickBooks ProAdvisor levels.
-  * `small-business-bookkeeping-orlando.html` - Cost breakdown for professional bookkeeping in Orlando.
-  * `payroll-taxes-florida-small-business.html` - Florida payroll taxes compliance guide.
-* **`images/`**: Image, logo, manifest, and favicon icon assets used across the site.
-* **`robots.txt`**: Search engine crawler and AI bot instructions.
-* **`sitemap.xml`**: Google-compliant XML Sitemap containing all active pages and blog posts.
-* **`llms.txt`**: High-context documentation file optimized for LLMs and AI assistants.
-* **`_config.yml`**: Jekyll site configuration for build settings.
+| Folder or file | Contents |
+| --- | --- |
+| `index.html` | Homepage |
+| `pages/services/` | Bookkeeping, payroll, QuickBooks and tax services |
+| `pages/service-areas/` | City and neighborhood pages |
+| `pages/industries/` | Industry specific service pages |
+| `pages/guides/` | Pricing and service selection guides |
+| `pages/general/` | Contact, FAQ, reviews and navigation hubs |
+| `Blog/` | Published articles and the blog listing |
+| `_scheduled/` | Article publishing queue and its publisher |
+| `images/`, `fonts/`, `assets/` | Website media, fonts and shared JavaScript |
+| `api/` | Lead logging endpoint |
+| `thank-you/` | Form confirmation page |
+| `tooling/` | Maintenance scripts and layout verification |
+| `docs/` | Organization guide, notes, reference files and homepage preview |
 
-## 🛠️ Technologies Used
+## Public addresses
 
-* HTML5 (Semantic markup)
-* Custom CSS3 (Charcoal & gold premium theme with grid layouts, responsive navigation, and transitions)
-* Vanilla JavaScript (Interactive FAQ accordions, mobile menu toggles)
+Folder names organize the source files. Each page under `pages/` has a rewrite in `vercel.json` that serves its existing public address. For example, `pages/services/bookkeeping-services-orlando.html` is served at `/bookkeeping-services-orlando.html`.
 
-## 🚀 Local Development
+Commit page moves and their routing rules together. See [the organization guide](docs/file-organization.md) for the file map and publishing instructions.
 
-To run or view the website locally:
-1. Double-click `index.html` or open it with any web browser.
-2. Click **Blog** in the navigation menu or open `Blog/index.html` directly to browse the articles.
+## Local checks
+
+Run these commands from the repository folder with Node.js 20 or later and Python 3.12.
+
+```powershell
+node tooling/verify-site-layout.mjs
+python _scheduled/publish_due.py --dry-run
+```
+
+For a browser preview that applies `vercel.json`, use Vercel's local development command, `vercel dev`, after installing its CLI and linking this project. Requests to the existing public paths need those routing rules. The [Vercel CLI guide](https://vercel.com/docs/cli/dev) describes local setup.
+
+## Publishing
+
+Review changes on a working branch and test a Vercel preview before merging into `main`. Publishing requires the moved files and `vercel.json` in the same commit. The GitHub workflow also checks approved queued articles daily and commits articles whose publication date has arrived.

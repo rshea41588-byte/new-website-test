@@ -8,6 +8,7 @@
 // them), so deferring changes no consent posture. Idempotent, exact-string, line-endings preserved.
 import fs from 'node:fs';
 import path from 'node:path';
+import { listMainPages } from './site-pages.mjs';
 
 const ROOT = path.resolve(process.argv[2] || '.');
 const DRY = process.argv.includes('--dry');
@@ -23,10 +24,10 @@ const loader = (label, url) =>
 const GTAG_LOADER = loader('GA (gtag.js)', 'https://www.googletagmanager.com/gtag/js?id=G-LYDBN7KGBN');
 const OAIQ_LOADER = loader('OpenAI pixel (oaiq)', 'https://bzrcdn.openai.com/sdk/oaiq.min.js');
 
-const files = [];
-for (const dir of [ROOT, path.join(ROOT, 'Blog')]) {
-  if (!fs.existsSync(dir)) continue;
-  for (const f of fs.readdirSync(dir)) if (f.endsWith('.html')) files.push(path.join(dir, f));
+const files = listMainPages(ROOT);
+const blogRoot = path.join(ROOT, 'Blog');
+if (fs.existsSync(blogRoot)) {
+  for (const f of fs.readdirSync(blogRoot)) if (f.endsWith('.html')) files.push(path.join(blogRoot, f));
 }
 
 let changed = 0, gtagN = 0, oaiqN = 0, skipMarked = 0;

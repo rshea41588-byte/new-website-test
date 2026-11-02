@@ -19,8 +19,9 @@
  */
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { SITE_ROOT, listMainPages } from './site-pages.mjs';
 
-const ROOT = new URL('.', import.meta.url).pathname;
+const ROOT = SITE_ROOT;
 const MARKER = 'SBS tap targets 2026-08-12';
 // \r? on both breaks: these files carry MIXED CRLF/LF endings, and an LF-only
 // pattern silently fails to strip the prior block, which duplicates it on re-run.
@@ -39,15 +40,13 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 }
 </style>`;
 
-const files = [];
-for (const f of readdirSync(ROOT)) if (f.endsWith('.html') && f !== 'preview-home.html') files.push(f);
-for (const f of readdirSync(join(ROOT, 'Blog'))) if (f.endsWith('.html')) files.push(join('Blog', f));
+const files = listMainPages(ROOT);
+for (const f of readdirSync(join(ROOT, 'Blog'))) if (f.endsWith('.html')) files.push(join(ROOT, 'Blog', f));
 
 let changed = 0, skipped = 0;
-for (const rel of files) {
-  const p = join(ROOT, rel);
+for (const p of files) {
   let html = readFileSync(p, 'utf8');
-  if (!html.includes('</head>')) { console.log(`!! no </head>: ${rel}`); skipped++; continue; }
+  if (!html.includes('</head>')) { console.log(`!! no </head>: ${p}`); skipped++; continue; }
   html = html.replace(BLOCK_RE, '');
   html = html.replace('</head>', `${BLOCK}\n</head>`);
   writeFileSync(p, html);

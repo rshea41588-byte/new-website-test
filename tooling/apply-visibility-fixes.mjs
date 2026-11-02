@@ -18,8 +18,9 @@
  */
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { SITE_ROOT, listMainPages } from './site-pages.mjs';
 
-const ROOT = new URL('.', import.meta.url).pathname;
+const ROOT = SITE_ROOT;
 const MARKER = 'SBS visibility fixes 2026-08-06';
 // Matches the whole injected <style>…marker…</style> block for clean replacement.
 const BLOCK_RE = new RegExp(`\\n?<style>\\n\\/\\* ${MARKER}[\\s\\S]*?<\\/style>`, 'g');
@@ -34,15 +35,13 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
 .article-body a:not([class]),.sbs-blog a:not([class]),main .tax-crosslink a:not([class]){text-decoration:underline;text-underline-offset:2px;}
 </style>`;
 
-const files = [];
-for (const f of readdirSync(ROOT)) if (f.endsWith('.html') && f !== 'preview-home.html') files.push(f);
-for (const f of readdirSync(join(ROOT, 'Blog'))) if (f.endsWith('.html')) files.push(join('Blog', f));
+const files = listMainPages(ROOT);
+for (const f of readdirSync(join(ROOT, 'Blog'))) if (f.endsWith('.html')) files.push(join(ROOT, 'Blog', f));
 
 let changed = 0;
-for (const rel of files) {
-  const p = join(ROOT, rel);
+for (const p of files) {
   let html = readFileSync(p, 'utf8');
-  if (!html.includes('</head>')) { console.log(`!! no </head>: ${rel}`); continue; }
+  if (!html.includes('</head>')) { console.log(`!! no </head>: ${p}`); continue; }
   html = html.replace(BLOCK_RE, '');                 // strip any prior injected block
   html = html.replace('</head>', `${BLOCK}\n</head>`); // inject fresh
   writeFileSync(p, html);

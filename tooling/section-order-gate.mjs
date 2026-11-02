@@ -4,6 +4,7 @@
 // the canonical stack out of order. Blog/ is a protected legacy surface and is skipped.
 import fs from 'node:fs';
 import path from 'node:path';
+import { listMainPages } from './site-pages.mjs';
 
 const RANK = {
   'hero': 10, 'trust': 20, 'services': 30, 'offer': 40, 'how-it-works': 50,
@@ -13,8 +14,9 @@ const RANK = {
   'tax-crosslink': 97, 'contact': 99
 };
 
-const files = fs.readdirSync('.').filter(f => f.endsWith('.html'))
-  .filter(f => !['preview-home.html', 'google6fb6dbc31d8bbc9a.html'].includes(f));
+const files = listMainPages()
+  .filter(f => !['preview-home.html', 'google6fb6dbc31d8bbc9a.html'].includes(path.basename(f)))
+  .map(f => path.relative('.', f));
 
 let failures = [];
 for (const f of files) {
