@@ -24,6 +24,277 @@
       "source": "/home/",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/pages/general/:file",
+      "destination": "/:file",
+      "permanent": true
+    },
+    {
+      "source": "/pages/guides/:file",
+      "destination": "/:file",
+      "permanent": true
+    },
+    {
+      "source": "/pages/industries/:file",
+      "destination": "/:file",
+      "permanent": true
+    },
+    {
+      "source": "/pages/service-areas/:file",
+      "destination": "/:file",
+      "permanent": true
+    },
+    {
+      "source": "/pages/services/:file",
+      "destination": "/:file",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/contact.html",
+      "destination": "/pages/general/contact.html"
+    },
+    {
+      "source": "/faq.html",
+      "destination": "/pages/general/faq.html"
+    },
+    {
+      "source": "/reviews.html",
+      "destination": "/pages/general/reviews.html"
+    },
+    {
+      "source": "/service-areas.html",
+      "destination": "/pages/general/service-areas.html"
+    },
+    {
+      "source": "/services.html",
+      "destination": "/pages/general/services.html"
+    },
+    {
+      "source": "/best-payroll-service-orlando-small-business.html",
+      "destination": "/pages/guides/best-payroll-service-orlando-small-business.html"
+    },
+    {
+      "source": "/how-to-choose-a-bookkeeper-orlando.html",
+      "destination": "/pages/guides/how-to-choose-a-bookkeeper-orlando.html"
+    },
+    {
+      "source": "/how-to-choose-tax-preparer-orlando.html",
+      "destination": "/pages/guides/how-to-choose-tax-preparer-orlando.html"
+    },
+    {
+      "source": "/payroll-services-cost-orlando.html",
+      "destination": "/pages/guides/payroll-services-cost-orlando.html"
+    },
+    {
+      "source": "/quickbooks-proadvisor-cost-orlando.html",
+      "destination": "/pages/guides/quickbooks-proadvisor-cost-orlando.html"
+    },
+    {
+      "source": "/tax-prep-cost-orlando.html",
+      "destination": "/pages/guides/tax-prep-cost-orlando.html"
+    },
+    {
+      "source": "/construction-bookkeeping-orlando.html",
+      "destination": "/pages/industries/construction-bookkeeping-orlando.html"
+    },
+    {
+      "source": "/contabilidad-para-restaurantes-orlando.html",
+      "destination": "/pages/industries/contabilidad-para-restaurantes-orlando.html"
+    },
+    {
+      "source": "/dental-med-spa-bookkeeping-orlando.html",
+      "destination": "/pages/industries/dental-med-spa-bookkeeping-orlando.html"
+    },
+    {
+      "source": "/dry-cleaning-bookkeeping-orlando.html",
+      "destination": "/pages/industries/dry-cleaning-bookkeeping-orlando.html"
+    },
+    {
+      "source": "/ecommerce-bookkeeping-orlando.html",
+      "destination": "/pages/industries/ecommerce-bookkeeping-orlando.html"
+    },
+    {
+      "source": "/fitness-gym-bookkeeping-orlando.html",
+      "destination": "/pages/industries/fitness-gym-bookkeeping-orlando.html"
+    },
+    {
+      "source": "/manufacturing-bookkeeping-orlando.html",
+      "destination": "/pages/industries/manufacturing-bookkeeping-orlando.html"
+    },
+    {
+      "source": "/restaurant-bookkeeping-orlando.html",
+      "destination": "/pages/industries/restaurant-bookkeeping-orlando.html"
+    },
+    {
+      "source": "/restaurant-payroll-orlando.html",
+      "destination": "/pages/industries/restaurant-payroll-orlando.html"
+    },
+    {
+      "source": "/retail-bookkeeping-orlando.html",
+      "destination": "/pages/industries/retail-bookkeeping-orlando.html"
+    },
+    {
+      "source": "/bookkeeping-apopka-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-apopka-fl.html"
+    },
+    {
+      "source": "/bookkeeping-baldwin-park-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-baldwin-park-fl.html"
+    },
+    {
+      "source": "/bookkeeping-celebration-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-celebration-fl.html"
+    },
+    {
+      "source": "/bookkeeping-dr-phillips-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-dr-phillips-fl.html"
+    },
+    {
+      "source": "/bookkeeping-kissimmee-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-kissimmee-fl.html"
+    },
+    {
+      "source": "/bookkeeping-lake-nona-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-lake-nona-fl.html"
+    },
+    {
+      "source": "/bookkeeping-lee-vista-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-lee-vista-fl.html"
+    },
+    {
+      "source": "/bookkeeping-oviedo-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-oviedo-fl.html"
+    },
+    {
+      "source": "/bookkeeping-randal-park-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-randal-park-fl.html"
+    },
+    {
+      "source": "/bookkeeping-sanford-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-sanford-fl.html"
+    },
+    {
+      "source": "/bookkeeping-st-cloud-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-st-cloud-fl.html"
+    },
+    {
+      "source": "/bookkeeping-storey-park-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-storey-park-fl.html"
+    },
+    {
+      "source": "/bookkeeping-vista-east-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-vista-east-fl.html"
+    },
+    {
+      "source": "/bookkeeping-waterford-lakes-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-waterford-lakes-fl.html"
+    },
+    {
+      "source": "/bookkeeping-windermere-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-windermere-fl.html"
+    },
+    {
+      "source": "/bookkeeping-winter-park-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-winter-park-fl.html"
+    },
+    {
+      "source": "/bookkeeping-winter-springs-fl.html",
+      "destination": "/pages/service-areas/bookkeeping-winter-springs-fl.html"
+    },
+    {
+      "source": "/contabilidad-kissimmee-fl.html",
+      "destination": "/pages/service-areas/contabilidad-kissimmee-fl.html"
+    },
+    {
+      "source": "/tax-baldwin-park-fl.html",
+      "destination": "/pages/service-areas/tax-baldwin-park-fl.html"
+    },
+    {
+      "source": "/tax-dr-phillips-fl.html",
+      "destination": "/pages/service-areas/tax-dr-phillips-fl.html"
+    },
+    {
+      "source": "/tax-lake-nona-fl.html",
+      "destination": "/pages/service-areas/tax-lake-nona-fl.html"
+    },
+    {
+      "source": "/tax-windermere-fl.html",
+      "destination": "/pages/service-areas/tax-windermere-fl.html"
+    },
+    {
+      "source": "/tax-winter-park-fl.html",
+      "destination": "/pages/service-areas/tax-winter-park-fl.html"
+    },
+    {
+      "source": "/bookkeeping-services-orlando.html",
+      "destination": "/pages/services/bookkeeping-services-orlando.html"
+    },
+    {
+      "source": "/bookkeeping-tax-package-orlando.html",
+      "destination": "/pages/services/bookkeeping-tax-package-orlando.html"
+    },
+    {
+      "source": "/catch-up-bookkeeping-orlando.html",
+      "destination": "/pages/services/catch-up-bookkeeping-orlando.html"
+    },
+    {
+      "source": "/financial-statement-preparation-orlando.html",
+      "destination": "/pages/services/financial-statement-preparation-orlando.html"
+    },
+    {
+      "source": "/flat-rate-bookkeeping-orlando.html",
+      "destination": "/pages/services/flat-rate-bookkeeping-orlando.html"
+    },
+    {
+      "source": "/outsourced-cfo-orlando-small-business.html",
+      "destination": "/pages/services/outsourced-cfo-orlando-small-business.html"
+    },
+    {
+      "source": "/payroll-services-orlando.html",
+      "destination": "/pages/services/payroll-services-orlando.html"
+    },
+    {
+      "source": "/quickbooks-cleanup-orlando.html",
+      "destination": "/pages/services/quickbooks-cleanup-orlando.html"
+    },
+    {
+      "source": "/quickbooks-migration-orlando.html",
+      "destination": "/pages/services/quickbooks-migration-orlando.html"
+    },
+    {
+      "source": "/quickbooks-proadvisor-orlando.html",
+      "destination": "/pages/services/quickbooks-proadvisor-orlando.html"
+    },
+    {
+      "source": "/quickbooks-setup-orlando.html",
+      "destination": "/pages/services/quickbooks-setup-orlando.html"
+    },
+    {
+      "source": "/quickbooks-training-orlando.html",
+      "destination": "/pages/services/quickbooks-training-orlando.html"
+    },
+    {
+      "source": "/responsive-bookkeeping-firm-orlando.html",
+      "destination": "/pages/services/responsive-bookkeeping-firm-orlando.html"
+    },
+    {
+      "source": "/s-corp-tax-preparation-orlando.html",
+      "destination": "/pages/services/s-corp-tax-preparation-orlando.html"
+    },
+    {
+      "source": "/servicios-de-contabilidad-orlando.html",
+      "destination": "/pages/services/servicios-de-contabilidad-orlando.html"
+    },
+    {
+      "source": "/servicios-de-nomina-orlando.html",
+      "destination": "/pages/services/servicios-de-nomina-orlando.html"
+    },
+    {
+      "source": "/small-business-tax-prep-orlando.html",
+      "destination": "/pages/services/small-business-tax-prep-orlando.html"
     }
   ]
 }

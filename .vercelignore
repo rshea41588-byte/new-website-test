@@ -1,15 +1,8 @@
 _scheduled/
 .github/
-_indexnow_key.txt
-_sm.xml
-_local_fontface.css
-_indexable.txt
 README.md
 docs/
 tooling/
 _session-trash/
-apply-tap-targets.mjs
-apply-visibility-fixes.mjs
-preview-home.html
 Blog/first-month-after-quickbooks-cleanup-orlando.html
 Blog/midyear-payroll-support-handoff-orlando.html

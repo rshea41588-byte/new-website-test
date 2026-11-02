@@ -2,8 +2,9 @@
 """PSI-100 2026-09-26, Dylan-approved tag delay (psi-harness/AGENT-CONTRACT.md "DYLAN DECISION").
 GA4 gtag.js and the OpenAI pixel load on the FIRST of pointerdown/keydown/touchstart/scroll (passive, once)
 or 4000 ms after `load`, whichever first, once. Replaces the paint-gate/idle trigger from 5c9d2bb.
-Inline dataLayer/gtag() and oaiq() stubs + all config/event calls untouched. Root *.html only
-(Blog/ protected; thank-you/ is a conversion page and exempt). Exact-string, count-asserted, idempotent."""
+Inline dataLayer/gtag() and oaiq() stubs + all config/event calls untouched.
+Main site pages only, including pages/. Blog/ and the thank-you/ conversion page are excluded.
+Exact-string, count-asserted, idempotent."""
 import glob, os, re, sys
 ROOT = sys.argv[1] if len(sys.argv) > 1 else '.'
 TAIL_OLD = ("var ev=['pointerdown','keydown','touchstart','scroll','mousemove'];function H(){L();ev.forEach(function(x){removeEventListener(x,H,{passive:true});});}ev.forEach(function(x){addEventListener(x,H,{passive:true});});"
@@ -11,7 +12,9 @@ TAIL_OLD = ("var ev=['pointerdown','keydown','touchstart','scroll','mousemove'];
 TAIL_NEW = ("/*psi100-tagdelay-20260926*/['pointerdown','keydown','touchstart','scroll'].forEach(function(x){addEventListener(x,L,{once:true,passive:true});});"
             "function O(){setTimeout(L,4000);}if(document.readyState==='complete'){O();}else{addEventListener('load',O);}})();")
 n = 0
-for f in sorted(glob.glob(os.path.join(ROOT, '*.html'))):
+files = glob.glob(os.path.join(ROOT, '*.html'))
+files += glob.glob(os.path.join(ROOT, 'pages', '*', '*.html'))
+for f in sorted(files):
     s = open(f, encoding='utf-8', newline='').read()
     c = s.count(TAIL_OLD)
     if not c: continue

@@ -14,7 +14,8 @@
    made from the original JPEG master, same crop.
 
 Idempotent: a file already carrying the marker is skipped. Exact-string, asserts every anchor.
-Only pages carrying the standard inline font block are touched (Blog/ is protected and excluded).
+Only main site pages carrying the standard inline font block are touched. This includes pages/
+and excludes Blog/.
 """
 import hashlib, re, sys, glob, os, collections
 
@@ -61,7 +62,9 @@ PIC2_NEW = ('<div class="about-img-border-2"></div><picture style="display:block
             'srcset="images/ryan_hero-480.webp 480w, images/ryan_hero-640.webp 640w, images/ryan_hero.webp 900w" sizes="(max-width:600px) calc(100vw - 40px), 470px">')
 
 changed = []
-for f in sorted(glob.glob(os.path.join(ROOT, '*.html'))):
+files = glob.glob(os.path.join(ROOT, '*.html'))
+files += glob.glob(os.path.join(ROOT, 'pages', '*', '*.html'))
+for f in sorted(files):
     s = open(f, encoding='utf-8', newline='').read()
     if MARK in s:
         continue
