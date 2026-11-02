@@ -1,0 +1,21 @@
+{
+  "version": "3.2.1",
+  "license": "MIT",
+  "files": {
+    "cookieconsent.umd.js": {
+      "source": "https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.2.1/dist/cookieconsent.umd.js",
+      "bytes": 24202,
+      "sha256": "a5b75180b11975bc4cde2a42f6a0ae285d37f13730574c38c80bd48dc6b301d5"
+    },
+    "cookieconsent.css": {
+      "source": "https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.2.1/dist/cookieconsent.css",
+      "bytes": 32051,
+      "sha256": "dd7ad33177579ec69138b107f107ea6bbb2c3e54cfae9c03ca6691e112b4a711"
+    },
+    "LICENSE": {
+      "source": "https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.2.1/LICENSE",
+      "bytes": 1072,
+      "sha256": "e3cf4e09e007ffede1a8a50aa006b489a5eafd466a2094551a0ac2b308230bfd"
+    }
+  }
+}
