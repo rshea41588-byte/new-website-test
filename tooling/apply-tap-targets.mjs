@@ -37,6 +37,9 @@ const BLOCK = `<style>
 nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 .back-to-blog a{padding:10px 0;}
 .hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center;padding:10px;}
+.nav-phone{min-height:44px;}
+.footer-legal a{display:inline-flex;align-items:center;min-height:44px;}
+.footer-preferred-source a{display:inline-flex;align-items:center;min-height:44px;}
 }
 </style>`;
 

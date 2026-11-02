@@ -1,0 +1,59 @@
+#cc-main {
+    --cc-font-family: 'Jost', Arial, sans-serif;
+    --cc-bg: #1a1a1a;
+    --cc-primary-color: #f5f2ec;
+    --cc-secondary-color: #ccccbb;
+    --cc-btn-primary-bg: #252525;
+    --cc-btn-primary-color: #f5f2ec;
+    --cc-btn-primary-border-color: #c9a84c;
+    --cc-btn-primary-hover-bg: #343434;
+    --cc-btn-primary-hover-color: #fff;
+    --cc-btn-primary-hover-border-color: #e2c97e;
+    --cc-btn-secondary-bg: #252525;
+    --cc-btn-secondary-color: #f5f2ec;
+    --cc-btn-secondary-border-color: #c9a84c;
+    --cc-btn-secondary-hover-bg: #343434;
+    --cc-btn-secondary-hover-color: #fff;
+    --cc-btn-secondary-hover-border-color: #e2c97e;
+    --cc-cookie-category-block-bg: #252525;
+    --cc-cookie-category-block-hover-bg: #2e2e2e;
+    --cc-toggle-on-bg: #c9a84c;
+    --cc-toggle-readonly-bg: #858585;
+    --cc-separator-border-color: #555;
+}
+.sbs-cookie-settings {
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: .78rem;
+    border: 0;
+    cursor: pointer;
+    min-height: 44px;
+}
+.sbs-cookie-settings:focus-visible { outline: 2px solid #c9a84c; outline-offset: 3px; }
+.sbs-map-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 180px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid #555;
+    background: #252525;
+    color: #f5f2ec;
+}
+.sbs-map-placeholder[hidden], iframe[data-sbs-map-src][hidden] { display: none !important; }
+.sbs-map-placeholder button {
+    padding: .6rem 1rem;
+    min-height: 44px;
+    border: 1px solid #c9a84c;
+    background: #252525;
+    color: #f5f2ec;
+    font: inherit;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .footer-legal { flex-wrap: wrap; justify-content: center; }
+}

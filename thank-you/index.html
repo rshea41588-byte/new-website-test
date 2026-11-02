@@ -3,16 +3,20 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="/assets/vendor/cookieconsent/cookieconsent.css">
+    <link rel="stylesheet" href="/assets/site-consent.css">
+    <script defer src="/assets/vendor/cookieconsent/cookieconsent.umd.js"></script>
+    <script defer src="/assets/site-consent.js"></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LYDBN7KGBN"></script>
-    <script>
+    <script type="text/plain" data-category="analytics" async data-src="https://www.googletagmanager.com/gtag/js?id=G-LYDBN7KGBN"></script>
+    <script type="text/plain" data-category="analytics">
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
         gtag('js', new Date());
         gtag('config', 'G-LYDBN7KGBN'); // Bloomview Growth agency GA4 (added alongside, does not replace)
     </script>
     <!-- GA4: phone-call click tracking (sibling listener; does not touch the OpenAI Ads tel listener) -->
-    <script>document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(a&&typeof gtag==='function'){gtag('event','phone_call',{phone_number:a.getAttribute('href').slice(4),link_text:(a.textContent||'').trim().slice(0,80),page_location:location.href});}},true);</script>
+    <script type="text/plain" data-category="analytics">document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(a&&typeof gtag==='function'){gtag('event','phone_call',{phone_number:a.getAttribute('href').slice(4),link_text:(a.textContent||'').trim().slice(0,80),page_location:location.href});}},true);</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
@@ -21,9 +25,6 @@
     <link rel="icon" href="/images/icon1.png" type="image/png" sizes="48x48">
     <title>Thank You | Shea Business Solutions</title>
     <meta name="description" content="Thanks for reaching out to Shea Business Solutions. We have your request. Call (603) 759-8547 if you need us sooner.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #C9A84C;
@@ -217,16 +218,16 @@
         }
     </style>
   <!-- OpenAI Ads Measurement Pixel -->
-  <script>
+  <script type="text/plain" data-category="marketing">
     window.oaiq = window.oaiq || function () { (window.oaiq.q = window.oaiq.q || []).push(arguments); };
     oaiq("init", { pixelId: "1F5g6WgWCyxiUeo7YqJkgL" });
   </script>
-  <script async src="https://bzrcdn.openai.com/sdk/oaiq.min.js"></script>
+  <script type="text/plain" data-category="marketing" async data-src="https://bzrcdn.openai.com/sdk/oaiq.min.js"></script>
   <!-- OpenAI Ads conversions v2 (Bloomview 2026-08-27): ONE optimization signal, three actions.
        lead_created fires on form submit, Calendly click AND tel: click - it is the single conversion
        event the campaign optimizes on (Ads Manager allows only one per campaign). appointment_scheduled
        and custom phone_call ALSO fire, as reporting-only breakdowns. -->
-  <script>
+  <script type="text/plain" data-category="marketing">
   /* Bloomview first-touch attribution (2026-08-25). Ads land on one page and the visitor often
      submits on another, so the lead beacon was recording the SUBMIT page - an ad lead read as
      organic. Stash the first page of the session once; bvgFT() flattens it onto every lead. */
@@ -291,7 +292,7 @@
     function lead(src) { if (once("oaiq_lead_fired_" + (src || "form"))) fire("lead_created", { type: "customer_action" }, { event_id: eid("lead") }); }
     try { window.bvgLead = lead; } catch (e) {}
     try {
-      if (/\/thank-you(\/|\/index\.html)?$/.test(location.pathname) && sessionStorage.getItem("bvg_lead_pending")) lead("form");
+      if (/\/thank-you(\/|\/index\.html)?$/.test(location.pathname) && (sessionStorage.getItem("bvg_lead_pending") || window.sbsPendingLead)) lead("form");
     } catch (e) {}
     function wireInline() {
       var s = document.querySelector(".hero-form-success");
@@ -310,9 +311,13 @@
 .bv-jobline{display:block}
 .sbs-entity-facts,.sbs-directions,.sbs-reviews-band,.sbs-closing-form,.sbsfaq,.sbsfaq-item,.stat-item,.sbs-area-map,.footer-brand,.tldr-eyebrow,.bvcalc-disclaimer,.sbs-access{box-sizing:border-box}
 </style>
-<!-- callrail swap.js href-only (bloomview 2026-09-30): visible number stays real, tel: link swaps --><script>(function(){if(!/(^|\.)sheabusinesssolutions\.com$/.test(location.hostname))return;var NS='6037598547'.split(','),SRC='https://cdn.callrail.com/companies/768771260/e20dabd56acbcf5c3d0f/12/swap.js',sep='[\\s.\\-\\u00a0\\u2010-\\u2015]?',pats=[];for(var i=0;i<NS.length;i++){var n=NS[i];pats.push('(\\+?1'+sep+')?\\(?'+n.slice(0,3)+'\\)?'+sep+n.slice(3,6)+sep+n.slice(6));}var R=new RegExp(pats.join('|'),'g');function skip(e){for(;e&&e.nodeType===1;e=e.parentNode){var t=e.tagName;if(t==='SCRIPT'||t==='STYLE'||t==='NOSCRIPT'||t==='TEXTAREA'||t==='TITLE'||e.hasAttribute('data-calltrk-noswap'))return true;}return false;}function wrap(root){if(!root||!root.nodeType)return;if(root.nodeType===3)root=root.parentNode;if(!root||skip(root))return;var w=document.createTreeWalker(root,4,null),n,list=[];while((n=w.nextNode())){R.lastIndex=0;if(R.test(n.nodeValue)&&!skip(n.parentNode))list.push(n);}for(var i=0;i<list.length;i++){var t=list[i];if(!t.parentNode)continue;var s=document.createElement('span');s.setAttribute('data-calltrk-noswap','');s.style.cssText='font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:inherit';t.parentNode.replaceChild(s,t);s.appendChild(t);}}function go(){try{wrap(document.body);new MutationObserver(function(ms){for(var i=0;i<ms.length;i++){var a=ms[i].addedNodes;for(var j=0;j<a.length;j++)wrap(a[j]);}}).observe(document.body,{childList:true,subtree:true});}catch(e){}load();}function load(){var s=document.createElement('script');s.async=1;s.src=SRC;(document.head||document.documentElement).appendChild(s);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();})();</script>
-<script src="/assets/bv-attr.js" defer></script>
+<!-- callrail swap.js href-only (bloomview 2026-09-30): visible number stays real, tel: link swaps --><script type="text/plain" data-category="marketing">(function(){if(!/(^|\.)sheabusinesssolutions\.com$/.test(location.hostname))return;var NS='6037598547'.split(','),SRC='https://cdn.callrail.com/companies/768771260/e20dabd56acbcf5c3d0f/12/swap.js',sep='[\\s.\\-\\u00a0\\u2010-\\u2015]?',pats=[];for(var i=0;i<NS.length;i++){var n=NS[i];pats.push('(\\+?1'+sep+')?\\(?'+n.slice(0,3)+'\\)?'+sep+n.slice(3,6)+sep+n.slice(6));}var R=new RegExp(pats.join('|'),'g');function skip(e){for(;e&&e.nodeType===1;e=e.parentNode){var t=e.tagName;if(t==='SCRIPT'||t==='STYLE'||t==='NOSCRIPT'||t==='TEXTAREA'||t==='TITLE'||e.hasAttribute('data-calltrk-noswap'))return true;}return false;}function wrap(root){if(!root||!root.nodeType)return;if(root.nodeType===3)root=root.parentNode;if(!root||skip(root))return;var w=document.createTreeWalker(root,4,null),n,list=[];while((n=w.nextNode())){R.lastIndex=0;if(R.test(n.nodeValue)&&!skip(n.parentNode))list.push(n);}for(var i=0;i<list.length;i++){var t=list[i];if(!t.parentNode)continue;var s=document.createElement('span');s.setAttribute('data-calltrk-noswap','');s.style.cssText='font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:inherit';t.parentNode.replaceChild(s,t);s.appendChild(t);}}function go(){try{wrap(document.body);new MutationObserver(function(ms){for(var i=0;i<ms.length;i++){var a=ms[i].addedNodes;for(var j=0;j<a.length;j++)wrap(a[j]);}}).observe(document.body,{childList:true,subtree:true});}catch(e){}load();}function load(){var s=document.createElement('script');s.async=1;s.src=SRC;(document.head||document.documentElement).appendChild(s);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();})();</script>
+<script type="text/plain" data-category="marketing" data-src="/assets/bv-attr.js" defer></script>
 <style id="ui-pr-20261005">.cred{text-align:left}</style>
+<style id="sbs-local-confirmation-fonts">
+@font-face{font-family:'Jost';font-style:normal;font-weight:300 600;font-display:swap;src:url('/fonts/jost-400-latin.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400 700;font-display:swap;src:url('/fonts/cormorant-garamond-400-latin.woff2') format('woff2')}
+</style>
 </head>
 
 <body>
@@ -384,12 +389,12 @@
         &copy; Shea Business Solutions Bookkeeping &amp; Tax &middot; Orlando, FL
     </footer>
 
-    <script>
+    <script type="text/plain" data-category="analytics">
         /* GA4 lead conversion. Bloomview 2026-08-25: was firing on ANY load of this page, so a
            refresh or a direct visit counted as a lead. Now gated on the same bvg_lead_pending
            stash the OpenAI block reads - this runs BEFORE the beacon block below clears it. */
         (function () {
-            try { if (!sessionStorage.getItem('bvg_lead_pending')) return; } catch (e) { return; }
+            try { if (!(sessionStorage.getItem('bvg_lead_pending') || window.sbsPendingLead)) return; } catch (e) { return; }
             gtag('event', 'generate_lead', {});
         })();
     </script>
@@ -402,12 +407,13 @@
         try {
             var raw = sessionStorage.getItem('bvg_lead_pending');
             if (!raw) return;
+            window.sbsPendingLead = raw;
             sessionStorage.removeItem('bvg_lead_pending');
             navigator.sendBeacon('/api/lead-log',
                 new Blob([raw], { type: 'text/plain;charset=UTF-8' }));
         } catch (e) {}
     })();
     </script>
-<script>(function(){var seen={};document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',p=h.slice(4),t=(a.textContent||'').trim().slice(0,80);if(typeof gtag==='function'){gtag('event','phone_call',{phone_number:p,link_text:t,page_location:location.href});}var now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon('https://bloomviewgrowth.com/collect/phone-click.php',new URLSearchParams({phone:p,text:t,page:location.pathname+location.search}));}}catch(err){}},true);})();</script></body>
+<script type="text/plain" data-category="marketing">(function(){var seen={};document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',p=h.slice(4),t=(a.textContent||'').trim().slice(0,80);if(typeof gtag==='function'){gtag('event','phone_call',{phone_number:p,link_text:t,page_location:location.href});}var now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon('https://bloomviewgrowth.com/collect/phone-click.php',new URLSearchParams({phone:p,text:t,page:location.pathname+location.search}));}}catch(err){}},true);})();</script></body>
 
 </html>

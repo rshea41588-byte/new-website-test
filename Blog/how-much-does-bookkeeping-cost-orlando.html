@@ -2,19 +2,21 @@
 <html lang="en">
 
 <head>
-    <script id="Cookiebot" async src="https://consent.cookiebot.com/uc.js" data-cbid="2efb65f7-d16b-485c-9590-d5800e86d237"
-        data-blockingmode="auto" type="text/javascript"></script>
+    <link rel="stylesheet" href="/assets/vendor/cookieconsent/cookieconsent.css">
+    <link rel="stylesheet" href="/assets/site-consent.css">
+    <script defer src="/assets/vendor/cookieconsent/cookieconsent.umd.js"></script>
+    <script defer src="/assets/site-consent.js"></script>
     <!-- Google tag (gtag.js) -->
-    <script>/* perf-defer-3p-2026-09-08: load GA (gtag.js) off the critical path (first interaction or idle); inline queue shim buffers events until it loads — no loss */
+    <script type="text/plain" data-category="analytics">/* perf-defer-3p-2026-09-08: load GA (gtag.js) off the critical path (first interaction or idle); inline queue shim buffers events until it loads — no loss */
 (function(){var d=0;function L(){if(d)return;d=1;var e=document.createElement('script');e.src='https://www.googletagmanager.com/gtag/js?id=G-LYDBN7KGBN';e.async=1;document.head.appendChild(e);}var ev=['pointerdown','keydown','touchstart','scroll','mousemove'];function H(){L();ev.forEach(function(x){removeEventListener(x,H,{passive:true});});}ev.forEach(function(x){addEventListener(x,H,{passive:true});});if('requestIdleCallback'in window){requestIdleCallback(L,{timeout:4000});}else{setTimeout(L,4000);}})();</script>
-    <script>
+    <script type="text/plain" data-category="analytics">
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
         gtag('js', new Date());
         gtag('config', 'G-LYDBN7KGBN'); // Bloomview Growth agency GA4 (added alongside, does not replace)
     </script>
     <!-- GA4: phone-call click tracking (sibling listener; does not touch the OpenAI Ads tel listener) -->
-    <script>document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(a&&typeof gtag==='function'){gtag('event','phone_call',{phone_number:a.getAttribute('href').slice(4),link_text:(a.textContent||'').trim().slice(0,80),page_location:location.href});}},true);</script>
+    <script type="text/plain" data-category="analytics">document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(a&&typeof gtag==='function'){gtag('event','phone_call',{phone_number:a.getAttribute('href').slice(4),link_text:(a.textContent||'').trim().slice(0,80),page_location:location.href});}},true);</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.sheabusinesssolutions.com/images/favicon.ico" type="image/x-icon">
@@ -858,17 +860,17 @@
 
 
   <!-- OpenAI Ads Measurement Pixel -->
-  <script>
+  <script type="text/plain" data-category="marketing">
     window.oaiq = window.oaiq || function () { (window.oaiq.q = window.oaiq.q || []).push(arguments); };
     oaiq("init", { pixelId: "1F5g6WgWCyxiUeo7YqJkgL" });
   </script>
-  <script>/* perf-defer-3p-2026-09-08: load OpenAI pixel (oaiq) off the critical path (first interaction or idle); inline queue shim buffers events until it loads — no loss */
+  <script type="text/plain" data-category="marketing">/* perf-defer-3p-2026-09-08: load OpenAI pixel (oaiq) off the critical path (first interaction or idle); inline queue shim buffers events until it loads — no loss */
 (function(){var d=0;function L(){if(d)return;d=1;var e=document.createElement('script');e.src='https://bzrcdn.openai.com/sdk/oaiq.min.js';e.async=1;document.head.appendChild(e);}var ev=['pointerdown','keydown','touchstart','scroll','mousemove'];function H(){L();ev.forEach(function(x){removeEventListener(x,H,{passive:true});});}ev.forEach(function(x){addEventListener(x,H,{passive:true});});if('requestIdleCallback'in window){requestIdleCallback(L,{timeout:4000});}else{setTimeout(L,4000);}})();</script>
   <!-- OpenAI Ads conversions v2 (Bloomview 2026-08-27): ONE optimization signal, three actions.
        lead_created fires on form submit, Calendly click AND tel: click - it is the single conversion
        event the campaign optimizes on (Ads Manager allows only one per campaign). appointment_scheduled
        and custom phone_call ALSO fire, as reporting-only breakdowns. -->
-  <script>
+  <script type="text/plain" data-category="marketing">
   /* Bloomview first-touch attribution (2026-08-25). Ads land on one page and the visitor often
      submits on another, so the lead beacon was recording the SUBMIT page - an ad lead read as
      organic. Stash the first page of the session once; bvgFT() flattens it onto every lead. */
@@ -954,18 +956,6 @@ main a:not([class]),.article-body a:not([class]),.sbs-blog a:not([class]),.sbs-r
 .article-body a:not([class]),.sbs-blog a:not([class]),main .tax-crosslink a:not([class]){text-decoration:underline;text-underline-offset:2px;}
 </style>
 <style>
-/* SBS tap targets 2026-08-12 — 40px minimum tap targets on mobile, CSS only, additive */
-@media (max-width:768px){
-.footer-col ul{gap:0;}
-.footer-col ul li a{display:block;padding:9px 0;}
-.footer-col a{padding:9px 0;margin-bottom:0;}
-.footer-social a{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;}
-nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
-.back-to-blog a{padding:10px 0;}
-.hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center;padding:10px;}
-}
-</style>
-<style>
 /* Bloomview hero trust-chip fix 2026-08-25 (bvg-chipfix-2026-08-25) — .post-meta is a wrapping flex row, so at
    phone widths each item took its own line and left its `.post-meta-divider` bullet dangling at
    the end. Stack the chips and drop the separators below 600px. CSS only, additive. */
@@ -979,11 +969,26 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 @media (prefers-reduced-motion: reduce) { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; } }
 @media print { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1 !important; transform: none !important; transition: none !important; } }
 </style>
-<!-- callrail swap.js href-only (bloomview 2026-09-30): visible number stays real, tel: link swaps --><script>(function(){if(!/(^|\.)sheabusinesssolutions\.com$/.test(location.hostname))return;var NS='6037598547'.split(','),SRC='https://cdn.callrail.com/companies/768771260/e20dabd56acbcf5c3d0f/12/swap.js',sep='[\\s.\\-\\u00a0\\u2010-\\u2015]?',pats=[];for(var i=0;i<NS.length;i++){var n=NS[i];pats.push('(\\+?1'+sep+')?\\(?'+n.slice(0,3)+'\\)?'+sep+n.slice(3,6)+sep+n.slice(6));}var R=new RegExp(pats.join('|'),'g');function skip(e){for(;e&&e.nodeType===1;e=e.parentNode){var t=e.tagName;if(t==='SCRIPT'||t==='STYLE'||t==='NOSCRIPT'||t==='TEXTAREA'||t==='TITLE'||e.hasAttribute('data-calltrk-noswap'))return true;}return false;}function wrap(root){if(!root||!root.nodeType)return;if(root.nodeType===3)root=root.parentNode;if(!root||skip(root))return;var w=document.createTreeWalker(root,4,null),n,list=[];while((n=w.nextNode())){R.lastIndex=0;if(R.test(n.nodeValue)&&!skip(n.parentNode))list.push(n);}for(var i=0;i<list.length;i++){var t=list[i];if(!t.parentNode)continue;var s=document.createElement('span');s.setAttribute('data-calltrk-noswap','');s.style.cssText='font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:inherit';t.parentNode.replaceChild(s,t);s.appendChild(t);}}function go(){try{wrap(document.body);new MutationObserver(function(ms){for(var i=0;i<ms.length;i++){var a=ms[i].addedNodes;for(var j=0;j<a.length;j++)wrap(a[j]);}}).observe(document.body,{childList:true,subtree:true});}catch(e){}load();}function load(){var s=document.createElement('script');s.async=1;s.src=SRC;(document.head||document.documentElement).appendChild(s);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();})();</script>
+<!-- callrail swap.js href-only (bloomview 2026-09-30): visible number stays real, tel: link swaps --><script type="text/plain" data-category="marketing">(function(){if(!/(^|\.)sheabusinesssolutions\.com$/.test(location.hostname))return;var NS='6037598547'.split(','),SRC='https://cdn.callrail.com/companies/768771260/e20dabd56acbcf5c3d0f/12/swap.js',sep='[\\s.\\-\\u00a0\\u2010-\\u2015]?',pats=[];for(var i=0;i<NS.length;i++){var n=NS[i];pats.push('(\\+?1'+sep+')?\\(?'+n.slice(0,3)+'\\)?'+sep+n.slice(3,6)+sep+n.slice(6));}var R=new RegExp(pats.join('|'),'g');function skip(e){for(;e&&e.nodeType===1;e=e.parentNode){var t=e.tagName;if(t==='SCRIPT'||t==='STYLE'||t==='NOSCRIPT'||t==='TEXTAREA'||t==='TITLE'||e.hasAttribute('data-calltrk-noswap'))return true;}return false;}function wrap(root){if(!root||!root.nodeType)return;if(root.nodeType===3)root=root.parentNode;if(!root||skip(root))return;var w=document.createTreeWalker(root,4,null),n,list=[];while((n=w.nextNode())){R.lastIndex=0;if(R.test(n.nodeValue)&&!skip(n.parentNode))list.push(n);}for(var i=0;i<list.length;i++){var t=list[i];if(!t.parentNode)continue;var s=document.createElement('span');s.setAttribute('data-calltrk-noswap','');s.style.cssText='font:inherit;color:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:inherit';t.parentNode.replaceChild(s,t);s.appendChild(t);}}function go(){try{wrap(document.body);new MutationObserver(function(ms){for(var i=0;i<ms.length;i++){var a=ms[i].addedNodes;for(var j=0;j<a.length;j++)wrap(a[j]);}}).observe(document.body,{childList:true,subtree:true});}catch(e){}load();}function load(){var s=document.createElement('script');s.async=1;s.src=SRC;(document.head||document.documentElement).appendChild(s);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();})();</script>
 
 <style>.sbs-proof-strip{display:flex!important;align-items:center;justify-content:center;gap:.45rem;line-height:1.2;flex-wrap:wrap}.sbs-proof-strip span{display:inline!important;line-height:1.2;margin:0;padding:0;white-space:nowrap}.sbs-proof-strip:hover{background:var(--charcoal-light)}.post-hero,.blog-hero{padding-top:2.2rem!important}@media(max-width:640px){.sbs-proof-strip{font-size:.85rem}}</style>
-<script src="/assets/bv-attr.js" defer></script>
+<script type="text/plain" data-category="marketing" data-src="/assets/bv-attr.js" defer></script>
 <style>.fact-card{margin:1.7rem 0;padding:1.4rem 1.5rem;border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:10px;background:rgba(201,168,76,0.05)}</style>
+<style>
+/* SBS tap targets 2026-08-12 — 40px minimum tap targets on mobile, CSS only, additive */
+@media (max-width:768px){
+.footer-col ul{gap:0;}
+.footer-col ul li a{display:block;padding:9px 0;}
+.footer-col a{padding:9px 0;margin-bottom:0;}
+.footer-social a{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;}
+nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
+.back-to-blog a{padding:10px 0;}
+.hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center;padding:10px;}
+.nav-phone{min-height:44px;}
+.footer-legal a{display:inline-flex;align-items:center;min-height:44px;}
+.footer-preferred-source a{display:inline-flex;align-items:center;min-height:44px;}
+}
+</style>
 </head>
 
 <body>
@@ -1308,7 +1313,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                     <picture style="display:block"><source type="image/webp" srcset="../images/logo_header_440.webp"><img width="440" height="142" src="../images/logo_header_440.png" alt="Shea Business Solutions logo in the site footer, QuickBooks ProAdvisor in Orlando FL" loading="lazy"></picture>
                 </div>
                 <p class="footer-tagline">QuickBooks Level 2 ProAdvisor offering bookkeeping, payroll, and tax preparation for small businesses in Orlando, FL.</p>
-                <iframe src="https://maps.google.com/maps?cid=13996863349911463635&amp;output=embed" width="100%" height="170" style="border:0;border-radius:8px;margin-top:1rem;display:block;max-width:340px;" loading="lazy" title="Shea Business Solutions Bookkeeping &amp; Tax on Google Maps" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe hidden data-sbs-map-src="https://maps.google.com/maps?cid=13996863349911463635&amp;output=embed" width="100%" height="170" style="border:0;border-radius:8px;margin-top:1rem;display:block;max-width:340px;" loading="lazy" title="Shea Business Solutions Bookkeeping &amp; Tax on Google Maps" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="footer-col">
                 <h3>Services</h3>
@@ -1464,7 +1469,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             }, 2000);
         }
 </script>
-<script>(function(){var seen={};document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',p=h.slice(4),t=(a.textContent||'').trim().slice(0,80);if(typeof gtag==='function'){gtag('event','phone_call',{phone_number:p,link_text:t,page_location:location.href});}var now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon('https://bloomviewgrowth.com/collect/phone-click.php',new URLSearchParams({phone:p,text:t,page:location.pathname+location.search}));}}catch(err){}},true);})();</script>
+<script type="text/plain" data-category="marketing">(function(){var seen={};document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',p=h.slice(4),t=(a.textContent||'').trim().slice(0,80);if(typeof gtag==='function'){gtag('event','phone_call',{phone_number:p,link_text:t,page_location:location.href});}var now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon('https://bloomviewgrowth.com/collect/phone-click.php',new URLSearchParams({phone:p,text:t,page:location.pathname+location.search}));}}catch(err){}},true);})();</script>
 <script>/* L5 2026-09-02: reveal failsafe - force-reveal every section at 1200ms no matter what */
 setTimeout(function(){try{document.querySelectorAll('.fade-up').forEach(function(el){el.classList.add('visible','fu-force')})}catch(e){}},1200);
 try{if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.fade-up').forEach(function(el){el.classList.add('visible','fu-force')})}}catch(e){}
